@@ -1,0 +1,3146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styleguide</title>
+<meta name="description" content="Design-System für das inuvet Shopify-Theme. Tokens, Komponenten und Patterns nach Atomic Design.">
+<link rel="stylesheet" href="https://use.typekit.net/vhh5bbc.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="inuvet.css">
+<link rel="stylesheet" href="sg.css">
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar" id="announcementBar">
+  <span>Kostenloser Versand ab 49 € · 30 Tage Rückgabe · Tierärztlich entwickelt</span>
+  <button class="btn --icon" onclick="closeAnnouncement()" aria-label="Schließen"><span class="material-icons">close</span></button>
+</div>
+
+<!-- Navigation -->
+<nav class="site-nav" aria-label="Seiten-Navigation">
+  <div class="nav-left">
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.4 113.4"><defs><style>.st0{fill:none}.st1{fill:#78b41b}.st2{clip-path:url(#clippath-nav)}</style><clipPath id="clippath-nav"><rect class="st0" width="113.4" height="113.4"/></clipPath></defs><g><path d="M19.4,74.3c0,1.4-1.1,2.6-2.6,2.6s-2.6-1.2-2.6-2.6,1.1-2.5,2.6-2.5,2.5,1.2,2.5,2.5ZM14.7,78.9h4.3v15.4h-4.3s0-15.4,0-15.4Z"/><path d="M23.1,78.9h3.8l.2,2.1c1.5-1.8,3.1-2.5,5.1-2.5s3.5.7,4.2,2.1c.5.9.7,2,.7,4.1v9.7h-4.3v-8.9c0-1.3,0-1.8-.3-2.3-.3-.6-.8-.9-1.6-.9-1.2,0-2.6,1.1-3.5,2.8v9.3h-4.3v-15.4h0Z"/><path d="M50.5,92.6c-1.4,1.5-2.8,2.1-4.7,2.1s-3.4-.8-4.2-2.2c-.5-.9-.7-2.1-.7-4.2v-9.5h4.3v8.7c0,2.6.5,3.4,1.9,3.4s2.3-.6,3.1-1.9v-10.2h4.3v15.4h-3.8l-.3-1.7h0Z"/><path d="M56.8,78.9h4.8l3.6,10.3,3.6-10.3h4.3l-6.3,15.4h-3.9l-6.1-15.4h0Z"/><path d="M78.1,87.9c.2,2.6,1.5,3.7,4.4,3.7s2.7-.3,4.4-1.2l1,2.8c-1.8,1.1-3.8,1.6-6.4,1.6-5.2,0-7.8-2.5-7.8-7.7s2.8-8.6,7.5-8.6,6.8,2.6,6.8,7.6,0,.9,0,1.8h-9.9,0ZM84.2,85.1c-.2-2.4-1.1-3.5-2.9-3.5s-2.9,1.1-3.2,3.5h6.1Z"/><path d="M89.7,82.4l.3-3.4h2.5l.2-3.7,4-1.4v5.1h3.8l-.3,3.4h-3.5v5.6c0,2.8.2,3.3,1.6,3.3s1.3-.2,2.1-.5l.8,2.7c-1.5.9-3,1.3-4.5,1.3s-3-.6-3.7-1.8c-.4-.8-.6-2-.6-4.2v-6.5h-2.7,0Z"/></g><g class="st2"><g><path d="M81.4,32h-.3v1h.2c.5,0,.7-.3.7-.6s-.1-.5-.6-.5M82,35.1l-.8-1.5h0v1.5h-.8v-3.7h1.3c.9,0,1.2.4,1.2,1s-.3,1-.8,1c0,0,.2.3.3.5l.7,1.2h-1ZM78.9,33.3c0,1.4,1.1,2.6,2.6,2.6s2.6-1.2,2.6-2.6-1.1-2.6-2.6-2.6-2.6,1.2-2.6,2.6M85,33.3c0,1.9-1.6,3.5-3.5,3.5s-3.6-1.5-3.6-3.5,1.6-3.5,3.6-3.5,3.5,1.5,3.5,3.5"/><path class="st1" d="M28.7,54.5c1.3,5.2,5.6,9,11.1,10.7,4.1-4.1,6.1-9.5,4.8-14.7-1.3-5.2-5.6-9-11.1-10.7-4.1,4.1-6.1,9.5-4.8,14.7Z"/><path class="st1" d="M38.6,32.3c.7,5.3,4.4,9.7,9.7,12,4.6-3.6,7.2-8.6,6.6-14-.6-5.3-4.4-9.7-9.7-12-4.6,3.6-7.2,8.7-6.5,14Z"/><path class="st1" d="M84.6,54.5c-1.3,5.2-5.6,9-11.1,10.7-4.1-4.1-6.1-9.5-4.8-14.7,1.3-5.2,5.6-9,11.1-10.7,4.1,4.1,6.1,9.5,4.8,14.7h0Z"/><path class="st1" d="M74.8,32.3c-.7,5.3-4.4,9.7-9.7,12-4.6-3.6-7.2-8.6-6.6-14,.6-5.3,4.4-9.7,9.7-12,4.6,3.6,7.2,8.7,6.6,14h0Z"/></g></g></svg></div>
+  <div class="nav-right">
+    <button class="btn --icon" aria-label="Suche" onclick="alert('Suche')">
+      <span class="material-icons">search</span>
+    </button>
+    <button class="btn --icon nav-cart" aria-label="Warenkorb" onclick="openCart('cartFull')">
+      <span class="material-icons">shopping_bag</span>
+      <span class="badge --count nav-cart-count" id="navCartCount" data-count="2">2</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Nav Menu (Mobile: einspaltig, Desktop: 5-spaltig) -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Hauptnavigation">
+  <div class="nav-col">
+    <a href="#logo" onclick="closeMobile()">Foundations</a>
+    <a href="#logo" class="--indent" onclick="closeMobile()">Logo</a>
+    <a href="#system" class="--indent" onclick="closeMobile()">System-Logik</a>
+    <a href="#tokens" class="--indent" onclick="closeMobile()">Design Tokens</a>
+    <a href="#sg-ui" class="--indent" onclick="closeMobile()">Styleguide UI-Klassen</a>
+    <a href="#typo" class="--indent" onclick="closeMobile()">Typografie</a>
+    <a href="#colors" class="--indent" onclick="closeMobile()">Farben</a>
+    <a href="#borders" class="--indent" onclick="closeMobile()">Linien &amp; Borders</a>
+    <a href="#spacing" class="--indent" onclick="closeMobile()">Spacing</a>
+    <a href="#columns" class="--indent" onclick="closeMobile()">Spaltenraster</a>
+    <a href="#responsive" class="--indent" onclick="closeMobile()">Responsive</a>
+    <a href="#height" class="--indent" onclick="closeMobile()">Höhen</a>
+  </div>
+  <div class="nav-col">
+    <a href="#buttons" onclick="closeMobile()">Atome</a>
+    <a href="#buttons" class="--indent" onclick="closeMobile()">Buttons</a>
+    <a href="#forms" class="--indent" onclick="closeMobile()">Formulare</a>
+  </div>
+  <div class="nav-col">
+    <a href="#nav-section" onclick="closeMobile()">Moleküle</a>
+    <a href="#actionable-input-section" class="--indent" onclick="closeMobile()">Actionable Input</a>
+    <a href="#nav-section" class="--indent" onclick="closeMobile()">Navigation</a>
+    <a href="#breadcrumb-section" class="--indent" onclick="closeMobile()">Breadcrumb</a>
+    <a href="#accordion-section" class="--indent" onclick="closeMobile()">Akkordeon / FAQ</a>
+    <a href="#tiles" class="--indent" onclick="closeMobile()">Kachel-Raster</a>
+    <a href="#tile-product" class="--indent" onclick="closeMobile()">Produktkarten</a>
+    <a href="#testimonials" class="--indent" onclick="closeMobile()">Testimonials</a>
+  </div>
+  <div class="nav-col">
+    <a href="#sections" onclick="closeMobile()">Organismen</a>
+    <a href="#sections" class="--indent" onclick="closeMobile()">Section Types</a>
+    <a href="#actionable-input-section" class="--indent" onclick="closeMobile()">Newsletter</a>
+    <a href="#footer-section" class="--indent" onclick="closeMobile()">Footer</a>
+    <a href="#marquee-section" class="--indent" onclick="closeMobile()">Banner / Marquee</a>
+    <a href="#cart-section" class="--indent" onclick="closeMobile()">Warenkorb-Drawer</a>
+  </div>
+  <div class="nav-col">
+    <a href="#pdp-section" onclick="closeMobile()">Templates</a>
+    <a href="#pdp-section" class="--indent" onclick="closeMobile()">Produktdetailseite</a>
+    <a href="#collection-section" class="--indent" onclick="closeMobile()">Produktübersicht</a>
+    <a href="#checkout-section" class="--indent" onclick="closeMobile()">Checkout</a>
+    <a href="#modal-section" class="--indent" onclick="closeMobile()">Modal / Pop-up</a>
+    <a href="#toast-section" class="--indent" onclick="closeMobile()">Toast / Notification</a>
+  </div>
+</div>
+
+<main>
+<div class="page">
+
+  <header class="header">
+    <h1 class="mb-half">Styleguide</h1>
+    <p>Ein logisches Design-System auf Basis von <code>1rem</code>, dem Faktor <code>1.5</code> und dem Grundmodul <code>3rem</code>. Typografie, Spacing und Grid leiten sich aus denselben Werten ab.</p>
+  </header>
+
+  <div class="rules">
+    <div class="rule">
+      <h4>Für Entwickler</h4>
+      <p>Jede Klasse in diesem Styleguide entspricht einer wiederverwendbaren CSS-Klasse im Shopify-Theme. Neue Komponenten werden ausschließlich aus bestehenden Klassen zusammengesetzt — kein neues CSS ohne neuen Eintrag hier. Spacing erfolgt immer in Vielfachen von <code>--module</code> (3rem) oder <code>--half-module</code> (1.5rem). Inline-Styles sind verboten. Neue Farben müssen als Custom Property definiert und hier dokumentiert werden.</p>
+    </div>
+    <div class="rule">
+      <h4>Für Designer</h4>
+      <p>Alle Abstände, Schriftgrößen und Farben sind Token — kein Einzelwert ohne Entsprechung in diesem System. Neue Elemente werden aus Atomen (Buttons, Inputs) zu Molekülen (Actionable Input, Navigation) und Organismen (Newsletter, Footer) zusammengesetzt. Wird etwas hier nicht gefunden, existiert es noch nicht — dann zuerst hier definieren, dann umsetzen. Das System funktioniert auf allen Breakpoints ohne Sonderbehandlung.</p>
+    </div>
+  </div>
+
+  <section class="sg-section" id="logo">
+    <h2 class="section-label">00 — Logo</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Dateiformat</h4>
+        <p>SVG (Vektor). Inline eingebettet für volle CSS-Kontrolle. Keine Raster-Fallbacks nötig.</p>
+      </div>
+      <div class="rule">
+        <h4>Farben</h4>
+        <p>Bildmarke in <code>--green</code> (#78b41b). Wortmarke in <code>--fg</code> (#000). Keine Farbvarianten definiert.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Navigation</th><td>Fluid: <code>clamp(3rem, 1.5rem + 5vw, 5.25rem)</code>. Min = <code>var(--module)</code>, Max = <code>var(--module) × 1.75</code>.</td></tr>
+      <tr><th>Schutzzone</th><td>Mindestens <code>½ Modul</code> Freiraum um das Logo auf allen Seiten.</td></tr>
+      <tr><th>Mindestgröße</th><td><code>3rem</code> = <code>var(--module)</code>. Darunter wird die Wortmarke unleserlich.</td></tr>
+      <tr><th>Hintergrund</th><td>Bevorzugt auf Weiß. Auf <code>--green-light</code> ebenfalls zulässig.</td></tr>
+    </table>
+
+    <div class="demo-label">Standard (5.25rem — Desktop-Maximum)</div>
+    <div class="sg-demo-pad">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.4 113.4" class="sg-logo-demo"><defs><style>.st0-demo{fill:none}.st1-demo{fill:#78b41b}.st2-demo{clip-path:url(#clippath-demo)}</style><clipPath id="clippath-demo"><rect class="st0-demo" width="113.4" height="113.4"/></clipPath></defs><g><path d="M19.4,74.3c0,1.4-1.1,2.6-2.6,2.6s-2.6-1.2-2.6-2.6,1.1-2.5,2.6-2.5,2.5,1.2,2.5,2.5ZM14.7,78.9h4.3v15.4h-4.3s0-15.4,0-15.4Z"/><path d="M23.1,78.9h3.8l.2,2.1c1.5-1.8,3.1-2.5,5.1-2.5s3.5.7,4.2,2.1c.5.9.7,2,.7,4.1v9.7h-4.3v-8.9c0-1.3,0-1.8-.3-2.3-.3-.6-.8-.9-1.6-.9-1.2,0-2.6,1.1-3.5,2.8v9.3h-4.3v-15.4h0Z"/><path d="M50.5,92.6c-1.4,1.5-2.8,2.1-4.7,2.1s-3.4-.8-4.2-2.2c-.5-.9-.7-2.1-.7-4.2v-9.5h4.3v8.7c0,2.6.5,3.4,1.9,3.4s2.3-.6,3.1-1.9v-10.2h4.3v15.4h-3.8l-.3-1.7h0Z"/><path d="M56.8,78.9h4.8l3.6,10.3,3.6-10.3h4.3l-6.3,15.4h-3.9l-6.1-15.4h0Z"/><path d="M78.1,87.9c.2,2.6,1.5,3.7,4.4,3.7s2.7-.3,4.4-1.2l1,2.8c-1.8,1.1-3.8,1.6-6.4,1.6-5.2,0-7.8-2.5-7.8-7.7s2.8-8.6,7.5-8.6,6.8,2.6,6.8,7.6,0,.9,0,1.8h-9.9,0ZM84.2,85.1c-.2-2.4-1.1-3.5-2.9-3.5s-2.9,1.1-3.2,3.5h6.1Z"/><path d="M89.7,82.4l.3-3.4h2.5l.2-3.7,4-1.4v5.1h3.8l-.3,3.4h-3.5v5.6c0,2.8.2,3.3,1.6,3.3s1.3-.2,2.1-.5l.8,2.7c-1.5.9-3,1.3-4.5,1.3s-3-.6-3.7-1.8c-.4-.8-.6-2-.6-4.2v-6.5h-2.7,0Z"/></g><g class="st2-demo"><g><path d="M81.4,32h-.3v1h.2c.5,0,.7-.3.7-.6s-.1-.5-.6-.5M82,35.1l-.8-1.5h0v1.5h-.8v-3.7h1.3c.9,0,1.2.4,1.2,1s-.3,1-.8,1c0,0,.2.3.3.5l.7,1.2h-1ZM78.9,33.3c0,1.4,1.1,2.6,2.6,2.6s2.6-1.2,2.6-2.6-1.1-2.6-2.6-2.6-2.6,1.2-2.6,2.6M85,33.3c0,1.9-1.6,3.5-3.5,3.5s-3.6-1.5-3.6-3.5,1.6-3.5,3.6-3.5,3.5,1.5,3.5,3.5"/><path class="st1-demo" d="M28.7,54.5c1.3,5.2,5.6,9,11.1,10.7,4.1-4.1,6.1-9.5,4.8-14.7-1.3-5.2-5.6-9-11.1-10.7-4.1,4.1-6.1,9.5-4.8,14.7Z"/><path class="st1-demo" d="M38.6,32.3c.7,5.3,4.4,9.7,9.7,12,4.6-3.6,7.2-8.6,6.6-14-.6-5.3-4.4-9.7-9.7-12-4.6,3.6-7.2,8.7-6.5,14Z"/><path class="st1-demo" d="M84.6,54.5c-1.3,5.2-5.6,9-11.1,10.7-4.1-4.1-6.1-9.5-4.8-14.7,1.3-5.2,5.6-9,11.1-10.7,4.1,4.1,6.1,9.5,4.8,14.7h0Z"/><path class="st1-demo" d="M74.8,32.3c-.7,5.3-4.4,9.7-9.7,12-4.6-3.6-7.2-8.6-6.6-14,.6-5.3,4.4-9.7,9.7-12,4.6,3.6,7.2,8.7,6.6,14h0Z"/></g></g></svg>
+    </div>
+    <p class="demo-note">Navigations-Größe: fluid <code>clamp(3rem, 1.5rem + 5vw, 5.25rem)</code>. Bildmarke (grün) + Wortmarke (schwarz).</p>
+
+
+
+  </section>
+
+
+  <section class="sg-section" id="system">
+    <h2 class="section-label">01 — System-Logik</h2>
+    <div class="logic-chain">
+      <div class="logic-node"><strong>1rem</strong><span>Basis · 16px</span></div>
+      <div class="logic-arrow">×</div>
+      <div class="logic-node"><strong>1.5</strong><span>Ratio</span></div>
+      <div class="logic-arrow">=</div>
+      <div class="logic-node"><strong>1.5rem</strong><span>½ Modul · 24px</span></div>
+      <div class="logic-arrow">×</div>
+      <div class="logic-node"><strong>1.5</strong><span>Ratio</span></div>
+      <div class="logic-arrow">=</div>
+      <div class="logic-node"><strong>2.25rem</strong><span>Stufe 2 · 36px</span></div>
+      <div class="logic-arrow">×</div>
+      <div class="logic-node"><strong>1.5</strong><span>Ratio</span></div>
+      <div class="logic-arrow">=</div>
+      <div class="logic-node"><strong>3.375rem</strong><span>Stufe 3 · 54px</span></div>
+    </div>
+    <div class="rules">
+      <div class="rule"><h4>Grundmodul</h4><p><code>3rem</code> (48px bei 16px Basis). Definiert in rem – skaliert mit der Browsergröße.</p></div>
+      <div class="rule"><h4>Halbes Modul</h4><p><code>1.5rem</code> (24px). Zwischenstufe für Line-Heights und feinere Abstände.</p></div>
+      <div class="rule"><h4>Modulare Skala</h4><p>Faktor <code>1.5</code>. Schriftgrößen: 0.667 → 1 → 1.5 → 2.25 → 3.375rem.</p></div>
+      <div class="rule"><h4>Einheitliche Sprache</h4><p>Typografie, Spacing und Grid leiten sich aus demselben Verhältnis ab.</p></div>
+    </div>
+  </section>
+
+  <!-- 01b Design Tokens -->
+  <section class="sg-section" id="tokens">
+    <h2 class="section-label">02 — Design Tokens</h2>
+    <div class="rules">
+      <div class="rule">
+        <h4>Single Source of Truth</h4>
+        <p>Alle Werte sind CSS Custom Properties in <code>:root</code>. Kein Hardcoding von Farben, Größen oder Abständen außerhalb dieser Tokens. Neue Werte müssen hier definiert werden, bevor sie verwendet werden.</p>
+      </div>
+      <div class="rule">
+        <h4>Verwendung</h4>
+        <p>Immer <code>var(--token)</code> im CSS, niemals Rohdaten wie <code>#78b41b</code> oder <code>3rem</code> direkt. Ausnahme: Demo-Blöcke mit instanzspezifischen Datenwerten (<code>--sz</code>, <code>--h</code>).</p>
+      </div>
+    </div>
+
+    <h3 class="sg-h3 --top">Spacing</h3>
+    <table class="spec-table">
+      <tr><th><code>--module</code></th><td><code>clamp(1.5rem, 1rem + 2.7vw, 3rem)</code> — Grundmodul, flüssig</td></tr>
+      <tr><th><code>--half-module</code></th><td><code>clamp(0.75rem, 0.5rem + 1.35vw, 1.5rem)</code> — ½ Modul</td></tr>
+      <tr><th><code>--gutter</code></th><td><code>var(--module)</code> — Grid-Abstände</td></tr>
+      <tr><th><code>--margin</code></th><td><code>var(--module)</code> — Seitenabstände</td></tr>
+      <tr><th><code>--section-gap</code></th><td><code>var(--module)</code> — Abstände zwischen Sektionen</td></tr>
+    </table>
+
+    <h3 class="sg-h3 --top">Typografie</h3>
+    <table class="spec-table">
+      <tr><th><code>--text-xs</code></th><td><code>0.667rem</code> — Labels, Captions, Metainfos</td></tr>
+      <tr><th><code>--text-base</code></th><td><code>clamp(0.875rem, 0.8rem + 0.3vw, 1rem)</code> — Fließtext</td></tr>
+      <tr><th><code>--text-m</code></th><td><code>clamp(1.25rem, 1rem + 0.7vw, 1.5rem)</code> — H3, Intro</td></tr>
+      <tr><th><code>--text-l</code></th><td><code>clamp(1.5rem, 1rem + 1.7vw, 2.25rem)</code> — H2</td></tr>
+      <tr><th><code>--text-xl</code></th><td><code>clamp(2rem, 1rem + 3.2vw, 3.375rem)</code> — H1</td></tr>
+      <tr><th><code>--lh-base</code></th><td><code>1.5</code> — Fließtext, H3, H4</td></tr>
+      <tr><th><code>--lh-h2</code></th><td><code>1.17</code></td></tr>
+      <tr><th><code>--lh-h1</code></th><td><code>1.11</code></td></tr>
+      <tr><th><code>--font</code></th><td><code>"schnebel-sans-me", sans-serif</code></td></tr>
+    </table>
+
+    <h3 class="sg-h3 --top">Farben</h3>
+    <table class="spec-table">
+      <tr><th><code>--fg</code></th><td><span class="sg-swatch" style="background:#000"></span><code>#000</code> — Text, aktive Zustände</td></tr>
+      <tr><th><code>--fg-muted</code></th><td><span class="sg-swatch" style="background:#666"></span><code>#666</code> — Sekundärer Text</td></tr>
+      <tr><th><code>--fg-hover</code></th><td><span class="sg-swatch" style="background:#333"></span><code>#333</code> — Hover-Zustand Text</td></tr>
+      <tr><th><code>--bg</code></th><td><span class="sg-swatch" style="background:#fff; border: 1px solid #ccc;"></span><code>#fff</code> — Seitenhintergrund</td></tr>
+      <tr><th><code>--border</code></th><td><span class="sg-swatch" style="background:#cccccc"></span><code>#cccccc</code> — Strukturelle Linien</td></tr>
+      <tr><th><code>--border-light</code></th><td><span class="sg-swatch" style="background:#e0e0e0"></span><code>#e0e0e0</code> — Dekorative Trennlinien (Rules, Rows, Dashed)</td></tr>
+      <tr><th><code>--accent-bg</code></th><td><span class="sg-swatch" style="background:#f2f2f2"></span><code>#f2f2f2</code> — Flächenfarbe für Boxen &amp; Placeholder. Bewusst heller als <code>--border-light</code>: Linie ≠ Fläche.</td></tr>
+      <tr><th><code>--green</code></th><td><span class="sg-swatch" style="background:#78b41b"></span><code>#78b41b</code> — Primärfarbe, CTAs, Icons</td></tr>
+      <tr><th><code>--green-hover</code></th><td><span class="sg-swatch" style="background:#58990F"></span><code>#58990F</code> — Hover-Zustand grün</td></tr>
+      <tr><th><code>--green-light</code></th><td><span class="sg-swatch" style="background:#f0fae6"></span><code>#f0fae6</code> — Hintergründe, Announcement Bar</td></tr>
+    </table>
+    <p class="sg-p">14 Produkt-Kategoriefarben (<code>--cat-herz</code>, <code>--cat-cbd</code> etc.) → <a href="#colors">05 — Farben</a>.</p>
+
+    <h3 class="sg-h3 --top">Layout</h3>
+    <table class="spec-table">
+      <tr><th><code>--announcement-height</code></th><td><code>var(--module)</code> — Höhe der Announcement Bar (wird beim Schließen auf <code>0px</code> gesetzt)</td></tr>
+      <tr><th><code>--nav-height</code></th><td><code>calc(var(--module) * 2)</code> — Höhe der Navigation</td></tr>
+      <tr><th><code>--header-height</code></th><td><code>calc(var(--module) * 3)</code> — Announcement + Nav, für <code>scroll-padding-top</code></td></tr>
+      <tr><th><code>--section-max-height</code></th><td><code>51rem</code> — Max-Höhe für Section Types mit Bild</td></tr>
+      <tr><th><code>--section-min-height</code></th><td><code>24rem</code> — Min-Höhe für Section Types mit Bild</td></tr>
+    </table>
+  </section>
+
+  <!-- 01c Styleguide UI -->
+
+  <section class="sg-section" id="sg-ui">
+    <h2 class="section-label">03 — Styleguide UI-Klassen</h2>
+    <div class="rules">
+      <div class="rule">
+        <h4>Wiederverwendung</h4>
+        <p>Diese Klassen definieren das Erscheinungsbild des Styleguides selbst — nicht des Shopify-Themes. Sie werden auch auf abgeleiteten Seiten (z.B. Newsletter-Dokumentation) verwendet und müssen dort identisch implementiert sein.</p>
+      </div>
+      <div class="rule">
+        <h4>Konsistenz</h4>
+        <p>Jede weitere Dokumentationsseite übernimmt diese Klassen 1:1 — keine lokalen Abweichungen. Änderungen hier ziehen Anpassungen auf allen Seiten nach sich.</p>
+      </div>
+    </div>
+
+    <h3 class="sg-h3">Seiten-Struktur</h3>
+    <table class="spec-table">
+      <tr>
+        <th><code>.section-label</code></th>
+        <td>Utility-Klasse für Sektions-Labels. Nutzt das HTML-Tag für semantische Gewichtung (<code>h2</code> für Haupt-Sektionen, <code>h3</code> für Sub-Sektionen). Style: <code>font-size: var(--text-xs)</code> · uppercase · <code>letter-spacing: 0.15em</code> · <code>color: var(--fg-muted)</code> · <code>border-bottom: 1px solid var(--border)</code>. Definiert in <code>inuvet.css</code>.</td>
+      </tr>
+      <tr>
+        <th><code>.sg-section</code></th>
+        <td><code>margin-bottom: calc(var(--module) * 2)</code> — Abstand zwischen Haupt-Sektionen</td>
+      </tr>
+      <tr>
+        <th><code>.sg-h3</code></th>
+        <td><code>font-size: var(--text-m)</code> · <code>margin-bottom: var(--half-module)</code>. Modifier <code>.--top</code>: <code>margin-top: var(--module)</code></td>
+      </tr>
+      <tr>
+        <th><code>.sg-p</code></th>
+        <td><code>color: var(--fg-muted)</code> · <code>margin-bottom: var(--half-module)</code> — beschreibender Fließtext unter Überschriften</td>
+      </tr>
+    </table>
+
+    <h3 class="sg-h3 --top">Demo-Elemente</h3>
+    <table class="spec-table">
+      <tr>
+        <th><code>.demo-label</code></th>
+        <td><code>font-size: var(--text-xs)</code> · <code>color: var(--fg-muted)</code> · <code>border-top: 1px solid var(--border-light)</code> · <code>padding-top: var(--module)</code> · <code>margin-top: calc(var(--module) * 2)</code></td>
+      </tr>
+      <tr>
+        <th><code>.demo-note</code></th>
+        <td><code>font-size: var(--text-xs)</code> · <code>color: var(--fg-muted)</code> · <code>margin-top: var(--half-module)</code> — erklärende Anmerkung unter Demo-Blöcken</td>
+      </tr>
+    </table>
+
+    <h3 class="sg-h3 --top">Regeln &amp; Tabellen</h3>
+    <table class="spec-table">
+      <tr>
+        <th><code>.rules</code></th>
+        <td><code>display: grid</code> · <code>grid-template-columns: 1fr 1fr</code> · <code>gap: var(--gutter)</code>. Mobile: <code>1fr</code></td>
+      </tr>
+      <tr>
+        <th><code>.rule</code></th>
+        <td><code>border-top: 1px solid var(--border-light)</code> · <code>padding-top: var(--half-module)</code> — kein Box-Border</td>
+      </tr>
+      <tr>
+        <th><code>.rule p</code></th>
+        <td><code>font-size: var(--text-base)</code> · <code>color: var(--fg-muted)</code> — nicht <code>var(--text-xs)</code></td>
+      </tr>
+      <tr>
+        <th><code>.spec-table th</code></th>
+        <td><code>font-size: var(--text-xs)</code> · uppercase · <code>letter-spacing: 0.1em</code> · <code>color: var(--fg-muted)</code> · <code>font-weight: 400</code> · <code>width: 10rem</code></td>
+      </tr>
+      <tr>
+        <th><code>.spec-table td</code></th>
+        <td><code>font-size: var(--text-base)</code> — nicht <code>var(--text-xs)</code></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 02 Typografie -->
+
+  <section class="sg-section" id="typo">
+    <h2 class="section-label">04 — Typografie</h2>
+    <div class="rules">
+      <div class="rule"><h4>Schriftart</h4><p><code>Schnebel Sans</code> via Adobe Typekit. Fallback: <code>sans-serif</code>.</p></div>
+      <div class="rule"><h4>Icons</h4><p><code>Google Material Icons</code> als Standard-Icon-Set. Einbindung via Google Fonts CDN.</p></div>
+      <div class="rule"><h4>Fluid Typography</h4><p>Schriftgrößen skalieren stufenlos via <code>clamp()</code> zwischen mobilem Minimum und Desktop-Maximum. Line-Heights als Faktor, nicht als fester rem-Wert.</p></div>
+      <div class="rule"><h4>Text-Stile</h4><p>Sechs Ebenen: H1–H4 (Headlines), Body, Caption. Zusätzlich: <strong>Uppercase Label</strong> (<code>--text-xs</code>, uppercase, 0.15em Spacing) für Sektions-Titel und Tabellen-Header. <code>code</code> in Monospace, relativ zum Kontext (<code>0.85em</code>).</p></div>
+    </div>
+    <div class="type-scale">
+      <div class="type-scale-step"><div class="glyph --xs">Ag</div><div class="meta">0.667rem</div></div>
+      <div class="type-scale-step"><div class="glyph --base">Ag</div><div class="meta">0.875–1rem</div></div>
+      <div class="type-scale-step"><div class="glyph --m">Ag</div><div class="meta">1.25–1.5rem</div></div>
+      <div class="type-scale-step"><div class="glyph --l">Ag</div><div class="meta">1.5–2.25rem</div></div>
+      <div class="type-scale-step"><div class="glyph --xl">Ag</div><div class="meta">2–3.375rem</div></div>
+    </div>
+    <div class="specimen">
+      <div class="specimen-row"><div class="specimen-meta"><span>2–3.375rem</span><span>LH 1.11</span></div><p class="h1">Headline 1</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>1.5–2.25rem</span><span>LH 1.17</span></div><p class="h2">Headline 2</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>1.25–1.5rem</span><span>LH 1.5</span></div><h3>Headline 3</h3></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>0.875–1rem</span><span>LH 1.5</span></div><h4>Headline 4</h4></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>0.875–1rem</span><span>LH 1.5 · Body</span></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Alle Produkte enthalten <a href="#">natürliche Wirkstoffe</a> – ohne unnötige Zusatzstoffe. Mehr dazu in unserem <a href="#">Ratgeber</a>.</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>ul · ol</span><span>a:not([class])</span></div><div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--module)"><ul><li>Tierärztlich entwickelt</li><li>Ohne künstliche Zusätze</li><li>Nachhaltige Rohstoffe</li></ul><ol><li>Produkt wählen</li><li>Dosierung beachten</li><li>Regelmäßig anwenden</li></ol></div></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>LH 1.5</span></div><p style="font-size: var(--text-xs)">Caption · Label · Kleingedrucktes · Metainfo</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>Uppercase · 0.15em</span></div><div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--fg-muted);">Section Label · Tabellen-Header · Filter-Label</div></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>0.85em (relativ)</span><span>Monospace</span></div><div style="font-size: var(--text-base); line-height: var(--lh-base); color: var(--fg-muted);">Inline-Code: <code>var(--module)</code>, <code>clamp()</code>, <code>#78b41b</code></div></div>
+      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>700 · uppercase · ls 0.05em</span></div><div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;"><div class="badge" data-cat="herz">Herz</div><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge" data-cat="stress">Stress</div><div class="badge --dark">Neu</div><div class="badge --sale">Sale</div></div></div>
+    </div>
+
+    <h3 class="sg-h3 --top">Icons</h3>
+    <p class="sg-p">Google Material Icons (Outlined) als Standard-Icon-Set. Einbindung via Google Fonts CDN. Größe orientiert sich am Kontext: <code>1rem</code> inline, <code>1.25rem</code> in Buttons/Navigation, <code>2.25rem</code> als Feature-Icon.</p>
+
+    <table class="spec-table">
+      <tr><th>Set</th><td>Google Material Icons · <code>font-family: 'Material Icons'</code></td></tr>
+      <tr><th>Größen</th><td><code>1rem</code> (inline/Sterne) · <code>1.25rem</code> (Nav/Buttons/Accordion) · <code>2.25rem</code> (Upload/Feature)</td></tr>
+      <tr><th>Farbe</th><td>Erbt <code>color</code> vom Elternelement. Standard: <code>--fg</code>. Sekundär: <code>--fg-muted</code>.</td></tr>
+      <tr><th>Ausrichtung</th><td>Vertikal zentriert zum Text via <code>vertical-align: middle</code> oder Flex-Alignment.</td></tr>
+    </table>
+
+    <div class="demo-label">Navigation &amp; UI</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">menu</span><div>menu</div></div>
+      <div class="icon-demo"><span class="material-icons">close</span><div>close</div></div>
+      <div class="icon-demo"><span class="material-icons">search</span><div>search</div></div>
+      <div class="icon-demo"><span class="material-icons">person</span><div>person</div></div>
+      <div class="icon-demo"><span class="material-icons">expand_more</span><div>expand_more</div></div>
+      <div class="icon-demo"><span class="material-icons">arrow_back</span><div>arrow_back</div></div>
+      <div class="icon-demo"><span class="material-icons">arrow_forward</span><div>arrow_forward</div></div>
+      <div class="icon-demo"><span class="material-icons">chevron_right</span><div>chevron_right</div></div>
+    </div>
+
+    <div class="demo-label">Shop</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">shopping_cart</span><div>shopping_cart</div></div>
+      <div class="icon-demo"><span class="material-icons">favorite_border</span><div>favorite_border</div></div>
+      <div class="icon-demo"><span class="material-icons">star</span><div>star</div></div>
+      <div class="icon-demo"><span class="material-icons">star_border</span><div>star_border</div></div>
+      <div class="icon-demo"><span class="material-icons">local_shipping</span><div>local_shipping</div></div>
+      <div class="icon-demo"><span class="material-icons">inventory_2</span><div>inventory_2</div></div>
+      <div class="icon-demo"><span class="material-icons">percent</span><div>percent</div></div>
+      <div class="icon-demo"><span class="material-icons">storefront</span><div>storefront</div></div>
+    </div>
+
+    <div class="demo-label">Formular &amp; Feedback</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">cloud_upload</span><div>cloud_upload</div></div>
+      <div class="icon-demo"><span class="material-icons">check_circle</span><div>check_circle</div></div>
+      <div class="icon-demo"><span class="material-icons">error_outline</span><div>error_outline</div></div>
+      <div class="icon-demo"><span class="material-icons">info</span><div>info</div></div>
+      <div class="icon-demo"><span class="material-icons">visibility</span><div>visibility</div></div>
+      <div class="icon-demo"><span class="material-icons">visibility_off</span><div>visibility_off</div></div>
+      <div class="icon-demo"><span class="material-icons">add</span><div>add</div></div>
+      <div class="icon-demo"><span class="material-icons">remove</span><div>remove</div></div>
+    </div>
+
+    <div class="demo-label">Social &amp; Kontakt</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">email</span><div>email</div></div>
+      <div class="icon-demo"><span class="material-icons">phone</span><div>phone</div></div>
+      <div class="icon-demo"><span class="material-icons">place</span><div>place</div></div>
+      <div class="icon-demo"><span class="material-icons">share</span><div>share</div></div>
+    </div>
+    <p class="demo-note">Kuratierter Satz für den Shop. Weitere Icons: <a href="https://fonts.google.com/icons" target="_blank">fonts.google.com/icons</a>. Nur <code>Material Icons</code> (Filled) verwenden — keine anderen Varianten mischen.</p>
+
+    <h3 class="sg-h3 --top-xl">Rich Text Editor (CMS Content)</h3>
+    <p class="sg-p">Texte aus dem Shopify-Backend (Seiten, Blogbeiträge, Produktbeschreibungen) haben keine Utility-Klassen. Der Wrapper <code>.rte</code> sorgt dafür, dass Standard-HTML-Tags automatisch den korrekten vertikalen Rhythmus erhalten.</p>
+
+    <div class="sg-demo-pad">
+      <div class="rte">
+        <h2>Warum natürliche Inhaltsstoffe?</h2>
+        <p>Viele handelsübliche Ergänzungsmittel enthalten synthetische Füllstoffe, künstliche Aromen und Konservierungsstoffe. Bei inuvet verzichten wir bewusst darauf – aus Überzeugung und weil es deinem Tier schlicht nicht guttut. Mehr dazu in unserer <a href="#">Philosophie</a>.</p>
+        <blockquote>
+          „Die Gesundheit beginnt im Napf. Natürliche Inhaltsstoffe werden vom tierischen Organismus deutlich besser metabolisiert als synthetische Isolate."
+        </blockquote>
+        <ul>
+          <li>Keine künstlichen Farbstoffe oder Aromen</li>
+          <li>Hergestellt in Deutschland nach HACCP-Standard</li>
+          <li>Entwickelt in Zusammenarbeit mit Tierärztinnen und Tierärzten</li>
+        </ul>
+        <figure>
+          <div class="placeholder-bg" style="width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; color: var(--fg-muted); border: 1px solid var(--border-light);">BILD-PLATZHALTER (16:9)</div>
+          <figcaption>Unsere Produktion in Deutschland unterliegt strengen Qualitätskontrollen.</figcaption>
+        </figure>
+        <h3>Transparenz in der Herstellung</h3>
+        <p>Jede Charge wird auf Reinheit und Wirkstoffgehalt geprüft. Die Ergebnisse sind auf Anfrage einsehbar. Wir glauben, dass du das Recht hast zu wissen, was dein Tier bekommt.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 03 Spacing -->
+
+  <!-- ═══════════════════════════════════════════
+       10 FARBEN
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="colors">
+    <h2 class="section-label">05 — Farben</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Basis</h4>
+        <p>Schwarz <code>#000</code> für Text und Linien. Weiß <code>#fff</code> als Hintergrund. Grau <code>#666</code> für sekundären Text.</p>
+      </div>
+      <div class="rule">
+        <h4>Akzentfarbe</h4>
+        <p>Grün <code>#78b41b</code> als primäre Akzentfarbe. Hover-Zustand: <code>#58990F</code>. Helle Variante: <code>#f0fae6</code> für Hintergründe.</p>
+      </div>
+    </div>
+
+    <p class="sg-p">Die CSS Custom Properties für Brandfarben sind in <a href="#tokens">02 — Design Tokens</a> definiert (<code>--fg</code>, <code>--green</code>, <code>--green-light</code> etc.). Fließtext-Links in <code>--green</code>, Hover: <code>--green-hover</code> + Unterstrich.</p>
+
+    <p class="sg-p">Beispiel: Ein Fließtext mit <a href="#colors">einem Link zur Farb-Sektion</a> und <a href="#buttons">einem Link zu den Buttons</a> — beide in Grün, mit Hover-Effekt.</p>
+
+    <h3 class="sg-h3 --top">Produkt-Kategoriefarben</h3>
+    <p class="sg-p">Jede Produktkategorie hat eine Hauptfarbe und eine helle Abstufung. Noch nicht auf Komponenten angewendet — nur als Farbpalette dokumentiert.</p>
+
+    <table class="spec-table">
+      <tr><th>CBD</th><td><span class="sg-swatch" style="background:#C5B4E3"></span> <code>#C5B4E3</code> · <span class="sg-swatch --pair" style="background:#f2eff9"></span> <code>#f2eff9</code></td></tr>
+      <tr><th>Bauchspeichel</th><td><span class="sg-swatch" style="background:#FFB1BB"></span> <code>#FFB1BB</code> · <span class="sg-swatch --pair" style="background:#ffeff2"></span> <code>#ffeff2</code></td></tr>
+      <tr><th>Blase</th><td><span class="sg-swatch" style="background:#F3DD6D"></span> <code>#F3DD6D</code> · <span class="sg-swatch --pair" style="background:#fdf8e3"></span> <code>#fdf8e3</code></td></tr>
+      <tr><th>Niere</th><td><span class="sg-swatch" style="background:#C3623A"></span> <code>#C3623A</code> · <span class="sg-swatch --pair" style="background:#f8ece8"></span> <code>#f8ece8</code></td></tr>
+      <tr><th>Herz</th><td><span class="sg-swatch" style="background:#FF6D6A"></span> <code>#FF6D6A</code> · <span class="sg-swatch --pair" style="background:#ffeceb"></span> <code>#ffeceb</code></td></tr>
+      <tr><th>Leber</th><td><span class="sg-swatch" style="background:#DDBCB0"></span> <code>#DDBCB0</code> · <span class="sg-swatch --pair" style="background:#f8f2f0"></span> <code>#f8f2f0</code></td></tr>
+      <tr><th>Stress</th><td><span class="sg-swatch" style="background:#C3D7EE"></span> <code>#C3D7EE</code> · <span class="sg-swatch --pair" style="background:#ecf2fa"></span> <code>#ecf2fa</code></td></tr>
+      <tr><th>Gelenke</th><td><span class="sg-swatch" style="background:#D0D3D4"></span> <code>#D0D3D4</code> · <span class="sg-swatch --pair" style="background:#f1f2f2"></span> <code>#f1f2f2</code></td></tr>
+      <tr><th>Magen/Darm</th><td><span class="sg-swatch" style="background:#D4EC8E"></span> <code>#D4EC8E</code> · <span class="sg-swatch --pair" style="background:#f0fae6"></span> <code>#f0fae6</code></td></tr>
+      <tr><th>Fettsäuren</th><td><span class="sg-swatch" style="background:#05868E"></span> <code>#05868E</code> · <span class="sg-swatch --pair" style="background:#e5f0f1"></span> <code>#e5f0f1</code></td></tr>
+      <tr><th>Haut</th><td><span class="sg-swatch" style="background:#F1A7DC"></span> <code>#F1A7DC</code> · <span class="sg-swatch --pair" style="background:#fcedf7"></span> <code>#fcedf7</code></td></tr>
+      <tr><th>Immun</th><td><span class="sg-swatch" style="background:#C3D7EE"></span> <code>#C3D7EE</code> · <span class="sg-swatch --pair" style="background:#e5f7f3"></span> <code>#e5f7f3</code></td></tr>
+      <tr><th>Atemwege</th><td><span class="sg-swatch" style="background:#FFB990"></span> <code>#FFB990</code> · <span class="sg-swatch --pair" style="background:#fff1e9"></span> <code>#fff1e9</code></td></tr>
+      <tr><th>Hormone</th><td><span class="sg-swatch" style="background:#994878"></span> <code>#994878</code> · <span class="sg-swatch --pair" style="background:#f4e9ef"></span> <code>#f4e9ef</code></td></tr>
+    </table>
+    <p class="demo-note">14 Kategoriefarben mit hellen Abstufungen. Als CSS-Variablen definiert (<code>--cat-[name]</code> und <code>--cat-[name]-light</code>), aber noch keinem Element zugewiesen.</p>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       04 LINIEN & BORDERS
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="borders">
+    <h2 class="section-label">06 — Linien &amp; Borders</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Prinzip</h4>
+        <p>Weniger, aber besser. Alle Linien sind <code>1px solid</code>. Zwei Stufen: strukturell (schwarz) für tragende Elemente, dekorativ (grau) für unterstützende Trennungen.</p>
+      </div>
+      <div class="rule">
+        <h4>Kein Border-Radius</h4>
+        <p>Keine abgerundeten Ecken — nirgends. Scharfe Kanten als gestalterisches Prinzip.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Strukturell</th><td><code>1px solid #cccccc</code> — Navigation, Section-Titles, Footer-Trennung. Definiert Hierarchie.</td></tr>
+      <tr><th>Dekorativ</th><td><code>1px solid #e0e0e0</code> — Rules, Tabellen, Specimen-Zeilen, Upload-Zone (dashed). Unterstützend.</td></tr>
+      <tr><th>Buttons</th><td><code>1px solid var(--border)</code> — Primary und Secondary. Konsistent mit strukturellen Linien.</td></tr>
+      <tr><th>Formulare</th><td><code>1px solid var(--border-light)</code> im Ruhezustand. <code>1px solid var(--fg)</code> bei Fokus. Subtil → prominent bei Interaktion.</td></tr>
+      <tr><th>Border-Radius</th><td><code>0</code> — überall. Keine Ausnahmen.</td></tr>
+    </table>
+
+    <div class="demo-label">Strukturell vs. Dekorativ</div>
+    <div class="sg-form-demo">
+      <div class="line --structural">Strukturelle Linie — 1px solid #000</div>
+      <div class="line --light">Dekorative Linie — 1px solid #e0e0e0</div>
+      <div class="line --dashed">Dashed (Upload-Zone) — 1px dashed #e0e0e0</div>
+    </div>
+    <p class="demo-note">Drei Linien-Typen im System. Dashed nur für die Upload-Zone.</p>
+
+  </section>
+
+
+  <section class="sg-section" id="spacing">
+    <h2 class="section-label">07 — Spacing</h2>
+    <div class="spacing-blocks">
+      <div class="spacing-block"><div class="box" style="--sz:1.5rem;"></div><div class="meta">½× · 1.5rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:3rem;"></div><div class="meta">1× · 3rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:6rem;"></div><div class="meta">2× · 6rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:9rem;"></div><div class="meta">3× · 9rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:12rem;"></div><div class="meta">4× · 12rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:15rem;"></div><div class="meta">5× · 15rem</div></div>
+    </div>
+    <div class="spacing-bars">
+      <div class="spacing-bar-row"><span class="spacing-bar-label">½×</span><div class="spacing-bar" style="--sz:1.5rem;"></div><span class="spacing-bar-value">1.5rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label">1×</span><div class="spacing-bar" style="--sz:3rem;"></div><span class="spacing-bar-value">3rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label">2×</span><div class="spacing-bar" style="--sz:6rem;"></div><span class="spacing-bar-value">6rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label">3×</span><div class="spacing-bar" style="--sz:9rem;"></div><span class="spacing-bar-value">9rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label">4×</span><div class="spacing-bar" style="--sz:12rem;"></div><span class="spacing-bar-value">12rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label">5×</span><div class="spacing-bar" style="--sz:15rem;"></div><span class="spacing-bar-value">15rem</span></div>
+    </div>
+
+    <h3 class="sg-h3 --top">Spacing Utilities</h3>
+    <p class="sg-p">Kurzform-Klassen für häufige Abstände. Alle Werte leiten sich aus den Spacing-Tokens ab — ändert sich ein Token, passen sich alle Utilities automatisch an.</p>
+    <table class="spec-table">
+      <tr><th>Klasse</th><th>Eigenschaft</th><th>Token</th><th>Wert (Desktop)</th></tr>
+      <tr><td><code>.mt-half</code></td><td><code>margin-top</code></td><td><code>var(--half-module)</code></td><td>1.5rem</td></tr>
+      <tr><td><code>.mt-1</code></td><td><code>margin-top</code></td><td><code>var(--module)</code></td><td>3rem</td></tr>
+      <tr><td><code>.mt-2</code></td><td><code>margin-top</code></td><td><code>var(--module-2xl)</code></td><td>6rem</td></tr>
+      <tr><td><code>.mb-half</code></td><td><code>margin-bottom</code></td><td><code>var(--half-module)</code></td><td>1.5rem</td></tr>
+      <tr><td><code>.mb-1</code></td><td><code>margin-bottom</code></td><td><code>var(--module)</code></td><td>3rem</td></tr>
+    </table>
+  </section>
+
+  <!-- 04 Spaltenraster -->
+
+  <section class="sg-section" id="columns">
+    <h2 class="section-label">08 — Spaltenraster</h2>
+    <div class="rules">
+      <div class="rule"><h4>Spalten-Modi</h4><p><code>1</code> (full-width), <code>2</code> (50/50), <code>3</code> (Drittel), <code>4</code> (Viertel).</p></div>
+      <div class="rule"><h4>Gutter &amp; Ränder</h4><p>Gutter: <code>3rem</code>. Seitenrand: <code>3rem</code>.</p></div>
+    </div>
+    <div class="col-demo"><div class="col-demo-label">1 Spalte</div><div class="col-grid" data-cols="1"><div class="col-cell">1 / 1</div></div></div>
+    <div class="col-demo"><div class="col-demo-label">2 Spalten</div><div class="col-grid" data-cols="2"><div class="col-cell">1 / 2</div><div class="col-cell">2 / 2</div></div></div>
+    <div class="col-demo"><div class="col-demo-label">3 Spalten</div><div class="col-grid" data-cols="3"><div class="col-cell">1 / 3</div><div class="col-cell">2 / 3</div><div class="col-cell">3 / 3</div></div></div>
+    <div class="col-demo"><div class="col-demo-label">4 Spalten</div><div class="col-grid" data-cols="4"><div class="col-cell">1 / 4</div><div class="col-cell">2 / 4</div><div class="col-cell">3 / 4</div><div class="col-cell">4 / 4</div></div></div>
+  </section>
+
+  <!-- 05 Responsive -->
+
+  <section class="sg-section" id="responsive">
+    <h2 class="section-label">09 — Responsive</h2>
+    <div class="rules">
+      <div class="rule"><h4>Prinzip</h4><p>Spaltenanzahl reduziert sich stufenweise. Das Modul <code>3rem</code> bleibt konstant.</p></div>
+      <div class="rule"><h4>Seitenrand</h4><p>Auf allen Breakpoints <code>3rem</code>.</p></div>
+    </div>
+    <table class="bp-table">
+      <thead><tr><th>Breakpoint</th><th>Breite</th><th>Spalten</th><th>Rand</th></tr></thead>
+      <tbody>
+        <tr><td>Desktop</td><td><code>≥ 1536px</code></td><td>1, 2, 3, 4</td><td><code>3rem</code></td></tr>
+        <tr><td>Tablet</td><td><code>768 – 1535px</code></td><td>4 → 2×2 · 2 → 1</td><td><code>3rem</code></td></tr>
+        <tr><td>Mobile</td><td><code>&lt; 768px</code></td><td>Alles 1-spaltig</td><td><code>3rem</code></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 06 Höhen -->
+
+  <section class="sg-section" id="height">
+    <h2 class="section-label">10 — Höhenverhalten</h2>
+    <div class="height-demo">
+      <div class="height-card">
+        <h4>Viewport-Modus</h4>
+        <p>Section als erstes Element: <code>height: calc(100dvh - var(--header-height))</code> mit <code>max-height: 51rem</code>.</p>
+        <div class="height-viz" style="--h:9rem;">calc(100dvh - header)</div>
+      </div>
+      <div class="height-card">
+        <h4>Content-Modus</h4>
+        <p>Section an beliebiger Stelle: <code>min-height: 24rem</code>, Höhe aus Inhalt.</p>
+        <div class="height-viz" style="--h:6rem;">min-height: 24rem</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       11 BUTTONS
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="buttons">
+    <h2 class="section-label">11 — Buttons</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Hierarchie</h4>
+        <p>Drei Stufen: <strong>Primary</strong> (Hauptaktion, gefüllt), <strong>Secondary</strong> (Nebenaktionen, Outline), <strong>Ghost</strong> (minimal, nur Text + Pfeil).</p>
+      </div>
+      <div class="rule">
+        <h4>Basis</h4>
+        <p>Einheitliche Klasse <code>.btn</code> mit Modifier. Schrift: Schnebel Sans, bold, <code>1rem</code> fluid. Padding: <code>0.75rem</code> vertikal, halbes Modul horizontal. Border: <code>1px solid</code>.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Primary</th><td>Hintergrund schwarz · Schrift weiß · Border schwarz · Hover: <code>#333</code></td></tr>
+      <tr><th>Secondary</th><td>Hintergrund transparent · Rand + Schrift schwarz · Hover: invertiert (schwarz gefüllt, weiße Schrift)</td></tr>
+      <tr><th>Ghost</th><td>Kein Hintergrund, kein Rand · Nur Text + animierter Pfeil · Hover: Pfeil bewegt sich</td></tr>
+    </table>
+
+    <!-- Demo: Default -->
+    <div class="demo-label">Default</div>
+    <div class="sg-btn-row">
+      <a class="btn --primary">Primary</a>
+      <a class="btn --secondary">Secondary</a>
+      <a class="btn --ghost">Mehr erfahren</a>
+    </div>
+    <p class="demo-note">Alle drei Stufen nebeneinander. Hover-Effekte: Buttons überfahren zum Testen.</p>
+
+    <!-- Demo: Auf Hintergrund -->
+    <div class="demo-label">Auf farbigem Hintergrund</div>
+    <div class="sg-btn-row --on-green">
+      <a class="btn --primary">Primary</a>
+      <a class="btn --secondary">Secondary</a>
+      <a class="btn --ghost">Mehr erfahren</a>
+    </div>
+    <p class="demo-note">Kontrast-Check auf <code>--green-light</code> Hintergrund.</p>
+
+    <!-- Demo: Einsatzbeispiel -->
+    <div class="demo-label">Kombination — Primary + Ghost</div>
+    <div class="sg-btn-row --sm">
+      <a class="btn --primary">Jetzt kaufen</a>
+      <a class="btn --ghost">Mehr erfahren</a>
+    </div>
+    <p class="demo-note">Typische Kombination: Primary für die Hauptaktion, Ghost als ergänzender Link.</p>
+
+    <!-- Demo: Kombination Primary + Secondary -->
+    <div class="demo-label">Kombination — Primary + Secondary</div>
+    <div class="sg-btn-row --sm">
+      <a class="btn --primary">Zum Warenkorb</a>
+      <a class="btn --secondary">Weiter einkaufen</a>
+    </div>
+    <p class="demo-note">Primary als Hauptaktion, Secondary als Alternative.</p>
+
+    <!-- Demo: Disabled State -->
+    <div class="demo-label">Disabled State</div>
+    <div class="sg-btn-row">
+      <button class="btn --primary" disabled>Primary</button>
+      <button class="btn --secondary" disabled>Secondary</button>
+      <button class="btn --ghost" disabled>Mehr erfahren</button>
+    </div>
+    <p class="demo-note">Attribut <code>disabled</code> auf <code>&lt;button&gt;</code> oder Klasse <code>.--disabled</code> auf <code>&lt;a&gt;</code>: Opacity 35%, kein Pointer-Cursor.</p>
+
+  </section>
+
+
+
+  <!-- ═══════════════════════════════════════════
+       09 FORMULARE
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="forms">
+    <h2 class="section-label">12 — Formulare</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Floating Labels</h4>
+        <p>Labels stehen initial im Eingabefeld. Bei Fokus oder Eingabe gleiten sie animiert in die obere Feldlinie. Der Label-Hintergrund muss immer mit dem Container-Hintergrund übereinstimmen — sonst ist die Feldlinie nicht verdeckt.</p>
+      </div>
+      <div class="rule">
+        <h4>Basis</h4>
+        <p>Border: <code>1px solid #ccc</code>. Fokus: <code>1px solid #000</code>. Padding: <code>1.25rem</code> oben, <code>0.5rem</code> unten, <code>0.75rem</code> seitlich. Kein Border-Radius.</p>
+      </div>
+      <div class="rule">
+        <h4>Auf farbigem Hintergrund</h4>
+        <p>Modifier <code>.--on-green</code> auf dem Container: Input- und Label-Hintergrund werden automatisch auf <code>--green-light</code> gesetzt. Niemals weißes Input auf grünem Hintergrund kombinieren.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Input</th><td>Einzeiliges Textfeld mit Floating Label. Volle Breite oder im 2-Spalten-Grid.</td></tr>
+      <tr><th>Textarea</th><td>Mehrzeiliges Feld, min-height <code>8rem</code>, resize vertikal.</td></tr>
+      <tr><th>Select</th><td>Dropdown mit Custom-Pfeil. Floating Label bei Auswahl.</td></tr>
+      <tr><th>Checkbox / Radio</th><td>Native Elemente mit <code>accent-color: --fg</code>. Label rechts daneben.</td></tr>
+      <tr><th>File Upload</th><td>Dashed Border, Drag-and-Drop-Zone. Icon + Text + Hinweis. Hover/Dragover: Border solid, Hintergrund grau. Dateiliste unterhalb.</td></tr>
+      <tr><th>Form-Grid</th><td>2-Spalten-Grid für nebeneinanderliegende Felder. Mobile: 1-spaltig.</td></tr>
+    </table>
+
+    <!-- Demo: Einzelne Felder -->
+    <div class="demo-label">Floating Label — Text Input</div>
+    <div class="sg-form-demo">
+      <div class="form-field">
+        <input type="text" id="demo-name" placeholder=" ">
+        <label for="demo-name">Vollständiger Name</label>
+      </div>
+    </div>
+    <p class="demo-note">Klick ins Feld: Label gleitet in die obere Linie. Bei Eingabe bleibt es oben.</p>
+
+    <!-- Demo: Error State -->
+    <div class="demo-label">Error State</div>
+    <div class="sg-form-demo">
+      <div class="form-field --error">
+        <input type="email" id="demo-error-email" placeholder=" " value="keine-gültige@">
+        <label for="demo-error-email">Email</label>
+        <p class="form-field__error">Bitte gib eine gültige E-Mail-Adresse ein.</p>
+      </div>
+      <div class="form-field --error">
+        <input type="text" id="demo-error-name" placeholder=" ">
+        <label for="demo-error-name">Vollständiger Name</label>
+        <p class="form-field__error">Dieses Feld ist erforderlich.</p>
+      </div>
+    </div>
+    <p class="demo-note">Modifier <code>.--error</code> auf <code>.form-field</code>: Border und Label werden rot, Fehlermeldung erscheint als <code>.form-field__error</code>.</p>
+
+    <!-- Demo: Success State -->
+    <div class="demo-label">Success State</div>
+    <div class="sg-form-demo">
+      <div class="form-field --success">
+        <input type="email" id="demo-success-email" placeholder=" " value="max@muster.de">
+        <label for="demo-success-email">Email</label>
+        <p class="form-field__success"><span class="material-icons">check_circle</span> E-Mail-Adresse wurde bestätigt.</p>
+      </div>
+    </div>
+    <p class="demo-note">Modifier <code>.--success</code> auf <code>.form-field</code>: Border und Label werden grün, Bestätigung erscheint als <code>.form-field__success</code>.</p>
+
+    <!-- Demo: Email -->
+    <div class="demo-label">Email Input</div>
+    <div class="sg-form-demo">
+      <div class="form-field">
+        <input type="email" id="demo-email" placeholder=" ">
+        <label for="demo-email">Email</label>
+      </div>
+    </div>
+    <p class="demo-note">Gleiches Verhalten, Typ <code>email</code>.</p>
+
+    <!-- Demo: 2-Spalten Grid -->
+    <div class="demo-label">Formular-Grid (2 Spalten)</div>
+    <div class="form-grid">
+      <div class="form-field">
+        <input type="text" id="demo-vorname" placeholder=" ">
+        <label for="demo-vorname">Vorname</label>
+      </div>
+      <div class="form-field">
+        <input type="text" id="demo-nachname" placeholder=" ">
+        <label for="demo-nachname">Nachname</label>
+      </div>
+      <div class="form-field">
+        <input type="email" id="demo-email2" placeholder=" ">
+        <label for="demo-email2">Email</label>
+      </div>
+      <div class="form-field">
+        <input type="tel" id="demo-tel" placeholder=" ">
+        <label for="demo-tel">Telefon</label>
+      </div>
+    </div>
+    <p class="demo-note">Zwei Spalten nebeneinander. Mobile: automatisch 1-spaltig.</p>
+
+    <!-- Demo: Textarea -->
+    <div class="demo-label">Textarea</div>
+    <div class="sg-form-demo">
+      <div class="form-field">
+        <textarea id="demo-msg" placeholder=" "></textarea>
+        <label for="demo-msg">Nachricht</label>
+      </div>
+    </div>
+    <p class="demo-note">Mehrzeiliges Feld. Label gleitet bei Fokus nach oben.</p>
+
+    <!-- Demo: Select -->
+    <div class="demo-label">Select / Dropdown</div>
+    <div class="sg-form-demo">
+      <div class="form-field">
+        <select id="demo-select" required>
+          <option value="" disabled selected hidden></option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label for="demo-select">Kategorie wählen</label>
+      </div>
+    </div>
+    <p class="demo-note">Custom-Pfeil. Label schwebt bei Auswahl.</p>
+
+    <!-- Demo: Checkboxen & Radios -->
+    <div class="demo-label">Checkboxen &amp; Radio-Buttons</div>
+    <div class="sg-form-demo --mb">
+      <label class="form-check">
+        <input type="checkbox">
+        <span>Ich akzeptiere die AGB</span>
+      </label>
+      <label class="form-check">
+        <input type="checkbox" checked>
+        <span>Newsletter abonnieren</span>
+      </label>
+    </div>
+    <div class="sg-form-demo">
+      <label class="form-check">
+        <input type="radio" name="demo-radio">
+        <span>Standardversand</span>
+      </label>
+      <label class="form-check">
+        <input type="radio" name="demo-radio" checked>
+        <span>Expressversand</span>
+      </label>
+    </div>
+    <p class="demo-note">Native Elemente mit schwarzer Akzentfarbe.</p>
+
+    <!-- Demo: File Upload -->
+    <div class="demo-label">Datei-Upload</div>
+    <div class="sg-form-demo">
+      <div class="form-upload" id="uploadZone">
+        <input type="file" id="fileInput" multiple onchange="handleFiles(this.files)">
+        <div class="form-upload__icon"><span class="material-icons">cloud_upload</span></div>
+        <div class="form-upload__text"><strong>Datei wählen</strong> oder hierher ziehen</div>
+        <div class="form-upload__hint">PDF, JPG, PNG — max. 10 MB</div>
+        <div class="form-upload__files" id="fileList"></div>
+      </div>
+    </div>
+    <p class="demo-note">Dashed Border als Drop-Zone. Hover und Drag-over heben das Feld hervor. Ausgewählte Dateien erscheinen als Liste mit Entfernen-Button.</p>
+
+    <div class="demo-label">Auswahlboxen (Choice Boxes)</div>
+    <div class="sg-form-demo --wide">
+      <p class="sg-p">Als Alternative zu Standard-Radiobuttons. Ideal für Varianten oder Versandarten.</p>
+      <div class="sg-demo-stack">
+        <div style="display: flex; gap: var(--half-module);">
+          <button class="choice-box --active" type="button">120g</button>
+          <button class="choice-box" type="button">250g</button>
+        </div>
+        <div class="tile-grid --cols-1" style="gap: var(--half-module);">
+          <button class="choice-box --block --active" type="button">
+            <span class="material-icons">local_shipping</span>
+            <span><strong>Standardversand</strong> — DHL · 3–5 Werktage · <strong>kostenlos</strong></span>
+          </button>
+          <button class="choice-box --block" type="button">
+            <span class="material-icons">rocket_launch</span>
+            <span><strong>Expressversand</strong> — DHL Express · 1–2 Werktage · <strong>4,99 €</strong></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo: Komplettes Formular -->
+    <div class="demo-label">Beispiel — Kontaktformular</div>
+    <div class="sg-form-demo --wide">
+      <div class="form-grid">
+        <div class="form-field">
+          <input type="text" id="demo-k-vorname" placeholder=" ">
+          <label for="demo-k-vorname">Vorname</label>
+        </div>
+        <div class="form-field">
+          <input type="text" id="demo-k-nachname" placeholder=" ">
+          <label for="demo-k-nachname">Nachname</label>
+        </div>
+      </div>
+      <div class="form-field">
+        <input type="email" id="demo-k-email" placeholder=" ">
+        <label for="demo-k-email">Email</label>
+      </div>
+      <div class="form-field">
+        <select id="demo-k-betreff" required>
+          <option value="" disabled selected hidden></option>
+          <option value="1">Allgemeine Anfrage</option>
+          <option value="2">Bestellung</option>
+          <option value="3">Reklamation</option>
+        </select>
+        <label for="demo-k-betreff">Betreff</label>
+      </div>
+      <div class="form-field">
+        <textarea id="demo-k-msg" placeholder=" "></textarea>
+        <label for="demo-k-msg">Nachricht</label>
+      </div>
+      <label class="form-check">
+        <input type="checkbox">
+        <span>Ich akzeptiere die Datenschutzerklärung</span>
+      </label>
+      <div class="mt-half">
+        <a class="btn --primary">Absenden</a>
+      </div>
+    </div>
+    <p class="demo-note">Komplettes Kontaktformular mit Grid, Floating Labels, Select, Textarea, Checkbox und Primary-Button.</p>
+
+    <!-- Demo: Auf farbigem Hintergrund -->
+    <div class="demo-label">Kontaktformular auf farbigem Hintergrund</div>
+    <div class="--on-green sg-form-demo --wide sg-bg-green">
+      <div class="form-grid">
+        <div class="form-field">
+          <input type="text" id="demo-g-vorname" placeholder=" ">
+          <label for="demo-g-vorname">Vorname</label>
+        </div>
+        <div class="form-field">
+          <input type="text" id="demo-g-nachname" placeholder=" ">
+          <label for="demo-g-nachname">Nachname</label>
+        </div>
+      </div>
+      <div class="form-field">
+        <input type="email" id="demo-g-email" placeholder=" ">
+        <label for="demo-g-email">Email</label>
+      </div>
+      <div class="form-field">
+        <textarea id="demo-g-msg" placeholder=" "></textarea>
+        <label for="demo-g-msg">Nachricht</label>
+      </div>
+      <div class="form-upload">
+        <input type="file" multiple>
+        <div class="form-upload__icon"><span class="material-icons">cloud_upload</span></div>
+        <div class="form-upload__text"><strong>Datei wählen</strong> oder hierher ziehen</div>
+        <div class="form-upload__hint">PDF, JPG, PNG — max. 10 MB</div>
+      </div>
+      <label class="form-check">
+        <input type="checkbox">
+        <span>Ich akzeptiere die Datenschutzerklärung</span>
+      </label>
+      <div class="mt-half">
+        <a class="btn --primary">Absenden</a>
+      </div>
+    </div>
+    <p class="demo-note">Gleiche Formular-Elemente auf <code>--green-light</code> Hintergrund. Labels und Input-Hintergründe passen sich an, damit die Floating-Label-Animation sauber funktioniert.</p>
+
+    <div class="demo-label">Komplexes Formular (mit Zwischenrubriken)</div>
+    <div class="sg-form-demo --wide">
+      <div class="checkout__block">
+        <h3 class="section-label">Persönliche Daten</h3>
+        <div class="form-grid">
+          <div class="form-field"><input type="text" id="demo-c-vorname" placeholder=" "><label for="demo-c-vorname">Vorname</label></div>
+          <div class="form-field"><input type="text" id="demo-c-nachname" placeholder=" "><label for="demo-c-nachname">Nachname</label></div>
+          <div class="form-field" style="grid-column: span 2"><input type="email" id="demo-c-email" placeholder=" "><label for="demo-c-email">E-Mail-Adresse</label></div>
+        </div>
+      </div>
+      <div class="checkout__block">
+        <h3 class="section-label">Versandart</h3>
+        <div class="tile-grid --cols-1" style="gap: var(--half-module); margin-bottom: var(--half-module);">
+          <button class="choice-box --block --active" type="button">
+            <span class="material-icons">local_shipping</span>
+            <span><strong>Standardversand</strong> — DHL · 3–5 Werktage</span>
+          </button>
+          <button class="choice-box --block" type="button">
+            <span class="material-icons">storefront</span>
+            <span><strong>Abholung vor Ort</strong> — In unserer Filiale</span>
+          </button>
+        </div>
+      </div>
+      <a class="btn --primary --full">Weiter zur Zahlung</a>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       10 NAVIGATION
+       ═══════════════════════════════════════════ -->
+  <!-- 10b Globale Moleküle -->
+  <section class="sg-section" id="global-molecules">
+    <h2 class="section-label">13 — Globale Moleküle</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Prinzip</h4>
+        <p>Diese Atome werden in mehreren Contexts eingesetzt und leben im globalen Stylesheet — nicht in einer Page-spezifischen Sektion. In Shopify: <code>{% render 'price-stack', product: product %}</code>.</p>
+      </div>
+    </div>
+
+    <div class="sg-demo-stack">
+
+      <div>
+        <p class="label">Rating — 4 von 5 Sternen</p>
+        <div class="sg-form-demo">
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span>4.2 (128 Bewertungen)</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="label">Price Stack — Normal &amp; Sale</p>
+        <div class="sg-form-demo" style="display: flex; gap: var(--module); align-items: baseline; flex-wrap: wrap;">
+          <div class="price-stack"><span>29,90 €</span></div>
+          <div class="price-stack"><span>19,90 €</span><span class="--old">29,90 €</span></div>
+          <div class="price-stack text-m"><span>19,90 €</span><span class="--old">29,90 €</span></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="label">Shipping Hint</p>
+        <div class="sg-form-demo">
+          <div class="shipping-hint"><span class="material-icons">local_shipping</span> Kostenloser Versand ab 49 €</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="label">Empty State</p>
+        <div class="sg-form-demo" style="min-height: 200px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-light);">
+          <div class="empty-state">
+            <span class="material-icons">search_off</span>
+            <p>Keine Ergebnisse gefunden.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="label">Breadcrumb</p>
+        <div class="sg-form-demo">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <div class="breadcrumb__item"><a href="#">Startseite</a></div>
+            <div class="breadcrumb__item"><span class="breadcrumb__sep">/</span><a href="#">Hunde</a></div>
+            <div class="breadcrumb__item"><span class="breadcrumb__sep">/</span><span class="--current">Gelenke &amp; Bewegung</span></div>
+          </nav>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="sg-section" id="nav-section">
+    <h2 class="section-label">14 — Announcement Bar &amp; Navigation</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Announcement Bar</h4>
+        <p>Volle Breite, zentrierter Text, Höhe: <code>3rem</code> (1 Modul). Statisch – scrollt mit dem Content. Schriftgröße: <code>0.667rem</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Navigation</h4>
+        <p>Sticky, <code>top: 0</code>. Höhe: <code>3rem</code> (1 Modul). 3-Spalten-Grid: Links (Menü), Mitte (Logo), Rechts (Aktionen). Volle Breite mit Seitenrand <code>3rem</code>.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Announcement</th><td>Höhe <code>3rem</code> · zentrierter Text · <code>border-bottom: 1px</code> · scrollt mit</td></tr>
+      <tr><th>Navigation</th><td>Höhe <code>6rem</code> (<code>var(--module-2xl)</code>) · sticky · <code>border-bottom: 1px solid</code> · weißer Hintergrund</td></tr>
+      <tr><th>Layout</th><td>3-Spalten-Grid: <code>1fr auto 1fr</code>. Links: Menü/Links. Mitte: Logo/Titel. Rechts: Aktionen.</td></tr>
+      <tr><th>Padding</th><td>Seitenrand <code>3rem</code> (1 Modul) links und rechts</td></tr>
+      <tr><th>Header-Höhe</th><td>Announcement + Nav = <code>9rem</code> (3 Module / <code>var(--header-height)</code>). Relevant für <code>scroll-padding-top</code> und <code>--viewport</code> Berechnung.</td></tr>
+      <tr><th>Responsive</th><td>Mobile: Seitenrand auf halbes Modul reduziert. Sekundäre Menüpunkte ausgeblendet.</td></tr>
+    </table>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       BREADCRUMB
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="breadcrumb-section">
+    <h2 class="section-label">15 — Breadcrumb</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Verwendung</h4>
+        <p>Orientierung auf Collection- und Produktseiten. Immer direkt unter der Navigation, vor dem Seitentitel.</p>
+      </div>
+      <div class="rule">
+        <h4>Typografie</h4>
+        <p><code>--text-xs</code>, <code>--fg-muted</code>. Aktuelles Element in <code>--fg</code> und <code>font-weight: 700</code>. Trennzeichen: <code>/</code>.</p>
+      </div>
+    </div>
+
+    <div class="sg-demo-stack">
+
+      <!-- Variante 1: Shop-Ebenen -->
+      <div>
+        <p class="label">Produktübersicht</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <div class="breadcrumb__item">
+            <a href="#">Startseite</a>
+          </div>
+          <div class="breadcrumb__item">
+            <span class="breadcrumb__sep">/</span>
+            <span class="--current">Gelenke &amp; Bewegung</span>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Variante 2: Produktseite -->
+      <div>
+        <p class="label">Produktdetailseite</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <div class="breadcrumb__item">
+            <a href="#">Startseite</a>
+          </div>
+          <div class="breadcrumb__item">
+            <span class="breadcrumb__sep">/</span>
+            <a href="#">Gelenke &amp; Bewegung</a>
+          </div>
+          <div class="breadcrumb__item">
+            <span class="breadcrumb__sep">/</span>
+            <span class="--current">ArthroBAL Mobility Complex</span>
+          </div>
+        </nav>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       07 SECTION TYPES
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="sections">
+    <h2 class="section-label">16 — Section Types</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Basis-Struktur</h4>
+        <p>Alle Sections teilen: 2-Spalten-Grid (Bild + Content), Modifier <code>--viewport</code> für Viewport-Höhe, Modifier <code>--reverse</code> zum Tauschen der Seiten.</p>
+      </div>
+      <div class="rule">
+        <h4>Varianten</h4>
+        <p>Ausprägungen unterscheiden sich in: Headline-Stufe, Hintergrund der Content-Box, Gap-Verhalten, und ob die Section page-width oder viewport-width ist.</p>
+      </div>
+    </div>
+
+    <!-- Variante 1 -->
+    <h3 id="v1" class="sg-h3">Variante 1 — Bild + Text</h3>
+    <p class="sg-p --mb">Kein Hintergrund auf der Content-Seite. H1. Button unten bündig mit dem Bild. Gap zwischen Bild und Text (1 Modul). Einsetzbar an beliebiger Stelle der Page.</p>
+
+    <!-- Spec -->
+    <table class="spec-table">
+      <tr><th>Headline</th><td><code>H1</code> · 3.375rem · LH 4.5rem</td></tr>
+      <tr><th>Content-BG</th><td>Keine (transparent)</td></tr>
+      <tr><th>Gap</th><td><code>3rem</code> (1 Modul) zwischen Bild und Content</td></tr>
+      <tr><th>Padding</th><td>Content-Box: kein Padding. Headline oben bündig, Button unten bündig mit dem Bild.</td></tr>
+      <tr><th>Layout</th><td>Content: Headline oben, Body + CTA unten (space-between)</td></tr>
+      <tr><th>Höhe</th><td>Default: <code>min-height: 24rem</code> · Mit <code>--viewport</code>: <code>calc(100dvh - 6rem)</code>, max <code>51rem</code></td></tr>
+      <tr><th>Breite</th><td>Page max-width</td></tr>
+      <tr><th>Responsive</th><td>Mobile: 1-spaltig, Bild oben, Content unten</td></tr>
+    </table>
+
+    <!-- Demo: Default -->
+    <!-- Demo: Default -->
+    <div class="demo-label">Default (Content-Höhe)</div>
+    <div class="section-type --v1">
+      <div class="section-type__image placeholder-bg"></div>
+      <div class="section-type__content">
+        <div class="section-type__headline">Headline 1</div>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Höhe leitet sich aus dem Inhalt ab. Mindesthöhe: 24rem.</p>
+
+    <!-- Demo: Viewport -->
+    <div class="demo-label">Mit <code>--viewport</code> (Viewport-Höhe)</div>
+    <div class="section-type --v1 --viewport">
+      <div class="section-type__image placeholder-bg"></div>
+      <div class="section-type__content">
+        <div class="section-type__headline">Headline 1</div>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Füllt den Viewport (minus Header). Max-Höhe: 51rem. Button bleibt unten bündig mit dem Bild.</p>
+
+    <!-- Demo: Reversed -->
+    <div class="demo-label">Reversed (Text links, Bild rechts)</div>
+    <div class="section-type --v1 --reverse">
+      <div class="section-type__image placeholder-bg"></div>
+      <div class="section-type__content">
+        <div class="section-type__headline">Headline 1</div>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Gleiche Section, mit <code>--reverse</code> gespiegelt.</p>
+
+    <!-- ─── Variante 2 ─── -->
+    <h3 id="v2" class="sg-h3 --top">Variante 2 — Bild + Content-Box mit Hintergrund</h3>
+    <p class="sg-p --mb">Content-Box mit Hintergrundfarbe. H2. Padding 3rem innerhalb der Box. Kein Gap – das Bild füllt den Gutter-Bereich mit aus, um den Satzspiegel zu halten.</p>
+
+    <!-- Spec -->
+    <table class="spec-table">
+      <tr><th>Headline</th><td><code>H2</code> · 2.25rem · LH 3rem</td></tr>
+      <tr><th>Content-BG</th><td>Hintergrundfarbe (variabel)</td></tr>
+      <tr><th>Gap</th><td>Kein Gap. Bild erstreckt sich bis direkt an die Content-Box.</td></tr>
+      <tr><th>Padding</th><td>Content-Box: <code>3rem</code> allseitig. Headline 3rem vom oberen Boxrand, Button 3rem vom unteren.</td></tr>
+      <tr><th>Layout</th><td>Content: Headline oben, Body + CTA unten (space-between)</td></tr>
+      <tr><th>Höhe</th><td>Default: <code>min-height: 24rem</code> · Mit <code>--viewport</code>: <code>calc(100dvh - 6rem)</code>, max <code>51rem</code></td></tr>
+      <tr><th>Breite</th><td>Page max-width</td></tr>
+      <tr><th>Responsive</th><td>Mobile: 1-spaltig, Bild oben, Content unten</td></tr>
+    </table>
+
+    <!-- Demo: Default -->
+    <div class="demo-label">Default (Content-Höhe)</div>
+    <div class="section-type --v2">
+      <div class="section-type__image placeholder-bg"></div>
+      <div class="section-type__content">
+        <div class="section-type__headline">Headline 2</div>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Kein Gap zwischen Bild und Content-Box. Padding innerhalb der Box.</p>
+
+    <!-- Demo: Viewport -->
+    <div class="demo-label">Mit <code>--viewport</code> (Viewport-Höhe)</div>
+    <div class="section-type --v2 --viewport">
+      <div class="section-type__image placeholder-bg"></div>
+      <div class="section-type__content">
+        <div class="section-type__headline">Headline 2</div>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Viewport-Höhe. Bild und Content-Box nahtlos nebeneinander.</p>
+
+    <!-- Demo: Reversed -->
+    <div class="demo-label">Reversed (Text links, Bild rechts)</div>
+    <div class="section-type --v2 --reverse">
+      <div class="section-type__image placeholder-bg"></div>
+      <div class="section-type__content">
+        <div class="section-type__headline">Headline 2</div>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Gespiegelt mit <code>--reverse</code>.</p>
+
+    <!-- ─── Variante 3 ─── -->
+    <h3 id="v3" class="sg-h3 --top">Variante 3 — Vollbild-Hintergrund + Content-Box</h3>
+    <p class="sg-p --mb">Bild geht über die volle Viewport-Breite (edge-to-edge). Content-Box mit Hintergrundfarbe sitzt darüber, Höhe aus Inhalt. H2. Die Box ist vertikal zentriert im Bild.</p>
+
+    <!-- Spec -->
+    <table class="spec-table">
+      <tr><th>Headline</th><td><code>H2</code> · 2.25rem · LH 3rem</td></tr>
+      <tr><th>Content-BG</th><td>Hintergrundfarbe (variabel), überlagert das Bild</td></tr>
+      <tr><th>Bild</th><td>Vollflächig hinter der gesamten Section (position absolute)</td></tr>
+      <tr><th>Padding</th><td>Content-Box: <code>3rem</code> allseitig</td></tr>
+      <tr><th>Box-Position</th><td>Rechte Hälfte (oder links mit <code>--reverse</code>), vertikal zentriert. Box-Breite orientiert sich an der Page max-width (1536px), nicht am Viewport.</td></tr>
+      <tr><th>Box-Höhe</th><td>Aus Inhalt — nicht gestreckt</td></tr>
+      <tr><th>Höhe</th><td>Default: <code>min-height: 24rem</code> · Mit <code>--viewport</code>: <code>calc(100dvh - 6rem)</code>, max <code>51rem</code></td></tr>
+      <tr><th>Breite</th><td>Viewport-Breite (bricht aus Page max-width aus)</td></tr>
+      <tr><th>Responsive</th><td>Mobile: 1-spaltig, Bild oben, Content-Box darunter (kein Overlay)</td></tr>
+    </table>
+
+    <!-- Demo: Default -->
+    <div class="demo-label">Default (Content-Höhe)</div>
+  </section>
+</div>
+
+<!-- V3 demos break out of .page for full viewport width -->
+<div class="section-type --v3">
+  <div class="section-type__image placeholder-bg"></div>
+  <div class="section-type__inner">
+    <div class="section-type__content">
+      <div class="section-type__headline">Headline 2</div>
+      <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="btn --primary">Call to Action</div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <section class="sg-section">
+    <p class="demo-note">Bild über die volle Viewport-Breite. Content-Box auf Höhe des Satzspiegels (max-width 1536px).</p>
+
+    <!-- Demo: Viewport -->
+    <div class="demo-label">Mit <code>--viewport</code> (Viewport-Höhe)</div>
+  </section>
+</div>
+
+<div class="section-type --v3 --viewport">
+  <div class="section-type__image placeholder-bg"></div>
+  <div class="section-type__inner">
+    <div class="section-type__content">
+      <div class="section-type__headline">Headline 2</div>
+      <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+      <div class="btn --primary">Call to Action</div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <section class="sg-section">
+    <p class="demo-note">Viewport-Höhe. Bild edge-to-edge, Content-Box am Satzspiegel ausgerichtet.</p>
+
+    <!-- Demo: Reversed -->
+    <div class="demo-label">Reversed (Content-Box links)</div>
+  </section>
+</div>
+
+<div class="section-type --v3 --reverse">
+  <div class="section-type__image placeholder-bg"></div>
+  <div class="section-type__inner">
+    <div class="section-type__content">
+      <div class="section-type__headline">Headline 2</div>
+      <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      <div class="btn --primary">Call to Action</div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <section class="sg-section">
+    <p class="demo-note">Content-Box links mit <code>--reverse</code>.</p>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       08 TILE GRIDS
+       ═══════════════════════════════════════════ -->
+
+  <section class="sg-section" id="tiles">
+    <h2 class="section-label">17 — Kachel-Raster</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Grid-Container</h4>
+        <p>Einheitlicher Container <code>.tile-grid</code> mit Spalten-Modifier (<code>--cols-2</code>, <code>--cols-3</code>, <code>--cols-4</code>). Gap: <code>3rem</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Kachel-Varianten</h4>
+        <p>Drei Typen: <strong>A</strong> (Icon + Text), <strong>B</strong> (Bild + Text), <strong>C</strong> Sonderkachel (Content-Box mit Hintergrund, Headline, Text, CTA). C kann jede beliebige Kachel im Grid ersetzen.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Gap</th><td><code>3rem</code> (1 Modul)</td></tr>
+      <tr><th>Spalten</th><td>2, 3 oder 4 — alle gleichbreit (<code>1fr</code>)</td></tr>
+      <tr><th>Kachel A</th><td>Icon (<code>3rem × 3rem</code>) + H4 + Fließtext (1rem)</td></tr>
+      <tr><th>Kachel B</th><td>Bild (<code>1:1</code> oder <code>4:3</code>) + H4 + Fließtext (1rem)</td></tr>
+      <tr><th>Kachel C</th><td>Sonderkachel: Hintergrundfarbe, H3 (1.5rem), Fließtext (1rem), CTA. Headline oben, Text + Button unten (space-between). Padding: halbes Modul. Ersetzt jede Position im Grid.</td></tr>
+      <tr><th>Responsive</th><td>4 → 2 → 1 · 3 → 1 · 2 → 1</td></tr>
+    </table>
+
+    <!-- 4-Spalter: Icon + Text -->
+    <h3 id="tile-4col" class="sg-h3">4-Spalter — Icon + Text (Variante A)</h3>
+    <div class="tile-grid --cols-4 --mb">
+      <div class="tile">
+        <div class="tile__icon icon-box placeholder-bg"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="tile">
+        <div class="tile__icon icon-box placeholder-bg"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="tile">
+        <div class="tile__icon icon-box placeholder-bg"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="tile">
+        <div class="tile__icon icon-box placeholder-bg"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    <p class="demo-note">4 gleichbreite Spalten. Icon als 3rem-Quadrat (1 Modul). Tablet: 2×2. Mobile: 1-spaltig.</p>
+
+    <!-- 4-Spalter mit Sonderkachel -->
+    <h3 id="tile-featured" class="sg-h3 --top">4-Spalter mit Sonderkachel (Variante C)</h3>
+    <div class="tile-grid --cols-4 --mb">
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="tile --featured">
+        <div class="tile__headline">Headline 4</div>
+        <div class="tile__bottom">
+          <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore et dolore magna aliqua.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    <p class="demo-note">Sonderkachel (Variante C) ersetzt die 3. Position. Hintergrundfarbe, H2, CTA. Kann an jeder Position im Grid stehen.</p>
+
+    <!-- 2-Spalter: Bild + Text (Querformat) -->
+    <h3 id="tile-2col" class="sg-h3 --top">2-Spalter — Bild + Text (Variante B, 4:3)</h3>
+    <div class="tile-grid --cols-2 --mb">
+      <div class="tile">
+        <div class="tile__image placeholder-bg --landscape"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl.</p>
+      </div>
+      <div class="tile">
+        <div class="tile__image placeholder-bg --landscape"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl.</p>
+      </div>
+    </div>
+    <p class="demo-note">2 Spalten. Bild im Querformat (4:3). Mobile: 1-spaltig.</p>
+
+    <!-- 2-Spalter mit Sonderkachel -->
+    <div class="demo-label">2-Spalter mit Sonderkachel</div>
+    <div class="tile-grid --cols-2 --mb">
+      <div class="tile">
+        <div class="tile__image placeholder-bg --landscape"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+      </div>
+      <div class="tile --featured">
+        <div class="tile__headline">Headline 4</div>
+        <div class="tile__bottom">
+          <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Sonderkachel im 2-Spalter.</p>
+
+    <!-- 3-Spalter: Bild + Text (Quadratisch) -->
+    <h3 id="tile-3col" class="sg-h3 --top">3-Spalter — Bild + Text (Variante B, 1:1)</h3>
+    <div class="tile-grid --cols-3 --mb">
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+    <p class="demo-note">3 Spalten. Bild quadratisch (1:1). Mobile: 1-spaltig.</p>
+
+    <!-- 3-Spalter mit Sonderkachel -->
+    <div class="demo-label">3-Spalter mit Sonderkachel</div>
+    <div class="tile-grid --cols-3 --mb">
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      </div>
+      <div class="tile --featured">
+        <div class="tile__headline">Headline 4</div>
+        <div class="tile__bottom">
+          <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore et dolore.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="tile__image placeholder-bg --square"></div>
+        <div class="tile__headline">Headline X</div>
+        <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      </div>
+    </div>
+    <p class="demo-note">Sonderkachel im 3-Spalter.</p>
+
+    <!-- Produktkarten -->
+    <h3 id="tile-product" class="sg-h3 --top">Produktkarten (Variante D)</h3>
+    <p class="sg-p --mb">Shopify-ready. Bild, Produktname, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid.</p>
+
+    <table class="spec-table">
+      <tr><th>Bild</th><td>Quadratisch (<code>1:1</code>). Bei Hover: „In den Warenkorb"-Button gleitet von unten ins Bild.</td></tr>
+      <tr><th>Badge</th><td>Optional. Position: oben links auf dem Bild. Varianten: Standard (schwarz) und Sale (grün).</td></tr>
+      <tr><th>Kategorie-Badge</th><td>Optional. <code>.badge</code> mit <code>data-cat="…"</code> im <code>.floating-meta</code>-Container. Nur Hintergrund in Kategoriefarbe (light), Schrift schwarz. Wird als erstes Badge gestapelt, Status-Badges (Neu, Sale) folgen dahinter.</td></tr>
+      <tr><th>Beschreibung</th><td>Optional. Unter dem Produktnamen, <code>--text-xs</code>, <code>--fg-muted</code>.</td></tr>
+      <tr><th>Preis</th><td>Bold. Bei Sale: alter Preis durchgestrichen daneben.</td></tr>
+      <tr><th>Button</th><td>Secondary-Style. Desktop: erscheint bei Hover als Overlay am unteren Bildrand (<code>0.25s ease</code>). Mobile: stattdessen permanentes Warenkorb-Icon (Material Icons) oben rechts auf dem Bild.</td></tr>
+    </table>
+
+    <div class="demo-label">4-Spalter — Produktkarten</div>
+    <div class="tile-grid --cols-4 --mb">
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="herz">Herz</div>
+            <div class="badge --dark">Neu</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname Eins</div>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="cbd">CBD</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname Zwei</div>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="stress">Stress</div>
+            <div class="badge --sale">Sale</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname Drei</div>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="gelenke">Gelenke</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname Vier</div>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div>
+      </div>
+    </div>
+    <p class="demo-note">Hover über ein Produktbild: Button gleitet von unten ein. Badges, Beschreibung und Preis darunter.</p>
+
+    <div class="demo-label">3-Spalter — Produktkarten</div>
+    <div class="tile-grid --cols-3 --mb">
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="bauchspeichel">Bauchspeicheldrüse</div>
+            <div class="badge --dark">Neu</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname mit einem etwas längeren Titel</div>
+        <div class="tile__description">Eine etwas ausführlichere Beschreibung des Produkts mit mehr Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>59,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.7</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="leber">Leber</div>
+            <div class="badge --sale">Sale</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname Sechs</div>
+        <div class="tile__description">Kurze Produktbeschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>24,90 €</span><span class="--old">49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.1</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="magendarm">Magen/Darm</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname Sieben</div>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
+      </div>
+    </div>
+    <p class="demo-note">3-Spalter. Produktname und Beschreibung dürfen mehrzeilig sein.</p>
+
+    <div class="demo-label">4-Spalter — Mix mit Sonderkachel</div>
+    <div class="tile-grid --cols-4 --mb">
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="haut">Haut</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname</div>
+        <div class="tile__description">Kurze Beschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.8</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="atemwege">Atemwege</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname</div>
+        <div class="tile__description">Kurze Beschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.3</div></div>
+      </div>
+      <div class="tile --featured">
+        <div class="tile__headline">Entdecke unsere Neuheiten</div>
+        <div class="tile__bottom">
+          <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+          <div class="btn --primary">Alle Produkte</div>
+        </div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="niere">Niere</div>
+            <div class="badge --sale">Sale</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <div class="tile__headline">Produktname</div>
+        <div class="tile__description">Kurze Beschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>14,90 €</span><span class="--old">29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
+      </div>
+    </div>
+    <p class="demo-note">Produktkarten gemischt mit Sonderkachel — flexibel einsetzbar.</p>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       14 AKKORDEON / FAQ
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="accordion-section">
+    <h2 class="section-label">18 — Tabs &amp; Akkordeon</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Struktur</h4>
+        <p>Jedes Item: Trigger (Frage/Titel) + Content (Antwort). Trigger hat <code>font-weight: 700</code>, Content ist <code>color: --fg-muted</code>. Öffnen/Schließen per Klick.</p>
+      </div>
+      <div class="rule">
+        <h4>Animation</h4>
+        <p>Content gleitet via <code>max-height</code> Transition smooth auf und zu. Icon (Material Icons <code>expand_more</code>) rotiert 180° beim Öffnen.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Trigger</th><td>Volle Breite, <code>font-weight: 700</code>, Padding: halbes Modul vertikal. Icon rechts.</td></tr>
+      <tr><th>Content</th><td>Text in <code>--fg-muted</code>. Padding unten: halbes Modul (offen). Max-height-Transition: <code>0.3s ease</code>.</td></tr>
+      <tr><th>Borders</th><td>Obere Linie strukturell (<code>1px solid #000</code>). Trennlinien zwischen Items dekorativ (<code>1px solid #ccc</code>).</td></tr>
+      <tr><th>Multi-Open</th><td>Mehrere Items können gleichzeitig offen sein.</td></tr>
+    </table>
+
+    <div class="demo-label">Tabs (Reiter)</div>
+    <div class="sg-form-demo --wide --mb">
+      <div class="tabs">
+        <div class="tab-nav" role="tablist">
+          <button class="tab-btn --active" role="tab" aria-selected="true" onclick="switchTab(this, 0)">Beschreibung</button>
+          <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this, 1)">Inhaltsstoffe</button>
+          <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab(this, 2)">Anwendung</button>
+        </div>
+        <div class="tab-panel --active" role="tabpanel">
+          <p class="sg-p">Hier steht die ausführliche Produktbeschreibung. Tabs eignen sich hervorragend, um viele Informationen auf der Produktdetailseite (PDP) platzsparend zu strukturieren, ohne den Nutzer mit endlosem Scrollen zu überfordern.</p>
+        </div>
+        <div class="tab-panel" role="tabpanel">
+          <p class="sg-p">Glucosamin (500 mg), Chondroitin (400 mg), MSM (200 mg), Teufelskralle (150 mg), Vitamin C (80 mg), Zink (5 mg).</p>
+        </div>
+        <div class="tab-panel" role="tabpanel">
+          <p class="sg-p">Täglich 1 Messlöffel (5 g) über das Futter geben. Für Hunde ab 10 kg. Kühl und trocken lagern.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-label">FAQ-Beispiel</div>
+    <div class="sg-form-demo --wide">
+      <div class="accordion">
+        <div class="accordion-item --open">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+            Was ist der Styleguide?
+            <span class="accordion-icon material-icons">expand_more</span>
+          </button>
+          <div class="accordion-content">
+              <div class="accordion-content__inner">
+              <p>Der Styleguide ist ein logisches Design-System auf Basis von 1rem, dem Faktor 1.5 und dem Grundmodul 3rem. Er definiert Typografie, Farben, Spacing, Komponenten und Layout-Patterns für einen konsistenten visuellen Auftritt.</p>
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+            Welche Schriftart wird verwendet?
+            <span class="accordion-icon material-icons">expand_more</span>
+          </button>
+          <div class="accordion-content">
+              <div class="accordion-content__inner">
+              <p>Schnebel Sans ME via Adobe Typekit. Eine moderne, gut lesbare Sans-Serif mit eigenem Charakter. Fallback ist die System-Sans-Serif.</p>
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+            Wie funktioniert das fluide System?
+            <span class="accordion-icon material-icons">expand_more</span>
+          </button>
+          <div class="accordion-content">
+              <div class="accordion-content__inner">
+              <p>Alle Größen — Typografie, Spacing, Modul — nutzen CSS clamp() Funktionen. Sie skalieren stufenlos zwischen einem Minimum (Mobile) und Maximum (Desktop), abhängig von der Viewport-Breite. Keine Breakpoints nötig.</p>
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+            Kann ich den Styleguide als Shopify Theme nutzen?
+            <span class="accordion-icon material-icons">expand_more</span>
+          </button>
+          <div class="accordion-content">
+              <div class="accordion-content__inner">
+              <p>Ja — das ist das Ziel. Die Section Types, Kachel-Raster und Komponenten sind so aufgebaut, dass sie sich direkt in Shopify Liquid Templates übersetzen lassen. Das Grid, die CSS-Variablen und die modularen Sections bilden die Basis für ein Starter-Theme.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Erstes Item standardmäßig offen. Mehrere können gleichzeitig offen sein. Icon rotiert smooth.</p>
+
+    <div class="demo-label">Auf farbigem Hintergrund</div>
+    <div class="sg-form-demo --wide sg-bg-green">
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+            Versand &amp; Lieferung
+            <span class="accordion-icon material-icons">expand_more</span>
+          </button>
+          <div class="accordion-content">
+              <div class="accordion-content__inner">
+              <p>Standardversand innerhalb Deutschlands: 3–5 Werktage. Expressversand: 1–2 Werktage. Ab 50 € Bestellwert versandkostenfrei.</p>
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+            Rückgabe &amp; Umtausch
+            <span class="accordion-icon material-icons">expand_more</span>
+          </button>
+          <div class="accordion-content">
+              <div class="accordion-content__inner">
+              <p>14 Tage Rückgaberecht ab Erhalt der Ware. Artikel müssen unbenutzt und in der Originalverpackung zurückgesendet werden.</p>
+              </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">
+            Zahlungsarten
+            <span class="accordion-icon material-icons">expand_more</span>
+          </button>
+          <div class="accordion-content">
+              <div class="accordion-content__inner">
+              <p>Wir akzeptieren Kreditkarte, PayPal, SEPA-Lastschrift und Kauf auf Rechnung. Alle Zahlungen werden verschlüsselt übertragen.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Akkordeon auf <code>--green-light</code> Hintergrund — typisch für Produktseiten oder FAQ-Bereiche.</p>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       16 TESTIMONIALS
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="testimonials">
+    <h2 class="section-label">19 — Testimonials</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Grid-Variante</h4>
+        <p>Alle Testimonials sichtbar im Grid (<code>--cols-3</code>, <code>--cols-4</code>). Mobile: 3 sichtbar, „Mehr anzeigen" lädt jeweils 3 weitere.</p>
+      </div>
+      <div class="rule">
+        <h4>Slider-Variante</h4>
+        <p>Desktop: 1 Reihe sichtbar, Prev/Next-Buttons zum Blättern. Mobile: identisch zur Grid-Variante (1-spaltig, „Mehr anzeigen"). Touch-Swipe auf mobilen Geräten.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Grid</th><td>3 oder 4 Spalten (<code>1fr</code>). Gap: 1 Modul. Tablet: 4-Spalter → 2×2. Mobile: alles 1-spaltig.</td></tr>
+      <tr><th>Kachel</th><td>Border-top: <code>1px solid #ccc</code> (dekorativ). Padding-top: halbes Modul. Inhalt vertikal mit <code>margin-top: auto</code> am Autor.</td></tr>
+      <tr><th>Quote-Zeichen</th><td>Typografisches <code>„</code> in <code>--text-l</code> (1.5–2.25rem), bold. Dekorativ.</td></tr>
+      <tr><th>Zitat-Text</th><td><code>--text-base</code> · LH 1.5</td></tr>
+      <tr><th>Sterne</th><td>Material Icons <code>star</code> / <code>star_border</code>. Gefüllt: <code>--fg</code>. Leer: <code>--border-light</code>. Größe: <code>1rem</code>.</td></tr>
+      <tr><th>Avatar</th><td><code>1 Modul × 1 Modul</code> (3rem). Kreuz-Platzhalter wie im System.</td></tr>
+      <tr><th>Name</th><td><code>--text-base</code>, bold.</td></tr>
+      <tr><th>Rolle</th><td><code>--text-xs</code>, <code>--fg-muted</code>.</td></tr>
+      <tr><th>Mobile</th><td>3 sichtbar. Button „Mehr anzeigen" (Secondary) lädt jeweils 3 weitere. Verschwindet, wenn alle gezeigt.</td></tr>
+      <tr><th>Hintergrund</th><td>Standard: weiß. Modifier <code>.--on-green</code> auf <code>.testimonial-section</code> / <code>.testimonial-slider</code> für <code>--green-light</code>.</td></tr>
+      <tr><th>Slider</th><td>Container <code>.testimonial-slider</code> mit <code>--cols-3</code> / <code>--cols-4</code>. Grid-Track, <code>transform: translateX()</code>, <code>0.4s ease</code>.</td></tr>
+      <tr><th>Slider Nav</th><td>Prev/Next-Buttons: <code>1 Modul × 1 Modul</code>. Border: <code>1px solid #000</code>. Hover: invertiert. Disabled: <code>#ccc</code>. Counter dazwischen.</td></tr>
+      <tr><th>Slider Mobile</th><td>Kein Slider — identisches Verhalten wie Grid-Variante: 1-spaltig, „Mehr anzeigen".</td></tr>
+    </table>
+
+    <!-- ── Demo: Grid 3-Spalter ── -->
+    <div class="demo-label">Grid — 3-Spalter, weißer Hintergrund</div>
+
+    <div class="testimonial-section" id="tSection1">
+      <div class="testimonial-grid --cols-3">
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab — kein Rätselraten mehr bei Abständen und Schriftgrößen.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director, Studio Klare Linie</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Endlich ein Styleguide, der nicht nur schön aussieht, sondern auch in Shopify funktioniert. Die Section Types lassen sich 1:1 als Liquid Templates umsetzen.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer, Nordlicht Commerce</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Die konsequente Modular-Logik überzeugt. Wir nutzen das System jetzt als Basis für drei verschiedene Shop-Projekte — und es skaliert perfekt.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner, Echt Digital GmbH</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Kein Border-Radius, scharfe Kanten, klare Regeln. Genau das, was wir für unsere Marke gebraucht haben.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist, Formwerk</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Wir haben den Styleguide als Grundlage für unser Shopify-Theme genommen. Die Dokumentation ist so klar, dass auch Nicht-Designer sofort loslegen können.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Anna Richter</div><div class="testimonial__role">UX Designerin, Pixelwerk</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Besonders die Fluid Typography hat uns überzeugt. Keine Breakpoints für Schriftgrößen mehr — das spart enorm viel CSS.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Tobias Keller</div><div class="testimonial__role">Frontend Architect, Codefreunde</div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="testimonial-more">
+        <button class="btn --secondary" type="button" onclick="showMore(this)">Mehr anzeigen</button>
+      </div>
+    </div>
+    <p class="demo-note">Desktop: alle 6 in 3 Spalten. Mobile: 3 sichtbar, „Mehr anzeigen" für je 3 weitere.</p>
+
+    <!-- ── Demo: Grid 4-Spalter auf Grün ── -->
+    <div class="demo-label">Grid — 4-Spalter, <code>--green-light</code> Hintergrund</div>
+
+    <div class="testimonial-section --on-green" id="tSection2">
+      <div class="testimonial-grid --cols-4">
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Die Section Types lassen sich 1:1 als Liquid Templates umsetzen. Genau das, was wir gebraucht haben.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Wir nutzen das System als Basis für drei Shop-Projekte — und es skaliert perfekt.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Scharfe Kanten, klare Regeln. Genau das, was wir für unsere Marke gebraucht haben.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist</div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="testimonial-more">
+        <button class="btn --secondary" type="button" onclick="showMore(this)">Mehr anzeigen</button>
+      </div>
+    </div>
+    <p class="demo-note">4 Spalten auf grünem Hintergrund. Tablet: 2×2.</p>
+
+    <!-- ── Demo: Slider 3-Spalter ── -->
+    <div class="demo-label">Slider — 3-Spalter, weißer Hintergrund</div>
+
+    <div class="testimonial-slider --cols-3" id="tSlider1">
+      <div class="testimonial-slider__track">
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab — kein Rätselraten mehr.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director, Studio Klare Linie</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Die Section Types lassen sich 1:1 als Liquid Templates umsetzen. Genau das, was wir gebraucht haben.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer, Nordlicht Commerce</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Wir nutzen das System als Basis für drei Shop-Projekte — und es skaliert perfekt.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner, Echt Digital GmbH</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Scharfe Kanten, klare Regeln. Die Dokumentation ist vorbildlich.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist, Formwerk</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Auch Nicht-Designer können sofort loslegen. Das System erklärt sich selbst.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Anna Richter</div><div class="testimonial__role">UX Designerin, Pixelwerk</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Keine Breakpoints für Schriftgrößen mehr — das spart enorm viel CSS.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Tobias Keller</div><div class="testimonial__role">Frontend Architect, Codefreunde</div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="slider-nav">
+        <button class="slider-btn icon-box" type="button" aria-label="Zurück" data-dir="prev" disabled><span class="material-icons">arrow_back</span></button>
+        <span class="slider-counter"></span>
+        <button class="slider-btn icon-box" type="button" aria-label="Weiter" data-dir="next"><span class="material-icons">arrow_forward</span></button>
+      </div>
+    </div>
+    <div class="testimonial-more"><button class="btn --secondary" type="button" onclick="showMoreSlider(this)">Mehr anzeigen</button></div>
+    <p class="demo-note">Desktop: 3 sichtbar, Prev/Next zum Blättern. Mobile: 1-spaltig, „Mehr anzeigen".</p>
+
+    <!-- ── Demo: Slider 4-Spalter auf Grün ── -->
+    <div class="demo-label">Slider — 4-Spalter, <code>--green-light</code> Hintergrund</div>
+
+    <div class="testimonial-slider --cols-4 --on-green" id="tSlider2">
+      <div class="testimonial-slider__track">
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Die Section Types lassen sich 1:1 als Liquid Templates umsetzen.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Wir nutzen das System als Basis für drei Shop-Projekte — skaliert perfekt.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Scharfe Kanten, klare Regeln. Genau das, was wir gebraucht haben.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Vorbildlich dokumentiert und sofort einsetzbar. So wünscht man sich ein Design-System.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Sophie Braun</div><div class="testimonial__role">Art Director</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Die modulare Skala macht jede Design-Entscheidung nachvollziehbar. Kein Zufall, nur Logik.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Marco Vogt</div><div class="testimonial__role">Design Engineer</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Fluid Typography ohne Breakpoints — endlich ein System, das einfach funktioniert.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Tobias Keller</div><div class="testimonial__role">Frontend Architect</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-slider__slide testimonial">
+          <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+          <p class="testimonial__text">Das Spacing-System hat unsere Diskussionen über Abstände komplett beendet. Alles ist logisch begründet.</p>
+          <div class="rating">
+            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+          </div>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar icon-box placeholder-bg"></div>
+            <div><div class="testimonial__name">Lena Fischer</div><div class="testimonial__role">Head of Design</div></div>
+          </div>
+        </div>
+
+      </div>
+      <div class="slider-nav">
+        <button class="slider-btn icon-box" type="button" aria-label="Zurück" data-dir="prev" disabled><span class="material-icons">arrow_back</span></button>
+        <span class="slider-counter"></span>
+        <button class="slider-btn icon-box" type="button" aria-label="Weiter" data-dir="next"><span class="material-icons">arrow_forward</span></button>
+      </div>
+    </div>
+    <div class="testimonial-more"><button class="btn --secondary" type="button" onclick="showMoreSlider(this)">Mehr anzeigen</button></div>
+    <p class="demo-note">Desktop: 4 sichtbar, durchblätterbar. Tablet: 2 sichtbar. Mobile: 1-spaltig, „Mehr anzeigen".</p>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       17 PRODUKTDETAILSEITE (PDP)
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="pdp-section">
+    <h2 class="section-label">21 — Produktdetailseite (PDP)</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Layout</h4>
+        <p>2-Spalten-Grid: Bild-Galerie links, Produktinfo rechts. Gap: 1 Modul. Mobile: 1-spaltig, Galerie oben.</p>
+      </div>
+      <div class="rule">
+        <h4>Elemente</h4>
+        <p>Kategorie-Badge (Kategoriefarbe), Produktname (H2), Sterne, Preis/Sale, Kurzbeschreibung, Varianten, Menge, Warenkorb-Button, Akkordeon, Empfehlungen.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Grid</th><td>2 Spalten (<code>1fr 1fr</code>). Gap: 1 Modul. Mobile: 1-spaltig.</td></tr>
+      <tr><th>Galerie</th><td>Hauptbild (<code>1:1</code>) + 4 Thumbnails darunter. Aktiver Thumbnail: <code>border: 1px solid #000</code>.</td></tr>
+      <tr><th>Badge</th><td>Oben links im Hauptbild (absolut positioniert). Kategoriefarbe als Hintergrund (light), Schrift schwarz. <code>--text-xs</code>, uppercase.</td></tr>
+      <tr><th>Titel</th><td><code>--text-l</code> · LH 1.17 · bold.</td></tr>
+      <tr><th>Bewertung</th><td>Material Icons <code>star</code>/<code>star_border</code>. Anzahl in <code>--text-xs</code>.</td></tr>
+      <tr><th>Preis</th><td><code>--text-m</code> bold. Sale: alter Preis durchgestrichen + grüner Badge.</td></tr>
+      <tr><th>Varianten</th><td>Buttons mit <code>1px solid #ccc</code>. Aktiv: schwarz gefüllt, weiße Schrift.</td></tr>
+      <tr><th>Menge</th><td>Minus/Plus-Buttons + Input. Höhe <code>2.75rem</code>.</td></tr>
+      <tr><th>Warenkorb</th><td>Primary-Button, volle Breite. Daneben: Wunschliste-Icon.</td></tr>
+      <tr><th>Akkordeon</th><td>Standard-Akkordeon. Beschreibung, Inhaltsstoffe, Versand.</td></tr>
+      <tr><th>Empfehlungen</th><td>4-Spalter Produktkarten unter der PDP. Border-top als Trennung.</td></tr>
+    </table>
+
+    <div class="demo-label">Produktdetailseite</div>
+
+    <div class="pdp">
+      <div class="pdp__gallery">
+        <div class="pdp__main-image placeholder-bg">
+          <div class="floating-meta"><div class="badge" data-cat="herz">Herz</div></div>
+        </div>
+        <div class="pdp__thumbs">
+          <div class="pdp__thumb placeholder-bg --active"></div>
+          <div class="pdp__thumb placeholder-bg"></div>
+          <div class="pdp__thumb placeholder-bg"></div>
+          <div class="pdp__thumb placeholder-bg"></div>
+        </div>
+      </div>
+      <div class="pdp__info">
+        <div class="pdp__title">IntestiBAL — Verdauungsunterstützung für Hunde</div>
+        <div class="rating">
+          <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          <span class="fg-muted text-xs">4.2 (128 Bewertungen)</span>
+        </div>
+        <div class="pdp__price"><div class="price-stack text-m"><span>19,90 €</span><span class="--old">29,90 €</span></div><span class="badge --sale pdp__price-badge">-33%</span></div>
+        <p class="pdp__description">Hochwertige Nahrungsergänzung zur Unterstützung der Verdauung. Mit natürlichen Inhaltsstoffen, die das Wohlbefinden Ihres Hundes fördern.</p>
+        <div class="pdp__variants">
+          <div class="pdp__variant-label">Größe</div>
+          <div class="pdp__variant-options">
+            <button class="choice-box --active" onclick="selectVariant(this)">120g</button>
+            <button class="choice-box" onclick="selectVariant(this)">250g</button>
+            <button class="choice-box" onclick="selectVariant(this)">500g</button>
+          </div>
+        </div>
+        <div class="pdp__variants">
+          <div class="pdp__variant-label">Menge</div>
+          <div class="qty-selector">
+            <button class="qty-selector__btn" type="button" aria-label="Menge verringern" onclick="changeQty(-1)"><span class="material-icons">remove</span></button>
+            <input class="qty-selector__input" type="number" value="1" min="1" id="qtyInput">
+            <button class="qty-selector__btn" type="button" aria-label="Menge erhöhen" onclick="changeQty(1)"><span class="material-icons">add</span></button>
+          </div>
+        </div>
+        <div class="pdp__actions">
+          <a class="btn --primary" onclick="openCart('cartFull')">In den Warenkorb</a>
+          <button class="pdp__wishlist" type="button" aria-label="Zur Wunschliste"><span class="material-icons">favorite_border</span></button>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item --open">
+            <button class="accordion-trigger" type="button" aria-expanded="true" onclick="toggleAccordion(this)">Beschreibung<span class="accordion-icon material-icons">expand_more</span></button>
+            <div class="accordion-content"><div class="accordion-content__inner"><p>IntestiBAL enthält eine einzigartige Kombination aus natürlichen Inhaltsstoffen, die speziell für die Verdauungsgesundheit Ihres Hundes entwickelt wurden.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Inhaltsstoffe<span class="accordion-icon material-icons">expand_more</span></button>
+            <div class="accordion-content"><div class="accordion-content__inner"><p>Flohsamenschalen, Probiotika (Enterococcus faecium), Präbiotika (FOS), Bentonit, Pektin, Kamillenextrakt. Ohne künstliche Zusatzstoffe.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Versand &amp; Lieferung<span class="accordion-icon material-icons">expand_more</span></button>
+            <div class="accordion-content"><div class="accordion-content__inner"><p>Standardversand: 3–5 Werktage. Expressversand: 1–2 Werktage. Ab 50 € versandkostenfrei.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pdp__recommendations">
+      <h3>Das könnte Ihnen auch gefallen</h3>
+      <div class="tile-grid --cols-4">
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Eins</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="cbd">CBD</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Zwei</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="stress">Stress</div><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Drei</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="haut">Haut</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Vier</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       18 WARENKORB-DRAWER
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="cart-section">
+    <h2 class="section-label">22 — Warenkorb-Drawer</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Typ</h4>
+        <p>Slide-in von rechts. Halbtransparentes Overlay dahinter. Breite: <code>min(28rem, 100vw)</code>. Transition: <code>0.3s ease</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Struktur</h4>
+        <p>Header (Titel + Schließen), scrollbare Produktliste (Mitte), Footer mit Summe und CTA (sticky unten).</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Overlay</th><td><code>rgba(0,0,0,0.4)</code>. Klick schließt den Drawer.</td></tr>
+      <tr><th>Drawer</th><td>Breite <code>min(28rem, 100vw)</code>. Border-left: <code>1px solid #000</code>.</td></tr>
+      <tr><th>Item</th><td>Grid: <code>5rem</code> Bild + <code>1fr</code> Info. Kompakte ±Buttons (<code>2rem</code>).</td></tr>
+      <tr><th>Footer</th><td>Versandhinweis, Zwischensumme (<code>--text-m</code>), Checkout (Primary), Weiter einkaufen (Ghost).</td></tr>
+      <tr><th>Leer</th><td>Zentriertes Icon + Text + Button.</td></tr>
+    </table>
+
+    <div class="demo-label">Drawer öffnen</div>
+    <div class="sg-btn-row --sm">
+      <button class="btn --primary" onclick="openCart('cartFull')">Mit Produkten</button>
+      <button class="btn --secondary" onclick="openCart('cartEmpty')">Leerer Warenkorb</button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       19 PRODUKTÜBERSICHT
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="collection-section">
+    <h2 class="section-label">23 — Produktübersicht</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Layout</h4>
+        <p>Schmale Sidebar (<code>12rem</code>) links + Produktgrid rechts. Mobile: Sidebar als Drawer von links.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Sidebar</th><td><code>12rem</code>, sticky. Kategorie-Filter (Checkboxen). Mobile: Drawer.</td></tr>
+      <tr><th>Filter-Tags</th><td>Aktive Filter als Tags. „Alle löschen"-Link.</td></tr>
+      <tr><th>Toolbar</th><td>Anzahl links, Sortierung rechts (Custom Select).</td></tr>
+      <tr><th>Grid</th><td>3-Spalter Produktkarten. Mobile: 2-spaltig.</td></tr>
+    </table>
+
+    <div class="demo-label">Produktübersicht</div>
+    <div class="sg-demo-stack">
+
+      <div class="filter-overlay" id="filterOverlay" onclick="closeFilter()"></div>
+      <div class="collection-layout">
+        <aside class="collection-sidebar" id="filterSidebar">
+          <div class="collection-sidebar__header">
+            <div class="collection-sidebar__title">Filter</div>
+            <button class="btn --icon collection-sidebar__close" onclick="closeFilter()"><span class="material-icons">close</span></button>
+          </div>
+          <div class="filter-tags">
+            <button class="filter-tag">Pulver <span class="material-icons">close</span></button>
+            <button class="filter-clear">Alle löschen</button>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group__title">Darreichungsform</div>
+            <label class="form-check"><input type="checkbox" checked><span>Pulver</span></label>
+            <label class="form-check"><input type="checkbox"><span>Kapseln</span></label>
+            <label class="form-check"><input type="checkbox"><span>Flüssig</span></label>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group__title">Besonderheiten</div>
+            <label class="form-check"><input type="checkbox"><span>Getreidefrei</span></label>
+            <label class="form-check"><input type="checkbox"><span>Vegan</span></label>
+          </div>
+        </aside>
+
+        <main class="collection-main">
+          <div class="collection-toolbar">
+            <button class="collection-filter-toggle" type="button" onclick="openFilter()"><span class="material-icons">filter_list</span> Filter</button>
+            <div class="collection-toolbar__count">Zeige 1–9 von 12 Produkten</div>
+            <div class="collection-toolbar__sort">
+              <span class="collection-toolbar__sort-label">Sortieren:</span>
+              <select class="collection-toolbar__sort-select">
+                <option>Empfohlen</option>
+                <option>Bestseller</option>
+                <option>Preis aufsteigend</option>
+                <option>Preis absteigend</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tile-grid --cols-3">
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button></div><div class="tile__headline">ArthroBAL Complex</div><div class="tile__description">Für agile Gelenke.</div><div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button></div><div class="tile__headline">Mobility Plus</div><div class="tile__description">Tägliche Unterstützung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button></div><div class="tile__headline">Senior Fit</div><div class="tile__description">Für ältere Hunde.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span><span class="--old">39,90 €</span></div></div></div>
+          </div>
+
+          <nav class="pagination" aria-label="Pagination">
+            <a href="#" class="pagination__btn" aria-label="Vorherige Seite"><span class="material-icons">chevron_left</span></a>
+            <a href="#" class="pagination__page">1</a>
+            <span class="pagination__page --current" aria-current="page">2</span>
+            <a href="#" class="pagination__page">3</a>
+            <span class="pagination__dots">...</span>
+            <a href="#" class="pagination__page">8</a>
+            <a href="#" class="pagination__btn" aria-label="Nächste Seite"><span class="material-icons">chevron_right</span></a>
+          </nav>
+        </main>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cart Drawer: Mit Produkten -->
+  <div class="cart-overlay" id="overlayFull" onclick="closeCart('cartFull')"></div>
+  <div class="cart-drawer" id="cartFull">
+    <div class="cart-drawer__header">
+      <div class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(3)</span></div>
+      <button class="btn --icon" onclick="closeCart('cartFull')"><span class="material-icons">close</span></button>
+    </div>
+    <div class="cart-drawer__items">
+      <div class="cart-item"><div class="cart-item__image placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><div class="cart-item__name">IntestiBAL</div><div class="cart-item__variant">250g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="2" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">59,80 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><div class="cart-item__name">CaniComplete</div><div class="cart-item__variant">120g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">34,90 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><div class="cart-item__name">DermaComplex</div><div class="cart-item__variant">500g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">49,90 €</div></div></div></div>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__shipping"><div class="shipping-hint"><span class="material-icons">local_shipping</span> Noch 5,40 € bis zum kostenlosen Versand</div></div>
+      <div class="summary-total"><span>Zwischensumme</span><span>144,60 €</span></div>
+      <div class="cart-drawer__tax">inkl. MwSt., zzgl. Versandkosten</div>
+      <a class="btn --primary cart-drawer__checkout">Zur Kasse</a>
+      <div class="cart-drawer__continue-wrap"><a class="btn --ghost cart-drawer__continue" onclick="closeCart('cartFull')">Weiter einkaufen</a></div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer: Leer -->
+  <div class="cart-overlay" id="overlayEmpty" onclick="closeCart('cartEmpty')"></div>
+  <div class="cart-drawer" id="cartEmpty">
+    <div class="cart-drawer__header">
+      <div class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(0)</span></div>
+      <button class="btn --icon" onclick="closeCart('cartEmpty')"><span class="material-icons">close</span></button>
+    </div>
+    <div class="cart-drawer__empty">
+      <div class="empty-state">
+        <span class="material-icons">shopping_cart</span>
+        <p>Ihr Warenkorb ist leer.</p>
+        <a class="btn --primary" onclick="closeCart('cartEmpty')">Weiter einkaufen</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       12 FOOTER
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="footer-section">
+    <h2 class="section-label">20 — Footer</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Struktur</h4>
+        <p>Zwei Bereiche: <strong>Footer-Main</strong> (4-Spalten-Grid mit Inhalten) und <strong>Footer-Bar</strong> (Copyright + Zahlungsarten). Volle Breite, Hintergrund <code>--green-light</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Responsive</h4>
+        <p>Tablet: 2 Spalten. Mobile: 1-spaltig. Footer-Bar stapelt sich vertikal.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Hintergrund</th><td><code>--green-light</code> (#f0fae6)</td></tr>
+      <tr><th>Schriftfarbe</th><td>Schwarz / Grau — nicht invertiert</td></tr>
+      <tr><th>Main-Padding</th><td>Oben: 2 Module · Unten: 1 Modul · Seiten: <code>--margin</code></td></tr>
+      <tr><th>Grid</th><td>4 Spalten (<code>1fr</code>) · Gap: 1 Modul</td></tr>
+      <tr><th>Footer-Bar</th><td>1 Modul Padding · <code>border-top: 1px solid</code> · Copyright links, Zahlungsarten rechts</td></tr>
+      <tr><th>Abstand</th><td><code>margin-top: 2 Module</code> zum vorherigen Content</td></tr>
+    </table>
+
+    <p class="sg-p --mb">Live-Demo: siehe unten — der Footer dieses Styleguides nutzt das dokumentierte Pattern.</p>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       MARQUEE / TICKER
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="marquee-section">
+    <h2 class="section-label">24 — Banner / Marquee</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Funktion</h4>
+        <p>Endlos-Laufband für Vertrauenssignale, Versandinfos oder Aktionshinweise. Pausiert bei Hover. Items werden doppelt gerendert für nahtlose Schleife.</p>
+      </div>
+      <div class="rule">
+        <h4>Varianten</h4>
+        <p>Standard (weiß), Grün (<code>--green</code>), Dark (<code>--fg</code>). Trennzeichen: gefüllter Kreis (<code>4px</code>). Geschwindigkeit via <code>animation-duration</code> anpassbar.</p>
+      </div>
+    </div>
+
+    <div class="sg-demo-stack --inset">
+
+      <!-- Variante 1: Standard -->
+      <div>
+        <p class="label --inset">Variante 1 — Standard</p>
+        <div class="marquee">
+          <div class="marquee__track">
+            <div class="marquee__item">Kostenloser Versand ab 49 €</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Tierärztlich entwickelt</div><span class="marquee__sep"></span>
+            <div class="marquee__item">30 Tage Rückgabe</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Über 10.000 zufriedene Kunden</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Kostenloser Versand ab 49 €</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Tierärztlich entwickelt</div><span class="marquee__sep"></span>
+            <div class="marquee__item">30 Tage Rückgabe</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Über 10.000 zufriedene Kunden</div><span class="marquee__sep"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variante 2: Grün -->
+      <div>
+        <p class="label --inset">Variante 2 — Grün</p>
+        <div class="marquee --green">
+          <div class="marquee__track">
+            <div class="marquee__item">Kostenloser Versand ab 49 €</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Tierärztlich entwickelt</div><span class="marquee__sep"></span>
+            <div class="marquee__item">30 Tage Rückgabe</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Über 10.000 zufriedene Kunden</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Kostenloser Versand ab 49 €</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Tierärztlich entwickelt</div><span class="marquee__sep"></span>
+            <div class="marquee__item">30 Tage Rückgabe</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Über 10.000 zufriedene Kunden</div><span class="marquee__sep"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variante 3: Dark -->
+      <div>
+        <p class="label --inset">Variante 3 — Dark</p>
+        <div class="marquee --dark">
+          <div class="marquee__track">
+            <div class="marquee__item">Kostenloser Versand ab 49 €</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Tierärztlich entwickelt</div><span class="marquee__sep"></span>
+            <div class="marquee__item">30 Tage Rückgabe</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Über 10.000 zufriedene Kunden</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Kostenloser Versand ab 49 €</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Tierärztlich entwickelt</div><span class="marquee__sep"></span>
+            <div class="marquee__item">30 Tage Rückgabe</div><span class="marquee__sep"></span>
+            <div class="marquee__item">Über 10.000 zufriedene Kunden</div><span class="marquee__sep"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       NEWSLETTER SIGNUP
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="actionable-input-section">
+    <h2 class="section-label">25 — Newsletter Signup</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Variante</h4>
+        <p>2-spaltig: Text links, Formular rechts. Hintergrund immer <code>--green-light</code>. Auf Mobil 1-spaltig gestapelt.</p>
+      </div>
+      <div class="rule">
+        <h4>Formular — <code>.actionable-input</code></h4>
+        <p>Wiederverwendbares Molekül: Input + Button als Flex-Reihe. Mobil gestapelt (<code>flex-direction: column</code>), ab 768 px nebeneinander (<code>flex-direction: row</code>). Input nimmt mit <code>flex: 1</code> den verfügbaren Platz. Einsetzbar überall wo ein Inline-Submit-Formular benötigt wird.</p>
+      </div>
+    </div>
+
+    <div class="sg-demo-stack">
+
+      <!-- Variante 1: 2-spaltig -->
+      <div>
+        <p class="label">Variante 1 — 2-spaltig (Standard)</p>
+        <div class="newsletter --on-green">
+          <div class="newsletter__content">
+            <p class="label">Newsletter</p>
+            <h3>Bleib auf dem Laufenden</h3>
+            <p>Tipps, Angebote und Neuigkeiten rund um die Gesundheit deines Tieres.</p>
+          </div>
+          <form class="actionable-input" onsubmit="return false;">
+            <div class="form-field">
+              <input type="email" id="newsletter-email" placeholder=" ">
+              <label for="newsletter-email">E-Mail-Adresse</label>
+            </div>
+            <button class="btn --primary" type="submit">Anmelden</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 20 Checkout -->
+  <section class="sg-section" id="checkout-section">
+    <h2 class="section-label">26 — Checkout</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Layout</h4>
+        <p>50/50-Grid: <code>1fr 1fr</code>. Sidebar läuft im Fluss mit (kein sticky). Sektionen getrennt durch <code>.line.--structural</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Atome</h4>
+        <p>Ausschließlich bestehende Steine: <code>.form-grid</code>, <code>.form-field</code>, <code>.choice-box</code>, <code>.cart-item</code>, <code>.cart-item__qty-text</code>, <code>.summary-line</code>, <code>.summary-total</code>, <code>.btn</code>.</p>
+      </div>
+      <div class="rule">
+        <h4><code>.summary-line</code> / <code>.summary-total</code></h4>
+        <p>Globale Atome für Preiszeilen. <code>.summary-line</code> zeigt gestrichelte Trennlinie, die letzte Zeile hat keine. <code>.summary-total</code> setzt eine starke Trennlinie oben und hebt den Gesamtbetrag typografisch hervor. Einsetzbar in Checkout-Sidebar, Cart-Drawer, Mini-Cart und überall wo Preiszusammenfassungen benötigt werden.</p>
+      </div>
+      <div class="rule">
+        <h4>CTA</h4>
+        <p>Einziger Kauf-Button am Ende der Bestellübersicht. Keine „Weiter"-Buttons.</p>
+      </div>
+    </div>
+
+    <div class="sg-demo-stack">
+      <div class="checkout">
+
+        <!-- ── Linke Spalte: Formulare ── -->
+        <div>
+
+          <!-- Lieferadresse -->
+          <div class="checkout__block">
+            <h3 class="section-label">Lieferadresse</h3>
+            <div class="form-grid">
+              <div class="form-field">
+                <input type="text" id="co-vorname" placeholder=" ">
+                <label for="co-vorname">Vorname</label>
+              </div>
+              <div class="form-field">
+                <input type="text" id="co-nachname" placeholder=" ">
+                <label for="co-nachname">Nachname</label>
+              </div>
+              <div class="form-field">
+                <input type="text" id="co-strasse" placeholder=" ">
+                <label for="co-strasse">Straße</label>
+              </div>
+              <div class="form-field">
+                <input type="text" id="co-hausnr" placeholder=" ">
+                <label for="co-hausnr">Nr.</label>
+              </div>
+              <div class="form-field">
+                <input type="text" id="co-plz" placeholder=" ">
+                <label for="co-plz">PLZ</label>
+              </div>
+              <div class="form-field">
+                <input type="text" id="co-ort" placeholder=" ">
+                <label for="co-ort">Ort</label>
+              </div>
+              <div class="form-field" style="grid-column: span 2">
+                <input type="email" id="co-email" placeholder=" ">
+                <label for="co-email">E-Mail-Adresse</label>
+              </div>
+              <div class="form-field" style="grid-column: span 2">
+                <input type="tel" id="co-tel" placeholder=" ">
+                <label for="co-tel">Telefon (optional)</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Versandart -->
+          <div class="checkout__block">
+            <h3 class="section-label">Versandart</h3>
+            <div class="tile-grid --cols-1" style="gap: var(--half-module);">
+              <button class="choice-box --block --active" type="button" onclick="selectCheckout(this)">
+                <span class="material-icons">local_shipping</span>
+                <span><strong>Standardversand</strong> — DHL · 3–5 Werktage · <strong>kostenlos</strong></span>
+              </button>
+              <button class="choice-box --block" type="button" onclick="selectCheckout(this)">
+                <span class="material-icons">rocket_launch</span>
+                <span><strong>Expressversand</strong> — DHL Express · 1–2 Werktage · <strong>4,99 €</strong></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Zahlung -->
+          <div class="checkout__block">
+            <h3 class="section-label">Zahlung</h3>
+            <div class="tile-grid --cols-1" style="gap: var(--half-module);">
+              <button class="choice-box --block --active" type="button" onclick="selectCheckout(this)">
+                <span class="material-icons">credit_card</span>
+                <span>Kreditkarte</span>
+              </button>
+              <button class="choice-box --block" type="button" onclick="selectCheckout(this)">
+                <span class="material-icons">account_balance_wallet</span>
+                <span>PayPal</span>
+              </button>
+              <button class="choice-box --block" type="button" onclick="selectCheckout(this)">
+                <span class="material-icons">receipt_long</span>
+                <span>Rechnung</span>
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /Linke Spalte -->
+
+        <!-- ── Rechte Spalte: Bestellübersicht ── -->
+        <aside class="checkout__sidebar">
+          <h3 class="section-label">Bestellübersicht</h3>
+
+          <div class="cart-item">
+            <div class="cart-item__image placeholder-bg"></div>
+            <div class="cart-item__info">
+              <div class="cart-item__top">
+                <div>
+                  <div class="cart-item__name">IntestiBAL</div>
+                  <div class="cart-item__variant">250g</div>
+                </div>
+              </div>
+              <div class="cart-item__bottom">
+                <div class="cart-item__qty-text">2 Stück</div>
+                <div class="price-stack">59,80 €</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item__image placeholder-bg"></div>
+            <div class="cart-item__info">
+              <div class="cart-item__top">
+                <div>
+                  <div class="cart-item__name">CaniComplete</div>
+                  <div class="cart-item__variant">120g</div>
+                </div>
+              </div>
+              <div class="cart-item__bottom">
+                <div class="cart-item__qty-text">1 Stück</div>
+                <div class="price-stack">34,90 €</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item__image placeholder-bg"></div>
+            <div class="cart-item__info">
+              <div class="cart-item__top">
+                <div>
+                  <div class="cart-item__name">DermaComplex</div>
+                  <div class="cart-item__variant">500g · Sale</div>
+                </div>
+              </div>
+              <div class="cart-item__bottom">
+                <div class="cart-item__qty-text">1 Stück</div>
+                <div class="price-stack">49,90 €</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-line"><span>Zwischensumme</span><span>144,60 €</span></div>
+          <div class="summary-line"><span>Versand</span><span>kostenlos</span></div>
+          <div class="summary-line"><span>MwSt. (19 %)</span><span>23,12 €</span></div>
+          <div class="summary-total"><span>Gesamt</span><span>144,60 €</span></div>
+
+          <div class="mt-half">
+            <button class="btn --primary --full" type="button">Jetzt kaufen</button>
+          </div>
+        </aside>
+
+      </div><!-- /checkout -->
+    </div><!-- /sg-demo-stack -->
+  </section>
+
+  <!-- 21 Modal -->
+  <section class="sg-section" id="modal-section">
+    <h2 class="section-label">27 — Modal / Pop-up</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p>Dunkles Overlay (60% Opacity) zentriert die Box. Die Box hat max. 32rem Breite. Header ist sticky, Body scrollbar. Klick auf X oder das Overlay schließt das Modal.</p></div>
+    </div>
+    <div class="demo-label">Modal öffnen</div>
+    <button class="btn --secondary" onclick="openModal('demoModal')">Beispiel-Modal öffnen</button>
+
+    <div class="modal-overlay" id="demoModal" onclick="closeModal('demoModal')">
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal__header">
+          <div class="modal__title">Willkommen im Rudel!</div>
+          <button class="btn --icon" onclick="closeModal('demoModal')" aria-label="Schließen"><span class="material-icons">close</span></button>
+        </div>
+        <div class="modal__body">
+          <p class="sg-p">Abonniere unseren Newsletter und erhalte 10% Rabatt auf deine erste Bestellung sowie wertvolle Tipps zur Tiergesundheit.</p>
+          <form class="actionable-input mt-1" onsubmit="return false;">
+            <div class="form-field"><input type="email" id="modal-email" placeholder=" "><label for="modal-email">E-Mail-Adresse</label></div>
+            <button class="btn --primary" type="submit">Anmelden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 22 Toast -->
+  <section class="sg-section" id="toast-section">
+    <h2 class="section-label">28 — Toast / Notification</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p>Fester Container unten rechts (<code>.toast-container</code>). Jeder Toast ist ein Atom mit Icon + Text. Slides in von rechts, verschwindet nach 3,5 s automatisch. Z-Index über dem Modal.</p></div>
+      <div class="rule"><h4>Varianten</h4><p><code>.--success</code> (grün), <code>.--error</code> (rot), <code>.--info</code> (grau). Aufruf über <code>showToast(message, type)</code>. Mehrere Toasts stapeln sich.</p></div>
+    </div>
+
+    <div class="demo-label">Varianten</div>
+    <div style="display: flex; gap: var(--half-module); flex-wrap: wrap;">
+      <button class="btn --secondary" onclick="showToast('Produkt wurde zum Warenkorb hinzugefügt.', 'success')">Success</button>
+      <button class="btn --secondary" onclick="showToast('Etwas ist schiefgelaufen. Bitte versuche es erneut.', 'error')">Error</button>
+      <button class="btn --secondary" onclick="showToast('Deine Änderungen wurden gespeichert.', 'info')">Info</button>
+    </div>
+
+    <table class="spec-table mt-1">
+      <tr><th><code>.toast-container</code></th><td>Fixer Container, Bottom-Right, <code>z-index: calc(var(--z-modal) + 10)</code></td></tr>
+      <tr><th><code>.toast</code></th><td>Basis-Toast: dunkler Hintergrund, Icon + Text, Slide-in-Animation</td></tr>
+      <tr><th><code>.toast.--success</code></th><td>Hintergrund <code>var(--green)</code></td></tr>
+      <tr><th><code>.toast.--error</code></th><td>Hintergrund <code>#c0392b</code></td></tr>
+      <tr><th><code>.toast.--info</code></th><td>Hintergrund <code>var(--fg-muted)</code></td></tr>
+      <tr><th><code>showToast(msg, type)</code></th><td>Erzeugt Toast dynamisch, auto-dismiss nach 3,5 s, Fade-out 0,3 s</td></tr>
+    </table>
+  </section>
+
+</div>
+</main>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="false"></div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-col">
+      <h4>Styleguide</h4>
+      <p>Ein logisches Design-System auf Basis von 1rem, Faktor 1.5 und dem Grundmodul 3rem.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Foundations</h4>
+      <ul>
+        <li><a href="#logo">Logo</a></li>
+        <li><a href="#system">System-Logik</a></li>
+        <li><a href="#tokens">Design Tokens</a></li>
+        <li><a href="#typo">Typografie</a></li>
+        <li><a href="#colors">Farben</a></li>
+        <li><a href="#borders">Linien &amp; Borders</a></li>
+        <li><a href="#spacing">Spacing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Komponenten</h4>
+      <ul>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#forms">Formulare</a></li>
+        <li><a href="#sections">Section Types</a></li>
+        <li><a href="#pdp-section">Produktdetailseite</a></li>
+        <li><a href="#cart-section">Warenkorb-Drawer</a></li>
+        <li><a href="#collection-section">Produktübersicht</a></li>
+        <li><a href="#modal-section">Modal / Pop-up</a></li>
+        <li><a href="#toast-section">Toast / Notification</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">AGB</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© 2026 Styleguide v1</span>
+    <span>Basis: 1rem · Ratio: 1.5 · Modul: 3rem</span>
+  </div>
+</footer>
+
+<script>
+function toggleMobile() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('hamburger');
+  var isOpen = menu.classList.toggle('open');
+  btn.classList.toggle('open');
+  btn.setAttribute('aria-expanded', isOpen);
+  btn.setAttribute('aria-label', isOpen ? 'Navigation schließen' : 'Navigation öffnen');
+}
+
+function closeMobile() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Navigation öffnen');
+}
+
+// ─── Modal ───
+function openModal(id) {
+  document.getElementById(id).classList.add('--open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('--open');
+  document.body.style.overflow = '';
+}
+
+// Escape closes menu + modals
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeMobile();
+    document.querySelectorAll('.modal-overlay.--open').forEach(function(m) { closeModal(m.id); });
+  }
+});
+
+// ─── Toast ───
+function showToast(message, type) {
+  type = type || 'info';
+  var icons = { success: 'check_circle', error: 'error', info: 'info' };
+  var container = document.getElementById('toastContainer');
+  var toast = document.createElement('div');
+  toast.className = 'toast --' + type;
+  toast.innerHTML = '<span class="material-icons">' + (icons[type] || 'info') + '</span><span>' + message + '</span>';
+  container.appendChild(toast);
+  setTimeout(function() {
+    toast.classList.add('--out');
+    setTimeout(function() { toast.remove(); }, 300);
+  }, 3500);
+}
+
+
+function closeAnnouncement() {
+  document.getElementById('announcementBar').classList.add('--closed');
+  document.documentElement.style.setProperty('--announcement-height', '0px');
+  sessionStorage.setItem('announcementClosed', '1');
+}
+
+// Restore closed state on page load (avoids flash)
+if (sessionStorage.getItem('announcementClosed')) {
+  var bar = document.getElementById('announcementBar');
+  if (bar) {
+    bar.classList.add('--closed');
+    document.documentElement.style.setProperty('--announcement-height', '0px');
+  }
+}
+
+
+// File upload
+var zone = document.getElementById('uploadZone');
+if (zone) {
+  zone.addEventListener('dragover', function(e) { e.preventDefault(); zone.classList.add('--dragover'); });
+  zone.addEventListener('dragleave', function() { zone.classList.remove('--dragover'); });
+  zone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    zone.classList.remove('--dragover');
+    handleFiles(e.dataTransfer.files);
+  });
+}
+
+// Accordion
+function toggleAccordion(trigger) {
+  var item = trigger.parentElement;
+  var isOpen = item.classList.toggle('--open');
+  trigger.setAttribute('aria-expanded', isOpen);
+}
+
+function handleFiles(files) {
+  var list = document.getElementById('fileList');
+  for (var i = 0; i < files.length; i++) {
+    var size = (files[i].size / 1024).toFixed(0);
+    var item = document.createElement('div');
+    item.className = 'form-upload__file';
+    item.innerHTML = '<span>' + files[i].name + ' <span class="text-muted">(' + size + ' KB)</span></span>' +
+      '<button class="form-upload__remove" onclick="this.parentElement.remove()">×</button>';
+    list.appendChild(item);
+  }
+}
+
+// ─── Testimonial Grid: Mobile "Mehr anzeigen" ───
+function initTestimonials() {
+  document.querySelectorAll('.testimonial-section, [class*="testimonial-grid"]').forEach(function(section) {
+    var container = section.closest('.testimonial-section') || section.closest('.page');
+    var grid = section.tagName === 'DIV' && section.classList.contains('testimonial-grid')
+      ? section
+      : section.querySelector('.testimonial-grid');
+    if (!grid) return;
+
+    var items = grid.querySelectorAll('.testimonial');
+    items.forEach(function(item, i) {
+      if (i < 3) item.classList.add('--visible');
+    });
+  });
+}
+
+function showMore(btn) {
+  var section = btn.closest('.testimonial-section') || btn.closest('.page');
+  var grid = section.querySelector('.testimonial-grid');
+  var hidden = grid.querySelectorAll('.testimonial:not(.--visible)');
+
+  var count = 0;
+  hidden.forEach(function(item) {
+    if (count < 3) { item.classList.add('--visible'); count++; }
+  });
+
+  if (grid.querySelectorAll('.testimonial:not(.--visible)').length === 0) {
+    btn.parentElement.classList.add('--hidden');
+  }
+}
+
+initTestimonials();
+
+// ─── Testimonial Slider ───
+function initSliders() {
+  document.querySelectorAll('.testimonial-slider').forEach(function(slider) {
+    var track = slider.querySelector('.testimonial-slider__track');
+    var slides = slider.querySelectorAll('.testimonial-slider__slide');
+    var prevBtn = slider.querySelector('[data-dir="prev"]');
+    var nextBtn = slider.querySelector('[data-dir="next"]');
+    var counter = slider.querySelector('.slider-counter');
+    var current = 0;
+
+    function getVisible() {
+      var w = window.innerWidth;
+      if (w <= 767) return slides.length;
+      if (slider.classList.contains('--cols-4')) return w <= 1535 ? 2 : 4;
+      return w <= 1535 ? 2 : 3;
+    }
+
+    function getMaxPage() {
+      return Math.max(0, slides.length - getVisible());
+    }
+
+    function update() {
+      var vis = getVisible();
+      var maxPage = getMaxPage();
+      if (current > maxPage) current = maxPage;
+
+      if (slides.length > 0 && vis < slides.length) {
+        var slideWidth = slides[0].offsetWidth;
+        var gap = 0;
+        if (slides.length > 1) {
+          gap = slides[1].offsetLeft - slides[0].offsetLeft - slideWidth;
+        }
+        var offset = current * (slideWidth + gap);
+        track.style.transform = 'translateX(-' + offset + 'px)';
+      } else {
+        track.style.transform = 'translateX(0)';
+      }
+
+      if (counter) counter.textContent = (current + 1) + ' – ' + Math.min(current + vis, slides.length) + ' / ' + slides.length;
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current >= maxPage;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function() {
+      if (current > 0) { current--; update(); }
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function() {
+      if (current < getMaxPage()) { current++; update(); }
+    });
+
+    var startX = 0;
+    track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && current < getMaxPage()) current++;
+        else if (diff < 0 && current > 0) current--;
+        update();
+      }
+    }, { passive: true });
+
+    slides.forEach(function(s, i) { if (i < 3) s.classList.add('--visible'); });
+
+    window.addEventListener('resize', function() { update(); });
+    update();
+  });
+}
+
+function showMoreSlider(btn) {
+  var moreDiv = btn.parentElement;
+  var prevEl = moreDiv.previousElementSibling;
+  while (prevEl && !prevEl.classList.contains('testimonial-slider')) {
+    prevEl = prevEl.previousElementSibling;
+  }
+  if (!prevEl) return;
+  var slider = prevEl;
+
+  var hidden = slider.querySelectorAll('.testimonial-slider__slide:not(.--visible)');
+  var count = 0;
+  hidden.forEach(function(s) {
+    if (count < 3) { s.classList.add('--visible'); count++; }
+  });
+  if (slider.querySelectorAll('.testimonial-slider__slide:not(.--visible)').length === 0) {
+    moreDiv.classList.add('--hidden');
+  }
+}
+
+initSliders();
+
+// ─── PDP ───
+function selectVariant(btn) {
+  btn.parentElement.querySelectorAll('.choice-box').forEach(function(b) { b.classList.remove('--active'); });
+  btn.classList.add('--active');
+}
+function switchTab(btn, index) {
+  var tabs = btn.closest('.tabs');
+  tabs.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('--active'); b.setAttribute('aria-selected', 'false'); });
+  tabs.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('--active'); });
+  btn.classList.add('--active');
+  btn.setAttribute('aria-selected', 'true');
+  tabs.querySelectorAll('.tab-panel')[index].classList.add('--active');
+}
+function selectCheckout(btn) {
+  btn.parentElement.querySelectorAll('.choice-box').forEach(function(b) { b.classList.remove('--active'); });
+  btn.classList.add('--active');
+}
+function changeQty(delta) {
+  var input = document.getElementById('qtyInput');
+  var val = parseInt(input.value) + delta;
+  if (val < 1) val = 1;
+  input.value = val;
+}
+
+// ─── Cart Drawer ───
+function openCart(id) {
+  var overlayId = id === 'cartFull' ? 'overlayFull' : 'overlayEmpty';
+  document.getElementById(overlayId).classList.add('--open');
+  document.getElementById(id).classList.add('--open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCart(id) {
+  var overlayId = id === 'cartFull' ? 'overlayFull' : 'overlayEmpty';
+  document.getElementById(overlayId).classList.remove('--open');
+  document.getElementById(id).classList.remove('--open');
+  document.body.style.overflow = '';
+}
+
+// ─── Collection Filter ───
+function openFilter() {
+  document.getElementById('filterSidebar').classList.add('--open');
+  document.getElementById('filterOverlay').classList.add('--open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFilter() {
+  document.getElementById('filterSidebar').classList.remove('--open');
+  document.getElementById('filterOverlay').classList.remove('--open');
+  document.body.style.overflow = '';
+}
+
+// ─── Scroll Animations ───
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('--in-view');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -4% 0px' });
+
+  function animate(el, delay) {
+    el.setAttribute('data-animate', '');
+    if (delay) el.style.setProperty('--anim-delay', delay + 'ms');
+    observer.observe(el);
+  }
+
+  // Section titles
+  document.querySelectorAll('.section-label').forEach(function(el) {
+    animate(el);
+  });
+
+  // Section types (full-bleed content blocks)
+  document.querySelectorAll('.section-type').forEach(function(el) {
+    animate(el);
+  });
+
+  // Newsletter block
+  document.querySelectorAll('.newsletter').forEach(function(el) {
+    animate(el);
+  });
+
+  // Marquee / Banner
+  document.querySelectorAll('.marquee').forEach(function(el) {
+    animate(el);
+  });
+
+  // Tiles — staggered per grid
+  document.querySelectorAll('.tile-grid').forEach(function(grid) {
+    grid.querySelectorAll('.tile').forEach(function(tile, i) {
+      animate(tile, Math.min(i, 5) * 70);
+    });
+  });
+
+  // Testimonials in grids — staggered
+  document.querySelectorAll('.testimonial-grid').forEach(function(grid) {
+    grid.querySelectorAll('.testimonial').forEach(function(t, i) {
+      animate(t, Math.min(i, 5) * 70);
+    });
+  });
+
+  // Testimonial slider slides
+  document.querySelectorAll('.testimonial-slider__slide').forEach(function(el) {
+    animate(el);
+  });
+})();
+
+</script>
+
+</body>
+</html>
