@@ -1054,6 +1054,7 @@
     justify-content: center;
     flex-shrink: 0;
   }
+  .icon-box.--lg { width: calc(var(--base) * 5); height: calc(var(--base) * 5); }
 
   /* ─── Choice Box (Varianten-Button oder Label für Radio) ─── */
   .choice-box {
@@ -1470,6 +1471,7 @@
   .btn.--icon { background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: color var(--anim-fast); color: var(--fg); padding: 0; }
   .btn.--icon:hover { color: var(--fg-muted); }
   .btn.--icon .material-icons { font-size: calc(var(--base) * 1.25); }
+  .btn.--with-icon { display: inline-flex; align-items: center; gap: 0.5rem; }
   .cart-drawer__items { flex: 1; overflow-y: auto; padding: 0 var(--module); }
   .cart-item { display: grid; grid-template-columns: calc(var(--base) * 5) 1fr; gap: var(--half-module); padding: var(--half-module) 0; border-bottom: 1px solid var(--border-light); }
   /* .cart-item__image — nutzt .placeholder-bg */
@@ -1650,6 +1652,105 @@
   .modal__header { display: flex; align-items: center; justify-content: space-between; padding: var(--half-module) var(--module); border-bottom: 1px solid var(--border-light); flex-shrink: 0; }
   .modal__title { font-size: var(--text-m); font-weight: 700; line-height: var(--lh-h3); }
   .modal__body { padding: var(--module); overflow-y: auto; }
+
+  /* ═══════════════════════════════════════════
+     SEARCH
+     ═══════════════════════════════════════════ */
+
+  /* ─── Overlay-Backdrop ─── */
+  .search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: var(--z-overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--anim-base), visibility var(--anim-base);
+  }
+  .search-overlay.--open { opacity: 1; visibility: visible; }
+
+  /* ─── Search Panel (oben, slide-in) ─── */
+  .search-panel {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--bg);
+    z-index: calc(var(--z-overlay) + 1);
+    transform: translateY(-100%);
+    transition: transform var(--anim-base);
+    border-bottom: 1px solid var(--border);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .search-overlay.--open .search-panel { transform: translateY(0); }
+
+  /* ─── Eingabezeile ─── */
+  .search-panel__bar {
+    display: flex;
+    align-items: center;
+    gap: var(--half-module);
+    padding: var(--half-module) var(--module);
+    border-bottom: 1px solid var(--border-light);
+    flex-shrink: 0;
+  }
+  .search-panel__bar > .material-icons { color: var(--fg-muted); flex-shrink: 0; }
+  .search-panel__input {
+    flex: 1;
+    font-family: var(--font);
+    font-size: var(--text-m);
+    font-weight: 700;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--fg);
+  }
+  .search-panel__input::placeholder { color: var(--fg-muted); font-weight: 400; }
+
+  /* ─── Ergebnisliste ─── */
+  .search-results {
+    overflow-y: auto;
+    padding: calc(var(--base) * 0.5) 0 var(--half-module);
+  }
+  .search-results__section { margin-bottom: calc(var(--base) * 0.5); }
+  .search-results .section-label { border-bottom-color: var(--border-light); padding: calc(var(--base) * 0.5) var(--module); margin-bottom: 0; }
+
+  /* ─── Einzelnes Ergebnis — angelehnt an .cart-item ─── */
+  .search-result {
+    display: grid;
+    grid-template-columns: calc(var(--base) * 5) 1fr auto;
+    gap: var(--half-module);
+    padding: var(--half-module) var(--module);
+    border-bottom: 1px solid var(--border-light);
+    text-decoration: none;
+    color: var(--fg);
+    cursor: pointer;
+    transition: background var(--anim-fast);
+  }
+  .search-result:hover,
+  .search-result.--active { background: var(--accent-bg); }
+
+  /* ─── Produkt-Bild im Ergebnis ─── */
+  .search-result__image {
+    width: calc(var(--base) * 5);
+    height: calc(var(--base) * 5);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+  .search-result__image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ─── Query-Icon (für Suchvorschläge ohne Bild) — nutzt .icon-box.--lg ─── */
+  .search-results .icon-box.--lg { background: var(--accent-bg); }
+  .search-results .icon-box.--lg .material-icons { font-size: 1.25rem; color: var(--fg-muted); }
+
+  /* ─── Text-Info ─── */
+  .search-result__info { display: flex; flex-direction: column; gap: calc(var(--base) * 0.25); min-width: 0; justify-content: center; }
+  .search-result__name { font-size: var(--text-base); font-weight: 700; line-height: var(--lh-base); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .search-result__meta { font-size: var(--text-xs); color: var(--fg-muted); }
+  .search-result__price { font-size: var(--text-base); font-weight: 700; white-space: nowrap; align-self: center; justify-self: end; }
+
+  /* ─── Empty + Loading ─── */
+  /* .search-results__empty — nutzt .empty-state */
+  .search-results__loading { display: flex; justify-content: center; padding: var(--module); color: var(--fg-muted); font-size: var(--text-xs); }
 
   /* ─── Keyframes ─── */
   @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }

@@ -7,7 +7,7 @@
 <meta name="description" content="Design-System für das inuvet Shopify-Theme. Tokens, Komponenten und Patterns nach Atomic Design.">
 <link rel="stylesheet" href="https://use.typekit.net/vhh5bbc.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="inuvet.css">
+<link rel="stylesheet" href="inuvet.css?v=3">
 <link rel="stylesheet" href="sg.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
   </div>
   <div class="nav-center"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.4 113.4"><defs><style>.st0{fill:none}.st1{fill:#78b41b}.st2{clip-path:url(#clippath-nav)}</style><clipPath id="clippath-nav"><rect class="st0" width="113.4" height="113.4"/></clipPath></defs><g><path d="M19.4,74.3c0,1.4-1.1,2.6-2.6,2.6s-2.6-1.2-2.6-2.6,1.1-2.5,2.6-2.5,2.5,1.2,2.5,2.5ZM14.7,78.9h4.3v15.4h-4.3s0-15.4,0-15.4Z"/><path d="M23.1,78.9h3.8l.2,2.1c1.5-1.8,3.1-2.5,5.1-2.5s3.5.7,4.2,2.1c.5.9.7,2,.7,4.1v9.7h-4.3v-8.9c0-1.3,0-1.8-.3-2.3-.3-.6-.8-.9-1.6-.9-1.2,0-2.6,1.1-3.5,2.8v9.3h-4.3v-15.4h0Z"/><path d="M50.5,92.6c-1.4,1.5-2.8,2.1-4.7,2.1s-3.4-.8-4.2-2.2c-.5-.9-.7-2.1-.7-4.2v-9.5h4.3v8.7c0,2.6.5,3.4,1.9,3.4s2.3-.6,3.1-1.9v-10.2h4.3v15.4h-3.8l-.3-1.7h0Z"/><path d="M56.8,78.9h4.8l3.6,10.3,3.6-10.3h4.3l-6.3,15.4h-3.9l-6.1-15.4h0Z"/><path d="M78.1,87.9c.2,2.6,1.5,3.7,4.4,3.7s2.7-.3,4.4-1.2l1,2.8c-1.8,1.1-3.8,1.6-6.4,1.6-5.2,0-7.8-2.5-7.8-7.7s2.8-8.6,7.5-8.6,6.8,2.6,6.8,7.6,0,.9,0,1.8h-9.9,0ZM84.2,85.1c-.2-2.4-1.1-3.5-2.9-3.5s-2.9,1.1-3.2,3.5h6.1Z"/><path d="M89.7,82.4l.3-3.4h2.5l.2-3.7,4-1.4v5.1h3.8l-.3,3.4h-3.5v5.6c0,2.8.2,3.3,1.6,3.3s1.3-.2,2.1-.5l.8,2.7c-1.5.9-3,1.3-4.5,1.3s-3-.6-3.7-1.8c-.4-.8-.6-2-.6-4.2v-6.5h-2.7,0Z"/></g><g class="st2"><g><path d="M81.4,32h-.3v1h.2c.5,0,.7-.3.7-.6s-.1-.5-.6-.5M82,35.1l-.8-1.5h0v1.5h-.8v-3.7h1.3c.9,0,1.2.4,1.2,1s-.3,1-.8,1c0,0,.2.3.3.5l.7,1.2h-1ZM78.9,33.3c0,1.4,1.1,2.6,2.6,2.6s2.6-1.2,2.6-2.6-1.1-2.6-2.6-2.6-2.6,1.2-2.6,2.6M85,33.3c0,1.9-1.6,3.5-3.5,3.5s-3.6-1.5-3.6-3.5,1.6-3.5,3.6-3.5,3.5,1.5,3.5,3.5"/><path class="st1" d="M28.7,54.5c1.3,5.2,5.6,9,11.1,10.7,4.1-4.1,6.1-9.5,4.8-14.7-1.3-5.2-5.6-9-11.1-10.7-4.1,4.1-6.1,9.5-4.8,14.7Z"/><path class="st1" d="M38.6,32.3c.7,5.3,4.4,9.7,9.7,12,4.6-3.6,7.2-8.6,6.6-14-.6-5.3-4.4-9.7-9.7-12-4.6,3.6-7.2,8.7-6.5,14Z"/><path class="st1" d="M84.6,54.5c-1.3,5.2-5.6,9-11.1,10.7-4.1-4.1-6.1-9.5-4.8-14.7,1.3-5.2,5.6-9,11.1-10.7,4.1,4.1,6.1,9.5,4.8,14.7h0Z"/><path class="st1" d="M74.8,32.3c-.7,5.3-4.4,9.7-9.7,12-4.6-3.6-7.2-8.6-6.6-14,.6-5.3,4.4-9.7,9.7-12,4.6,3.6,7.2,8.7,6.6,14h0Z"/></g></g></svg></div>
   <div class="nav-right">
-    <button class="btn --icon" aria-label="Suche" onclick="alert('Suche')">
+    <button class="btn --icon" aria-label="Suche" onclick="openSearch()">
       <span class="material-icons">search</span>
     </button>
     <button class="btn --icon nav-cart" aria-label="Warenkorb" onclick="openCart('cartFull')">
@@ -36,6 +36,18 @@
     </button>
   </div>
 </nav>
+
+<!-- ═══ SEARCH OVERLAY ═══ -->
+<div class="search-overlay" id="searchOverlay" onclick="handleSearchOverlayClick(event)">
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel__bar">
+      <span class="material-icons">search</span>
+      <input class="search-panel__input" id="searchInput" type="search" placeholder="Produkt oder Kategorie suchen …" autocomplete="off" aria-label="Suche">
+      <button class="btn --icon" onclick="closeSearch()" aria-label="Suche schließen"><span class="material-icons">close</span></button>
+    </div>
+    <div class="search-results" id="searchResults" role="listbox"></div>
+  </div>
+</div>
 
 <!-- Nav Menu (Mobile: einspaltig, Desktop: 5-spaltig) -->
 <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Hauptnavigation">
@@ -626,6 +638,14 @@
       <a class="btn --secondary">Weiter einkaufen</a>
     </div>
     <p class="demo-note">Primary als Hauptaktion, Secondary als Alternative.</p>
+
+    <!-- Demo: Mit Icon -->
+    <div class="demo-label">Mit Icon — <code>.btn.--with-icon</code></div>
+    <div class="sg-btn-row">
+      <button class="btn --primary --with-icon"><span class="material-icons">shopping_cart</span> In den Warenkorb</button>
+      <button class="btn --secondary --with-icon"><span class="material-icons">favorite_border</span> Merken</button>
+    </div>
+    <p class="demo-note">Modifier <code>.--with-icon</code>: wechselt auf <code>inline-flex</code> + vertikale Zentrierung via <code>align-items: center</code> und <code>gap: 0.5rem</code>.</p>
 
     <!-- Demo: Disabled State -->
     <div class="demo-label">Disabled State</div>
@@ -2758,6 +2778,101 @@
     </table>
   </section>
 
+  <!-- 29 Suche -->
+  <section class="sg-section" id="search">
+    <h2 class="section-label">29 — Suche</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p>Das <code>.search-overlay</code> ist ein Fullscreen-Backdrop (<code>position:fixed</code>). Das darin liegende <code>.search-panel</code> gleitet von oben ins Bild (<code>translateY(-100%)</code> → <code>translateY(0)</code>). Die Klasse <code>.--open</code> am Overlay aktiviert beides. In der statischen Demo unten ist <code>position:fixed</code> aufgehoben, damit der Block im Seitenfluss sichtbar bleibt.</p></div>
+      <div class="rule"><h4>Interaktion</h4><p>Öffnen via <code>openSearch()</code> (Lupen-Icon in der Nav). Schließen via Close-Button, Escape-Taste oder Klick auf den Backdrop. Keyboard-Navigation mit Pfeiltasten. Debounced Input filtert <code>SEARCH_DATA</code> clientseitig.</p></div>
+      <div class="rule"><h4>Ergebnis-Typen</h4><p><strong>Query-Vorschlag:</strong> <code>.icon-box.--lg</code> + Name. <strong>Produkt:</strong> <code>.search-result__image</code> + Name + Meta + Preis. <strong>Empty State:</strong> <code>.empty-state</code> mit Icon und Hinweistext.</p></div>
+    </div>
+
+    <!-- Statische Demo: Search-Bar -->
+    <div class="demo-label">Suchleiste (statisch, im Seitenfluss — im echten Einsatz position:fixed)</div>
+    <!-- Im realen Einsatz gilt: .search-panel { position: fixed; top: 0; left: 0; right: 0; }
+         Für die Styleguide-Demo wird der Block als normaler Block-Container angezeigt. -->
+    <div style="border:1px solid var(--border);overflow:hidden;">
+      <div class="search-panel__bar">
+        <span class="material-icons">search</span>
+        <input class="search-panel__input" type="search" placeholder="Produkt oder Kategorie suchen …" readonly>
+        <button class="btn --icon" aria-label="Suche schließen"><span class="material-icons">close</span></button>
+      </div>
+    </div>
+
+    <!-- Statische Demo: Ergebnisliste mit Vorschlägen + Produkten -->
+    <div class="demo-label mt-1">Ergebnisse — Vorschläge &amp; Produkte</div>
+    <div style="border:1px solid var(--border);overflow:hidden;">
+      <div class="search-results" style="max-height:none;overflow:visible;">
+        <div class="search-results__section">
+          <div class="section-label">Vorschläge</div>
+          <div class="search-result">
+            <div class="icon-box --lg"><span class="material-icons">search</span></div>
+            <div class="search-result__info"><div class="search-result__name">Gelenke &amp; Bewegung</div></div>
+          </div>
+          <div class="search-result --active">
+            <div class="icon-box --lg"><span class="material-icons">search</span></div>
+            <div class="search-result__info"><div class="search-result__name">Verdauung &amp; Darm</div></div>
+          </div>
+        </div>
+        <div class="search-results__section">
+          <div class="section-label">Produkte</div>
+          <div class="search-result">
+            <div class="search-result__image"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="ArthroBAL Mobility Complex"></div>
+            <div class="search-result__info">
+              <div class="search-result__name">ArthroBAL Mobility Complex</div>
+              <div class="search-result__meta">Gelenke &amp; Bewegung</div>
+            </div>
+            <div class="search-result__price">34,90 €</div>
+          </div>
+          <div class="search-result">
+            <div class="search-result__image"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="IntestiBAL Darm-Komplex"></div>
+            <div class="search-result__info">
+              <div class="search-result__name">IntestiBAL Darm-Komplex</div>
+              <div class="search-result__meta">Verdauung &amp; Darm</div>
+            </div>
+            <div class="search-result__price">29,90 €</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Statische Demo: Empty State -->
+    <div class="demo-label mt-1">Empty State</div>
+    <div style="border:1px solid var(--border);overflow:hidden;">
+      <div class="empty-state">
+        <span class="material-icons">search_off</span>
+        <p>Keine Ergebnisse für „Mustersuche"</p>
+      </div>
+    </div>
+
+    <!-- Live-Demo -->
+    <div class="demo-label mt-1">Live-Demo</div>
+    <button class="btn --primary --with-icon" onclick="openSearch()">
+      <span class="material-icons">search</span>
+      Suche öffnen
+    </button>
+    <p class="sg-p mt-1">Tipp: Nach dem Öffnen „Gelenk", „Darm" oder „Haut" eintippen — oder Pfeiltasten zur Navigation nutzen, Escape zum Schließen.</p>
+
+    <table class="spec-table mt-1">
+      <tr><th><code>.search-overlay</code></th><td>Fullscreen-Backdrop, <code>position:fixed</code>, aktiviert via <code>.--open</code></td></tr>
+      <tr><th><code>.search-panel</code></th><td>Header-Panel, slide-in von oben, <code>max-height:80vh</code></td></tr>
+      <tr><th><code>.search-panel__bar</code></th><td>Eingabezeile: Icon + Input + Close-Button</td></tr>
+      <tr><th><code>.search-panel__input</code></th><td>Texteingabe, <code>font-weight:700</code>, kein Border/Outline</td></tr>
+      <tr><th><code>.search-results</code></th><td>Scrollbarer Ergebnis-Container</td></tr>
+      <tr><th><code>.search-results__section</code></th><td>Gruppe (Vorschläge / Produkte)</td></tr>
+      <tr><th><code>.section-label</code></th><td>Kategoriebezeichnung in Caps, <code>var(--fg-muted)</code> — gleiche Klasse wie global, Kontext-Override via <code>.search-results .section-label</code></td></tr>
+      <tr><th><code>.search-result</code></th><td>Einzelne Trefferzeile, hover/focus via <code>.--active</code></td></tr>
+      <tr><th><code>.search-result__image</code></th><td>Produktbild-Quadrat, <code>object-fit:cover</code></td></tr>
+      <tr><th><code>.icon-box.--lg</code></th><td>Lupen-Icon-Box für Query-Vorschläge — großes Icon-Box-Atom, <code>5rem × 5rem</code></td></tr>
+      <tr><th><code>.search-result__info</code></th><td>Name + Meta, <code>min-width:0</code> + ellipsis</td></tr>
+      <tr><th><code>.search-result__price</code></th><td>Preis rechts, kein Wrap</td></tr>
+      <tr><th><code>.empty-state</code></th><td>Kein-Ergebnisse-Zustand: Icon + Text zentriert — globale Klasse wiederverwendet</td></tr>
+      <tr><th><code>openSearch()</code></th><td>Öffnet Overlay, fokussiert Input, sperrt Body-Scroll</td></tr>
+      <tr><th><code>closeSearch()</code></th><td>Schließt Overlay, leert Input und Ergebnisliste</td></tr>
+      <tr><th><code>renderSearchResults(query)</code></th><td>Filtert <code>SEARCH_DATA</code>, rendert Treffer oder Empty State</td></tr>
+    </table>
+  </section>
+
 </div>
 </main>
 
@@ -3139,6 +3254,128 @@ function closeFilter() {
     animate(el);
   });
 })();
+
+// ─── SEARCH ───────────────────────────────────────────
+const SEARCH_DATA = {
+  queries: [
+    { text: 'Gelenke & Bewegung' },
+    { text: 'Verdauung & Darm' },
+    { text: 'Haut & Fell' },
+  ],
+  products: [
+    { name: 'ArthroBAL Mobility Complex', meta: 'Gelenke & Bewegung', price: '34,90 €', img: 'https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg' },
+    { name: 'IntestiBAL Darm-Komplex', meta: 'Verdauung & Darm', price: '29,90 €', img: 'https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg' },
+    { name: 'DermaBAL Haut & Fell', meta: 'Haut & Fell', price: '27,90 €', img: 'https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg' },
+  ]
+};
+
+let searchActiveIndex = -1;
+
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('--open');
+  setTimeout(() => document.getElementById('searchInput').focus(), 300);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('--open');
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchResults').innerHTML = '';
+  searchActiveIndex = -1;
+  document.body.style.overflow = '';
+}
+
+function handleSearchOverlayClick(e) {
+  if (e.target === document.getElementById('searchOverlay')) closeSearch();
+}
+
+function renderSearchResults(query) {
+  const container = document.getElementById('searchResults');
+  if (!query.trim()) { container.innerHTML = ''; return; }
+
+  const q = query.toLowerCase();
+  const matchedProducts = SEARCH_DATA.products.filter(p =>
+    p.name.toLowerCase().includes(q) || p.meta.toLowerCase().includes(q)
+  );
+  const matchedQueries = SEARCH_DATA.queries.filter(qr =>
+    qr.text.toLowerCase().includes(q)
+  );
+
+  if (!matchedProducts.length && !matchedQueries.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <span class="material-icons">search_off</span>
+        <p>Keine Ergebnisse für „${query}"</p>
+      </div>`;
+    return;
+  }
+
+  let html = '';
+
+  if (matchedQueries.length) {
+    html += `<div class="search-results__section">
+      <div class="section-label">Vorschläge</div>`;
+    matchedQueries.forEach((qr, i) => {
+      html += `<div class="search-result" role="option" data-index="${i}" onclick="closeSearch()">
+        <div class="icon-box --lg"><span class="material-icons">search</span></div>
+        <div class="search-result__info"><div class="search-result__name">${qr.text}</div></div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  if (matchedProducts.length) {
+    html += `<div class="search-results__section">
+      <div class="section-label">Produkte</div>`;
+    matchedProducts.forEach((p, i) => {
+      html += `<div class="search-result" role="option" data-index="${matchedQueries.length + i}" onclick="closeSearch()">
+        <div class="search-result__image"><img src="${p.img}" alt="${p.name}"></div>
+        <div class="search-result__info">
+          <div class="search-result__name">${p.name}</div>
+          <div class="search-result__meta">${p.meta}</div>
+        </div>
+        <div class="search-result__price">${p.price}</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  container.innerHTML = html;
+  searchActiveIndex = -1;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('searchInput');
+  if (!input) return;
+
+  let debounceTimer;
+  input.addEventListener('input', e => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => renderSearchResults(e.target.value), 200);
+  });
+
+  input.addEventListener('keydown', e => {
+    const items = document.querySelectorAll('#searchResults .search-result');
+    if (!items.length) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      searchActiveIndex = Math.min(searchActiveIndex + 1, items.length - 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      searchActiveIndex = Math.max(searchActiveIndex - 1, -1);
+    } else if (e.key === 'Enter' && searchActiveIndex >= 0) {
+      items[searchActiveIndex].click();
+      return;
+    } else if (e.key === 'Escape') {
+      closeSearch();
+      return;
+    }
+
+    items.forEach((item, i) => item.classList.toggle('--active', i === searchActiveIndex));
+    if (searchActiveIndex >= 0) items[searchActiveIndex].scrollIntoView({ block: 'nearest' });
+  });
+});
 
 </script>
 
