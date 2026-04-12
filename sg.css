@@ -4,6 +4,8 @@
    ═══════════════════════════════════════════ */
   /* ─── Section ─── */
   .sg-section { margin-bottom: var(--module-2xl); }
+  /* ─── Styleguide Header ─── */
+  .header h1 { margin-bottom: var(--half-module); }
   /* ─── Rules ─── */
   .rules { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); margin-bottom: var(--section-gap); }
   .rule { border-top: 1px solid var(--border-light); padding-top: var(--half-module); }

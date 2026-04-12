@@ -7,7 +7,7 @@
 <meta name="description" content="Design-System für das inuvet Shopify-Theme. Tokens, Komponenten und Patterns nach Atomic Design.">
 <link rel="stylesheet" href="https://use.typekit.net/vhh5bbc.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="inuvet.css?v=3">
+<link rel="stylesheet" href="inuvet.css?v=17">
 <link rel="stylesheet" href="sg.css">
 </head>
 <body>
@@ -30,9 +30,9 @@
     <button class="btn --icon" aria-label="Suche" onclick="openSearch()">
       <span class="material-icons">search</span>
     </button>
-    <button class="btn --icon nav-cart" aria-label="Warenkorb" onclick="openCart('cartFull')">
+    <button class="btn --icon icon-badged" aria-label="Warenkorb" onclick="openCart('cartFull')">
       <span class="material-icons">shopping_cart</span>
-      <span class="badge --count nav-cart-count" id="navCartCount" data-count="2">2</span>
+      <span class="badge --count" id="navCartCount" data-count="2">2</span>
     </button>
   </div>
 </nav>
@@ -52,49 +52,62 @@
 <!-- Nav Menu (Mobile: einspaltig, Desktop: 5-spaltig) -->
 <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Hauptnavigation">
   <div class="nav-col">
-    <a href="#logo" onclick="closeMobile()">Foundations</a>
-    <a href="#logo" class="--indent" onclick="closeMobile()">Logo</a>
-    <a href="#system" class="--indent" onclick="closeMobile()">System-Logik</a>
-    <a href="#tokens" class="--indent" onclick="closeMobile()">Design Tokens</a>
-    <a href="#sg-ui" class="--indent" onclick="closeMobile()">Styleguide UI-Klassen</a>
-    <a href="#typo" class="--indent" onclick="closeMobile()">Typografie</a>
-    <a href="#colors" class="--indent" onclick="closeMobile()">Farben</a>
-    <a href="#borders" class="--indent" onclick="closeMobile()">Linien &amp; Borders</a>
-    <a href="#spacing" class="--indent" onclick="closeMobile()">Spacing</a>
-    <a href="#columns" class="--indent" onclick="closeMobile()">Spaltenraster</a>
-    <a href="#responsive" class="--indent" onclick="closeMobile()">Responsive</a>
-    <a href="#height" class="--indent" onclick="closeMobile()">Höhen</a>
+    <a href="#logo" onclick="closeMobile()">Fundament</a>
+    <a href="#logo" class="--indent" onclick="closeMobile()">00 Logo</a>
+    <a href="#system" class="--indent" onclick="closeMobile()">01 System-Logik</a>
+    <a href="#tokens" class="--indent" onclick="closeMobile()">02 Design Tokens</a>
+    <a href="#sg-ui" class="--indent" onclick="closeMobile()">03 Styleguide UI</a>
+    <a href="#typo" class="--indent" onclick="closeMobile()">04 Typografie</a>
+    <a href="#colors" class="--indent" onclick="closeMobile()">05 Farben</a>
+    <a href="#borders" class="--indent" onclick="closeMobile()">06 Linien &amp; Borders</a>
+    <a href="#spacing" class="--indent" onclick="closeMobile()">07 Spacing</a>
+    <a href="#columns" class="--indent" onclick="closeMobile()">08 Spaltenraster</a>
+    <a href="#responsive" class="--indent" onclick="closeMobile()">09 Responsive</a>
+    <a href="#height" class="--indent" onclick="closeMobile()">10 Höhen</a>
   </div>
   <div class="nav-col">
-    <a href="#buttons" onclick="closeMobile()">Atome</a>
-    <a href="#buttons" class="--indent" onclick="closeMobile()">Buttons</a>
-    <a href="#forms" class="--indent" onclick="closeMobile()">Formulare</a>
+    <a href="#buttons" onclick="closeMobile()">Atome &amp; Basis</a>
+    <a href="#buttons" class="--indent" onclick="closeMobile()">11 Buttons</a>
+    <a href="#section-12" class="--indent" onclick="closeMobile()">12 Badges &amp; Labels</a>
+    <a href="#section-13" class="--indent" onclick="closeMobile()">13 Formulare</a>
+    <a href="#section-14" class="--indent" onclick="closeMobile()">14 Icons &amp; icon-box</a>
+    <a href="#section-15" onclick="closeMobile()">Produktkarten</a>
+    <a href="#section-15" class="--indent" onclick="closeMobile()">15 Produktkarte</a>
+    <a href="#section-16" class="--indent" onclick="closeMobile()">16 Cart Item</a>
+    <a href="#section-17" class="--indent" onclick="closeMobile()">17 Product Thumb</a>
   </div>
   <div class="nav-col">
-    <a href="#nav-section" onclick="closeMobile()">Moleküle</a>
-    <a href="#actionable-input-section" class="--indent" onclick="closeMobile()">Actionable Input</a>
-    <a href="#nav-section" class="--indent" onclick="closeMobile()">Navigation</a>
-    <a href="#breadcrumb-section" class="--indent" onclick="closeMobile()">Breadcrumb</a>
-    <a href="#accordion-section" class="--indent" onclick="closeMobile()">Akkordeon / FAQ</a>
-    <a href="#tiles" class="--indent" onclick="closeMobile()">Kachel-Raster</a>
-    <a href="#tile-product" class="--indent" onclick="closeMobile()">Produktkarten</a>
-    <a href="#testimonials" class="--indent" onclick="closeMobile()">Testimonials</a>
+    <a href="#section-18" onclick="closeMobile()">Seitenstruktur</a>
+    <a href="#section-18" class="--indent" onclick="closeMobile()">18 Navigation &amp; Announcement</a>
+    <a href="#section-19" class="--indent" onclick="closeMobile()">19 Breadcrumb</a>
+    <a href="#section-20" class="--indent" onclick="closeMobile()">20 Footer</a>
+    <a href="#section-21" onclick="closeMobile()">Seiten-Layouts</a>
+    <a href="#section-21" class="--indent" onclick="closeMobile()">21 Section Types</a>
+    <a href="#section-22" class="--indent" onclick="closeMobile()">22 Kachel-Raster</a>
+    <a href="#section-23" class="--indent" onclick="closeMobile()">23 Tabs &amp; Akkordeon</a>
+    <a href="#section-24" class="--indent" onclick="closeMobile()">24 Testimonials</a>
+    <a href="#section-25" class="--indent" onclick="closeMobile()">25 Banner / Marquee</a>
   </div>
   <div class="nav-col">
-    <a href="#sections" onclick="closeMobile()">Organismen</a>
-    <a href="#sections" class="--indent" onclick="closeMobile()">Section Types</a>
-    <a href="#actionable-input-section" class="--indent" onclick="closeMobile()">Newsletter</a>
-    <a href="#footer-section" class="--indent" onclick="closeMobile()">Footer</a>
-    <a href="#marquee-section" class="--indent" onclick="closeMobile()">Banner / Marquee</a>
-    <a href="#cart-section" class="--indent" onclick="closeMobile()">Warenkorb-Drawer</a>
+    <a href="#section-26" onclick="closeMobile()">Shop-Seiten</a>
+    <a href="#section-26" class="--indent" onclick="closeMobile()">26 Produktdetailseite (PDP)</a>
+    <a href="#section-27" class="--indent" onclick="closeMobile()">27 Produktübersicht</a>
+    <a href="#section-28" class="--indent" onclick="closeMobile()">28 Warenkorb-Drawer</a>
+    <a href="#section-29" class="--indent" onclick="closeMobile()">29 Checkout</a>
+    <a href="#section-30" onclick="closeMobile()">Account &amp; Services</a>
+    <a href="#section-30" class="--indent" onclick="closeMobile()">30 Account-Seiten</a>
+    <a href="#section-31" class="--indent" onclick="closeMobile()">31 Suche</a>
+    <a href="#section-32" class="--indent" onclick="closeMobile()">32 Blog</a>
   </div>
   <div class="nav-col">
-    <a href="#pdp-section" onclick="closeMobile()">Templates</a>
-    <a href="#pdp-section" class="--indent" onclick="closeMobile()">Produktdetailseite</a>
-    <a href="#collection-section" class="--indent" onclick="closeMobile()">Produktübersicht</a>
-    <a href="#checkout-section" class="--indent" onclick="closeMobile()">Checkout</a>
-    <a href="#modal-section" class="--indent" onclick="closeMobile()">Modal / Pop-up</a>
-    <a href="#toast-section" class="--indent" onclick="closeMobile()">Toast / Notification</a>
+    <a href="#section-33" onclick="closeMobile()">Feedback &amp; Zust&#228;nde</a>
+    <a href="#section-33" class="--indent" onclick="closeMobile()">33 Modal / Pop-up</a>
+    <a href="#section-34" class="--indent" onclick="closeMobile()">34 Toast / Notification</a>
+    <a href="#section-35" class="--indent" onclick="closeMobile()">35 Empty States</a>
+    <a href="#section-36" class="--indent" onclick="closeMobile()">36 Out-of-Stock</a>
+    <a href="#section-37" class="--indent" onclick="closeMobile()">37 Pagination</a>
+    <a href="#section-38" onclick="closeMobile()">Legal</a>
+    <a href="#section-38" class="--indent" onclick="closeMobile()">38 Cookie-Banner</a>
   </div>
 </div>
 
@@ -102,7 +115,7 @@
 <div class="page">
 
   <header class="header">
-    <h1 class="mb-half">Styleguide</h1>
+    <h1>Styleguide</h1>
     <p>Ein logisches Design-System auf Basis von <code>1rem</code>, dem Faktor <code>1.5</code> und dem Grundmodul <code>3rem</code>. Typografie, Spacing und Grid leiten sich aus denselben Werten ab.</p>
   </header>
 
@@ -254,7 +267,15 @@
     <table class="spec-table">
       <tr>
         <th><code>.section-label</code></th>
-        <td>Utility-Klasse für Sektions-Labels. Nutzt das HTML-Tag für semantische Gewichtung (<code>h2</code> für Haupt-Sektionen, <code>h3</code> für Sub-Sektionen). Style: <code>font-size: var(--text-xs)</code> · uppercase · <code>letter-spacing: 0.15em</code> · <code>color: var(--fg-muted)</code> · <code>border-bottom: 1px solid var(--border)</code>. Definiert in <code>inuvet.css</code>.</td>
+        <td>Sektions-Label mit Border-Bottom und Abstand. <code>letter-spacing: 0.15em</code> · <code>border-bottom: 1px solid var(--border)</code> · <code>margin-bottom: var(--module)</code>.</td>
+      </tr>
+      <tr>
+        <th><code>.label-caps</code></th>
+        <td>Kompaktes Uppercase-Label ohne Border/Padding — für Varianten, Filter-Titel o.Ä. <code>font-size: var(--text-xs)</code> · <code>font-weight: 700</code> · uppercase · <code>letter-spacing: 0.05em</code> · <code>color: var(--fg-muted)</code>.</td>
+      </tr>
+      <tr>
+        <th><code>.product-thumb</code></th>
+        <td>Geteiltes Produkt-Vorschaubild-Atom. <code>5rem × 5rem</code> · <code>border: 1px solid var(--border-light)</code> · <code>overflow: hidden</code>. Kindbilder via <code>.product-thumb img</code> automatisch <code>object-fit: cover</code>. Genutzt von <code>.cart-item__image</code> und <code>.search-result__image</code>.</td>
       </tr>
       <tr>
         <th><code>.sg-section</code></th>
@@ -337,60 +358,7 @@
       <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>700 · uppercase · ls 0.05em</span></div><div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;"><div class="badge" data-cat="herz">Herz</div><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge" data-cat="stress">Stress</div><div class="badge --dark">Neu</div><div class="badge --sale">Sale</div></div></div>
     </div>
 
-    <h3 class="sg-h3 --top">Icons</h3>
-    <p class="sg-p">Google Material Icons (Outlined) als Standard-Icon-Set. Einbindung via Google Fonts CDN. Größe orientiert sich am Kontext: <code>1rem</code> inline, <code>1.25rem</code> in Buttons/Navigation, <code>2.25rem</code> als Feature-Icon.</p>
-
-    <table class="spec-table">
-      <tr><th>Set</th><td>Google Material Icons · <code>font-family: 'Material Icons'</code></td></tr>
-      <tr><th>Größen</th><td><code>1rem</code> (inline/Sterne) · <code>1.25rem</code> (Nav/Buttons/Accordion) · <code>2.25rem</code> (Upload/Feature)</td></tr>
-      <tr><th>Farbe</th><td>Erbt <code>color</code> vom Elternelement. Standard: <code>--fg</code>. Sekundär: <code>--fg-muted</code>.</td></tr>
-      <tr><th>Ausrichtung</th><td>Vertikal zentriert zum Text via <code>vertical-align: middle</code> oder Flex-Alignment.</td></tr>
-    </table>
-
-    <div class="demo-label">Navigation &amp; UI</div>
-    <div class="icon-grid">
-      <div class="icon-demo"><span class="material-icons">menu</span><div>menu</div></div>
-      <div class="icon-demo"><span class="material-icons">close</span><div>close</div></div>
-      <div class="icon-demo"><span class="material-icons">search</span><div>search</div></div>
-      <div class="icon-demo"><span class="material-icons">person</span><div>person</div></div>
-      <div class="icon-demo"><span class="material-icons">expand_more</span><div>expand_more</div></div>
-      <div class="icon-demo"><span class="material-icons">arrow_back</span><div>arrow_back</div></div>
-      <div class="icon-demo"><span class="material-icons">arrow_forward</span><div>arrow_forward</div></div>
-      <div class="icon-demo"><span class="material-icons">chevron_right</span><div>chevron_right</div></div>
-    </div>
-
-    <div class="demo-label">Shop</div>
-    <div class="icon-grid">
-      <div class="icon-demo"><span class="material-icons">shopping_cart</span><div>shopping_cart</div></div>
-      <div class="icon-demo"><span class="material-icons">favorite_border</span><div>favorite_border</div></div>
-      <div class="icon-demo"><span class="material-icons">star</span><div>star</div></div>
-      <div class="icon-demo"><span class="material-icons">star_border</span><div>star_border</div></div>
-      <div class="icon-demo"><span class="material-icons">local_shipping</span><div>local_shipping</div></div>
-      <div class="icon-demo"><span class="material-icons">inventory_2</span><div>inventory_2</div></div>
-      <div class="icon-demo"><span class="material-icons">percent</span><div>percent</div></div>
-      <div class="icon-demo"><span class="material-icons">storefront</span><div>storefront</div></div>
-    </div>
-
-    <div class="demo-label">Formular &amp; Feedback</div>
-    <div class="icon-grid">
-      <div class="icon-demo"><span class="material-icons">cloud_upload</span><div>cloud_upload</div></div>
-      <div class="icon-demo"><span class="material-icons">check_circle</span><div>check_circle</div></div>
-      <div class="icon-demo"><span class="material-icons">error_outline</span><div>error_outline</div></div>
-      <div class="icon-demo"><span class="material-icons">info</span><div>info</div></div>
-      <div class="icon-demo"><span class="material-icons">visibility</span><div>visibility</div></div>
-      <div class="icon-demo"><span class="material-icons">visibility_off</span><div>visibility_off</div></div>
-      <div class="icon-demo"><span class="material-icons">add</span><div>add</div></div>
-      <div class="icon-demo"><span class="material-icons">remove</span><div>remove</div></div>
-    </div>
-
-    <div class="demo-label">Social &amp; Kontakt</div>
-    <div class="icon-grid">
-      <div class="icon-demo"><span class="material-icons">email</span><div>email</div></div>
-      <div class="icon-demo"><span class="material-icons">phone</span><div>phone</div></div>
-      <div class="icon-demo"><span class="material-icons">place</span><div>place</div></div>
-      <div class="icon-demo"><span class="material-icons">share</span><div>share</div></div>
-    </div>
-    <p class="demo-note">Kuratierter Satz für den Shop. Weitere Icons: <a href="https://fonts.google.com/icons" target="_blank">fonts.google.com/icons</a>. Nur <code>Material Icons</code> (Filled) verwenden — keine anderen Varianten mischen.</p>
+    <p class="sg-p">Die vollständige Icon-Galerie ist in <a href="#section-14">14 — Icons &amp; icon-box</a> dokumentiert.</p>
 
     <h3 class="sg-h3 --top-xl">Rich Text Editor (CMS Content)</h3>
     <p class="sg-p">Texte aus dem Shopify-Backend (Seiten, Blogbeiträge, Produktbeschreibungen) haben keine Utility-Klassen. Der Wrapper <code>.rte</code> sorgt dafür, dass Standard-HTML-Tags automatisch den korrekten vertikalen Rhythmus erhalten.</p>
@@ -658,13 +626,93 @@
 
   </section>
 
+  <!-- ── ATOME & BASIS-KOMPONENTEN ────────────────────── -->
 
+  <section class="sg-section" id="section-12">
+    <h2 class="section-label">12 — Badges &amp; Labels</h2>
 
-  <!-- ═══════════════════════════════════════════
-       09 FORMULARE
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="forms">
-    <h2 class="section-label">12 — Formulare</h2>
+    <!-- ── Rating ── -->
+    <h3 class="sg-h3 --top">Rating</h3>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p><code>.rating</code> nutzt Material Icons <code>star</code> / <code>star_border</code>. Leere Sterne via <code>.material-icons.--empty</code>. Optionale Textzahl direkt im Container.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.rating</code></th><td>Flex, <code>gap: 0.25rem</code>, <code>font-size: var(--text-xs)</code>, <code>color: var(--fg-muted)</code></td></tr>
+      <tr><th><code>.rating .material-icons</code></th><td><code>font-size: 1rem</code>, <code>color: var(--fg)</code></td></tr>
+      <tr><th><code>.rating .material-icons.--empty</code></th><td><code>color: var(--border-light)</code> — leerer Stern</td></tr>
+    </table>
+    <div class="demo-label">Varianten</div>
+    <div class="sg-demo-stack">
+      <div class="rating">
+        <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+        <span>5,0</span>
+      </div>
+      <div class="rating">
+        <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+        <span>4,0</span>
+      </div>
+      <div class="rating">
+        <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+        <span>4,2 · 128 Bewertungen</span>
+      </div>
+    </div>
+
+    <!-- ── Badge ── -->
+    <h3 class="sg-h3 --top">Badge</h3>
+    <div class="rules">
+      <div class="rule"><h4>Varianten</h4><p>Basis <code>.badge</code> für Kategorie-Labels via <code>data-cat</code>. Status-Varianten <code>.--dark</code> (Neu) und <code>.--sale</code>. Zähler-Variante <code>.--count</code> für Icon-Badges.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.badge</code> + <code>data-cat</code></th><td>Hintergrund aus Kategorie-Token, Schrift schwarz</td></tr>
+      <tr><th><code>.badge.--dark</code></th><td>Schwarz gefüllt, weiße Schrift — für "Neu"-Labels</td></tr>
+      <tr><th><code>.badge.--sale</code></th><td>Grün gefüllt, weiße Schrift — für Sale-Labels</td></tr>
+      <tr><th><code>.badge.--count</code></th><td>Runder Zähler, <code>border-radius: 50%</code> — für Icon-Badges</td></tr>
+    </table>
+    <div class="demo-label">Kategorie-Badges</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+      <div class="badge" data-cat="gelenke">Gelenke</div>
+      <div class="badge" data-cat="stress">Stress</div>
+      <div class="badge" data-cat="herz">Herz</div>
+      <div class="badge" data-cat="haut">Haut</div>
+      <div class="badge" data-cat="cbd">CBD</div>
+      <div class="badge" data-cat="immun">Immun</div>
+      <div class="badge" data-cat="magendarm">Magendarm</div>
+    </div>
+    <div class="demo-label" style="margin-top:var(--half-module);">Status-Badges</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+      <div class="badge --dark">Neu</div>
+      <div class="badge --sale">Sale</div>
+    </div>
+    <div class="demo-label" style="margin-top:var(--half-module);">Count-Badge (in .icon-badged)</div>
+    <div class="sg-btn-row">
+      <button class="btn --icon icon-badged" aria-label="Warenkorb 3 Artikel"><span class="material-icons">shopping_cart</span><span class="badge --count">3</span></button>
+      <button class="btn --icon icon-badged" aria-label="Warenkorb 12 Artikel"><span class="material-icons">shopping_cart</span><span class="badge --count">12</span></button>
+      <button class="btn --icon icon-badged" aria-label="Warenkorb 99+ Artikel"><span class="material-icons">shopping_cart</span><span class="badge --count">99</span></button>
+    </div>
+
+    <!-- ── Wishlist ── -->
+    <h3 class="sg-h3 --top">Wishlist-Button</h3>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p><code>.pdp__wishlist</code> kombiniert <code>.icon-box.--md</code> für Größe/Ausrichtung. Aktiv-Zustand über JS-Toggle (Icon wechselt auf <code>favorite</code>). Border-Farbe als Feedback.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.pdp__wishlist</code></th><td>Nutzt <code>.icon-box.--md</code> · kein Hintergrund · Border <code>var(--border-light)</code></td></tr>
+      <tr><th><code>.pdp__wishlist:hover</code></th><td>Border-Farbe wechselt auf <code>var(--border-active)</code></td></tr>
+    </table>
+    <div class="demo-label">Inaktiv / Aktiv</div>
+    <div class="sg-btn-row">
+      <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste">
+        <span class="material-icons">favorite_border</span>
+      </button>
+      <button class="pdp__wishlist icon-box --md" type="button" aria-label="Von Wunschliste entfernen" style="border-color:var(--border-active);">
+        <span class="material-icons">favorite</span>
+      </button>
+    </div>
+    <p class="demo-note">Links: inaktiv (Outline-Herz). Rechts: aktiv (gefülltes Herz, Border dunkel). Toggle via JS.</p>
+  </section>
+
+  <section class="sg-section" id="section-13">
+    <h2 class="section-label">13 — Formulare</h2>
 
     <div class="rules">
       <div class="rule">
@@ -694,7 +742,7 @@
     <div class="demo-label">Floating Label — Text Input</div>
     <div class="sg-form-demo">
       <div class="form-field">
-        <input type="text" id="demo-name" placeholder=" ">
+        <input type="text" id="demo-name" placeholder="">
         <label for="demo-name">Vollständiger Name</label>
       </div>
     </div>
@@ -704,12 +752,12 @@
     <div class="demo-label">Error State</div>
     <div class="sg-form-demo">
       <div class="form-field --error">
-        <input type="email" id="demo-error-email" placeholder=" " value="keine-gültige@">
+        <input type="email" id="demo-error-email" placeholder="" value="keine-gültige@">
         <label for="demo-error-email">Email</label>
         <p class="form-field__error">Bitte gib eine gültige E-Mail-Adresse ein.</p>
       </div>
       <div class="form-field --error">
-        <input type="text" id="demo-error-name" placeholder=" ">
+        <input type="text" id="demo-error-name" placeholder="">
         <label for="demo-error-name">Vollständiger Name</label>
         <p class="form-field__error">Dieses Feld ist erforderlich.</p>
       </div>
@@ -720,7 +768,7 @@
     <div class="demo-label">Success State</div>
     <div class="sg-form-demo">
       <div class="form-field --success">
-        <input type="email" id="demo-success-email" placeholder=" " value="max@muster.de">
+        <input type="email" id="demo-success-email" placeholder="" value="max@muster.de">
         <label for="demo-success-email">Email</label>
         <p class="form-field__success"><span class="material-icons">check_circle</span> E-Mail-Adresse wurde bestätigt.</p>
       </div>
@@ -731,7 +779,7 @@
     <div class="demo-label">Email Input</div>
     <div class="sg-form-demo">
       <div class="form-field">
-        <input type="email" id="demo-email" placeholder=" ">
+        <input type="email" id="demo-email" placeholder="">
         <label for="demo-email">Email</label>
       </div>
     </div>
@@ -741,19 +789,19 @@
     <div class="demo-label">Formular-Grid (2 Spalten)</div>
     <div class="form-grid">
       <div class="form-field">
-        <input type="text" id="demo-vorname" placeholder=" ">
+        <input type="text" id="demo-vorname" placeholder="">
         <label for="demo-vorname">Vorname</label>
       </div>
       <div class="form-field">
-        <input type="text" id="demo-nachname" placeholder=" ">
+        <input type="text" id="demo-nachname" placeholder="">
         <label for="demo-nachname">Nachname</label>
       </div>
       <div class="form-field">
-        <input type="email" id="demo-email2" placeholder=" ">
+        <input type="email" id="demo-email2" placeholder="">
         <label for="demo-email2">Email</label>
       </div>
       <div class="form-field">
-        <input type="tel" id="demo-tel" placeholder=" ">
+        <input type="tel" id="demo-tel" placeholder="">
         <label for="demo-tel">Telefon</label>
       </div>
     </div>
@@ -763,7 +811,7 @@
     <div class="demo-label">Textarea</div>
     <div class="sg-form-demo">
       <div class="form-field">
-        <textarea id="demo-msg" placeholder=" "></textarea>
+        <textarea id="demo-msg" placeholder=""></textarea>
         <label for="demo-msg">Nachricht</label>
       </div>
     </div>
@@ -847,16 +895,16 @@
     <div class="sg-form-demo --wide">
       <div class="form-grid">
         <div class="form-field">
-          <input type="text" id="demo-k-vorname" placeholder=" ">
+          <input type="text" id="demo-k-vorname" placeholder="">
           <label for="demo-k-vorname">Vorname</label>
         </div>
         <div class="form-field">
-          <input type="text" id="demo-k-nachname" placeholder=" ">
+          <input type="text" id="demo-k-nachname" placeholder="">
           <label for="demo-k-nachname">Nachname</label>
         </div>
       </div>
       <div class="form-field">
-        <input type="email" id="demo-k-email" placeholder=" ">
+        <input type="email" id="demo-k-email" placeholder="">
         <label for="demo-k-email">Email</label>
       </div>
       <div class="form-field">
@@ -869,16 +917,14 @@
         <label for="demo-k-betreff">Betreff</label>
       </div>
       <div class="form-field">
-        <textarea id="demo-k-msg" placeholder=" "></textarea>
+        <textarea id="demo-k-msg" placeholder=""></textarea>
         <label for="demo-k-msg">Nachricht</label>
       </div>
       <label class="form-check">
         <input type="checkbox">
         <span>Ich akzeptiere die Datenschutzerklärung</span>
       </label>
-      <div class="mt-half">
-        <a class="btn --primary">Absenden</a>
-      </div>
+      <a class="btn --primary">Absenden</a>
     </div>
     <p class="demo-note">Komplettes Kontaktformular mit Grid, Floating Labels, Select, Textarea, Checkbox und Primary-Button.</p>
 
@@ -887,20 +933,20 @@
     <div class="--on-green sg-form-demo --wide sg-bg-green">
       <div class="form-grid">
         <div class="form-field">
-          <input type="text" id="demo-g-vorname" placeholder=" ">
+          <input type="text" id="demo-g-vorname" placeholder="">
           <label for="demo-g-vorname">Vorname</label>
         </div>
         <div class="form-field">
-          <input type="text" id="demo-g-nachname" placeholder=" ">
+          <input type="text" id="demo-g-nachname" placeholder="">
           <label for="demo-g-nachname">Nachname</label>
         </div>
       </div>
       <div class="form-field">
-        <input type="email" id="demo-g-email" placeholder=" ">
+        <input type="email" id="demo-g-email" placeholder="">
         <label for="demo-g-email">Email</label>
       </div>
       <div class="form-field">
-        <textarea id="demo-g-msg" placeholder=" "></textarea>
+        <textarea id="demo-g-msg" placeholder=""></textarea>
         <label for="demo-g-msg">Nachricht</label>
       </div>
       <div class="form-upload">
@@ -913,23 +959,21 @@
         <input type="checkbox">
         <span>Ich akzeptiere die Datenschutzerklärung</span>
       </label>
-      <div class="mt-half">
-        <a class="btn --primary">Absenden</a>
-      </div>
+      <a class="btn --primary">Absenden</a>
     </div>
     <p class="demo-note">Gleiche Formular-Elemente auf <code>--green-light</code> Hintergrund. Labels und Input-Hintergründe passen sich an, damit die Floating-Label-Animation sauber funktioniert.</p>
 
     <div class="demo-label">Komplexes Formular (mit Zwischenrubriken)</div>
     <div class="sg-form-demo --wide">
-      <div class="checkout__block">
+      <div>
         <h3 class="section-label">Persönliche Daten</h3>
         <div class="form-grid">
-          <div class="form-field"><input type="text" id="demo-c-vorname" placeholder=" "><label for="demo-c-vorname">Vorname</label></div>
-          <div class="form-field"><input type="text" id="demo-c-nachname" placeholder=" "><label for="demo-c-nachname">Nachname</label></div>
-          <div class="form-field" style="grid-column: span 2"><input type="email" id="demo-c-email" placeholder=" "><label for="demo-c-email">E-Mail-Adresse</label></div>
+          <div class="form-field"><input type="text" id="demo-c-vorname" placeholder=""><label for="demo-c-vorname">Vorname</label></div>
+          <div class="form-field"><input type="text" id="demo-c-nachname" placeholder=""><label for="demo-c-nachname">Nachname</label></div>
+          <div class="form-field" style="grid-column: span 2"><input type="email" id="demo-c-email" placeholder=""><label for="demo-c-email">E-Mail-Adresse</label></div>
         </div>
       </div>
-      <div class="checkout__block">
+      <div>
         <h3 class="section-label">Versandart</h3>
         <div class="tile-grid" style="gap: var(--half-module); margin-bottom: var(--half-module);">
           <button class="choice-box --block --active" type="button">
@@ -947,19 +991,129 @@
 
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       10 NAVIGATION
-       ═══════════════════════════════════════════ -->
-  <!-- 10b Globale Moleküle -->
-  <section class="sg-section" id="global-molecules">
-    <h2 class="section-label">13 — Globale Moleküle</h2>
+  <section class="sg-section" id="section-14">
+    <h2 class="section-label">14 — Icons &amp; icon-box</h2>
 
     <div class="rules">
       <div class="rule">
-        <h4>Prinzip</h4>
-        <p>Diese Atome werden in mehreren Contexts eingesetzt und leben im globalen Stylesheet — nicht in einer Page-spezifischen Sektion. In Shopify: <code>{% render 'price-stack', product: product %}</code>.</p>
+        <h4>Icon-Set</h4>
+        <p>Google Material Icons (Filled) als Standard. Einbindung via Google Fonts CDN. Größe richtet sich nach Kontext: <code>1rem</code> inline, <code>1.25rem</code> in Buttons/Navigation, <code>2.25rem</code> als Feature-Icon.</p>
+      </div>
+      <div class="rule">
+        <h4>icon-box</h4>
+        <p>Quadratischer Flex-Container <code>.icon-box</code> in vier Stufen: <code>--sm</code> (2.5rem), <code>--md</code> (2.75rem), Basis (3rem), <code>--lg</code> (5rem). Für Badge-Zähler: Wrapper <code>.icon-badged</code> positioniert <code>.badge.--count</code> automatisch oben rechts.</p>
       </div>
     </div>
+
+    <h3 class="sg-h3">Icon-Galerie</h3>
+    <table class="spec-table">
+      <tr><th>Set</th><td>Google Material Icons · <code>font-family: 'Material Icons'</code></td></tr>
+      <tr><th>Größen</th><td><code>1rem</code> (inline/Sterne) · <code>1.25rem</code> (Nav/Buttons/Accordion) · <code>2.25rem</code> (Upload/Feature)</td></tr>
+      <tr><th>Farbe</th><td>Erbt <code>color</code> vom Elternelement. Standard: <code>--fg</code>. Sekundär: <code>--fg-muted</code>.</td></tr>
+      <tr><th>Ausrichtung</th><td>Vertikal zentriert zum Text via <code>vertical-align: middle</code> oder Flex-Alignment.</td></tr>
+    </table>
+
+    <div class="demo-label">Navigation &amp; UI</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">menu</span><div>menu</div></div>
+      <div class="icon-demo"><span class="material-icons">close</span><div>close</div></div>
+      <div class="icon-demo"><span class="material-icons">search</span><div>search</div></div>
+      <div class="icon-demo"><span class="material-icons">person</span><div>person</div></div>
+      <div class="icon-demo"><span class="material-icons">expand_more</span><div>expand_more</div></div>
+      <div class="icon-demo"><span class="material-icons">arrow_back</span><div>arrow_back</div></div>
+      <div class="icon-demo"><span class="material-icons">arrow_forward</span><div>arrow_forward</div></div>
+      <div class="icon-demo"><span class="material-icons">chevron_right</span><div>chevron_right</div></div>
+    </div>
+
+    <div class="demo-label">Shop</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">shopping_cart</span><div>shopping_cart</div></div>
+      <div class="icon-demo"><span class="material-icons">favorite_border</span><div>favorite_border</div></div>
+      <div class="icon-demo"><span class="material-icons">star</span><div>star</div></div>
+      <div class="icon-demo"><span class="material-icons">star_border</span><div>star_border</div></div>
+      <div class="icon-demo"><span class="material-icons">local_shipping</span><div>local_shipping</div></div>
+      <div class="icon-demo"><span class="material-icons">inventory_2</span><div>inventory_2</div></div>
+      <div class="icon-demo"><span class="material-icons">percent</span><div>percent</div></div>
+      <div class="icon-demo"><span class="material-icons">storefront</span><div>storefront</div></div>
+    </div>
+
+    <div class="demo-label">Formular &amp; Feedback</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">cloud_upload</span><div>cloud_upload</div></div>
+      <div class="icon-demo"><span class="material-icons">check_circle</span><div>check_circle</div></div>
+      <div class="icon-demo"><span class="material-icons">error_outline</span><div>error_outline</div></div>
+      <div class="icon-demo"><span class="material-icons">info</span><div>info</div></div>
+      <div class="icon-demo"><span class="material-icons">visibility</span><div>visibility</div></div>
+      <div class="icon-demo"><span class="material-icons">visibility_off</span><div>visibility_off</div></div>
+      <div class="icon-demo"><span class="material-icons">add</span><div>add</div></div>
+      <div class="icon-demo"><span class="material-icons">remove</span><div>remove</div></div>
+    </div>
+
+    <div class="demo-label">Social &amp; Kontakt</div>
+    <div class="icon-grid">
+      <div class="icon-demo"><span class="material-icons">email</span><div>email</div></div>
+      <div class="icon-demo"><span class="material-icons">phone</span><div>phone</div></div>
+      <div class="icon-demo"><span class="material-icons">place</span><div>place</div></div>
+      <div class="icon-demo"><span class="material-icons">share</span><div>share</div></div>
+    </div>
+    <p class="demo-note">Kuratierter Satz für den Shop. Weitere Icons: <a href="https://fonts.google.com/icons" target="_blank">fonts.google.com/icons</a>. Nur <code>Material Icons</code> (Filled) verwenden — keine anderen Varianten mischen.</p>
+
+    <h3 class="sg-h3 --top">icon-box &amp; icon-badged</h3>
+    <table class="spec-table">
+      <tr><th><code>.icon-box</code></th><td>Quadratischer Flex-Container, zentriert · Basisgröße <code>var(--module)</code> (3rem)</td></tr>
+      <tr><th><code>.icon-box.--sm</code></th><td><code>calc(var(--base) * 2.5)</code> — z.B. Quick-Add-Button auf Tiles</td></tr>
+      <tr><th><code>.icon-box.--md</code></th><td><code>calc(var(--base) * 2.75)</code> — z.B. Wishlist-Button auf PDP</td></tr>
+      <tr><th><code>.icon-box.--lg</code></th><td><code>calc(var(--base) * 5)</code> — z.B. Query-Icon in Suchergebnissen</td></tr>
+      <tr><th><code>.icon-badged</code></th><td>Wrapper mit <code>position: relative</code> — Badge-Anker für <code>.badge.--count</code></td></tr>
+      <tr><th><code>.badge.--count</code></th><td>Runder Zähler-Badge · grün · absolut positioniert oben rechts innerhalb <code>.icon-badged</code></td></tr>
+    </table>
+
+    <div class="demo-label">Icon-Box Größen — <code>.icon-box</code> + Modifier</div>
+    <div class="sg-btn-row" style="align-items:flex-end;">
+      <div>
+        <div class="icon-box --sm" style="border:1px solid var(--border-light);"><span class="material-icons">favorite</span></div>
+        <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">--sm · 2.5rem</div>
+      </div>
+      <div>
+        <div class="icon-box --md" style="border:1px solid var(--border-light);"><span class="material-icons">favorite</span></div>
+        <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">--md · 2.75rem</div>
+      </div>
+      <div>
+        <div class="icon-box" style="border:1px solid var(--border-light);"><span class="material-icons">favorite</span></div>
+        <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">base · 3rem</div>
+      </div>
+      <div>
+        <div class="icon-box --lg" style="border:1px solid var(--border-light);"><span class="material-icons">favorite</span></div>
+        <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">--lg · 5rem</div>
+      </div>
+    </div>
+    <p class="demo-note">Alle vier Stufen im Vergleich. Border nur zur Visualisierung der Fläche.</p>
+
+    <div class="demo-label">Icon mit Badge-Count — <code>.icon-badged</code></div>
+    <div class="sg-btn-row">
+      <div>
+        <div class="icon-badged">
+          <span class="material-icons">shopping_cart</span>
+          <span class="badge --count">3</span>
+        </div>
+        <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">Standard</div>
+      </div>
+      <div>
+        <div class="icon-badged">
+          <span class="material-icons">shopping_cart</span>
+          <span class="badge --count">12</span>
+        </div>
+        <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">Zweistellig</div>
+      </div>
+      <div>
+        <div class="icon-badged">
+          <span class="material-icons">shopping_cart</span>
+          <span class="badge --count">128</span>
+        </div>
+        <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">Dreistellig</div>
+      </div>
+    </div>
+    <p class="demo-note">Hover über den Icon — Badge skaliert auf 1.2×</p>
 
     <div class="sg-demo-stack">
 
@@ -1013,8 +1167,387 @@
     </div>
   </section>
 
-  <section class="sg-section" id="nav-section">
-    <h2 class="section-label">14 — Announcement Bar &amp; Navigation</h2>
+  <!-- ── PRODUKTKARTEN ───────────────────────────────── -->
+
+    <!-- ═══════════════════════════════════════════
+       15 PRODUKTKARTE
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="section-15">
+    <h2 class="section-label">15 — Produktkarte</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Shopify-ready</h4>
+        <p>Bild, Produktname, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid (<code>.tile-grid</code>). Entspricht Variante D der Kachel-Raster-Sektion.</p>
+      </div>
+      <div class="rule">
+        <h4>Klassen-Übersicht</h4>
+        <p>Basisklassen: <code>.tile.--product</code>, <code>.tile__image-wrap</code>, <code>.floating-meta</code>, <code>.tile__image</code>, <code>.tile__cart</code>, <code>.tile__cart-icon</code>, <code>.tile__headline</code>, <code>.tile__description</code>, <code>.tile__price</code>.</p>
+      </div>
+    </div>
+
+    <!-- Produktkarten -->
+    <h3 id="tile-product" class="sg-h3 --top">Produktkarten (Variante D)</h3>
+    <p class="sg-p --mb">Shopify-ready. Bild, Produktname, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid.</p>
+
+    <table class="spec-table">
+      <tr><th>Bild</th><td>Quadratisch (<code>1:1</code>). Bei Hover: „In den Warenkorb"-Button gleitet von unten ins Bild.</td></tr>
+      <tr><th>Badge</th><td>Optional. Position: oben links auf dem Bild. Varianten: Standard (schwarz) und Sale (grün).</td></tr>
+      <tr><th>Kategorie-Badge</th><td>Optional. <code>.badge</code> mit <code>data-cat="…"</code> im <code>.floating-meta</code>-Container. Nur Hintergrund in Kategoriefarbe (light), Schrift schwarz. Wird als erstes Badge gestapelt, Status-Badges (Neu, Sale) folgen dahinter.</td></tr>
+      <tr><th>Beschreibung</th><td>Optional. Unter dem Produktnamen, <code>--text-xs</code>, <code>--fg-muted</code>.</td></tr>
+      <tr><th>Preis</th><td>Bold. Bei Sale: alter Preis durchgestrichen daneben.</td></tr>
+      <tr><th>Button</th><td>Secondary-Style. Desktop: erscheint bei Hover als Overlay am unteren Bildrand (<code>0.25s ease</code>). Mobile: stattdessen permanentes Warenkorb-Icon (Material Icons) oben rechts auf dem Bild.</td></tr>
+    </table>
+
+    <div class="demo-label">4-Spalter — Produktkarten</div>
+    <div class="tile-grid --cols-4 --mb">
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="herz">Herz</div>
+            <div class="badge --dark">Neu</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname Eins</h3>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="cbd">CBD</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname Zwei</h3>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="stress">Stress</div>
+            <div class="badge --sale">Sale</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname Drei</h3>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="gelenke">Gelenke</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname Vier</h3>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div>
+      </div>
+    </div>
+    <p class="demo-note">Hover über ein Produktbild: Button gleitet von unten ein. Badges, Beschreibung und Preis darunter.</p>
+
+    <div class="demo-label">3-Spalter — Produktkarten</div>
+    <div class="tile-grid --cols-3 --mb">
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="bauchspeichel">Bauchspeicheldrüse</div>
+            <div class="badge --dark">Neu</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname mit einem etwas längeren Titel</h3>
+        <div class="tile__description">Eine etwas ausführlichere Beschreibung des Produkts mit mehr Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>59,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.7</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="leber">Leber</div>
+            <div class="badge --sale">Sale</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname Sechs</h3>
+        <div class="tile__description">Kurze Produktbeschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>24,90 €</span><span class="--old">49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.1</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="magendarm">Magen/Darm</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname Sieben</h3>
+        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
+        <div class="tile__price"><div class="price-stack"><span>39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
+      </div>
+    </div>
+    <p class="demo-note">3-Spalter. Produktname und Beschreibung dürfen mehrzeilig sein.</p>
+
+    <div class="demo-label">4-Spalter — Mix mit Sonderkachel</div>
+    <div class="tile-grid --cols-4 --mb">
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="haut">Haut</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__description">Kurze Beschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.8</div></div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="atemwege">Atemwege</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__description">Kurze Beschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.3</div></div>
+      </div>
+      <div class="tile --featured">
+        <h3 class="tile__headline">Entdecke unsere Neuheiten</h3>
+        <div class="tile__bottom">
+          <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+          <div class="btn --primary">Alle Produkte</div>
+        </div>
+      </div>
+      <div class="tile --product">
+          <div class="tile__image-wrap">
+          <div class="floating-meta">
+            <div class="badge" data-cat="niere">Niere</div>
+            <div class="badge --sale">Sale</div>
+          </div>
+          <div class="tile__image placeholder-bg"></div>
+          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
+          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
+        </div>
+        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__description">Kurze Beschreibung.</div>
+        <div class="tile__price"><div class="price-stack"><span>14,90 €</span><span class="--old">29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
+      </div>
+    </div>
+    <p class="demo-note">Produktkarten gemischt mit Sonderkachel — flexibel einsetzbar.</p>
+
+  </section>
+
+  <section class="sg-section" id="section-16">
+    <h2 class="section-label">16 — Cart Item</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Verwendung</h4>
+        <p>Wiederverwendbares Muster für Produktzeilen. Genutzt in: Warenkorb-Drawer, Suchergebnisse, Checkout, Bundle Builder. Basis ist immer <code>.cart-item</code> (Grid: <code>5rem + 1fr</code>).</p>
+      </div>
+      <div class="rule">
+        <h4>Erweiterungen</h4>
+        <p><code>.product-thumb-wrap</code> — Wrapper mit <code>position: relative</code> für <code>.floating-meta</code> Overlay. <code>.cart-item__counter</code> — Flex-Zeile für <code>.qty-selector</code> + optionalen Inline-Badge.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Basis</th><td><code>.cart-item</code> + <code>.product-thumb</code> + <code>.cart-item__info</code> + <code>.cart-item__top</code></td></tr>
+      <tr><th>Mit Menge</th><td><code>.cart-item__bottom</code> + <code>.qty-selector.--sm</code></td></tr>
+      <tr><th>Mit Badge-Overlay</th><td><code>.product-thumb-wrap</code> (statt <code>.product-thumb</code> direkt) + <code>.floating-meta</code> darin</td></tr>
+      <tr><th>Counter + Badge</th><td><code>.cart-item__counter</code> wrapping <code>.qty-selector.--sm</code> + inline Badge</td></tr>
+    </table>
+
+    <div class="demo-label">1 — Basis (.cart-item)</div>
+    <div class="sg-demo-pad">
+      <div style="max-width: 28rem;">
+        <div class="cart-item">
+          <div class="product-thumb placeholder-bg"></div>
+          <div class="cart-item__info">
+            <div class="cart-item__top">
+              <div>
+                <p class="cart-item__name">FloraComplex</p>
+                <div class="cart-item__variant">29,90 € / Stk.</div>
+              </div>
+              <button type="button" class="btn --icon cart-item__remove" aria-label="Entfernen">
+                <span class="material-icons">close</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-label">2 — Mit Mengenauswahl (.cart-item__bottom + .qty-selector.--sm)</div>
+    <div class="sg-demo-pad">
+      <div style="max-width: 28rem;">
+        <div class="cart-item">
+          <div class="product-thumb placeholder-bg"></div>
+          <div class="cart-item__info">
+            <div class="cart-item__top">
+              <div>
+                <p class="cart-item__name">FloraComplex</p>
+                <div class="cart-item__variant">29,90 € / Stk.</div>
+              </div>
+              <button type="button" class="btn --icon cart-item__remove" aria-label="Entfernen">
+                <span class="material-icons">close</span>
+              </button>
+            </div>
+            <div class="cart-item__bottom">
+              <div class="qty-selector --sm">
+                <button type="button" class="qty-selector__btn"><span class="material-icons">remove</span></button>
+                <input class="qty-selector__input" type="number" value="8" min="1">
+                <button type="button" class="qty-selector__btn"><span class="material-icons">add</span></button>
+              </div>
+              <span class="cart-item__qty-text">239,20 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-label">3 — Mit Badge-Overlay (.product-thumb-wrap + .floating-meta)</div>
+    <div class="sg-demo-pad">
+      <div style="max-width: 28rem;">
+        <div class="cart-item">
+          <div class="product-thumb-wrap">
+            <div class="product-thumb placeholder-bg"></div>
+            <div class="floating-meta" style="top:0; left:0;">
+              <span class="badge --free">+3 gratis</span>
+            </div>
+          </div>
+          <div class="cart-item__info">
+            <div class="cart-item__top">
+              <div>
+                <p class="cart-item__name">FloraComplex</p>
+                <div class="cart-item__variant">29,90 € / Stk.</div>
+              </div>
+              <button type="button" class="btn --icon cart-item__remove" aria-label="Entfernen">
+                <span class="material-icons">close</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-label">4 — Vollständig (.cart-item__counter + Overlay)</div>
+    <div class="sg-demo-pad">
+      <div style="max-width: 28rem;">
+        <div class="cart-item">
+          <div class="product-thumb-wrap">
+            <div class="product-thumb placeholder-bg"></div>
+            <div class="floating-meta" style="top:0; left:0;">
+              <span class="badge --free">+3 gratis</span>
+            </div>
+          </div>
+          <div class="cart-item__info">
+            <div class="cart-item__top">
+              <div>
+                <p class="cart-item__name">FloraComplex</p>
+                <div class="cart-item__variant">29,90 € / Stk.</div>
+              </div>
+              <button type="button" class="btn --icon cart-item__remove" aria-label="Entfernen">
+                <span class="material-icons">close</span>
+              </button>
+            </div>
+            <div class="cart-item__bottom">
+              <div class="cart-item__counter">
+                <div class="qty-selector --sm">
+                  <button type="button" class="qty-selector__btn"><span class="material-icons">remove</span></button>
+                  <input class="qty-selector__input" type="number" value="16" min="1">
+                  <button type="button" class="qty-selector__btn"><span class="material-icons">add</span></button>
+                </div>
+                <span class="badge">Letzte 6 Monate: 12×</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ═══════════════════════════════════════════
+       17 PRODUCT THUMB
+       ═══════════════════════════════════════════ -->
+  <section class="sg-section" id="section-17">
+    <h2 class="section-label">17 — Product Thumb</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Atom</h4>
+        <p><code>.product-thumb</code> ist ein eigenständiges Atom: ein quadratisches Vorschaubild (<code>5rem × 5rem</code>) mit <code>border: 1px solid var(--border-light)</code> und <code>overflow: hidden</code>. Kindbilder via <code>img</code> automatisch <code>object-fit: cover</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Verwendung</h4>
+        <p>Genutzt in <code>.cart-item__image</code>, <code>.search-result__image</code> und überall wo kompakte quadratische Produktbilder benötigt werden. Kombinierbar mit <code>.product-thumb-wrap</code> für Badge-Overlays.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th><code>.product-thumb</code></th><td><code>5rem × 5rem</code> · <code>border: 1px solid var(--border-light)</code> · <code>overflow: hidden</code> · <code>flex-shrink: 0</code></td></tr>
+      <tr><th><code>.product-thumb img</code></th><td><code>object-fit: cover</code> · <code>width: 100%</code> · <code>height: 100%</code></td></tr>
+      <tr><th><code>.product-thumb-wrap</code></th><td>Wrapper mit <code>position: relative</code> — Anker für <code>.floating-meta</code> Overlay</td></tr>
+      <tr><th><code>.floating-meta</code></th><td>Absolut positioniert oben links auf dem Bild. Flex-Spalte für gestapelte Badges.</td></tr>
+    </table>
+
+    <div class="demo-label">Basis — <code>.product-thumb</code></div>
+    <div class="sg-demo-pad">
+      <div style="display:flex;gap:var(--half-module);align-items:flex-end;">
+        <div>
+          <div class="product-thumb placeholder-bg"></div>
+          <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">.product-thumb · 5rem</div>
+        </div>
+        <div>
+          <div class="product-thumb placeholder-bg"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="Beispielbild"></div>
+          <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">mit Bild</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-label">Mit Badge-Overlay — <code>.product-thumb-wrap</code> + <code>.floating-meta</code></div>
+    <div class="sg-demo-pad">
+      <div style="display:flex;gap:var(--half-module);align-items:flex-end;">
+        <div>
+          <div class="product-thumb-wrap">
+            <div class="product-thumb placeholder-bg"></div>
+            <div class="floating-meta" style="top:0;left:0;">
+              <span class="badge --free">+3 gratis</span>
+            </div>
+          </div>
+          <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">.product-thumb-wrap + .floating-meta</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Wrapper <code>.product-thumb-wrap</code> setzt <code>position: relative</code>. Das <code>.floating-meta</code> positioniert sich absolut darüber.</p>
+
+  </section>
+
+  <!-- ── SEITENSTRUKTUR ──────────────────────────────── -->
+
+  <section class="sg-section" id="section-18">
+    <h2 class="section-label">18 — Navigation &amp; Announcement Bar</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1036,14 +1569,21 @@
       <tr><th>Responsive</th><td>Mobile: Seitenrand auf halbes Modul reduziert. Sekundäre Menüpunkte ausgeblendet.</td></tr>
     </table>
 
+    <p class="sg-p --mb">Live-Demo: Die Announcement Bar und Navigation oben auf dieser Seite nutzen das dokumentierte Pattern.</p>
+    <div class="demo-label">Announcement Bar — Live-Demo</div>
+    <button class="btn --secondary" onclick="(function(){
+      var bar = document.getElementById('announcementBar');
+      bar.classList.remove('--closed');
+      document.documentElement.style.setProperty('--announcement-height', 'var(--module)');
+      sessionStorage.removeItem('announcementClosed');
+      bar.scrollIntoView({behavior:'smooth'});
+    })()">Announcement Bar wieder einblenden</button>
+    <p class="demo-note">Schließt man die Bar über das ✕, wird die Höhe auf <code>0</code> animiert und der Zustand in <code>sessionStorage</code> gespeichert. Seitenreload stellt sie wieder her.</p>
+
   </section>
 
-
-  <!-- ═══════════════════════════════════════════
-       BREADCRUMB
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="breadcrumb-section">
-    <h2 class="section-label">15 — Breadcrumb</h2>
+  <section class="sg-section" id="section-19">
+    <h2 class="section-label">19 — Breadcrumb</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1093,12 +1633,37 @@
     </div>
   </section>
 
+  <section class="sg-section" id="section-20">
+    <h2 class="section-label">20 — Footer</h2>
 
-  <!-- ═══════════════════════════════════════════
-       07 SECTION TYPES
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="sections">
-    <h2 class="section-label">16 — Section Types</h2>
+    <div class="rules">
+      <div class="rule">
+        <h4>Struktur</h4>
+        <p>Zwei Bereiche: <strong>Footer-Main</strong> (4-Spalten-Grid mit Inhalten) und <strong>Footer-Bar</strong> (Copyright + Zahlungsarten). Volle Breite, Hintergrund <code>--green-light</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Responsive</h4>
+        <p>Tablet: 2 Spalten. Mobile: 1-spaltig. Footer-Bar stapelt sich vertikal.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Hintergrund</th><td><code>--green-light</code> (#f0fae6)</td></tr>
+      <tr><th>Schriftfarbe</th><td>Schwarz / Grau — nicht invertiert</td></tr>
+      <tr><th>Main-Padding</th><td>Oben: 2 Module · Unten: 1 Modul · Seiten: <code>--margin</code></td></tr>
+      <tr><th>Grid</th><td>4 Spalten (<code>1fr</code>) · Gap: 1 Modul</td></tr>
+      <tr><th>Footer-Bar</th><td>1 Modul Padding · <code>border-top: 1px solid</code> · Copyright links, Zahlungsarten rechts</td></tr>
+      <tr><th>Abstand</th><td><code>margin-top: 2 Module</code> zum vorherigen Content</td></tr>
+    </table>
+
+    <p class="sg-p --mb">Live-Demo: siehe unten — der Footer dieses Styleguides nutzt das dokumentierte Pattern.</p>
+
+  </section>
+
+  <!-- ── SEITEN-LAYOUTS ──────────────────────────────── -->
+
+  <section class="sg-section" id="section-21">
+    <h2 class="section-label">21 — Section Types</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1133,7 +1698,7 @@
     <div class="section-type --v1">
       <div class="section-type__image placeholder-bg"></div>
       <div class="section-type__content">
-        <div class="section-type__headline">Headline 1</div>
+        <h3 class="section-type__headline">Headline 1</h3>
         <div class="section-type__bottom">
           <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1147,7 +1712,7 @@
     <div class="section-type --v1 --viewport">
       <div class="section-type__image placeholder-bg"></div>
       <div class="section-type__content">
-        <div class="section-type__headline">Headline 1</div>
+        <h3 class="section-type__headline">Headline 1</h3>
         <div class="section-type__bottom">
           <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1161,7 +1726,7 @@
     <div class="section-type --v1 --reverse">
       <div class="section-type__image placeholder-bg"></div>
       <div class="section-type__content">
-        <div class="section-type__headline">Headline 1</div>
+        <h3 class="section-type__headline">Headline 1</h3>
         <div class="section-type__bottom">
           <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1191,7 +1756,7 @@
     <div class="section-type --v2">
       <div class="section-type__image placeholder-bg"></div>
       <div class="section-type__content">
-        <div class="section-type__headline">Headline 2</div>
+        <h3 class="section-type__headline">Headline 2</h3>
         <div class="section-type__bottom">
           <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1205,7 +1770,7 @@
     <div class="section-type --v2 --viewport">
       <div class="section-type__image placeholder-bg"></div>
       <div class="section-type__content">
-        <div class="section-type__headline">Headline 2</div>
+        <h3 class="section-type__headline">Headline 2</h3>
         <div class="section-type__bottom">
           <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1219,7 +1784,7 @@
     <div class="section-type --v2 --reverse">
       <div class="section-type__image placeholder-bg"></div>
       <div class="section-type__content">
-        <div class="section-type__headline">Headline 2</div>
+        <h3 class="section-type__headline">Headline 2</h3>
         <div class="section-type__bottom">
           <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1255,7 +1820,7 @@
   <div class="section-type__image placeholder-bg"></div>
   <div class="section-type__inner">
     <div class="section-type__content">
-      <div class="section-type__headline">Headline 2</div>
+      <h3 class="section-type__headline">Headline 2</h3>
       <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <div class="btn --primary">Call to Action</div>
     </div>
@@ -1275,7 +1840,7 @@
   <div class="section-type__image placeholder-bg"></div>
   <div class="section-type__inner">
     <div class="section-type__content">
-      <div class="section-type__headline">Headline 2</div>
+      <h3 class="section-type__headline">Headline 2</h3>
       <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
       <div class="btn --primary">Call to Action</div>
     </div>
@@ -1295,7 +1860,7 @@
   <div class="section-type__image placeholder-bg"></div>
   <div class="section-type__inner">
     <div class="section-type__content">
-      <div class="section-type__headline">Headline 2</div>
+      <h3 class="section-type__headline">Headline 2</h3>
       <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
       <div class="btn --primary">Call to Action</div>
     </div>
@@ -1308,12 +1873,8 @@
 
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       08 TILE GRIDS
-       ═══════════════════════════════════════════ -->
-
-  <section class="sg-section" id="tiles">
-    <h2 class="section-label">17 — Kachel-Raster</h2>
+  <section class="sg-section" id="section-22">
+    <h2 class="section-label">22 — Kachel-Raster</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1340,22 +1901,22 @@
     <div class="tile-grid --cols-4 --mb">
       <div class="tile">
         <div class="tile__icon icon-box placeholder-bg"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="tile">
         <div class="tile__icon icon-box placeholder-bg"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="tile">
         <div class="tile__icon icon-box placeholder-bg"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="tile">
         <div class="tile__icon icon-box placeholder-bg"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </div>
@@ -1366,16 +1927,16 @@
     <div class="tile-grid --cols-4 --mb">
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="tile --featured">
-        <div class="tile__headline">Headline 4</div>
+        <h3 class="tile__headline">Headline 4</h3>
         <div class="tile__bottom">
           <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore et dolore magna aliqua.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1383,7 +1944,7 @@
       </div>
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </div>
@@ -1394,12 +1955,12 @@
     <div class="tile-grid --cols-2 --mb">
       <div class="tile">
         <div class="tile__image placeholder-bg --landscape"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl.</p>
       </div>
       <div class="tile">
         <div class="tile__image placeholder-bg --landscape"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl.</p>
       </div>
     </div>
@@ -1410,11 +1971,11 @@
     <div class="tile-grid --cols-2 --mb">
       <div class="tile">
         <div class="tile__image placeholder-bg --landscape"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
       </div>
       <div class="tile --featured">
-        <div class="tile__headline">Headline 4</div>
+        <h3 class="tile__headline">Headline 4</h3>
         <div class="tile__bottom">
           <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1428,17 +1989,17 @@
     <div class="tile-grid --cols-3 --mb">
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </div>
     </div>
@@ -1449,11 +2010,11 @@
     <div class="tile-grid --cols-3 --mb">
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
       </div>
       <div class="tile --featured">
-        <div class="tile__headline">Headline 4</div>
+        <h3 class="tile__headline">Headline 4</h3>
         <div class="tile__bottom">
           <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut labore et dolore.</p>
           <div class="btn --primary">Call to Action</div>
@@ -1461,189 +2022,16 @@
       </div>
       <div class="tile">
         <div class="tile__image placeholder-bg --square"></div>
-        <div class="tile__headline">Headline X</div>
+        <h3 class="tile__headline">Headline X</h3>
         <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
       </div>
     </div>
     <p class="demo-note">Sonderkachel im 3-Spalter.</p>
 
-    <!-- Produktkarten -->
-    <h3 id="tile-product" class="sg-h3 --top">Produktkarten (Variante D)</h3>
-    <p class="sg-p --mb">Shopify-ready. Bild, Produktname, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid.</p>
-
-    <table class="spec-table">
-      <tr><th>Bild</th><td>Quadratisch (<code>1:1</code>). Bei Hover: „In den Warenkorb"-Button gleitet von unten ins Bild.</td></tr>
-      <tr><th>Badge</th><td>Optional. Position: oben links auf dem Bild. Varianten: Standard (schwarz) und Sale (grün).</td></tr>
-      <tr><th>Kategorie-Badge</th><td>Optional. <code>.badge</code> mit <code>data-cat="…"</code> im <code>.floating-meta</code>-Container. Nur Hintergrund in Kategoriefarbe (light), Schrift schwarz. Wird als erstes Badge gestapelt, Status-Badges (Neu, Sale) folgen dahinter.</td></tr>
-      <tr><th>Beschreibung</th><td>Optional. Unter dem Produktnamen, <code>--text-xs</code>, <code>--fg-muted</code>.</td></tr>
-      <tr><th>Preis</th><td>Bold. Bei Sale: alter Preis durchgestrichen daneben.</td></tr>
-      <tr><th>Button</th><td>Secondary-Style. Desktop: erscheint bei Hover als Overlay am unteren Bildrand (<code>0.25s ease</code>). Mobile: stattdessen permanentes Warenkorb-Icon (Material Icons) oben rechts auf dem Bild.</td></tr>
-    </table>
-
-    <div class="demo-label">4-Spalter — Produktkarten</div>
-    <div class="tile-grid --cols-4 --mb">
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="herz">Herz</div>
-            <div class="badge --dark">Neu</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname Eins</div>
-        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
-      </div>
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="cbd">CBD</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname Zwei</div>
-        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
-      </div>
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="stress">Stress</div>
-            <div class="badge --sale">Sale</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname Drei</div>
-        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div>
-      </div>
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="gelenke">Gelenke</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname Vier</div>
-        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div>
-      </div>
-    </div>
-    <p class="demo-note">Hover über ein Produktbild: Button gleitet von unten ein. Badges, Beschreibung und Preis darunter.</p>
-
-    <div class="demo-label">3-Spalter — Produktkarten</div>
-    <div class="tile-grid --cols-3 --mb">
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="bauchspeichel">Bauchspeicheldrüse</div>
-            <div class="badge --dark">Neu</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname mit einem etwas längeren Titel</div>
-        <div class="tile__description">Eine etwas ausführlichere Beschreibung des Produkts mit mehr Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>59,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.7</div></div>
-      </div>
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="leber">Leber</div>
-            <div class="badge --sale">Sale</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname Sechs</div>
-        <div class="tile__description">Kurze Produktbeschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>24,90 €</span><span class="--old">49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.1</div></div>
-      </div>
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="magendarm">Magen/Darm</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname Sieben</div>
-        <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
-      </div>
-    </div>
-    <p class="demo-note">3-Spalter. Produktname und Beschreibung dürfen mehrzeilig sein.</p>
-
-    <div class="demo-label">4-Spalter — Mix mit Sonderkachel</div>
-    <div class="tile-grid --cols-4 --mb">
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="haut">Haut</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname</div>
-        <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.8</div></div>
-      </div>
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="atemwege">Atemwege</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname</div>
-        <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.3</div></div>
-      </div>
-      <div class="tile --featured">
-        <div class="tile__headline">Entdecke unsere Neuheiten</div>
-        <div class="tile__bottom">
-          <p class="tile__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-          <div class="btn --primary">Alle Produkte</div>
-        </div>
-      </div>
-      <div class="tile --product">
-          <div class="tile__image-wrap">
-          <div class="floating-meta">
-            <div class="badge" data-cat="niere">Niere</div>
-            <div class="badge --sale">Sale</div>
-          </div>
-          <div class="tile__image placeholder-bg"></div>
-          <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
-          <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
-        </div>
-        <div class="tile__headline">Produktname</div>
-        <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>14,90 €</span><span class="--old">29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
-      </div>
-    </div>
-    <p class="demo-note">Produktkarten gemischt mit Sonderkachel — flexibel einsetzbar.</p>
-
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       14 AKKORDEON / FAQ
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="accordion-section">
-    <h2 class="section-label">18 — Tabs &amp; Akkordeon</h2>
+  <section class="sg-section" id="section-23">
+    <h2 class="section-label">23 — Tabs &amp; Akkordeon</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1776,11 +2164,8 @@
 
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       16 TESTIMONIALS
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="testimonials">
-    <h2 class="section-label">19 — Testimonials</h2>
+  <section class="sg-section" id="section-24">
+    <h2 class="section-label">24 — Testimonials</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1823,7 +2208,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director, Studio Klare Linie</div></div>
+            <div><p class="testimonial__name">Maria Schneider</p><div class="testimonial__role">Creative Director, Studio Klare Linie</div></div>
           </div>
         </div>
 
@@ -1835,7 +2220,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer, Nordlicht Commerce</div></div>
+            <div><p class="testimonial__name">Jonas Bergmann</p><div class="testimonial__role">Lead Developer, Nordlicht Commerce</div></div>
           </div>
         </div>
 
@@ -1847,7 +2232,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner, Echt Digital GmbH</div></div>
+            <div><p class="testimonial__name">Laura Weiß</p><div class="testimonial__role">Product Owner, Echt Digital GmbH</div></div>
           </div>
         </div>
 
@@ -1859,7 +2244,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist, Formwerk</div></div>
+            <div><p class="testimonial__name">Felix Hartmann</p><div class="testimonial__role">Brand Strategist, Formwerk</div></div>
           </div>
         </div>
 
@@ -1871,7 +2256,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Anna Richter</div><div class="testimonial__role">UX Designerin, Pixelwerk</div></div>
+            <div><p class="testimonial__name">Anna Richter</p><div class="testimonial__role">UX Designerin, Pixelwerk</div></div>
           </div>
         </div>
 
@@ -1883,7 +2268,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Tobias Keller</div><div class="testimonial__role">Frontend Architect, Codefreunde</div></div>
+            <div><p class="testimonial__name">Tobias Keller</p><div class="testimonial__role">Frontend Architect, Codefreunde</div></div>
           </div>
         </div>
 
@@ -1908,7 +2293,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director</div></div>
+            <div><p class="testimonial__name">Maria Schneider</p><div class="testimonial__role">Creative Director</div></div>
           </div>
         </div>
 
@@ -1920,7 +2305,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer</div></div>
+            <div><p class="testimonial__name">Jonas Bergmann</p><div class="testimonial__role">Lead Developer</div></div>
           </div>
         </div>
 
@@ -1932,7 +2317,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner</div></div>
+            <div><p class="testimonial__name">Laura Weiß</p><div class="testimonial__role">Product Owner</div></div>
           </div>
         </div>
 
@@ -1944,7 +2329,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist</div></div>
+            <div><p class="testimonial__name">Felix Hartmann</p><div class="testimonial__role">Brand Strategist</div></div>
           </div>
         </div>
 
@@ -1969,7 +2354,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director, Studio Klare Linie</div></div>
+            <div><p class="testimonial__name">Maria Schneider</p><div class="testimonial__role">Creative Director, Studio Klare Linie</div></div>
           </div>
         </div>
 
@@ -1981,7 +2366,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer, Nordlicht Commerce</div></div>
+            <div><p class="testimonial__name">Jonas Bergmann</p><div class="testimonial__role">Lead Developer, Nordlicht Commerce</div></div>
           </div>
         </div>
 
@@ -1993,7 +2378,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner, Echt Digital GmbH</div></div>
+            <div><p class="testimonial__name">Laura Weiß</p><div class="testimonial__role">Product Owner, Echt Digital GmbH</div></div>
           </div>
         </div>
 
@@ -2005,7 +2390,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist, Formwerk</div></div>
+            <div><p class="testimonial__name">Felix Hartmann</p><div class="testimonial__role">Brand Strategist, Formwerk</div></div>
           </div>
         </div>
 
@@ -2017,7 +2402,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Anna Richter</div><div class="testimonial__role">UX Designerin, Pixelwerk</div></div>
+            <div><p class="testimonial__name">Anna Richter</p><div class="testimonial__role">UX Designerin, Pixelwerk</div></div>
           </div>
         </div>
 
@@ -2029,7 +2414,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Tobias Keller</div><div class="testimonial__role">Frontend Architect, Codefreunde</div></div>
+            <div><p class="testimonial__name">Tobias Keller</p><div class="testimonial__role">Frontend Architect, Codefreunde</div></div>
           </div>
         </div>
 
@@ -2057,7 +2442,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Maria Schneider</div><div class="testimonial__role">Creative Director</div></div>
+            <div><p class="testimonial__name">Maria Schneider</p><div class="testimonial__role">Creative Director</div></div>
           </div>
         </div>
 
@@ -2069,7 +2454,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Jonas Bergmann</div><div class="testimonial__role">Lead Developer</div></div>
+            <div><p class="testimonial__name">Jonas Bergmann</p><div class="testimonial__role">Lead Developer</div></div>
           </div>
         </div>
 
@@ -2081,7 +2466,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Laura Weiß</div><div class="testimonial__role">Product Owner</div></div>
+            <div><p class="testimonial__name">Laura Weiß</p><div class="testimonial__role">Product Owner</div></div>
           </div>
         </div>
 
@@ -2093,7 +2478,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Felix Hartmann</div><div class="testimonial__role">Brand Strategist</div></div>
+            <div><p class="testimonial__name">Felix Hartmann</p><div class="testimonial__role">Brand Strategist</div></div>
           </div>
         </div>
 
@@ -2105,7 +2490,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Sophie Braun</div><div class="testimonial__role">Art Director</div></div>
+            <div><p class="testimonial__name">Sophie Braun</p><div class="testimonial__role">Art Director</div></div>
           </div>
         </div>
 
@@ -2117,7 +2502,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Marco Vogt</div><div class="testimonial__role">Design Engineer</div></div>
+            <div><p class="testimonial__name">Marco Vogt</p><div class="testimonial__role">Design Engineer</div></div>
           </div>
         </div>
 
@@ -2129,7 +2514,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Tobias Keller</div><div class="testimonial__role">Frontend Architect</div></div>
+            <div><p class="testimonial__name">Tobias Keller</p><div class="testimonial__role">Frontend Architect</div></div>
           </div>
         </div>
 
@@ -2141,7 +2526,7 @@
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
-            <div><div class="testimonial__name">Lena Fischer</div><div class="testimonial__role">Head of Design</div></div>
+            <div><p class="testimonial__name">Lena Fischer</p><div class="testimonial__role">Head of Design</div></div>
           </div>
         </div>
 
@@ -2157,296 +2542,8 @@
 
   </section>
 
-  <!-- ═══════════════════════════════════════════
-       17 PRODUKTDETAILSEITE (PDP)
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="pdp-section">
-    <h2 class="section-label">21 — Produktdetailseite (PDP)</h2>
-
-    <div class="rules">
-      <div class="rule">
-        <h4>Layout</h4>
-        <p>2-Spalten-Grid: Bild-Galerie links, Produktinfo rechts. Gap: 1 Modul. Mobile: 1-spaltig, Galerie oben.</p>
-      </div>
-      <div class="rule">
-        <h4>Elemente</h4>
-        <p>Kategorie-Badge (Kategoriefarbe), Produktname (H2), Sterne, Preis/Sale, Kurzbeschreibung, Varianten, Menge, Warenkorb-Button, Akkordeon, Empfehlungen.</p>
-      </div>
-    </div>
-
-    <table class="spec-table">
-      <tr><th>Grid</th><td>2 Spalten (<code>1fr 1fr</code>). Gap: 1 Modul. Mobile: 1-spaltig.</td></tr>
-      <tr><th>Galerie</th><td>Hauptbild (<code>1:1</code>) + 4 Thumbnails darunter. Aktiver Thumbnail: <code>border: 1px solid #000</code>.</td></tr>
-      <tr><th>Badge</th><td>Oben links im Hauptbild (absolut positioniert). Kategoriefarbe als Hintergrund (light), Schrift schwarz. <code>--text-xs</code>, uppercase.</td></tr>
-      <tr><th>Titel</th><td><code>--text-l</code> · LH 1.17 · bold.</td></tr>
-      <tr><th>Bewertung</th><td>Material Icons <code>star</code>/<code>star_border</code>. Anzahl in <code>--text-xs</code>.</td></tr>
-      <tr><th>Preis</th><td><code>--text-m</code> bold. Sale: alter Preis durchgestrichen + grüner Badge.</td></tr>
-      <tr><th>Varianten</th><td>Buttons mit <code>1px solid #ccc</code>. Aktiv: schwarz gefüllt, weiße Schrift.</td></tr>
-      <tr><th>Menge</th><td>Minus/Plus-Buttons + Input. Höhe <code>2.75rem</code>.</td></tr>
-      <tr><th>Warenkorb</th><td>Primary-Button, volle Breite. Daneben: Wunschliste-Icon.</td></tr>
-      <tr><th>Akkordeon</th><td>Standard-Akkordeon. Beschreibung, Inhaltsstoffe, Versand.</td></tr>
-      <tr><th>Empfehlungen</th><td>4-Spalter Produktkarten unter der PDP. Border-top als Trennung.</td></tr>
-    </table>
-
-    <div class="demo-label">Produktdetailseite</div>
-
-    <div class="pdp">
-      <div class="pdp__gallery">
-        <div class="pdp__main-image placeholder-bg">
-          <div class="floating-meta"><div class="badge" data-cat="herz">Herz</div></div>
-        </div>
-        <div class="pdp__thumbs">
-          <div class="pdp__thumb placeholder-bg --active"></div>
-          <div class="pdp__thumb placeholder-bg"></div>
-          <div class="pdp__thumb placeholder-bg"></div>
-          <div class="pdp__thumb placeholder-bg"></div>
-        </div>
-      </div>
-      <div class="pdp__info">
-        <div class="pdp__title">IntestiBAL — Verdauungsunterstützung für Hunde</div>
-        <div class="rating">
-          <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
-          <span class="fg-muted text-xs">4.2 (128 Bewertungen)</span>
-        </div>
-        <div class="pdp__price"><div class="price-stack text-m"><span>19,90 €</span><span class="--old">29,90 €</span></div><span class="badge --sale pdp__price-badge">-33%</span></div>
-        <p class="pdp__description">Hochwertige Nahrungsergänzung zur Unterstützung der Verdauung. Mit natürlichen Inhaltsstoffen, die das Wohlbefinden Ihres Hundes fördern.</p>
-        <div class="pdp__variants">
-          <div class="pdp__variant-label">Größe</div>
-          <div class="pdp__variant-options">
-            <button class="choice-box --active" onclick="selectVariant(this)">120g</button>
-            <button class="choice-box" onclick="selectVariant(this)">250g</button>
-            <button class="choice-box" onclick="selectVariant(this)">500g</button>
-          </div>
-        </div>
-        <div class="pdp__variants">
-          <div class="pdp__variant-label">Menge</div>
-          <div class="qty-selector">
-            <button class="qty-selector__btn" type="button" aria-label="Menge verringern" onclick="changeQty(-1)"><span class="material-icons">remove</span></button>
-            <input class="qty-selector__input" type="number" value="1" min="1" id="qtyInput">
-            <button class="qty-selector__btn" type="button" aria-label="Menge erhöhen" onclick="changeQty(1)"><span class="material-icons">add</span></button>
-          </div>
-        </div>
-        <div class="pdp__actions">
-          <a class="btn --primary" onclick="openCart('cartFull')">In den Warenkorb</a>
-          <button class="pdp__wishlist" type="button" aria-label="Zur Wunschliste"><span class="material-icons">favorite_border</span></button>
-        </div>
-        <div class="accordion">
-          <div class="accordion-item --open">
-            <button class="accordion-trigger" type="button" aria-expanded="true" onclick="toggleAccordion(this)">Beschreibung<span class="accordion-icon material-icons">expand_more</span></button>
-            <div class="accordion-content"><div class="accordion-content__inner"><p>IntestiBAL enthält eine einzigartige Kombination aus natürlichen Inhaltsstoffen, die speziell für die Verdauungsgesundheit Ihres Hundes entwickelt wurden.</p></div></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Inhaltsstoffe<span class="accordion-icon material-icons">expand_more</span></button>
-            <div class="accordion-content"><div class="accordion-content__inner"><p>Flohsamenschalen, Probiotika (Enterococcus faecium), Präbiotika (FOS), Bentonit, Pektin, Kamillenextrakt. Ohne künstliche Zusatzstoffe.</p></div></div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Versand &amp; Lieferung<span class="accordion-icon material-icons">expand_more</span></button>
-            <div class="accordion-content"><div class="accordion-content__inner"><p>Standardversand: 3–5 Werktage. Expressversand: 1–2 Werktage. Ab 50 € versandkostenfrei.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="pdp__recommendations">
-      <h3>Das könnte Ihnen auch gefallen</h3>
-      <div class="tile-grid --cols-4">
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Eins</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="cbd">CBD</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Zwei</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="stress">Stress</div><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Drei</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="haut">Haut</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline">Produktname Vier</div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div></div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       18 WARENKORB-DRAWER
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="cart-section">
-    <h2 class="section-label">22 — Warenkorb-Drawer</h2>
-
-    <div class="rules">
-      <div class="rule">
-        <h4>Typ</h4>
-        <p>Slide-in von rechts. Halbtransparentes Overlay dahinter. Breite: <code>min(28rem, 100vw)</code>. Transition: <code>0.3s ease</code>.</p>
-      </div>
-      <div class="rule">
-        <h4>Struktur</h4>
-        <p>Header (Titel + Schließen), scrollbare Produktliste (Mitte), Footer mit Summe und CTA (sticky unten).</p>
-      </div>
-    </div>
-
-    <table class="spec-table">
-      <tr><th>Overlay</th><td><code>rgba(0,0,0,0.4)</code>. Klick schließt den Drawer.</td></tr>
-      <tr><th>Drawer</th><td>Breite <code>min(28rem, 100vw)</code>. Border-left: <code>1px solid #000</code>.</td></tr>
-      <tr><th>Item</th><td>Grid: <code>5rem</code> Bild + <code>1fr</code> Info. Kompakte ±Buttons (<code>2rem</code>).</td></tr>
-      <tr><th>Footer</th><td>Versandhinweis, Zwischensumme (<code>--text-m</code>), Checkout (Primary), Weiter einkaufen (Ghost).</td></tr>
-      <tr><th>Leer</th><td>Zentriertes Icon + Text + Button.</td></tr>
-    </table>
-
-    <div class="demo-label">Drawer öffnen</div>
-    <div class="sg-btn-row --sm">
-      <button class="btn --primary" onclick="openCart('cartFull')">Mit Produkten</button>
-      <button class="btn --secondary" onclick="openCart('cartEmpty')">Leerer Warenkorb</button>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       19 PRODUKTÜBERSICHT
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="collection-section">
-    <h2 class="section-label">23 — Produktübersicht</h2>
-
-    <div class="rules">
-      <div class="rule">
-        <h4>Layout</h4>
-        <p>Schmale Sidebar (<code>12rem</code>) links + Produktgrid rechts. Mobile: Sidebar als Drawer von links.</p>
-      </div>
-    </div>
-
-    <table class="spec-table">
-      <tr><th>Sidebar</th><td><code>12rem</code>, sticky. Kategorie-Filter (Checkboxen). Mobile: Drawer.</td></tr>
-      <tr><th>Filter-Tags</th><td>Aktive Filter als Tags. „Alle löschen"-Link.</td></tr>
-      <tr><th>Toolbar</th><td>Anzahl links, Sortierung rechts (Custom Select).</td></tr>
-      <tr><th>Grid</th><td>3-Spalter Produktkarten. Mobile: 2-spaltig.</td></tr>
-    </table>
-
-    <div class="demo-label">Produktübersicht</div>
-    <div class="sg-demo-stack">
-
-      <div class="filter-overlay" id="filterOverlay" onclick="closeFilter()"></div>
-      <div class="collection-layout">
-        <aside class="collection-sidebar" id="filterSidebar">
-          <div class="collection-sidebar__header">
-            <div class="collection-sidebar__title">Filter</div>
-            <button class="btn --icon collection-sidebar__close" onclick="closeFilter()"><span class="material-icons">close</span></button>
-          </div>
-          <div class="filter-tags">
-            <button class="filter-tag">Pulver <span class="material-icons">close</span></button>
-            <button class="filter-clear">Alle löschen</button>
-          </div>
-          <div class="filter-group">
-            <div class="filter-group__title">Darreichungsform</div>
-            <label class="form-check"><input type="checkbox" checked><span>Pulver</span></label>
-            <label class="form-check"><input type="checkbox"><span>Kapseln</span></label>
-            <label class="form-check"><input type="checkbox"><span>Flüssig</span></label>
-          </div>
-          <div class="filter-group">
-            <div class="filter-group__title">Besonderheiten</div>
-            <label class="form-check"><input type="checkbox"><span>Getreidefrei</span></label>
-            <label class="form-check"><input type="checkbox"><span>Vegan</span></label>
-          </div>
-        </aside>
-
-        <main class="collection-main">
-          <div class="collection-toolbar">
-            <button class="collection-filter-toggle" type="button" onclick="openFilter()"><span class="material-icons">filter_list</span> Filter</button>
-            <div class="collection-toolbar__count">Zeige 1–9 von 12 Produkten</div>
-            <div class="collection-toolbar__sort">
-              <span class="collection-toolbar__sort-label">Sortieren:</span>
-              <select class="collection-toolbar__sort-select">
-                <option>Empfohlen</option>
-                <option>Bestseller</option>
-                <option>Preis aufsteigend</option>
-                <option>Preis absteigend</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="tile-grid --cols-3">
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button></div><div class="tile__headline">ArthroBAL Complex</div><div class="tile__description">Für agile Gelenke.</div><div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div></div>
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button></div><div class="tile__headline">Mobility Plus</div><div class="tile__description">Tägliche Unterstützung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button></div><div class="tile__headline">Senior Fit</div><div class="tile__description">Für ältere Hunde.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span><span class="--old">39,90 €</span></div></div></div>
-          </div>
-
-          <nav class="pagination" aria-label="Pagination">
-            <a href="#" class="pagination__btn" aria-label="Vorherige Seite"><span class="material-icons">chevron_left</span></a>
-            <a href="#" class="pagination__page">1</a>
-            <span class="pagination__page --current" aria-current="page">2</span>
-            <a href="#" class="pagination__page">3</a>
-            <span class="pagination__dots">...</span>
-            <a href="#" class="pagination__page">8</a>
-            <a href="#" class="pagination__btn" aria-label="Nächste Seite"><span class="material-icons">chevron_right</span></a>
-          </nav>
-        </main>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Cart Drawer: Mit Produkten -->
-  <div class="cart-overlay" id="overlayFull" onclick="closeCart('cartFull')"></div>
-  <div class="cart-drawer" id="cartFull">
-    <div class="cart-drawer__header">
-      <div class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(3)</span></div>
-      <button class="btn --icon" onclick="closeCart('cartFull')"><span class="material-icons">close</span></button>
-    </div>
-    <div class="cart-drawer__items">
-      <div class="cart-item"><div class="cart-item__image placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><div class="cart-item__name">IntestiBAL</div><div class="cart-item__variant">250g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="2" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">59,80 €</div></div></div></div>
-      <div class="cart-item"><div class="cart-item__image placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><div class="cart-item__name">CaniComplete</div><div class="cart-item__variant">120g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">34,90 €</div></div></div></div>
-      <div class="cart-item"><div class="cart-item__image placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><div class="cart-item__name">DermaComplex</div><div class="cart-item__variant">500g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">49,90 €</div></div></div></div>
-    </div>
-    <div class="cart-drawer__footer">
-      <div class="cart-drawer__shipping"><div class="shipping-hint"><span class="material-icons">local_shipping</span> Noch 5,40 € bis zum kostenlosen Versand</div></div>
-      <div class="summary-total"><span>Zwischensumme</span><span>144,60 €</span></div>
-      <div class="cart-drawer__tax">inkl. MwSt., zzgl. Versandkosten</div>
-      <a class="btn --primary cart-drawer__checkout">Zur Kasse</a>
-      <div class="cart-drawer__continue-wrap"><a class="btn --ghost cart-drawer__continue" onclick="closeCart('cartFull')">Weiter einkaufen</a></div>
-    </div>
-  </div>
-
-  <!-- Cart Drawer: Leer -->
-  <div class="cart-overlay" id="overlayEmpty" onclick="closeCart('cartEmpty')"></div>
-  <div class="cart-drawer" id="cartEmpty">
-    <div class="cart-drawer__header">
-      <div class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(0)</span></div>
-      <button class="btn --icon" onclick="closeCart('cartEmpty')"><span class="material-icons">close</span></button>
-    </div>
-    <div class="cart-drawer__empty">
-      <div class="empty-state">
-        <span class="material-icons">shopping_cart</span>
-        <p>Ihr Warenkorb ist leer.</p>
-        <a class="btn --primary" onclick="closeCart('cartEmpty')">Weiter einkaufen</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════════
-       12 FOOTER
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="footer-section">
-    <h2 class="section-label">20 — Footer</h2>
-
-    <div class="rules">
-      <div class="rule">
-        <h4>Struktur</h4>
-        <p>Zwei Bereiche: <strong>Footer-Main</strong> (4-Spalten-Grid mit Inhalten) und <strong>Footer-Bar</strong> (Copyright + Zahlungsarten). Volle Breite, Hintergrund <code>--green-light</code>.</p>
-      </div>
-      <div class="rule">
-        <h4>Responsive</h4>
-        <p>Tablet: 2 Spalten. Mobile: 1-spaltig. Footer-Bar stapelt sich vertikal.</p>
-      </div>
-    </div>
-
-    <table class="spec-table">
-      <tr><th>Hintergrund</th><td><code>--green-light</code> (#f0fae6)</td></tr>
-      <tr><th>Schriftfarbe</th><td>Schwarz / Grau — nicht invertiert</td></tr>
-      <tr><th>Main-Padding</th><td>Oben: 2 Module · Unten: 1 Modul · Seiten: <code>--margin</code></td></tr>
-      <tr><th>Grid</th><td>4 Spalten (<code>1fr</code>) · Gap: 1 Modul</td></tr>
-      <tr><th>Footer-Bar</th><td>1 Modul Padding · <code>border-top: 1px solid</code> · Copyright links, Zahlungsarten rechts</td></tr>
-      <tr><th>Abstand</th><td><code>margin-top: 2 Module</code> zum vorherigen Content</td></tr>
-    </table>
-
-    <p class="sg-p --mb">Live-Demo: siehe unten — der Footer dieses Styleguides nutzt das dokumentierte Pattern.</p>
-
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════
-       MARQUEE / TICKER
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="marquee-section">
-    <h2 class="section-label">24 — Banner / Marquee</h2>
+  <section class="sg-section" id="section-25">
+    <h2 class="section-label">25 — Banner / Marquee</h2>
 
     <div class="rules">
       <div class="rule">
@@ -2513,15 +2610,9 @@
       </div>
 
     </div>
-  </section>
 
-
-  <!-- ═══════════════════════════════════════════
-       NEWSLETTER SIGNUP
-       ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="actionable-input-section">
-    <h2 class="section-label">25 — Newsletter Signup</h2>
-
+    <!-- ── Newsletter Signup ── -->
+    <h3 class="sg-h3 --top">Newsletter Signup</h3>
     <div class="rules">
       <div class="rule">
         <h4>Variante</h4>
@@ -2532,10 +2623,7 @@
         <p>Wiederverwendbares Molekül: Input + Button als Flex-Reihe. Mobil gestapelt (<code>flex-direction: column</code>), ab 768 px nebeneinander (<code>flex-direction: row</code>). Input nimmt mit <code>flex: 1</code> den verfügbaren Platz. Einsetzbar überall wo ein Inline-Submit-Formular benötigt wird.</p>
       </div>
     </div>
-
     <div class="sg-demo-stack">
-
-      <!-- Variante 1: 2-spaltig -->
       <div>
         <p class="label">Variante 1 — 2-spaltig (Standard)</p>
         <div class="newsletter --on-green">
@@ -2546,20 +2634,340 @@
           </div>
           <form class="actionable-input" onsubmit="return false;">
             <div class="form-field">
-              <input type="email" id="newsletter-email" placeholder=" ">
+              <input type="email" id="newsletter-email" placeholder="">
               <label for="newsletter-email">E-Mail-Adresse</label>
             </div>
             <button class="btn --primary" type="submit">Anmelden</button>
           </form>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- 20 Checkout -->
-  <section class="sg-section" id="checkout-section">
-    <h2 class="section-label">26 — Checkout</h2>
+  <!-- ── SHOP-SEITEN ─────────────────────────────────── -->
+
+  <section class="sg-section" id="section-26">
+    <h2 class="section-label">26 — Produktdetailseite (PDP)</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Layout</h4>
+        <p>2-Spalten-Grid: Bild-Galerie links, Produktinfo rechts. Gap: 1 Modul. Mobile: 1-spaltig, Galerie oben.</p>
+      </div>
+      <div class="rule">
+        <h4>Elemente</h4>
+        <p>Kategorie-Badge (Kategoriefarbe), Produktname (H2), Sterne, Preis/Sale, Kurzbeschreibung, Varianten, Menge, Warenkorb-Button, Akkordeon, Empfehlungen.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Grid</th><td>2 Spalten (<code>1fr 1fr</code>). Gap: 1 Modul. Mobile: 1-spaltig.</td></tr>
+      <tr><th>Galerie</th><td>Hauptbild (<code>1:1</code>) + 4 Thumbnails darunter. Aktiver Thumbnail: <code>border: 1px solid #000</code>.</td></tr>
+      <tr><th>Badge</th><td>Oben links im Hauptbild (absolut positioniert). Kategoriefarbe als Hintergrund (light), Schrift schwarz. <code>--text-xs</code>, uppercase.</td></tr>
+      <tr><th>Titel</th><td><code>--text-l</code> · LH 1.17 · bold.</td></tr>
+      <tr><th>Bewertung</th><td>Material Icons <code>star</code>/<code>star_border</code>. Anzahl in <code>--text-xs</code>.</td></tr>
+      <tr><th>Preis</th><td><code>--text-m</code> bold. Sale: alter Preis durchgestrichen + grüner Badge.</td></tr>
+      <tr><th>Varianten</th><td>Buttons mit <code>1px solid #ccc</code>. Aktiv: schwarz gefüllt, weiße Schrift.</td></tr>
+      <tr><th>Menge</th><td>Minus/Plus-Buttons + Input. Höhe <code>2.75rem</code>.</td></tr>
+      <tr><th>Warenkorb</th><td>Primary-Button, volle Breite. Daneben: Wunschliste-Icon.</td></tr>
+      <tr><th>Akkordeon</th><td>Standard-Akkordeon. Beschreibung, Inhaltsstoffe, Versand.</td></tr>
+      <tr><th>Empfehlungen</th><td>4-Spalter Produktkarten unter der PDP. Border-top als Trennung.</td></tr>
+    </table>
+
+    <div class="demo-label">Produktdetailseite</div>
+
+    <div class="pdp">
+      <div class="pdp__gallery">
+        <div class="pdp__main-image placeholder-bg">
+          <div class="floating-meta"><div class="badge" data-cat="herz">Herz</div></div>
+        </div>
+        <div class="pdp__thumbs">
+          <div class="pdp__thumb placeholder-bg --active"></div>
+          <div class="pdp__thumb placeholder-bg"></div>
+          <div class="pdp__thumb placeholder-bg"></div>
+          <div class="pdp__thumb placeholder-bg"></div>
+        </div>
+      </div>
+      <div class="pdp__info">
+        <h3 class="pdp__title">IntestiBAL — Verdauungsunterstützung für Hunde</h3>
+        <div class="rating">
+          <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          <span class="text-muted text-xs">4.2 (128 Bewertungen)</span>
+        </div>
+        <div class="pdp__price"><div class="price-stack text-m"><span>19,90 €</span><span class="--old">29,90 €</span></div><span class="badge --sale pdp__price-badge">-33%</span></div>
+        <p class="pdp__description">Hochwertige Nahrungsergänzung zur Unterstützung der Verdauung. Mit natürlichen Inhaltsstoffen, die das Wohlbefinden Ihres Hundes fördern.</p>
+        <div class="pdp__variants">
+          <div class="pdp__variant-label label-caps">Größe</div>
+          <div class="pdp__variant-options">
+            <button class="choice-box --active" onclick="selectVariant(this)">120g</button>
+            <button class="choice-box" onclick="selectVariant(this)">250g</button>
+            <button class="choice-box" onclick="selectVariant(this)">500g</button>
+          </div>
+        </div>
+        <div class="pdp__variants">
+          <div class="pdp__variant-label label-caps">Menge</div>
+          <div class="qty-selector">
+            <button class="qty-selector__btn" type="button" aria-label="Menge verringern" onclick="changeQty(-1)"><span class="material-icons">remove</span></button>
+            <input class="qty-selector__input" type="number" value="1" min="1" id="qtyInput">
+            <button class="qty-selector__btn" type="button" aria-label="Menge erhöhen" onclick="changeQty(1)"><span class="material-icons">add</span></button>
+          </div>
+        </div>
+        <div class="pdp__actions">
+          <a class="btn --primary" onclick="openCart('cartFull')">In den Warenkorb</a>
+          <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste"><span class="material-icons">favorite_border</span></button>
+        </div>
+        <div class="accordion">
+          <div class="accordion-item --open">
+            <button class="accordion-trigger" type="button" aria-expanded="true" onclick="toggleAccordion(this)">Beschreibung<span class="accordion-icon material-icons">expand_more</span></button>
+            <div class="accordion-content"><div class="accordion-content__inner"><p>IntestiBAL enthält eine einzigartige Kombination aus natürlichen Inhaltsstoffen, die speziell für die Verdauungsgesundheit Ihres Hundes entwickelt wurden.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Inhaltsstoffe<span class="accordion-icon material-icons">expand_more</span></button>
+            <div class="accordion-content"><div class="accordion-content__inner"><p>Flohsamenschalen, Probiotika (Enterococcus faecium), Präbiotika (FOS), Bentonit, Pektin, Kamillenextrakt. Ohne künstliche Zusatzstoffe.</p></div></div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Versand &amp; Lieferung<span class="accordion-icon material-icons">expand_more</span></button>
+            <div class="accordion-content"><div class="accordion-content__inner"><p>Standardversand: 3–5 Werktage. Expressversand: 1–2 Werktage. Ab 50 € versandkostenfrei.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pdp__recommendations">
+      <h3>Das könnte Ihnen auch gefallen</h3>
+      <div class="tile-grid --cols-4">
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Eins</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="cbd">CBD</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Zwei</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="stress">Stress</div><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Drei</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="haut">Haut</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Vier</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div></div>
+      </div>
+    </div>
+
+    <!-- Wishlist-Zustände -->
+    <h3 class="sg-h3">Wishlist-Button (.pdp__wishlist)</h3>
+    <p class="sg-p">Quadratischer Icon-Button neben dem Kauf-CTA. Nutzt <code>.icon-box.--md</code>. Drei Zustände:</p>
+    <div class="demo-label">Inaktiv / Aktiv / Hover</div>
+    <div style="display:flex;gap:var(--half-module);align-items:center;">
+      <div>
+        <p class="label-caps" style="margin-bottom:calc(var(--base)*0.5);">Inaktiv</p>
+        <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste hinzufügen" aria-pressed="false">
+          <span class="material-icons">favorite_border</span>
+        </button>
+      </div>
+      <div>
+        <p class="label-caps" style="margin-bottom:calc(var(--base)*0.5);">Aktiv (.--active)</p>
+        <button class="pdp__wishlist icon-box --md --active" type="button" aria-label="Von Wunschliste entfernen" aria-pressed="true">
+          <span class="material-icons">favorite</span>
+        </button>
+      </div>
+    </div>
+    <table class="spec-table" style="margin-top:var(--half-module);">
+      <tr><th><code>.pdp__wishlist</code></th><td>Inaktiv: <code>border: 1px solid var(--border-light)</code>, Icon <code>favorite_border</code></td></tr>
+      <tr><th><code>.pdp__wishlist.--active</code></th><td>Aktiv: <code>border-color: var(--color-error)</code>, Icon <code>favorite</code>, Farbe <code>var(--color-error)</code></td></tr>
+      <tr><th><code>:hover</code></th><td><code>border-color: var(--border-active)</code></td></tr>
+    </table>
+
+  </section>
+
+  <section class="sg-section" id="section-27">
+    <h2 class="section-label">27 — Produktübersicht / Collection</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Layout</h4>
+        <p>Schmale Sidebar (<code>12rem</code>) links + Produktgrid rechts. Mobile: Sidebar als Drawer von links.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Sidebar</th><td><code>12rem</code>, sticky. Kategorie-Filter (Checkboxen). Mobile: Drawer.</td></tr>
+      <tr><th>Filter-Tags</th><td>Aktive Filter als Tags. „Alle löschen"-Link.</td></tr>
+      <tr><th>Toolbar</th><td>Anzahl links, Sortierung rechts (Custom Select).</td></tr>
+      <tr><th>Grid</th><td>3-Spalter Produktkarten. Mobile: 2-spaltig.</td></tr>
+      <tr><th><code>.filter-active-bar</code></th><td>Flex, wrap, <code>gap: 0.5rem</code> — zeigt aktive Filter unter der Toolbar</td></tr>
+      <tr><th><code>.filter-tag__remove</code></th><td>Close-Button innerhalb <code>.filter-tag</code>, <code>color: var(--fg-muted)</code></td></tr>
+      <tr><th><code>.filter-count</code></th><td><code>color: var(--fg-muted)</code>, <code>font-weight: 400</code> — Anzahl in Klammern</td></tr>
+      <tr><th><code>.filter-reset</code></th><td>Text-Button, <code>margin-left: auto</code>, underline, rechts in <code>.filter-active-bar</code></td></tr>
+    </table>
+
+    <div class="demo-label">Produktübersicht</div>
+    <div class="sg-demo-stack">
+
+      <div class="filter-overlay" id="filterOverlay" onclick="closeFilter()"></div>
+      <div class="collection-layout">
+        <aside class="collection-sidebar" id="filterSidebar">
+          <div class="collection-sidebar__header">
+            <h3 class="collection-sidebar__title">Filter</h3>
+            <button class="btn --icon collection-sidebar__close" onclick="closeFilter()"><span class="material-icons">close</span></button>
+          </div>
+          <div class="filter-tags">
+            <button class="filter-tag">Pulver <span class="material-icons">close</span></button>
+            <button class="filter-clear">Alle löschen</button>
+          </div>
+          <div class="filter-group">
+            <h4 class="filter-group__title label-caps">Darreichungsform</h4>
+            <label class="form-check"><input type="checkbox" checked><span>Pulver</span></label>
+            <label class="form-check"><input type="checkbox"><span>Kapseln</span></label>
+            <label class="form-check"><input type="checkbox"><span>Flüssig</span></label>
+          </div>
+          <div class="filter-group">
+            <h4 class="filter-group__title label-caps">Besonderheiten</h4>
+            <label class="form-check"><input type="checkbox"><span>Getreidefrei</span></label>
+            <label class="form-check"><input type="checkbox"><span>Vegan</span></label>
+          </div>
+        </aside>
+
+        <main class="collection-main">
+          <div class="collection-toolbar">
+            <button class="collection-filter-toggle" type="button" onclick="openFilter()"><span class="material-icons">filter_list</span> Filter</button>
+            <div class="collection-toolbar__count">Zeige 1–9 von 12 Produkten</div>
+            <div class="collection-toolbar__sort">
+              <span class="collection-toolbar__sort-label">Sortieren:</span>
+              <select class="collection-toolbar__sort-select">
+                <option>Empfohlen</option>
+                <option>Bestseller</option>
+                <option>Preis aufsteigend</option>
+                <option>Preis absteigend</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tile-grid --cols-3">
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">ArthroBAL Complex</h3><div class="tile__description">Für agile Gelenke.</div><div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Mobility Plus</h3><div class="tile__description">Tägliche Unterstützung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Senior Fit</h3><div class="tile__description">Für ältere Hunde.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span><span class="--old">39,90 €</span></div></div></div>
+          </div>
+
+          <nav class="pagination" aria-label="Pagination">
+            <a href="#" class="pagination__btn" aria-label="Vorherige Seite"><span class="material-icons">chevron_left</span></a>
+            <a href="#" class="pagination__page">1</a>
+            <span class="pagination__page --current" aria-current="page">2</span>
+            <a href="#" class="pagination__page">3</a>
+            <span class="pagination__dots">...</span>
+            <a href="#" class="pagination__page">8</a>
+            <a href="#" class="pagination__btn" aria-label="Nächste Seite"><span class="material-icons">chevron_right</span></a>
+          </nav>
+        </main>
+      </div>
+
+    </div>
+
+    <!-- Filter-Zustände: Active Bar + Count + Accordion -->
+    <h3 class="sg-h3">Filter-Zustände</h3>
+
+    <div class="demo-label">Aktive Filter-Leiste (.filter-active-bar)</div>
+    <div class="filter-active-bar">
+      <span class="filter-tag">Gelenke <button class="filter-tag__remove" aria-label="Filter &#8222;Gelenke&#8220; entfernen"><span class="material-icons">close</span></button></span>
+      <span class="filter-tag">Hund <button class="filter-tag__remove" aria-label="Filter &#8222;Hund&#8220; entfernen"><span class="material-icons">close</span></button></span>
+      <span class="filter-tag">Neu <button class="filter-tag__remove" aria-label="Filter &#8222;Neu&#8220; entfernen"><span class="material-icons">close</span></button></span>
+      <button class="filter-reset">Alle Filter zurücksetzen</button>
+    </div>
+
+    <div class="demo-label">Ergebnis-Anzahl pro Filter-Option (.filter-count)</div>
+    <div class="sg-demo-stack" style="max-width:16rem;">
+      <div class="filter-group">
+        <h4 class="filter-group__title label-caps">Kategorie</h4>
+        <label class="form-check"><input type="checkbox" checked><span>Gelenke <span class="filter-count">(12)</span></span></label>
+        <label class="form-check"><input type="checkbox"><span>Haut &amp; Fell <span class="filter-count">(5)</span></span></label>
+        <label class="form-check"><input type="checkbox"><span>Verdauung &amp; Darm <span class="filter-count">(8)</span></span></label>
+      </div>
+    </div>
+
+    <div class="demo-label">Filterg ruppen: offen / eingeklappt (via .accordion-trigger)</div>
+    <div class="sg-demo-stack" style="max-width:16rem;">
+      <div class="accordion">
+        <div class="accordion-item --open">
+          <button class="accordion-trigger" type="button" aria-expanded="true" onclick="toggleAccordion(this)">Darreichungsform <span class="accordion-icon material-icons">expand_more</span></button>
+          <div class="accordion-content"><div class="accordion-content__inner">
+            <label class="form-check"><input type="checkbox" checked><span>Pulver</span></label>
+            <label class="form-check"><input type="checkbox"><span>Kapseln</span></label>
+            <label class="form-check"><input type="checkbox"><span>Flüssig</span></label>
+          </div></div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Besonderheiten <span class="accordion-icon material-icons">expand_more</span></button>
+          <div class="accordion-content"><div class="accordion-content__inner">
+            <label class="form-check"><input type="checkbox"><span>Getreidefrei</span></label>
+            <label class="form-check"><input type="checkbox"><span>Vegan</span></label>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Cart Drawer: Mit Produkten -->
+  <div class="cart-overlay" id="overlayFull" onclick="closeCart('cartFull')"></div>
+  <div class="cart-drawer" id="cartFull">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(3)</span></h2>
+      <button class="btn --icon" onclick="closeCart('cartFull')"><span class="material-icons">close</span></button>
+    </div>
+    <div class="cart-drawer__items">
+      <div class="cart-item"><div class="cart-item__image product-thumb placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">IntestiBAL</p><div class="cart-item__variant">250g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="2" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">59,80 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">CaniComplete</p><div class="cart-item__variant">120g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">34,90 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">DermaComplex</p><div class="cart-item__variant">500g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">49,90 €</div></div></div></div>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__shipping"><div class="shipping-hint"><span class="material-icons">local_shipping</span> Noch 5,40 € bis zum kostenlosen Versand</div></div>
+      <div class="summary-total"><span>Zwischensumme</span><span>144,60 €</span></div>
+      <div class="cart-drawer__tax">inkl. MwSt., zzgl. Versandkosten</div>
+      <a class="btn --primary cart-drawer__checkout">Zur Kasse</a>
+      <div class="cart-drawer__continue-wrap"><a class="btn --ghost cart-drawer__continue" onclick="closeCart('cartFull')">Weiter einkaufen</a></div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer: Leer -->
+  <div class="cart-overlay" id="overlayEmpty" onclick="closeCart('cartEmpty')"></div>
+  <div class="cart-drawer" id="cartEmpty">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(0)</span></h2>
+      <button class="btn --icon" onclick="closeCart('cartEmpty')"><span class="material-icons">close</span></button>
+    </div>
+    <div class="cart-drawer__empty">
+      <div class="empty-state">
+        <span class="material-icons">shopping_cart</span>
+        <p>Ihr Warenkorb ist leer.</p>
+        <a class="btn --primary" onclick="closeCart('cartEmpty')">Weiter einkaufen</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       12 FOOTER
+       ═══════════════════════════════════════════ -->
+    <section class="sg-section" id="section-28">
+    <h2 class="section-label">28 — Warenkorb-Drawer</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Typ</h4>
+        <p>Slide-in von rechts. Halbtransparentes Overlay dahinter. Breite: <code>min(28rem, 100vw)</code>. Transition: <code>0.3s ease</code>.</p>
+      </div>
+      <div class="rule">
+        <h4>Struktur</h4>
+        <p>Header (Titel + Schließen), scrollbare Produktliste (Mitte), Footer mit Summe und CTA (sticky unten).</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th>Overlay</th><td><code>rgba(0,0,0,0.4)</code>. Klick schließt den Drawer.</td></tr>
+      <tr><th>Drawer</th><td>Breite <code>min(28rem, 100vw)</code>. Border-left: <code>1px solid #000</code>.</td></tr>
+      <tr><th>Item</th><td>Grid: <code>5rem</code> Bild + <code>1fr</code> Info. Kompakte ±Buttons (<code>2rem</code>).</td></tr>
+      <tr><th>Footer</th><td>Versandhinweis, Zwischensumme (<code>--text-m</code>), Checkout (Primary), Weiter einkaufen (Ghost).</td></tr>
+      <tr><th>Leer</th><td>Zentriertes Icon + Text + Button.</td></tr>
+    </table>
+
+    <div class="demo-label">Drawer öffnen</div>
+    <div class="sg-btn-row --sm">
+      <button class="btn --primary" onclick="openCart('cartFull')">Mit Produkten</button>
+      <button class="btn --secondary" onclick="openCart('cartEmpty')">Leerer Warenkorb</button>
+    </div>
+  </section>
+
+  <section class="sg-section" id="section-29">
+    <h2 class="section-label">29 — Checkout</h2>
 
     <div class="rules">
       <div class="rule">
@@ -2587,46 +2995,46 @@
         <div>
 
           <!-- Lieferadresse -->
-          <div class="checkout__block">
+          <div>
             <h3 class="section-label">Lieferadresse</h3>
             <div class="form-grid">
               <div class="form-field">
-                <input type="text" id="co-vorname" placeholder=" ">
+                <input type="text" id="co-vorname" placeholder="">
                 <label for="co-vorname">Vorname</label>
               </div>
               <div class="form-field">
-                <input type="text" id="co-nachname" placeholder=" ">
+                <input type="text" id="co-nachname" placeholder="">
                 <label for="co-nachname">Nachname</label>
               </div>
               <div class="form-field">
-                <input type="text" id="co-strasse" placeholder=" ">
+                <input type="text" id="co-strasse" placeholder="">
                 <label for="co-strasse">Straße</label>
               </div>
               <div class="form-field">
-                <input type="text" id="co-hausnr" placeholder=" ">
+                <input type="text" id="co-hausnr" placeholder="">
                 <label for="co-hausnr">Nr.</label>
               </div>
               <div class="form-field">
-                <input type="text" id="co-plz" placeholder=" ">
+                <input type="text" id="co-plz" placeholder="">
                 <label for="co-plz">PLZ</label>
               </div>
               <div class="form-field">
-                <input type="text" id="co-ort" placeholder=" ">
+                <input type="text" id="co-ort" placeholder="">
                 <label for="co-ort">Ort</label>
               </div>
               <div class="form-field" style="grid-column: span 2">
-                <input type="email" id="co-email" placeholder=" ">
+                <input type="email" id="co-email" placeholder="">
                 <label for="co-email">E-Mail-Adresse</label>
               </div>
               <div class="form-field" style="grid-column: span 2">
-                <input type="tel" id="co-tel" placeholder=" ">
+                <input type="tel" id="co-tel" placeholder="">
                 <label for="co-tel">Telefon (optional)</label>
               </div>
             </div>
           </div>
 
           <!-- Versandart -->
-          <div class="checkout__block">
+          <div>
             <h3 class="section-label">Versandart</h3>
             <div class="tile-grid" style="gap: var(--half-module);">
               <button class="choice-box --block --active" type="button" onclick="selectCheckout(this)">
@@ -2641,7 +3049,7 @@
           </div>
 
           <!-- Zahlung -->
-          <div class="checkout__block">
+          <div>
             <h3 class="section-label">Zahlung</h3>
             <div class="tile-grid" style="gap: var(--half-module);">
               <button class="choice-box --block --active" type="button" onclick="selectCheckout(this)">
@@ -2666,11 +3074,11 @@
           <h3 class="section-label">Bestellübersicht</h3>
 
           <div class="cart-item">
-            <div class="cart-item__image placeholder-bg"></div>
+            <div class="cart-item__image product-thumb placeholder-bg"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
-                  <div class="cart-item__name">IntestiBAL</div>
+                  <p class="cart-item__name">IntestiBAL</p>
                   <div class="cart-item__variant">250g</div>
                 </div>
               </div>
@@ -2682,11 +3090,11 @@
           </div>
 
           <div class="cart-item">
-            <div class="cart-item__image placeholder-bg"></div>
+            <div class="cart-item__image product-thumb placeholder-bg"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
-                  <div class="cart-item__name">CaniComplete</div>
+                  <p class="cart-item__name">CaniComplete</p>
                   <div class="cart-item__variant">120g</div>
                 </div>
               </div>
@@ -2698,11 +3106,11 @@
           </div>
 
           <div class="cart-item">
-            <div class="cart-item__image placeholder-bg"></div>
+            <div class="cart-item__image product-thumb placeholder-bg"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
-                  <div class="cart-item__name">DermaComplex</div>
+                  <p class="cart-item__name">DermaComplex</p>
                   <div class="cart-item__variant">500g · Sale</div>
                 </div>
               </div>
@@ -2718,7 +3126,7 @@
           <div class="summary-line"><span>MwSt. (19 %)</span><span>23,12 €</span></div>
           <div class="summary-total"><span>Gesamt</span><span>144,60 €</span></div>
 
-          <div class="mt-half">
+          <div>
             <button class="btn --primary --full" type="button">Jetzt kaufen</button>
           </div>
         </aside>
@@ -2727,60 +3135,144 @@
     </div><!-- /sg-demo-stack -->
   </section>
 
-  <!-- 21 Modal -->
-  <section class="sg-section" id="modal-section">
-    <h2 class="section-label">27 — Modal / Pop-up</h2>
-    <div class="rules">
-      <div class="rule"><h4>Aufbau</h4><p>Dunkles Overlay (60% Opacity) zentriert die Box. Die Box hat max. 32rem Breite. Header ist sticky, Body scrollbar. Klick auf X oder das Overlay schließt das Modal.</p></div>
-    </div>
-    <div class="demo-label">Modal öffnen</div>
-    <button class="btn --secondary" onclick="openModal('demoModal')">Beispiel-Modal öffnen</button>
+  <!-- ── ACCOUNT & SERVICES ─────────────────────────── -->
 
-    <div class="modal-overlay" id="demoModal" onclick="closeModal('demoModal')">
-      <div class="modal" onclick="event.stopPropagation()">
-        <div class="modal__header">
-          <div class="modal__title">Willkommen im Rudel!</div>
-          <button class="btn --icon" onclick="closeModal('demoModal')" aria-label="Schließen"><span class="material-icons">close</span></button>
+  <section class="sg-section" id="section-30">
+    <h2 class="section-label">30 — Account-Seiten</h2>
+    <div class="rules">
+      <div class="rule"><h4>Formulare</h4><p>Nutzen <code>.form-field</code> (Floating Label), <code>.form-grid</code> (2-Spalten), <code>.btn.--primary.--full</code>. Alle drei Screens in einem <code>.tab-nav</code>.</p></div>
+      <div class="rule"><h4>Dashboard</h4><p>Begrüßung + 4 Kacheln (<code>.tile-grid.--cols-2</code>). Kacheln nutzen <code>.icon-box.--lg</code> + <code>.label-caps</code>.</p></div>
+      <div class="rule"><h4>Bestellhistorie</h4><p><code>.order-item</code> mit Bestellnummer, Datum, Status-Badge, Betrag und Link.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.account-tile</code></th><td>Flex-Spalte, zentriert, Border, Hover-Hintergrund</td></tr>
+      <tr><th><code>.account-tile__label</code></th><td><code>font-weight: 700</code></td></tr>
+      <tr><th><code>.account-tile__sub</code></th><td><code>color: var(--fg-muted)</code>, <code>font-size: var(--text-xs)</code></td></tr>
+      <tr><th><code>.order-item</code></th><td>5-Spalten-Grid: Info · Datum · Badge · Betrag · Link</td></tr>
+    </table>
+
+    <!-- Tabs: Login / Registrierung / Passwort vergessen -->
+    <div class="demo-label">Login · Registrierung · Passwort vergessen</div>
+    <div style="max-width:32rem;">
+      <div class="tab-nav" role="tablist">
+        <button class="tab-btn --active" role="tab" onclick="switchAccTab(this,'acc-login')" aria-selected="true">Login</button>
+        <button class="tab-btn" role="tab" onclick="switchAccTab(this,'acc-register')" aria-selected="false">Registrierung</button>
+        <button class="tab-btn" role="tab" onclick="switchAccTab(this,'acc-forgot')" aria-selected="false">Passwort vergessen</button>
+      </div>
+
+      <!-- Login -->
+      <div class="tab-panel --active" id="acc-login" role="tabpanel">
+        <form onsubmit="return false;">
+          <div class="form-field">
+            <input type="email" id="acc-email" placeholder=" ">
+            <label for="acc-email">E-Mail-Adresse</label>
+          </div>
+          <div class="form-field" style="margin-top:var(--half-module);">
+            <input type="password" id="acc-password" placeholder=" ">
+            <label for="acc-password">Passwort</label>
+          </div>
+          <button class="btn --primary --full" type="submit" style="margin-top:var(--half-module);width:100%;">Anmelden</button>
+          <p style="margin-top:var(--half-module);font-size:var(--text-xs);color:var(--fg-muted);"><a href="#" style="color:var(--fg);">Passwort vergessen?</a></p>
+        </form>
+      </div>
+
+      <!-- Registrierung -->
+      <div class="tab-panel" id="acc-register" role="tabpanel">
+        <form onsubmit="return false;">
+          <div class="form-grid">
+            <div class="form-field">
+              <input type="text" id="acc-vorname" placeholder=" ">
+              <label for="acc-vorname">Vorname</label>
+            </div>
+            <div class="form-field">
+              <input type="text" id="acc-nachname" placeholder=" ">
+              <label for="acc-nachname">Nachname</label>
+            </div>
+          </div>
+          <div class="form-field" style="margin-top:var(--half-module);">
+            <input type="email" id="acc-reg-email" placeholder=" ">
+            <label for="acc-reg-email">E-Mail-Adresse</label>
+          </div>
+          <div class="form-field" style="margin-top:var(--half-module);">
+            <input type="password" id="acc-reg-pw" placeholder=" ">
+            <label for="acc-reg-pw">Passwort</label>
+          </div>
+          <div class="form-field" style="margin-top:var(--half-module);">
+            <input type="password" id="acc-reg-pw2" placeholder=" ">
+            <label for="acc-reg-pw2">Passwort wiederholen</label>
+          </div>
+          <button class="btn --primary" type="submit" style="margin-top:var(--half-module);width:100%;">Konto erstellen</button>
+        </form>
+      </div>
+
+      <!-- Passwort vergessen -->
+      <div class="tab-panel" id="acc-forgot" role="tabpanel">
+        <form onsubmit="return false;">
+          <p style="font-size:var(--text-base);color:var(--fg-muted);margin-bottom:var(--half-module);">Gib deine E-Mail-Adresse ein — wir senden dir einen Link zum Zurücksetzen.</p>
+          <div class="form-field">
+            <input type="email" id="acc-forgot-email" placeholder=" ">
+            <label for="acc-forgot-email">E-Mail-Adresse</label>
+          </div>
+          <button class="btn --primary" type="submit" style="margin-top:var(--half-module);width:100%;">Link senden</button>
+          <p style="margin-top:var(--half-module);font-size:var(--text-xs);color:var(--fg-muted);"><a href="#" style="color:var(--fg);">Zurück zum Login</a></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Account-Dashboard -->
+    <div class="demo-label" style="margin-top:var(--module);">Account-Dashboard</div>
+    <div>
+      <p style="font-size:var(--text-l);font-weight:700;margin-bottom:var(--module);">Hallo, Maria</p>
+      <div class="tile-grid --cols-2" style="max-width:32rem;">
+        <a class="account-tile" href="#">
+          <div class="icon-box --lg"><span class="material-icons">inventory_2</span></div>
+          <span class="account-tile__label">Meine Bestellungen</span>
+          <span class="account-tile__sub">3 aktive Bestellungen</span>
+        </a>
+        <a class="account-tile" href="#">
+          <div class="icon-box --lg"><span class="material-icons">place</span></div>
+          <span class="account-tile__label">Meine Adressen</span>
+          <span class="account-tile__sub">2 gespeicherte Adressen</span>
+        </a>
+        <a class="account-tile" href="#">
+          <div class="icon-box --lg"><span class="material-icons">person</span></div>
+          <span class="account-tile__label">Meine Daten</span>
+          <span class="account-tile__sub">Name, E-Mail, Passwort</span>
+        </a>
+        <a class="account-tile" href="#">
+          <div class="icon-box --lg"><span class="material-icons">logout</span></div>
+          <span class="account-tile__label">Abmelden</span>
+          <span class="account-tile__sub label-caps" style="text-transform:none;">Sitzung beenden</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bestellhistorie -->
+    <div class="demo-label" style="margin-top:var(--module);">Bestellhistorie</div>
+    <div style="max-width:48rem;">
+      <div class="order-item">
+        <div>
+          <div class="order-item__number">#10042</div>
+          <div class="order-item__date">12. März 2025</div>
         </div>
-        <div class="modal__body">
-          <p class="sg-p">Abonniere unseren Newsletter und erhalte 10% Rabatt auf deine erste Bestellung sowie wertvolle Tipps zur Tiergesundheit.</p>
-          <form class="actionable-input mt-1" onsubmit="return false;">
-            <div class="form-field"><input type="email" id="modal-email" placeholder=" "><label for="modal-email">E-Mail-Adresse</label></div>
-            <button class="btn --primary" type="submit">Anmelden</button>
-          </form>
+        <span class="badge --dark">Versandt</span>
+        <span class="order-item__amount">89,70 €</span>
+        <a class="order-item__link" href="#">Details</a>
+      </div>
+      <div class="order-item">
+        <div>
+          <div class="order-item__number">#10039</div>
+          <div class="order-item__date">3. Februar 2025</div>
         </div>
+        <span class="badge" data-cat="stress">In Bearbeitung</span>
+        <span class="order-item__amount">34,90 €</span>
+        <a class="order-item__link" href="#">Details</a>
       </div>
     </div>
   </section>
 
-  <!-- 22 Toast -->
-  <section class="sg-section" id="toast-section">
-    <h2 class="section-label">28 — Toast / Notification</h2>
-    <div class="rules">
-      <div class="rule"><h4>Aufbau</h4><p>Fester Container unten rechts (<code>.toast-container</code>). Jeder Toast ist ein Atom mit Icon + Text. Slides in von rechts, verschwindet nach 3,5 s automatisch. Z-Index über dem Modal.</p></div>
-      <div class="rule"><h4>Varianten</h4><p><code>.--success</code> (grün), <code>.--error</code> (rot), <code>.--info</code> (grau). Aufruf über <code>showToast(message, type)</code>. Mehrere Toasts stapeln sich.</p></div>
-    </div>
-
-    <div class="demo-label">Varianten</div>
-    <div style="display: flex; gap: var(--half-module); flex-wrap: wrap;">
-      <button class="btn --secondary" onclick="showToast('Produkt wurde zum Warenkorb hinzugefügt.', 'success')">Success</button>
-      <button class="btn --secondary" onclick="showToast('Etwas ist schiefgelaufen. Bitte versuche es erneut.', 'error')">Error</button>
-      <button class="btn --secondary" onclick="showToast('Deine Änderungen wurden gespeichert.', 'info')">Info</button>
-    </div>
-
-    <table class="spec-table mt-1">
-      <tr><th><code>.toast-container</code></th><td>Fixer Container, Bottom-Right, <code>z-index: calc(var(--z-modal) + 10)</code></td></tr>
-      <tr><th><code>.toast</code></th><td>Basis-Toast: dunkler Hintergrund, Icon + Text, Slide-in-Animation</td></tr>
-      <tr><th><code>.toast.--success</code></th><td>Hintergrund <code>var(--green)</code></td></tr>
-      <tr><th><code>.toast.--error</code></th><td>Hintergrund <code>#c0392b</code></td></tr>
-      <tr><th><code>.toast.--info</code></th><td>Hintergrund <code>var(--fg-muted)</code></td></tr>
-      <tr><th><code>showToast(msg, type)</code></th><td>Erzeugt Toast dynamisch, auto-dismiss nach 3,5 s, Fade-out 0,3 s</td></tr>
-    </table>
-  </section>
-
-  <!-- 29 Suche -->
-  <section class="sg-section" id="search">
-    <h2 class="section-label">29 — Suche</h2>
+  <section class="sg-section" id="section-31">
+    <h2 class="section-label">31 — Suche</h2>
     <div class="rules">
       <div class="rule"><h4>Aufbau</h4><p>Das <code>.search-overlay</code> ist ein Fullscreen-Backdrop (<code>position:fixed</code>). Das darin liegende <code>.search-panel</code> gleitet von oben ins Bild (<code>translateY(-100%)</code> → <code>translateY(0)</code>). Die Klasse <code>.--open</code> am Overlay aktiviert beides. In der statischen Demo unten ist <code>position:fixed</code> aufgehoben, damit der Block im Seitenfluss sichtbar bleibt.</p></div>
       <div class="rule"><h4>Interaktion</h4><p>Öffnen via <code>openSearch()</code> (Lupen-Icon in der Nav). Schließen via Close-Button, Escape-Taste oder Klick auf den Backdrop. Keyboard-Navigation mit Pfeiltasten. Debounced Input filtert <code>SEARCH_DATA</code> clientseitig.</p></div>
@@ -2800,34 +3292,34 @@
     </div>
 
     <!-- Statische Demo: Ergebnisliste mit Vorschlägen + Produkten -->
-    <div class="demo-label mt-1">Ergebnisse — Vorschläge &amp; Produkte</div>
+    <div class="demo-label">Ergebnisse — Vorschläge &amp; Produkte</div>
     <div style="border:1px solid var(--border);overflow:hidden;">
       <div class="search-results" style="max-height:none;overflow:visible;">
         <div class="search-results__section">
           <div class="section-label">Vorschläge</div>
           <div class="search-result">
             <div class="icon-box --lg"><span class="material-icons">search</span></div>
-            <div class="search-result__info"><div class="search-result__name">Gelenke &amp; Bewegung</div></div>
+            <div class="search-result__info"><p class="search-result__name">Gelenke &amp; Bewegung</p></div>
           </div>
           <div class="search-result --active">
             <div class="icon-box --lg"><span class="material-icons">search</span></div>
-            <div class="search-result__info"><div class="search-result__name">Verdauung &amp; Darm</div></div>
+            <div class="search-result__info"><p class="search-result__name">Verdauung &amp; Darm</p></div>
           </div>
         </div>
         <div class="search-results__section">
           <div class="section-label">Produkte</div>
           <div class="search-result">
-            <div class="search-result__image"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="ArthroBAL Mobility Complex"></div>
+            <div class="search-result__image product-thumb"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="ArthroBAL Mobility Complex"></div>
             <div class="search-result__info">
-              <div class="search-result__name">ArthroBAL Mobility Complex</div>
+              <p class="search-result__name">ArthroBAL Mobility Complex</p>
               <div class="search-result__meta">Gelenke &amp; Bewegung</div>
             </div>
             <div class="search-result__price">34,90 €</div>
           </div>
           <div class="search-result">
-            <div class="search-result__image"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="IntestiBAL Darm-Komplex"></div>
+            <div class="search-result__image product-thumb"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="IntestiBAL Darm-Komplex"></div>
             <div class="search-result__info">
-              <div class="search-result__name">IntestiBAL Darm-Komplex</div>
+              <p class="search-result__name">IntestiBAL Darm-Komplex</p>
               <div class="search-result__meta">Verdauung &amp; Darm</div>
             </div>
             <div class="search-result__price">29,90 €</div>
@@ -2837,7 +3329,7 @@
     </div>
 
     <!-- Statische Demo: Empty State -->
-    <div class="demo-label mt-1">Empty State</div>
+    <div class="demo-label">Empty State</div>
     <div style="border:1px solid var(--border);overflow:hidden;">
       <div class="empty-state">
         <span class="material-icons">search_off</span>
@@ -2846,14 +3338,14 @@
     </div>
 
     <!-- Live-Demo -->
-    <div class="demo-label mt-1">Live-Demo</div>
+    <div class="demo-label">Live-Demo</div>
     <button class="btn --primary --with-icon" onclick="openSearch()">
       <span class="material-icons">search</span>
       Suche öffnen
     </button>
-    <p class="sg-p mt-1">Tipp: Nach dem Öffnen „Gelenk", „Darm" oder „Haut" eintippen — oder Pfeiltasten zur Navigation nutzen, Escape zum Schließen.</p>
+    <p class="sg-p" style="margin-top:var(--half-module);">Tipp: Nach dem Öffnen „Gelenk", „Darm" oder „Haut" eintippen — oder Pfeiltasten zur Navigation nutzen, Escape zum Schließen.</p>
 
-    <table class="spec-table mt-1">
+    <table class="spec-table">
       <tr><th><code>.search-overlay</code></th><td>Fullscreen-Backdrop, <code>position:fixed</code>, aktiviert via <code>.--open</code></td></tr>
       <tr><th><code>.search-panel</code></th><td>Header-Panel, slide-in von oben, <code>max-height:80vh</code></td></tr>
       <tr><th><code>.search-panel__bar</code></th><td>Eingabezeile: Icon + Input + Close-Button</td></tr>
@@ -2873,6 +3365,290 @@
     </table>
   </section>
 
+  <section class="sg-section" id="section-32">
+    <h2 class="section-label">32 — Blog</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Blog-Übersicht</h4>
+        <p>3-Spalter-Grid auf Desktop (<code>.blog-grid</code>), 1-spaltig auf Mobile. Jede Karte besteht aus Bild (16:9), Meta, Titel, Excerpt (line-clamp 3) und CTA-Link.</p>
+      </div>
+      <div class="rule">
+        <h4>Artikel-Detailseite</h4>
+        <p>Max-Width 48rem, zentriert. Hero-Bild, Fließtext via <code>.rte</code>. Abschluss: Autor-Card + Tags via <code>.filter-tag</code> Atom.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th><code>.blog-grid</code></th><td>CSS Grid, 3 Spalten, <code>gap: var(--module)</code>. Mobile: 1-spaltig.</td></tr>
+      <tr><th><code>.blog-card</code></th><td>Flex column. Bild oben, Content unten mit <code>flex: 1</code>.</td></tr>
+      <tr><th><code>.blog-card__image</code></th><td>Aspect-Ratio 16:9, nutzt <code>.placeholder-bg</code></td></tr>
+      <tr><th><code>.blog-card__meta</code></th><td>Datum + Kategorie, nutzt <code>.label-caps</code></td></tr>
+      <tr><th><code>.blog-card__title</code></th><td><code>var(--text-m)</code>, <code>font-weight: 700</code>, h3-Element</td></tr>
+      <tr><th><code>.blog-card__excerpt</code></th><td><code>var(--fg-muted)</code>, line-clamp 3 Zeilen</td></tr>
+      <tr><th><code>.blog-card__cta</code></th><td>„Weiterlesen"-Link, underline on hover, <code>margin-top: auto</code></td></tr>
+      <tr><th><code>.article__header</code></th><td>Meta (<code>.label-caps</code>) + h1-Titel</td></tr>
+      <tr><th><code>.article__hero</code></th><td>16:9, <code>.placeholder-bg</code>, <code>margin-bottom: var(--module)</code></td></tr>
+      <tr><th><code>.article__body</code></th><td>Nutzt bestehende <code>.rte</code>-Klasse für Fließtext</td></tr>
+      <tr><th><code>.article__author</code></th><td>Flex, rundes Avatar-Bild (<code>border-radius: 50%</code>), Name + Rolle</td></tr>
+      <tr><th><code>.article__tags</code></th><td>Flex-wrap, nutzt <code>.filter-tag</code> Atom (aus Sektion 23)</td></tr>
+    </table>
+
+    <!-- Blog-Übersicht -->
+    <div class="demo-label">Blog-Übersicht (.blog-grid)</div>
+    <div class="blog-grid">
+
+      <article class="blog-card">
+        <div class="blog-card__image placeholder-bg"></div>
+        <div class="blog-card__content">
+          <span class="blog-card__meta label-caps">12. April 2026 · Ernährung</span>
+          <h3 class="blog-card__title">5 Wege wie Omega-3 die Gelenkgesundheit deines Hundes verbessert</h3>
+          <p class="blog-card__excerpt">Omega-3-Fettsäuren spielen eine entscheidende Rolle bei der Unterstützung gesunder Gelenke. Erfahre, warum regelmäßige Supplementierung besonders bei älteren Hunden sinnvoll ist und welche Quellen wirklich helfen.</p>
+          <a href="#" class="blog-card__cta">Weiterlesen</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card__image placeholder-bg"></div>
+        <div class="blog-card__content">
+          <span class="blog-card__meta label-caps">8. April 2026 · Verdauung</span>
+          <h3 class="blog-card__title">Probiotika für Hunde: Was steckt dahinter und wann helfen sie wirklich?</h3>
+          <p class="blog-card__excerpt">Immer mehr Tierbesitzer greifen zu Probiotika. Doch wie funktionieren sie, wann sind sie sinnvoll – und was solltest du beim Kauf beachten? Wir klären auf.</p>
+          <a href="#" class="blog-card__cta">Weiterlesen</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-card__image placeholder-bg"></div>
+        <div class="blog-card__content">
+          <span class="blog-card__meta label-caps">3. April 2026 · Haut &amp; Fell</span>
+          <h3 class="blog-card__title">Glänzendes Fell – was Ernährung und Pflegesupplemente leisten können</h3>
+          <p class="blog-card__excerpt">Ein strahlendes Fell ist nicht nur Schönheit – es ist ein Zeichen innerer Gesundheit. Welche Nährstoffe wirklich helfen und wie du Mangelerscheinungen erkennst.</p>
+          <a href="#" class="blog-card__cta">Weiterlesen</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Artikel-Detailseite -->
+    <div class="demo-label" style="margin-top:var(--module);">Artikel-Detailseite (.article-layout)</div>
+    <div class="article-layout">
+
+      <!-- Linke Spalte: Autor + Tags (Desktop sticky) -->
+      <aside class="article-sidebar">
+        <div class="article__author">
+          <div class="article__author-avatar placeholder-bg"></div>
+          <div>
+            <p class="article__author-name">Dr. Mara Hofer</p>
+            <p class="article__author-role">Tierärztin &amp; Ernährungsberaterin</p>
+          </div>
+        </div>
+        <div class="article__tags">
+          <span class="filter-tag">Gelenke</span>
+          <span class="filter-tag">Omega-3</span>
+          <span class="filter-tag">Ernährung</span>
+          <span class="filter-tag">Hund</span>
+        </div>
+      </aside>
+
+      <!-- Rechte Spalte: Artikel-Inhalt -->
+      <article class="article">
+
+        <header class="article__header">
+          <span class="label-caps">Ernährung · 12. April 2026</span>
+          <h1>5 Wege wie Omega-3 die Gelenkgesundheit deines Hundes verbessert</h1>
+        </header>
+
+        <div class="article__hero placeholder-bg"></div>
+
+        <div class="article__body rte">
+          <p>Omega-3-Fettsäuren sind essenzielle Nährstoffe, die der Körper nicht selbst herstellen kann. Für Hunde – besonders solche mit Gelenkbeschwerden oder hohem Aktivitätsniveau – kann eine gezielte Supplementierung einen spürbaren Unterschied machen.</p>
+          <h2>Entzündungshemmende Wirkung</h2>
+          <p>EPA und DHA, zwei langkettige Omega-3-Fettsäuren, hemmen entzündungsfördernde Prostaglandine und können so Schwellungen und Steifheit in den Gelenken reduzieren. Studien zeigen, dass regelmäßige Gabe bei Hunden mit Arthritis zu deutlicher Besserung führen kann.</p>
+          <h2>Schmerzlinderung ohne Nebenwirkungen</h2>
+          <p>Im Gegensatz zu NSAIDs (nicht-steroidale Antirheumatika) haben Omega-3-Präparate bei empfohlener Dosierung kaum Nebenwirkungen. Sie eignen sich daher auch für Langzeittherapie bei chronisch erkrankten Tieren.</p>
+          <blockquote>„Gerade bei älteren Hunden mit Osteoarthritis sehen wir signifikante Verbesserungen, wenn Omega-3 konsequent eingesetzt wird." — Dr. Mara Hofer, Tierärztin</blockquote>
+          <h2>Dosierung und Quellen</h2>
+          <p>Empfohlen werden 50–75 mg EPA+DHA pro kg Körpergewicht täglich. Gute Quellen sind Fischöl, Krillöl oder spezielle Ergänzungsfuttermittel. Pflanzliche ALA (z.B. aus Leinöl) wird vom Hund nur schlecht in EPA/DHA umgewandelt.</p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- ── FEEDBACK & SYSTEM-ZUSTÄNDE ──────────────────── -->
+
+  <section class="sg-section" id="section-33">
+    <h2 class="section-label">33 — Modal / Pop-up</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p>Dunkles Overlay (60% Opacity) zentriert die Box. Die Box hat max. 32rem Breite. Header ist sticky, Body scrollbar. Klick auf X oder das Overlay schließt das Modal.</p></div>
+    </div>
+    <div class="demo-label">Modal öffnen</div>
+    <button class="btn --secondary" onclick="openModal('demoModal')">Beispiel-Modal öffnen</button>
+
+    <div class="modal-overlay" id="demoModal" onclick="closeModal('demoModal')">
+      <div class="modal" onclick="event.stopPropagation()">
+        <div class="modal__header">
+          <h2 class="modal__title">Willkommen im Rudel!</h2>
+          <button class="btn --icon" onclick="closeModal('demoModal')" aria-label="Schließen"><span class="material-icons">close</span></button>
+        </div>
+        <div class="modal__body">
+          <p class="sg-p">Abonniere unseren Newsletter und erhalte 10% Rabatt auf deine erste Bestellung sowie wertvolle Tipps zur Tiergesundheit.</p>
+          <form class="actionable-input" onsubmit="return false;">
+            <div class="form-field"><input type="email" id="modal-email" placeholder=""><label for="modal-email">E-Mail-Adresse</label></div>
+            <button class="btn --primary" type="submit">Anmelden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section" id="section-34">
+    <h2 class="section-label">34 — Toast / Notification</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p>Fester Container unten rechts (<code>.toast-container</code>). Jeder Toast ist ein Atom mit Icon + Text. Slides in von rechts, verschwindet nach 3,5 s automatisch. Z-Index über dem Modal.</p></div>
+      <div class="rule"><h4>Varianten</h4><p><code>.--success</code> (grün), <code>.--error</code> (rot), <code>.--info</code> (grau). Aufruf über <code>showToast(message, type)</code>. Mehrere Toasts stapeln sich.</p></div>
+    </div>
+
+    <div class="demo-label">Varianten</div>
+    <div style="display: flex; gap: var(--half-module); flex-wrap: wrap;">
+      <button class="btn --secondary" onclick="showToast('Produkt wurde zum Warenkorb hinzugefügt.', 'success')">Success</button>
+      <button class="btn --secondary" onclick="showToast('Etwas ist schiefgelaufen. Bitte versuche es erneut.', 'error')">Error</button>
+      <button class="btn --secondary" onclick="showToast('Deine Änderungen wurden gespeichert.', 'info')">Info</button>
+    </div>
+
+    <table class="spec-table">
+      <tr><th><code>.toast-container</code></th><td>Fixer Container, Bottom-Right, <code>z-index: calc(var(--z-modal) + 10)</code></td></tr>
+      <tr><th><code>.toast</code></th><td>Basis-Toast: dunkler Hintergrund, Icon + Text, Slide-in-Animation</td></tr>
+      <tr><th><code>.toast.--success</code></th><td>Hintergrund <code>var(--green)</code></td></tr>
+      <tr><th><code>.toast.--error</code></th><td>Hintergrund <code>#c0392b</code></td></tr>
+      <tr><th><code>.toast.--info</code></th><td>Hintergrund <code>var(--fg-muted)</code></td></tr>
+      <tr><th><code>showToast(msg, type)</code></th><td>Erzeugt Toast dynamisch, auto-dismiss nach 3,5 s, Fade-out 0,3 s</td></tr>
+    </table>
+  </section>
+
+  <section class="sg-section" id="section-35">
+    <h2 class="section-label">35 — Empty States</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p>Basis-Atom <code>.empty-state</code>: Flex-Spalte, zentriert. Innen: <code>.material-icons</code> (<code>var(--module)</code>, <code>--border-light</code>) · <code>.empty-state__title</code> (<code>--text-m</code>, bold) · <code>.empty-state__sub</code> (<code>--fg-muted</code>) · optionaler <code>.btn.--primary</code>.</p></div>
+      <div class="rule"><h4>Einsatz</h4><p>Warenkorb leer, Keine Suchergebnisse, 404, leere Listen. Immer ohne Rahmen oder Hintergrund — der Kontext gibt den Container.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.empty-state</code></th><td>Flex-Spalte, zentriert, <code>max-width: 28rem</code>, <code>padding: var(--module)</code></td></tr>
+      <tr><th><code>.empty-state .material-icons</code></th><td><code>font-size: var(--module)</code>, <code>color: var(--border-light)</code></td></tr>
+      <tr><th><code>.empty-state__title</code></th><td><code>font-size: var(--text-m)</code>, <code>font-weight: 700</code>, <code>color: var(--fg)</code></td></tr>
+      <tr><th><code>.empty-state__sub</code></th><td><code>font-size: var(--text-base)</code>, <code>color: var(--fg-muted)</code></td></tr>
+    </table>
+
+    <div class="demo-label">Warenkorb leer</div>
+    <div style="border:1px solid var(--border-light);">
+      <div class="empty-state">
+        <span class="material-icons">shopping_cart</span>
+        <p class="empty-state__title">Dein Warenkorb ist leer</p>
+        <p class="empty-state__sub">Entdecke unsere Produkte und füge sie hinzu.</p>
+        <a class="btn --primary" href="#">Zum Shop</a>
+      </div>
+    </div>
+
+    <div class="demo-label" style="margin-top:var(--half-module);">Keine Suchergebnisse</div>
+    <div style="border:1px solid var(--border-light);">
+      <div class="empty-state">
+        <span class="material-icons">search_off</span>
+        <p class="empty-state__title">Keine Ergebnisse</p>
+        <p class="empty-state__sub">Versuche einen anderen Suchbegriff oder stöbere in unseren Kategorien.</p>
+      </div>
+    </div>
+
+    <div class="demo-label" style="margin-top:var(--half-module);">404 — Seite nicht gefunden</div>
+    <div style="border:1px solid var(--border-light);">
+      <div class="empty-state">
+        <span class="material-icons">error_outline</span>
+        <p class="empty-state__title">Seite nicht gefunden</p>
+        <p class="empty-state__sub">Die Seite existiert nicht oder wurde verschoben.</p>
+        <a class="btn --primary" href="#">Zur Startseite</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section" id="section-36">
+    <h2 class="section-label">36 — Out-of-Stock</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p><code>.pdp__oos-badge</code> signalisiert den Status. Darunter <code>.pdp__oos-cta</code> mit Hinweistext und CTA-Button (<code>.btn.--secondary</code>, volle Breite).</p></div>
+      <div class="rule"><h4>Einsatz</h4><p>Ersetzt den Standard-Kauf-Bereich auf der PDP wenn <code>available: false</code>. Keine Preisänderung, kein Warenkorb-Button.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.pdp__oos-badge</code></th><td>Kompaktes Uppercase-Label, Border <code>var(--border-light)</code>, <code>color: var(--fg-muted)</code></td></tr>
+      <tr><th><code>.pdp__oos-cta</code></th><td>Flex-Spalte, <code>gap: var(--half-module)</code></td></tr>
+      <tr><th><code>.pdp__oos-cta__label</code></th><td><code>color: var(--fg-muted)</code></td></tr>
+      <tr><th><code>.pdp__oos-cta .btn</code></th><td>Volle Breite via <code>width: 100%</code></td></tr>
+    </table>
+    <div class="demo-label">Out-of-Stock Zustand</div>
+    <div style="border:1px solid var(--border-light);padding:var(--module);max-width:28rem;">
+      <div class="pdp__oos-badge">Nicht verfügbar</div>
+      <div class="pdp__oos-cta">
+        <p class="pdp__oos-cta__label">Dieses Produkt ist aktuell nicht auf Lager. Trage dich ein und wir benachrichtigen dich sobald es wieder verfügbar ist.</p>
+        <button class="btn --secondary">Benachrichtige mich</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sg-section" id="section-37">
+    <h2 class="section-label">37 — Pagination</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p>Flex-Container <code>.pagination</code> mit <code>.pagination__btn</code> (Prev/Next), <code>.pagination__page</code> (Seitenzahl) und <code>.pagination__dots</code> (Ellipsis). Aktive Seite via <code>.--current</code>.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.pagination</code></th><td>Flex-Zeile, zentriert, <code>gap: 0.25rem</code>, <code>margin-top: var(--module-2xl)</code></td></tr>
+      <tr><th><code>.pagination__page</code></th><td>Seitenzahl-Link, <code>min-width: 2.5rem</code>, hover: Border sichtbar</td></tr>
+      <tr><th><code>.pagination__page.--current</code></th><td>Aktive Seite: <code>font-weight: 700</code> + Border aktiv</td></tr>
+      <tr><th><code>.pagination__btn</code></th><td>Prev/Next-Button, gleiche Maße wie <code>.pagination__page</code></td></tr>
+      <tr><th><code>.pagination__dots</code></th><td>Ellipsis, <code>color: var(--fg-muted)</code></td></tr>
+    </table>
+    <div class="demo-label">Default</div>
+    <nav class="pagination" aria-label="Seitennavigation" style="margin-top:0;">
+      <button class="pagination__btn" aria-label="Vorherige Seite"><span class="material-icons">arrow_back</span></button>
+      <a class="pagination__page" href="#">1</a>
+      <a class="pagination__page" href="#">2</a>
+      <a class="pagination__page --current" href="#" aria-current="page">3</a>
+      <a class="pagination__page" href="#">4</a>
+      <span class="pagination__dots">…</span>
+      <a class="pagination__page" href="#">12</a>
+      <button class="pagination__btn" aria-label="Nächste Seite"><span class="material-icons">arrow_forward</span></button>
+    </nav>
+  </section>
+
+  <!-- ── LEGAL ───────────────────────────────────────── -->
+
+  <section class="sg-section" id="section-38">
+    <h2 class="section-label">38 — Cookie-Banner</h2>
+    <div class="rules">
+      <div class="rule"><h4>Aufbau</h4><p><code>.cookie-banner</code> ist <code>position: fixed; bottom: 0</code>, volle Breite. Text links, Buttons rechts. <code>z-index: var(--z-overlay)</code>.</p></div>
+      <div class="rule"><h4>Buttons</h4><p>"Ablehnen" als <code>.btn.--secondary</code>, "Akzeptieren" als <code>.btn.--primary</code>. Im Demo via JS ausblendbar.</p></div>
+    </div>
+    <table class="spec-table">
+      <tr><th><code>.cookie-banner</code></th><td>Fixed, Bottom, <code>border-top: 1px solid var(--border-light)</code>, <code>z-index: var(--z-overlay)</code></td></tr>
+      <tr><th><code>.cookie-banner__text</code></th><td><code>font-size: var(--text-xs)</code>, <code>color: var(--fg-muted)</code>, <code>flex: 1</code></td></tr>
+      <tr><th><code>.cookie-banner__actions</code></th><td>Flex-Zeile, <code>gap: var(--half-module)</code></td></tr>
+    </table>
+    <div class="demo-label">Demo (im Seitenfluss — im echten Einsatz <code>position: fixed</code>)</div>
+    <div style="border:1px solid var(--border-light);">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:var(--module);padding:var(--half-module) var(--module);background:var(--bg);">
+        <p class="cookie-banner__text" style="position:static;border:none;padding:0;">Wir nutzen Cookies, um dir die bestmögliche Erfahrung auf unserer Website zu bieten. Weitere Informationen findest du in unserer <a href="#" style="color:var(--fg);">Datenschutzerklärung</a>.</p>
+        <div class="cookie-banner__actions">
+          <button class="btn --secondary">Ablehnen</button>
+          <button class="btn --primary">Akzeptieren</button>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Im Einsatz wird der Banner via JS nach Auswahl ausgeblendet (<code>display: none</code> oder <code>visibility: hidden</code>).</p>
+    <div class="demo-label" style="margin-top:var(--half-module);">Live-Demo (öffnet fixed Banner)</div>
+    <button class="btn --secondary" onclick="document.getElementById('cookieBannerDemo').style.display='flex';">Cookie-Banner öffnen</button>
+  </section>
+
+
+
 </div>
 </main>
 
@@ -2887,28 +3663,30 @@
       <p>Ein logisches Design-System auf Basis von 1rem, Faktor 1.5 und dem Grundmodul 3rem.</p>
     </div>
     <div class="footer-col">
-      <h4>Foundations</h4>
+      <h4>Fundament</h4>
       <ul>
-        <li><a href="#logo">Logo</a></li>
-        <li><a href="#system">System-Logik</a></li>
-        <li><a href="#tokens">Design Tokens</a></li>
-        <li><a href="#typo">Typografie</a></li>
-        <li><a href="#colors">Farben</a></li>
-        <li><a href="#borders">Linien &amp; Borders</a></li>
-        <li><a href="#spacing">Spacing</a></li>
+        <li><a href="#logo">00 Logo</a></li>
+        <li><a href="#system">01 System-Logik</a></li>
+        <li><a href="#tokens">02 Design Tokens</a></li>
+        <li><a href="#typo">04 Typografie</a></li>
+        <li><a href="#colors">05 Farben</a></li>
+        <li><a href="#borders">06 Linien &amp; Borders</a></li>
+        <li><a href="#spacing">07 Spacing</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Komponenten</h4>
       <ul>
-        <li><a href="#buttons">Buttons</a></li>
-        <li><a href="#forms">Formulare</a></li>
-        <li><a href="#sections">Section Types</a></li>
-        <li><a href="#pdp-section">Produktdetailseite</a></li>
-        <li><a href="#cart-section">Warenkorb-Drawer</a></li>
-        <li><a href="#collection-section">Produktübersicht</a></li>
-        <li><a href="#modal-section">Modal / Pop-up</a></li>
-        <li><a href="#toast-section">Toast / Notification</a></li>
+        <li><a href="#buttons">11 Buttons</a></li>
+        <li><a href="#section-13">13 Formulare</a></li>
+        <li><a href="#section-21">21 Section Types</a></li>
+        <li><a href="#section-26">26 Produktdetailseite</a></li>
+        <li><a href="#section-28">28 Warenkorb-Drawer</a></li>
+        <li><a href="#section-16">16 Cart Item</a></li>
+        <li><a href="#section-27">27 Produktübersicht</a></li>
+        <li><a href="#section-31">31 Suche</a></li>
+        <li><a href="#section-33">33 Modal / Pop-up</a></li>
+        <li><a href="#section-34">34 Toast / Notification</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -3026,7 +3804,7 @@ function handleFiles(files) {
   }
 }
 
-// ─── Testimonial Grid: Mobile "Mehr anzeigen" ───
+// ─── Testimonial Grid: Mobile"Mehr anzeigen" ───
 function initTestimonials() {
   document.querySelectorAll('.testimonial-section, [class*="testimonial-grid"]').forEach(function(section) {
     var container = section.closest('.testimonial-section') || section.closest('.page');
@@ -3152,6 +3930,14 @@ initSliders();
 function selectVariant(btn) {
   btn.parentElement.querySelectorAll('.choice-box').forEach(function(b) { b.classList.remove('--active'); });
   btn.classList.add('--active');
+}
+function switchAccTab(btn, targetId) {
+  var nav = btn.closest('.tab-nav');
+  nav.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('--active'); b.setAttribute('aria-selected','false'); });
+  btn.classList.add('--active'); btn.setAttribute('aria-selected','true');
+  var panels = nav.nextElementSibling;
+  while (panels) { if (panels.classList.contains('tab-panel')) panels.classList.remove('--active'); panels = panels.nextElementSibling; }
+  document.getElementById(targetId).classList.add('--active');
 }
 function switchTab(btn, index) {
   var tabs = btn.closest('.tabs');
@@ -3318,7 +4104,7 @@ function renderSearchResults(query) {
     matchedQueries.forEach((qr, i) => {
       html += `<div class="search-result" role="option" data-index="${i}" onclick="closeSearch()">
         <div class="icon-box --lg"><span class="material-icons">search</span></div>
-        <div class="search-result__info"><div class="search-result__name">${qr.text}</div></div>
+        <div class="search-result__info"><p class="search-result__name">${qr.text}</p></div>
       </div>`;
     });
     html += `</div>`;
@@ -3329,9 +4115,9 @@ function renderSearchResults(query) {
       <div class="section-label">Produkte</div>`;
     matchedProducts.forEach((p, i) => {
       html += `<div class="search-result" role="option" data-index="${matchedQueries.length + i}" onclick="closeSearch()">
-        <div class="search-result__image"><img src="${p.img}" alt="${p.name}"></div>
+        <div class="search-result__image product-thumb"><img src="${p.img}" alt="${p.name}"></div>
         <div class="search-result__info">
-          <div class="search-result__name">${p.name}</div>
+          <p class="search-result__name">${p.name}</p>
           <div class="search-result__meta">${p.meta}</div>
         </div>
         <div class="search-result__price">${p.price}</div>
@@ -3378,6 +4164,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
+
+<!-- Cookie-Banner Demo (fixed) -->
+<div class="cookie-banner" id="cookieBannerDemo" style="display:none;">
+  <p class="cookie-banner__text">Wir nutzen Cookies, um dir die bestmögliche Erfahrung auf unserer Website zu bieten. Weitere Informationen findest du in unserer <a href="#" style="color:var(--fg);">Datenschutzerklärung</a>.</p>
+  <div class="cookie-banner__actions">
+    <button class="btn --secondary" onclick="document.getElementById('cookieBannerDemo').style.display='none';">Ablehnen</button>
+    <button class="btn --primary" onclick="document.getElementById('cookieBannerDemo').style.display='none';">Akzeptieren</button>
+  </div>
+</div>
 
 </body>
 </html>
