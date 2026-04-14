@@ -1940,6 +1940,79 @@
   .article__author-role { font-size: var(--text-xs); color: var(--fg-muted); }
   .article__tags { display: flex; flex-wrap: wrap; gap: calc(var(--base) * 0.5); }
 
+  /* ═══════════════════════════════════════════
+     STAND-ALONE FORMULAR (form-page)
+     Eigenständige Formularseite mit Logo-Header
+     und rechtlichem Footer — z.B. Reklamation,
+     Kontakt, Registrierung außerhalb des Shops.
+     ═══════════════════════════════════════════ */
+
+  /* ─── Seitenhintergrund + Zentrierung ─── */
+  .form-page {
+    min-height: 100vh;
+    background: var(--accent-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--half-module) var(--base) var(--module);
+  }
+
+  /* ─── Weißer Card-Container ─── */
+  .form-page__card {
+    background: var(--bg);
+    width: 100%;
+    max-width: 640px;
+    padding: var(--half-module) var(--module) calc(var(--module) * 1.5);
+  }
+
+  @media (max-width: 480px) {
+    .form-page__card { padding: var(--half-module) var(--half-module) var(--module); }
+  }
+
+  /* ─── Header — Logo zentriert ─── */
+  .form-page__header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--half-module);
+    margin-bottom: var(--module);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .form-page__header svg,
+  .form-page__header img {
+    height: calc(var(--module) * 1.75);
+    width: auto;
+    display: block;
+  }
+
+  /* ─── Seiten-Titel (H1) ─── */
+  .form-page__title {
+    font-size: var(--text-l);
+    font-weight: 700;
+    color: var(--fg);
+    line-height: var(--lh-h2);
+    margin-bottom: var(--module);
+  }
+
+  /* ─── Datenschutzhinweis ─── */
+  .form-page__privacy {
+    font-size: var(--text-xs);
+    color: var(--fg-muted);
+    margin-top: var(--half-module);
+    line-height: var(--lh-base);
+  }
+
+  /* ─── Rechtlicher Footer (Impressum) ─── */
+  .form-page__footer {
+    width: 100%;
+    max-width: 640px;
+    margin-top: var(--half-module);
+    font-size: var(--text-xs);
+    color: var(--fg-muted);
+    line-height: var(--lh-base);
+    text-align: center;
+  }
+
   /* ─── Keyframes ─── */
   @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
   @keyframes toastIn { from { opacity: 0; transform: translateX(1rem); } to { opacity: 1; transform: translateX(0); } }
