@@ -92,6 +92,7 @@
     --anim-base: 0.4s ease;
     --anim-slow: 0.6s ease;
     --anim-announcement: 4s;  /* Anzeigedauer pro Announcement-Item */
+    --anim-delay: 0ms;        /* Per-Element Verzögerung für gestaffelte Animationen */
 
     /* ─── Z-Index ─── */
     --z-below:   -1;
@@ -411,6 +412,21 @@
   /* ─── Section Image ─── */
   /* .section-type__image — nutzt .placeholder-bg */
 
+  /* ─── Section Animation (Lottie) ─── */
+  .section-type__animation { align-self: center; }
+  .section-type__animation lottie-player { width: 100%; display: block; }
+
+  /* Wenn Animation statt Bild: Content kompakt, zentriert, Zeilenlänge begrenzt */
+  .section-type:has(.section-type__animation) .section-type__content {
+    justify-content: center;
+    gap: var(--half-module);
+    max-width: calc(var(--module) * 8); /* 8× = 24rem */
+    margin: auto;
+  }
+  .section-type:has(.section-type__animation) .section-type__bottom {
+    margin-top: 0;
+  }
+
   /* ─── Section Content ─── */
   .section-type__content {
     display: flex;
@@ -537,9 +553,24 @@
 
   /* ─── Tile Variante B: Bild + Text ─── */
   /* .tile__image — nutzt .placeholder-bg */
+  .tile__image { position: relative; overflow: hidden; }
   .tile__image.--square { aspect-ratio: 1 / 1; }
   .tile__image.--landscape { aspect-ratio: 4 / 3; }
   .tile__image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ─── Produkt-Rollover ─── */
+  /* Zweites img = Rollover-Bild, absolut überlagert, auf Hover sichtbar */
+  .tile__image img:nth-child(2),
+  .product-thumb img:nth-child(2) {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity var(--anim-base);
+  }
+  .tile__image:hover img:nth-child(2),
+  .product-thumb:hover img:nth-child(2) {
+    opacity: 1;
+  }
 
   /* ─── Tile Variante C: Sonderkachel (Content-Box mit Hintergrund) ─── */
   .tile.--featured {
@@ -1114,7 +1145,7 @@
   .choice-box.--active,
   .choice-box:has(input:checked) { border: 1px solid var(--border-active); background: var(--green-light); color: var(--fg); }
   .choice-box.--block { display: grid; grid-template-columns: min-content 1fr; gap: var(--half-module); align-items: center; text-align: left; width: 100%; padding: var(--half-module); }
-  .choice-box.--block .material-icons { margin: 0 !important; }
+  .choice-box.--block .material-icons { margin: 0; }
 
   /* ─── Placeholder Background (Bild-Platzhalter mit diagonalem Kreuz) ─── */
   .placeholder-bg {
@@ -1461,11 +1492,35 @@
   }
   .pdp__gallery { display: flex; flex-direction: column; gap: var(--half-module); }
   /* .pdp__main-image — nutzt .placeholder-bg */
-  .pdp__main-image { aspect-ratio: 1/1; border: 1px solid var(--border-light); }
+  .pdp__main-image { aspect-ratio: 1/1; border: 1px solid var(--border-light); overflow: hidden; position: relative; }
+  .pdp__main-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .pdp__thumbs { display: flex; gap: var(--half-module); }
   /* .pdp__thumb — nutzt .placeholder-bg */
-  .pdp__thumb { width: calc((100% - var(--half-module) * 3) / 4); aspect-ratio: 1/1; border: 1px solid var(--border-light); cursor: pointer; transition: border-color var(--anim-fast); }
+  .pdp__thumb { width: calc((100% - var(--half-module) * 4) / 5); aspect-ratio: 1/1; border: 1px solid var(--border-light); cursor: pointer; transition: border-color var(--anim-fast); overflow: hidden; }
+  .pdp__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .pdp__thumb.--active, .pdp__thumb:hover { border-color: var(--border-active); }
+
+  /* ─── PDP Caption (Text-Layer über Hauptbild) ─── */
+  .pdp__caption.--hidden { display: none; }
+  .pdp__caption {
+    position: absolute;
+    bottom: calc(var(--base) * 0.75);
+    left: calc(var(--base) * 0.75);
+    right: calc(var(--base) * 0.75);
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    padding: var(--half-module);
+    font-size: var(--text-base);
+    line-height: var(--lh-base);
+    color: var(--fg);
+  }
+  .pdp__caption-author {
+    display: block;
+    margin-top: calc(var(--base) * 0.25);
+    font-size: var(--text-xs);
+    color: var(--fg-muted);
+  }
   .pdp__info { display: flex; flex-direction: column; }
 
   /* ─── Kategorie-Farben via data-cat ─── */
@@ -1523,7 +1578,7 @@
   .cart-drawer__items { flex: 1; overflow-y: auto; padding: 0 var(--module); }
   .cart-item { display: grid; grid-template-columns: calc(var(--base) * 5) 1fr; gap: var(--half-module); padding: var(--half-module) 0; border-bottom: 1px solid var(--border-light); }
   /* ─── Product Thumb — geteiltes Atom für Produkt-Vorschaubilder (Cart, Search) ─── */
-  .product-thumb { width: calc(var(--base) * 5); height: calc(var(--base) * 5); border: 1px solid var(--border-light); flex-shrink: 0; overflow: hidden; }
+  .product-thumb { position: relative; width: calc(var(--base) * 5); height: calc(var(--base) * 5); border: 1px solid var(--border-light); flex-shrink: 0; overflow: hidden; }
   .product-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* .cart-item__image — nutzt .placeholder-bg + .product-thumb */
@@ -1800,9 +1855,6 @@
   .search-result:hover,
   .search-result.--active { background: var(--accent-bg); }
 
-  /* ─── Produkt-Bild im Ergebnis — nutzt .product-thumb ─── */
-  .search-result__image { }
-
   /* ─── Query-Icon (für Suchvorschläge ohne Bild) — nutzt .icon-box.--lg ─── */
   .search-results .icon-box.--lg { background: var(--accent-bg); }
   .search-results .icon-box.--lg .material-icons { font-size: 1.25rem; color: var(--fg-muted); }
@@ -1878,7 +1930,6 @@
     .article-sidebar { position: static; flex-direction: row; flex-wrap: wrap; align-items: flex-start; border-bottom: 1px solid var(--border-light); padding-bottom: var(--half-module); margin-bottom: var(--half-module); }
   }
   /* ─── Artikel-Detailseite ─── */
-  .article { }
   .article__header { margin-bottom: var(--half-module); }
   .article__header h1 { margin-top: calc(var(--base) * 0.5); }
   .article__hero { aspect-ratio: 16 / 9; margin-bottom: var(--module); }
