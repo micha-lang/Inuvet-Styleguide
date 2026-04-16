@@ -35,7 +35,7 @@ Vor jeder neuen Komponente oder Klasse: `inuvet.css` lesen und prüfen, ob das M
 
 ## Neue Dateien
 
-- Neue CSS-Datei nur anlegen, wenn es sich um eine eigenständige Seite handelt (z.B. `reklamation.css`)
+- Formular-spezifische Styles kommen in `formulare.css` (gilt für alle `Formular-*.html`)
 - Styles, die potenziell global nützlich sind, am Ende der Session als Kandidaten für `inuvet.css` vorschlagen
 
 ## Preview-Server
