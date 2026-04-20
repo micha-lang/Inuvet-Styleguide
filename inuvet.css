@@ -530,6 +530,12 @@
   .tile-grid.--cols-3 { grid-template-columns: 1fr 1fr 1fr; }
   .tile-grid.--cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
 
+  /* ─── Tile Grid — Boxed (Infoboxen für Landing-Pages) ─── */
+  .tile-grid.--boxed > .tile {
+    border: 1px solid var(--border-light);
+    padding: var(--half-module);
+  }
+
   /* ─── Tile Base ─── */
   .tile {
     display: flex;
@@ -1171,6 +1177,27 @@
 
   /* ─── Label Caps — kompaktes Uppercase-Label ohne Border/Padding (z.B. Varianten, Filter) ─── */
   .label-caps { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fg-muted); }
+
+  /* ─── Check List (Textliste mit Häkchen, Landing-Pages) ─── */
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: calc(var(--base) * 0.5);
+    padding: calc(var(--base) * 0.25) 0;
+    font-size: var(--text-base);
+    line-height: var(--lh-base);
+  }
+  .check-list li .material-icons {
+    color: var(--green);
+    font-size: var(--base);
+    flex-shrink: 0;
+    margin-top: 0.2em;
+  }
 
   /* ─── Divider / Line ─── */
   .line { padding-bottom: var(--half-module); margin-bottom: var(--half-module); }
