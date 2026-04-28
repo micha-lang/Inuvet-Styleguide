@@ -12,30 +12,25 @@
 <body>
 
 <!-- ════════════════════════════════════════
-     MOCKUP STEUERLEISTE
+     MOCKUP-STEUERLEISTE
      ════════════════════════════════════════ -->
 <div class="mockup-bar" id="mockupBar">
-  <span class="mockup-bar__label">Mockup</span>
-
   <div class="mockup-bar__group">
     <span class="mockup-bar__group-label">Zustand:</span>
-    <button class="mockup-btn --active" onclick="setState('guest', this)">① Nicht angemeldet</button>
-    <button class="mockup-btn" onclick="setState('no-release', this)">② Angemeldet / keine Freigabe</button>
-    <button class="mockup-btn" onclick="setState('with-release', this)">③ Angemeldet / mit Freigabe</button>
+    <button class="mockup-btn --active" data-state="guest"       onclick="setState('guest',       this)">① Nicht angemeldet</button>
+    <button class="mockup-btn"          data-state="no-release"  onclick="setState('no-release',  this)">② Angemeldet · keine Freigabe</button>
+    <button class="mockup-btn"          data-state="with-release"onclick="setState('with-release',this)">③ Angemeldet · mit Freigabe</button>
   </div>
-
   <div class="mockup-bar__sep"></div>
-
   <div class="mockup-bar__group" id="pageNav">
     <span class="mockup-bar__group-label">Seite:</span>
-    <button class="mockup-btn --active" onclick="setPage('home', this)">Startseite</button>
-    <button class="mockup-btn" onclick="setPage('collection', this)">Alle Produkte</button>
-    <button class="mockup-btn" id="btnRecommended" style="display:none" onclick="setPage('recommended', this)">Empfohlene Produkte</button>
-    <button class="mockup-btn" onclick="setPage('product', this)">Produktseite</button>
-    <button class="mockup-btn" onclick="setPage('cart', this)">Warenkorb</button>
-    <button class="mockup-btn" onclick="setPage('checkout', this)">Checkout</button>
+    <button class="mockup-btn --active" onclick="setPage('home',        this)">Startseite</button>
+    <button class="mockup-btn"          onclick="setPage('collection',  this)">Alle Produkte</button>
+    <button class="mockup-btn"          onclick="setPage('recommended', this)" id="btnRecommended" style="display:none">Empfohlene Produkte</button>
+    <button class="mockup-btn"          onclick="setPage('product',     this)">Produktseite</button>
+    <button class="mockup-btn"          onclick="setPage('cart',        this)">Warenkorb</button>
+    <button class="mockup-btn"          onclick="setPage('checkout',    this)">Checkout</button>
   </div>
-
   <div class="mockup-bar__sep" id="productPickerSep" style="display:none"></div>
   <div class="mockup-bar__group" id="productPicker" style="display:none">
     <span class="mockup-bar__group-label">Produkt:</span>
@@ -43,23 +38,23 @@
 </div>
 
 <!-- ════════════════════════════════════════
-     SHOP HEADER
+     SHOP-HEADER
      ════════════════════════════════════════ -->
 <div class="announcement-bar" id="announcementBar">
-  <span class="announcement-bar__item">Tierärztlich empfohlen · Für Hund &amp; Katze</span>
+  <span class="announcement-bar__item">Tierärztlich empfohlen &amp; entwickelt</span>
   <span class="announcement-bar__item">Versand nur mit ärztlicher Empfehlung</span>
   <span class="announcement-bar__item">Fragen? Ruf deine Tierarztpraxis an</span>
-  <button class="btn --icon" onclick="document.getElementById('announcementBar').classList.add('--closed')" aria-label="Schließen"><span class="material-icons">close</span></button>
+  <button class="btn --icon" onclick="document.getElementById('announcementBar').classList.add('--closed')" aria-label="Schließen">
+    <span class="material-icons">close</span>
+  </button>
 </div>
 
 <nav class="site-nav" aria-label="Hauptnavigation">
-  <div class="nav-left">
-    <!-- Nav-Links werden per JS gesetzt -->
-    <span id="navLinks"></span>
-  </div>
+  <div class="nav-left" id="navLinks"></div>
   <div class="nav-center">
-    <a href="#" onclick="setPage('home'); return false;">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.4 113.4" style="width:clamp(3rem,1.5rem + 5vw,5.25rem);height:auto;display:block"><defs><style>.st0{fill:none}.st1{fill:#78b41b}.st2{clip-path:url(#clippath-shop)}</style><clipPath id="clippath-shop"><rect class="st0" width="113.4" height="113.4"/></clipPath></defs><g><path d="M19.4,74.3c0,1.4-1.1,2.6-2.6,2.6s-2.6-1.2-2.6-2.6,1.1-2.5,2.6-2.5,2.5,1.2,2.5,2.5ZM14.7,78.9h4.3v15.4h-4.3s0-15.4,0-15.4Z"/><path d="M23.1,78.9h3.8l.2,2.1c1.5-1.8,3.1-2.5,5.1-2.5s3.5.7,4.2,2.1c.5.9.7,2,.7,4.1v9.7h-4.3v-8.9c0-1.3,0-1.8-.3-2.3-.3-.6-.8-.9-1.6-.9-1.2,0-2.6,1.1-3.5,2.8v9.3h-4.3v-15.4h0Z"/><path d="M50.5,92.6c-1.4,1.5-2.8,2.1-4.7,2.1s-3.4-.8-4.2-2.2c-.5-.9-.7-2.1-.7-4.2v-9.5h4.3v8.7c0,2.6.5,3.4,1.9,3.4s2.3-.6,3.1-1.9v-10.2h4.3v15.4h-3.8l-.3-1.7h0Z"/><path d="M56.8,78.9h4.8l3.6,10.3,3.6-10.3h4.3l-6.3,15.4h-3.9l-6.1-15.4h0Z"/><path d="M78.1,87.9c.2,2.6,1.5,3.7,4.4,3.7s2.7-.3,4.4-1.2l1,2.8c-1.8,1.1-3.8,1.6-6.4,1.6-5.2,0-7.8-2.5-7.8-7.7s2.8-8.6,7.5-8.6,6.8,2.6,6.8,7.6,0,.9,0,1.8h-9.9,0ZM84.2,85.1c-.2-2.4-1.1-3.5-2.9-3.5s-2.9,1.1-3.2,3.5h6.1Z"/><path d="M89.7,82.4l.3-3.4h2.5l.2-3.7,4-1.4v5.1h3.8l-.3,3.4h-3.5v5.6c0,2.8.2,3.3,1.6,3.3s1.3-.2,2.1-.5l.8,2.7c-1.5.9-3,1.3-4.5,1.3s-3-.6-3.7-1.8c-.4-.8-.6-2-.6-4.2v-6.5h-2.7,0Z"/></g><g class="st2"><g><path d="M81.4,32h-.3v1h.2c.5,0,.7-.3.7-.6s-.1-.5-.6-.5M82,35.1l-.8-1.5h0v1.5h-.8v-3.7h1.3c.9,0,1.2.4,1.2,1s-.3,1-.8,1c0,0,.2.3.3.5l.7,1.2h-1ZM78.9,33.3c0,1.4,1.1,2.6,2.6,2.6s2.6-1.2,2.6-2.6-1.1-2.6-2.6-2.6-2.6,1.2-2.6,2.6M85,33.3c0,1.9-1.6,3.5-3.5,3.5s-3.6-1.5-3.6-3.5,1.6-3.5,3.6-3.5,3.5,1.5,3.5,3.5"/><path class="st1" d="M28.7,54.5c1.3,5.2,5.6,9,11.1,10.7,4.1-4.1,6.1-9.5,4.8-14.7-1.3-5.2-5.6-9-11.1-10.7-4.1,4.1-6.1,9.5-4.8,14.7Z"/><path class="st1" d="M38.6,32.3c.7,5.3,4.4,9.7,9.7,12,4.6-3.6,7.2-8.6,6.6-14-.6-5.3-4.4-9.7-9.7-12-4.6,3.6-7.2,8.7-6.5,14Z"/><path class="st1" d="M84.6,54.5c-1.3,5.2-5.6,9-11.1,10.7-4.1-4.1-6.1-9.5-4.8-14.7,1.3-5.2,5.6-9,11.1-10.7,4.1,4.1,6.1,9.5,4.8,14.7h0Z"/><path class="st1" d="M74.8,32.3c-.7,5.3-4.4,9.7-9.7,12-4.6-3.6-7.2-8.6-6.6-14,.6-5.3,4.4-9.7,9.7-12,4.6,3.6,7.2,8.7,6.6,14h0Z"/></g></g></svg>
+    <a href="#" onclick="setPage('home');return false;" aria-label="Zur Startseite">
+      <!-- Inline-SVG Logo -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.4 113.4" style="width:clamp(3rem,1.5rem + 5vw,5.25rem);height:auto;display:block"><defs><style>.st0{fill:none}.st1{fill:#78b41b}.st2{clip-path:url(#cp-shop)}</style><clipPath id="cp-shop"><rect class="st0" width="113.4" height="113.4"/></clipPath></defs><g><path d="M19.4,74.3c0,1.4-1.1,2.6-2.6,2.6s-2.6-1.2-2.6-2.6,1.1-2.5,2.6-2.5,2.5,1.2,2.5,2.5ZM14.7,78.9h4.3v15.4h-4.3s0-15.4,0-15.4Z"/><path d="M23.1,78.9h3.8l.2,2.1c1.5-1.8,3.1-2.5,5.1-2.5s3.5.7,4.2,2.1c.5.9.7,2,.7,4.1v9.7h-4.3v-8.9c0-1.3,0-1.8-.3-2.3-.3-.6-.8-.9-1.6-.9-1.2,0-2.6,1.1-3.5,2.8v9.3h-4.3v-15.4h0Z"/><path d="M50.5,92.6c-1.4,1.5-2.8,2.1-4.7,2.1s-3.4-.8-4.2-2.2c-.5-.9-.7-2.1-.7-4.2v-9.5h4.3v8.7c0,2.6.5,3.4,1.9,3.4s2.3-.6,3.1-1.9v-10.2h4.3v15.4h-3.8l-.3-1.7h0Z"/><path d="M56.8,78.9h4.8l3.6,10.3,3.6-10.3h4.3l-6.3,15.4h-3.9l-6.1-15.4h0Z"/><path d="M78.1,87.9c.2,2.6,1.5,3.7,4.4,3.7s2.7-.3,4.4-1.2l1,2.8c-1.8,1.1-3.8,1.6-6.4,1.6-5.2,0-7.8-2.5-7.8-7.7s2.8-8.6,7.5-8.6,6.8,2.6,6.8,7.6,0,.9,0,1.8h-9.9,0ZM84.2,85.1c-.2-2.4-1.1-3.5-2.9-3.5s-2.9,1.1-3.2,3.5h6.1Z"/><path d="M89.7,82.4l.3-3.4h2.5l.2-3.7,4-1.4v5.1h3.8l-.3,3.4h-3.5v5.6c0,2.8.2,3.3,1.6,3.3s1.3-.2,2.1-.5l.8,2.7c-1.5.9-3,1.3-4.5,1.3s-3-.6-3.7-1.8c-.4-.8-.6-2-.6-4.2v-6.5h-2.7,0Z"/></g><g class="st2"><g><path d="M81.4,32h-.3v1h.2c.5,0,.7-.3.7-.6s-.1-.5-.6-.5M82,35.1l-.8-1.5h0v1.5h-.8v-3.7h1.3c.9,0,1.2.4,1.2,1s-.3,1-.8,1c0,0,.2.3.3.5l.7,1.2h-1ZM78.9,33.3c0,1.4,1.1,2.6,2.6,2.6s2.6-1.2,2.6-2.6-1.1-2.6-2.6-2.6-2.6,1.2-2.6,2.6M85,33.3c0,1.9-1.6,3.5-3.5,3.5s-3.6-1.5-3.6-3.5,1.6-3.5,3.6-3.5,3.5,1.5,3.5,3.5"/><path class="st1" d="M28.7,54.5c1.3,5.2,5.6,9,11.1,10.7,4.1-4.1,6.1-9.5,4.8-14.7-1.3-5.2-5.6-9-11.1-10.7-4.1,4.1-6.1,9.5-4.8,14.7Z"/><path class="st1" d="M38.6,32.3c.7,5.3,4.4,9.7,9.7,12,4.6-3.6,7.2-8.6,6.6-14-.6-5.3-4.4-9.7-9.7-12-4.6,3.6-7.2,8.7-6.5,14Z"/><path class="st1" d="M84.6,54.5c-1.3,5.2-5.6,9-11.1,10.7-4.1-4.1-6.1-9.5-4.8-14.7,1.3-5.2,5.6-9,11.1-10.7,4.1,4.1,6.1,9.5,4.8,14.7h0Z"/><path class="st1" d="M74.8,32.3c-.7,5.3-4.4,9.7-9.7,12-4.6-3.6-7.2-8.6-6.6-14,.6-5.3,4.4-9.7,9.7-12,4.6,3.6,7.2,8.7,6.6,14h0Z"/></g></g></svg>
     </a>
   </div>
   <div class="nav-right">
@@ -77,55 +72,96 @@
 <main id="shopMain"></main>
 
 <!-- ════════════════════════════════════════
-     CHECKOUT MODAL
+     CHECKOUT-MODAL (Popup)
      ════════════════════════════════════════ -->
 <div class="shop-modal-overlay" id="checkoutModal">
   <div class="shop-modal">
-    <div class="shop-modal__icon"><span class="material-icons" style="font-size:2.5rem;color:var(--green)">check_circle</span></div>
-    <div class="shop-modal__title" id="modalTitle"></div>
-    <div class="shop-modal__body" id="modalBody"></div>
+    <div class="shop-modal__icon">
+      <span class="material-icons" style="font-size:2.5rem;color:var(--green)">check_circle</span>
+    </div>
+    <div class="shop-modal__title"  id="modalTitle"></div>
+    <div class="shop-modal__body"   id="modalBody"></div>
     <div class="shop-modal__actions" id="modalActions"></div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════════
-     JAVASCRIPT
-     ════════════════════════════════════════ -->
 <script>
-// ─── Produktdaten ───
+/* ════════════════════════════════════════════
+   PRODUKTDATEN
+   ════════════════════════════════════════════ */
 const PRODUCTS = [
-  { id: 1, name: "Inuvet CBD Tropfen",   cat: "cbd",       catLabel: "CBD",        price: "39,90 €", img: "../assets/images/Produkt_Packshot_01.jpeg", approved: true,  desc: "Hochwertige CBD-Tropfen für eine entspannte und ausgeglichene Stimmung bei Hunden und Katzen. Schonend gewonnen, tierärztlich geprüft." },
-  { id: 2, name: "Inuvet Gelenk Forte",  cat: "gelenke",   catLabel: "Gelenke",    price: "44,90 €", img: "../assets/images/Produkt_Packshot_02.jpeg", approved: true,  desc: "Unterstützt Knorpel und Gelenke bei aktiven Hunden. Enthält Glucosamin, Chondroitin und natürliche Extrakte." },
-  { id: 3, name: "Inuvet Magen-Darm",   cat: "magendarm", catLabel: "Magen-Darm", price: "34,90 €", img: "../assets/images/Produkt_Packshot_01.jpeg", approved: true,  desc: "Beruhigt den Verdauungstrakt und fördert eine gesunde Darmflora. Ideal bei empfindlichem Magen." },
-  { id: 4, name: "Inuvet Herz Plus",    cat: "herz",      catLabel: "Herz",       price: "49,90 €", img: "../assets/images/Produkt_Packshot_02.jpeg", approved: false, desc: "Spezialformel zur Unterstützung der Herzfunktion bei älteren Tieren. Enthält Taurin und CoQ10." },
-  { id: 5, name: "Inuvet Niere Support",cat: "niere",     catLabel: "Niere",      price: "42,90 €", img: "../assets/images/Produkt_Packshot_01.jpeg", approved: false, desc: "Unterstützt die Nierenfunktion und trägt zur Entgiftung bei. Schonende Naturextrakte." },
-  { id: 6, name: "Inuvet Haut & Fell",  cat: "haut",      catLabel: "Haut",       price: "36,90 €", img: "../assets/images/Produkt_Packshot_02.jpeg", approved: false, desc: "Für glänzendes Fell und gesunde Haut. Reich an Omega-3-Fettsäuren und Biotin." },
+  {
+    id: 1, name: 'Produkt A', cat: 'cbd',      catLabel: 'CBD',
+    price: '39,90 €', img: '../assets/images/Produkt_Packshot_01.jpeg',
+    approved: true,
+    shortDesc: 'Für Entspannung und innere Balance.',
+    desc: 'Hochwertige Tropfen für eine entspannte und ausgeglichene Stimmung. Schonend gewonnen, tierärztlich geprüft und in Deutschland hergestellt.'
+  },
+  {
+    id: 2, name: 'Produkt B', cat: 'gelenke',  catLabel: 'Gelenke',
+    price: '44,90 €', img: '../assets/images/Produkt_Packshot_02.jpeg',
+    approved: true,
+    shortDesc: 'Unterstützt Knorpel und Gelenke.',
+    desc: 'Spezialformel zur Unterstützung von Knorpel und Gelenken bei aktiven Tieren. Mit natürlichen Extrakten und geprüften Wirkstoffen.'
+  },
+  {
+    id: 3, name: 'Produkt C', cat: 'magendarm', catLabel: 'Magen-Darm',
+    price: '34,90 €', img: '../assets/images/Produkt_Packshot_01.jpeg',
+    approved: true,
+    shortDesc: 'Für eine gesunde Verdauung.',
+    desc: 'Beruhigt den Verdauungstrakt und fördert eine gesunde Darmflora. Ideal bei empfindlichem Magen und nach Antibiotika-Behandlungen.'
+  },
+  {
+    id: 4, name: 'Produkt D', cat: 'herz',     catLabel: 'Herz',
+    price: '49,90 €', img: '../assets/images/Produkt_Packshot_02.jpeg',
+    approved: false,
+    shortDesc: 'Zur Unterstützung der Herzfunktion.',
+    desc: 'Spezialformel zur Unterstützung der Herzfunktion bei älteren Tieren. Enthält natürliche Wirkstoffe, tierärztlich entwickelt.'
+  },
+  {
+    id: 5, name: 'Produkt E', cat: 'niere',    catLabel: 'Niere',
+    price: '42,90 €', img: '../assets/images/Produkt_Packshot_01.jpeg',
+    approved: false,
+    shortDesc: 'Zur Unterstützung der Nierenfunktion.',
+    desc: 'Unterstützt die Nierenfunktion und trägt zur natürlichen Entgiftung bei. Schonende Naturextrakte, speziell für Hunde und Katzen.'
+  },
+  {
+    id: 6, name: 'Produkt F', cat: 'haut',     catLabel: 'Haut',
+    price: '36,90 €', img: '../assets/images/Produkt_Packshot_02.jpeg',
+    approved: false,
+    shortDesc: 'Für gesunde Haut und glänzendes Fell.',
+    desc: 'Für glänzendes Fell und gesunde Haut. Reich an Omega-3-Fettsäuren und Biotin, tierärztlich geprüft.'
+  }
 ];
 
-// ─── State ───
-let state       = 'guest';      // 'guest' | 'no-release' | 'with-release'
-let page        = 'home';       // 'home' | 'collection' | 'recommended' | 'product' | 'cart' | 'checkout'
+/* ════════════════════════════════════════════
+   STATE
+   ════════════════════════════════════════════ */
+let state         = 'guest';
+let page          = 'home';
 let activeProduct = PRODUCTS[0];
-let cartApproved  = [];         // Produkt-IDs (einzulösende)
-let cartRequested = [];         // Produkt-IDs (anzufragende)
+let cartApproved  = [];   /* IDs einzulösender Produkte */
+let cartRequested = [];   /* IDs anzufragender Produkte */
 
-// ─── Hilfsfunktionen ───
-function getProduct(id) { return PRODUCTS.find(p => p.id === id); }
-function cartTotal() { return cartApproved.length + cartRequested.length; }
-function isApproved(p) { return state === 'with-release' && p.approved; }
+/* ════════════════════════════════════════════
+   HILFSFUNKTIONEN
+   ════════════════════════════════════════════ */
+const getProduct  = id  => PRODUCTS.find(p => p.id === id);
+const cartTotal   = ()  => cartApproved.length + cartRequested.length;
+const isApproved  = p   => state === 'with-release' && p.approved;
 
 function updateCartBadge() {
   const badge = document.getElementById('cartCount');
-  const total = cartTotal();
-  badge.style.display = total > 0 ? 'flex' : 'none';
-  badge.textContent = total;
+  const n = cartTotal();
+  badge.style.display = n > 0 ? 'flex' : 'none';
+  badge.textContent = n;
 }
 
 function addToCart(id, type) {
   const arr = type === 'approved' ? cartApproved : cartRequested;
   if (!arr.includes(id)) arr.push(id);
   updateCartBadge();
-  showToast(type === 'approved' ? 'In den Warenkorb gelegt' : 'Produkt angefragt');
+  toast(type === 'approved' ? 'In den Warenkorb gelegt' : 'Anfrage hinzugefügt');
 }
 
 function removeFromCart(id) {
@@ -135,66 +171,58 @@ function removeFromCart(id) {
   render();
 }
 
-function showToast(msg) {
+function toast(msg) {
   let t = document.getElementById('shopToast');
   if (!t) {
     t = document.createElement('div');
     t.id = 'shopToast';
-    t.style.cssText = 'position:fixed;bottom:2rem;right:2rem;background:var(--fg);color:#fff;padding:0.75rem 1.25rem;font-size:0.85rem;z-index:9999;transition:opacity 0.3s';
+    Object.assign(t.style, {
+      position:'fixed', bottom:'2rem', right:'2rem',
+      background:'var(--fg)', color:'#fff',
+      padding:'0.75rem 1.25rem', fontSize:'var(--text-base)',
+      zIndex:'9999', transition:'opacity 0.3s', opacity:'0'
+    });
     document.body.appendChild(t);
   }
   t.textContent = msg;
   t.style.opacity = '1';
   clearTimeout(t._timer);
-  t._timer = setTimeout(() => t.style.opacity = '0', 2000);
+  t._timer = setTimeout(() => t.style.opacity = '0', 2200);
 }
 
-// ─── State & Page wechseln ───
+/* ════════════════════════════════════════════
+   ZUSTAND & SEITE WECHSELN
+   ════════════════════════════════════════════ */
 function setState(s, btn) {
   state = s;
-  // Reset cart on state change
   cartApproved = []; cartRequested = [];
   updateCartBadge();
-  // Aktiven Button markieren
-  document.querySelectorAll('.mockup-bar .mockup-btn').forEach(b => {
-    if (['guest','no-release','with-release'].includes(b.getAttribute('onclick')?.match(/'([^']+)'/)?.[1])) {
-      b.classList.remove('--active');
-    }
-  });
+
+  document.querySelectorAll('.mockup-bar [data-state]').forEach(b => b.classList.remove('--active'));
   if (btn) btn.classList.add('--active');
 
-  // "Empfohlene Produkte" Page-Button ein-/ausblenden
   const btnRec = document.getElementById('btnRecommended');
-  if (state === 'with-release') {
-    btnRec.style.display = '';
-  } else {
-    btnRec.style.display = 'none';
-    if (page === 'recommended') setPage('collection');
-  }
+  btnRec.style.display = state === 'with-release' ? '' : 'none';
+  if (state !== 'with-release' && page === 'recommended') setPage('collection');
+
   render();
 }
 
 function setPage(p, btn) {
   page = p;
-  // Aktiven Page-Button markieren
   document.querySelectorAll('#pageNav .mockup-btn').forEach(b => b.classList.remove('--active'));
   if (btn) btn.classList.add('--active');
 
-  // Produktpicker ein-/ausblenden
-  const picker = document.getElementById('productPicker');
+  const picker    = document.getElementById('productPicker');
   const pickerSep = document.getElementById('productPickerSep');
   if (p === 'product') {
-    picker.style.display = '';
-    pickerSep.style.display = '';
+    picker.style.display = pickerSep.style.display = '';
     renderProductPicker();
   } else {
-    picker.style.display = 'none';
-    pickerSep.style.display = 'none';
+    picker.style.display = pickerSep.style.display = 'none';
   }
 
-  // Checkout-Modal schließen
   document.getElementById('checkoutModal').classList.remove('--open');
-
   window.scrollTo({ top: 0 });
   render();
 }
@@ -208,7 +236,7 @@ function renderProductPicker() {
     btn.textContent = p.name;
     btn.onclick = () => {
       activeProduct = p;
-      document.querySelectorAll('#productPicker .mockup-btn').forEach(b => b.classList.remove('--active'));
+      picker.querySelectorAll('.mockup-btn').forEach(b => b.classList.remove('--active'));
       btn.classList.add('--active');
       render();
     };
@@ -216,415 +244,428 @@ function renderProductPicker() {
   });
 }
 
-// ─── Nav rendern ───
+/* ════════════════════════════════════════════
+   NAV
+   ════════════════════════════════════════════ */
 function renderNav() {
   const navLinks = document.getElementById('navLinks');
   const navRight = document.getElementById('navRight');
 
-  let links = `<a href="#" onclick="setPage('collection');return false;" style="font-size:var(--text-xs);color:var(--fg-muted);text-decoration:none;transition:color var(--anim-fast)">Alle Produkte</a>`;
+  let links = `<a href="#" onclick="setPage('collection');return false;">Alle Produkte</a>`;
   if (state === 'with-release') {
-    links += `<a href="#" onclick="setPage('recommended');return false;" style="font-size:var(--text-xs);color:var(--fg-muted);text-decoration:none;margin-left:var(--half-module);transition:color var(--anim-fast)">⭐ Empfohlene Produkte</a>`;
+    links += `<a href="#" onclick="setPage('recommended');return false;">Empfohlene Produkte</a>`;
   }
   navLinks.innerHTML = links;
 
-  if (state === 'guest') {
-    navRight.innerHTML = `<button class="btn --secondary" style="font-size:var(--text-xs);padding:0.3em 0.8em" onclick="setState('no-release', document.querySelectorAll('.mockup-bar .mockup-btn')[1])">Anmelden</button>`;
-  } else {
-    navRight.innerHTML = `<span style="font-size:var(--text-xs);color:var(--fg-muted)">Hallo, <strong>Anna M.</strong></span>
-      <button class="btn --ghost" style="font-size:var(--text-xs);padding:0.3em 0.8em" onclick="setState('guest', document.querySelectorAll('.mockup-bar .mockup-btn')[0])">Abmelden</button>`;
-  }
+  navRight.innerHTML = state === 'guest'
+    ? `<button class="btn --secondary" onclick="setState('no-release', document.querySelectorAll('[data-state]')[1])">Anmelden</button>`
+    : `<span style="font-size:var(--text-xs);color:var(--fg-muted)">Hallo, <strong>Anna M.</strong></span>
+       <button class="btn --ghost" onclick="setState('guest', document.querySelectorAll('[data-state]')[0])">Abmelden</button>`;
 }
 
-// ─── Produkt-Kachel ───
-function productTileHTML(p, showBtns = true) {
-  let ctaHTML = '';
-  if (showBtns) {
-    if (state === 'guest') {
-      ctaHTML = `<a class="btn --ghost --full" style="font-size:var(--text-xs);margin-top:0.5rem" href="#" onclick="setPage('product');activeProduct=PRODUCTS[${p.id-1}];render();return false;">Produkt ansehen</a>`;
-    } else if (state === 'no-release') {
-      ctaHTML = `<a class="btn --ghost --full" style="font-size:var(--text-xs);margin-top:0.5rem" href="#" onclick="setPage('product');activeProduct=PRODUCTS[${p.id-1}];render();return false;">Produkt ansehen</a>`;
-    } else {
-      if (p.approved) {
-        ctaHTML = `<button class="btn --primary --with-icon --full" style="font-size:var(--text-xs);margin-top:0.5rem" onclick="addToCart(${p.id},'approved');event.stopPropagation()"><span class="material-icons">shopping_cart</span> In den Warenkorb</button>`;
-      } else {
-        ctaHTML = `<button class="btn --secondary --with-icon --full" style="font-size:var(--text-xs);margin-top:0.5rem" onclick="addToCart(${p.id},'requested');event.stopPropagation()"><span class="material-icons">mail_outline</span> Produkt anfragen</button>`;
+/* ════════════════════════════════════════════
+   BREADCRUMB
+   ════════════════════════════════════════════ */
+function breadcrumb(items) {
+  return `<nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--module)">
+    ${items.map((item, i) => {
+      if (item.href) {
+        return `<div class="breadcrumb__item">${i > 0 ? '<span class="breadcrumb__sep">/</span>' : ''}<a href="#" onclick="${item.onclick};return false;">${item.label}</a></div>`;
       }
+      return `<div class="breadcrumb__item"><span class="breadcrumb__sep">/</span><span class="--current">${item.label}</span></div>`;
+    }).join('')}
+  </nav>`;
+}
+
+/* ════════════════════════════════════════════
+   PRODUKT-KACHEL (.tile --product)
+   ════════════════════════════════════════════ */
+function tileHTML(p) {
+  const approved = isApproved(p);
+
+  /* Badges im .floating-meta Container */
+  const badges = `<div class="floating-meta">
+    <div class="badge" data-cat="${p.cat}">${p.catLabel}</div>
+    ${approved ? '<div class="badge --sale">Empfohlen</div>' : ''}
+  </div>`;
+
+  /* Warenkorb / Anfragen Overlay auf der Kachel */
+  let cartOverlay = '';
+  if (state === 'with-release') {
+    if (approved) {
+      cartOverlay = `
+        <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="addToCart(${p.id},'approved');event.stopPropagation()">
+          <span class="material-icons">shopping_cart</span>
+        </button>
+        <div class="tile__cart">
+          <button class="btn --primary" onclick="addToCart(${p.id},'approved');event.stopPropagation()">In den Warenkorb</button>
+        </div>`;
+    } else {
+      cartOverlay = `
+        <button class="tile__cart-icon" type="button" aria-label="Produkt anfragen" onclick="addToCart(${p.id},'requested');event.stopPropagation()">
+          <span class="material-icons">mail_outline</span>
+        </button>
+        <div class="tile__cart">
+          <button class="btn --secondary" onclick="addToCart(${p.id},'requested');event.stopPropagation()">Produkt anfragen</button>
+        </div>`;
     }
   }
+  /* State guest / no-release: kein Warenkorb-Overlay auf der Kachel */
 
-  const approvedBadge = (state === 'with-release' && p.approved)
-    ? `<div class="badge --sale" style="position:absolute;top:0.5rem;left:0.5rem">Empfohlen</div>` : '';
-
-  return `
-    <div class="tile --product" onclick="activeProduct=PRODUCTS[${p.id-1}];setPage('product')" style="cursor:pointer">
-      <div class="tile__image-wrap" style="position:relative">
-        <div class="tile__image --square">
-          <img src="${p.img}" alt="${p.name}" loading="lazy">
-        </div>
-        ${approvedBadge}
-        <div class="badge" data-cat="${p.cat}" style="position:absolute;bottom:0.5rem;left:0.5rem">${p.catLabel}</div>
+  return `<div class="tile --product" onclick="activeProduct=PRODUCTS[${p.id - 1}];setPage('product')" style="cursor:pointer">
+    <div class="tile__image-wrap">
+      ${badges}
+      <div class="tile__image --square">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
       </div>
-      <div class="tile__description" style="padding:0.75rem 0 0.25rem">
-        <div class="tile__headline" style="font-weight:700;font-size:var(--text-base)">${p.name}</div>
-        <div class="tile__price" style="color:var(--fg-muted);font-size:var(--text-base)">${p.price}</div>
-      </div>
-      ${ctaHTML}
-    </div>`;
+      ${cartOverlay}
+    </div>
+    <h3 class="tile__headline">${p.name}</h3>
+    <div class="tile__description">${p.shortDesc}</div>
+    <div class="tile__price">
+      <div class="price-stack"><span>${p.price}</span></div>
+    </div>
+  </div>`;
 }
 
-// ─── Seiten rendern ───
-function renderHome() {
-  let hero = '';
-  if (state === 'guest') {
-    hero = `
-      <div class="shop-hero">
-        <div class="shop-hero__inner">
-          <div class="shop-hero__eyebrow">Tierärztlicher Spezial-Shop</div>
-          <h1 class="shop-hero__headline">Wenn Sie eine Empfehlung haben, können Sie diese nach der Registrierung oder dem Login einlösen.</h1>
-          <p class="shop-hero__body">Dieser Shop ist ausschließlich für Tierhalter mit ärztlicher Empfehlung zugänglich. Bitte melden Sie sich an oder registrieren Sie sich, um Ihre Empfehlung einzulösen.</p>
-          <div class="shop-hero__actions">
-            <button class="btn --primary" onclick="setState('no-release', document.querySelectorAll('.mockup-bar .mockup-btn')[1])">Jetzt registrieren</button>
-            <button class="btn --ghost" onclick="setState('no-release', document.querySelectorAll('.mockup-bar .mockup-btn')[1])">Bereits registriert? Anmelden</button>
-          </div>
+/* ════════════════════════════════════════════
+   WARENKORB-ARTIKEL (.cart-item)
+   ════════════════════════════════════════════ */
+function cartItemHTML(id, type) {
+  const p = getProduct(id);
+  const variantText = type === 'approved'
+    ? 'Einzulösen mit Empfehlung'
+    : 'Anfrage an deine Praxis';
+  return `<div class="cart-item">
+    <div class="product-thumb">
+      <img src="${p.img}" alt="${p.name}">
+    </div>
+    <div class="cart-item__info">
+      <div class="cart-item__top">
+        <div>
+          <p class="cart-item__name">${p.name}</p>
+          <div class="cart-item__variant">${variantText} &middot; ${p.price}</div>
         </div>
+        <button type="button" class="btn --icon cart-item__remove" aria-label="Entfernen" onclick="removeFromCart(${id})">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="cart-item__bottom">
+        <div class="qty-selector --sm">
+          <button class="qty-selector__btn" type="button" aria-label="Weniger"><span class="material-icons">remove</span></button>
+          <input class="qty-selector__input" type="number" value="1" min="1" max="99">
+          <button class="qty-selector__btn" type="button" aria-label="Mehr"><span class="material-icons">add</span></button>
+        </div>
+        <span class="cart-item__qty-text">${p.price}</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════
+   SEITEN
+   ════════════════════════════════════════════ */
+
+/* ── Startseite ── */
+function renderHome() {
+  let heroContent = '';
+  if (state === 'guest') {
+    heroContent = `
+      <h1 class="shop-hero__headline">Wenn Sie eine Empfehlung haben, können Sie diese nach der Registrierung oder dem Login einlösen.</h1>
+      <p class="shop-hero__body">Dieser Shop ist ausschließlich für Tierhalter mit ärztlicher Empfehlung zugänglich. Bitte melden Sie sich an oder registrieren Sie sich, um Ihre Empfehlung einzulösen.</p>
+      <div class="shop-hero__actions">
+        <button class="btn --primary" onclick="setState('no-release', document.querySelectorAll('[data-state]')[1])">Jetzt registrieren</button>
+        <button class="btn --ghost" onclick="setState('no-release', document.querySelectorAll('[data-state]')[1])">Bereits registriert? Anmelden</button>
       </div>`;
   } else if (state === 'no-release') {
-    hero = `
-      <div class="shop-hero">
-        <div class="shop-hero__inner">
-          <div class="shop-hero__eyebrow">Willkommen zurück, Anna!</div>
-          <h1 class="shop-hero__headline">Du hast noch keine Empfehlung für Inuvet-Produkte?</h1>
-          <p class="shop-hero__body">Gut, dass über 20.000 Tierärzte mit Inuvet arbeiten. Ruf einfach in deiner Praxis an und frage nach Inuvet-Produkten. Deine Praxis kann diese jederzeit für dich bestellen.</p>
-        </div>
-      </div>`;
+    heroContent = `
+      <h1 class="shop-hero__headline">Du hast noch keine Empfehlung für Inuvet-Produkte?</h1>
+      <p class="shop-hero__body">Gut, dass über 20.000 Tierärzte mit Inuvet arbeiten. Ruf einfach in deiner Praxis an und frage nach Inuvet-Produkten. Deine Praxis kann diese jederzeit für dich bestellen.</p>`;
   } else {
-    hero = `
-      <div class="shop-hero">
-        <div class="shop-hero__inner">
-          <div class="shop-hero__eyebrow">Willkommen zurück, Anna!</div>
-          <h1 class="shop-hero__headline">Du hast offene Empfehlungen. Diese kannst du hier einlösen.</h1>
-          <p class="shop-hero__body">3 Produkte wurden für dich von deiner Tierarztpraxis empfohlen. Lege sie direkt in den Warenkorb und schließe deine Bestellung ab.</p>
-          <div class="shop-hero__actions">
-            <button class="btn --primary" onclick="setPage('recommended')">Empfohlene Produkte ansehen</button>
-            <button class="btn --ghost" onclick="setPage('collection')">Alle Produkte</button>
-          </div>
-        </div>
+    heroContent = `
+      <h1 class="shop-hero__headline">Du hast offene Empfehlungen. Diese kannst du hier einlösen.</h1>
+      <p class="shop-hero__body">3 Produkte wurden für dich von deiner Tierarztpraxis empfohlen. Lege sie direkt in den Warenkorb und schließe deine Bestellung ab.</p>
+      <div class="shop-hero__actions">
+        <button class="btn --primary" onclick="setPage('recommended')">Empfohlene Produkte ansehen</button>
+        <button class="btn --ghost" onclick="setPage('collection')">Alle Produkte</button>
       </div>`;
   }
 
-  const featured = PRODUCTS.slice(0, 4);
   return `
-    ${hero}
-    <div class="shop-section">
+    <div class="shop-hero">
+      <div class="shop-hero__inner">${heroContent}</div>
+    </div>
+    <div class="page">
       <h3 class="section-label">Unsere Produkte</h3>
       <div class="tile-grid --cols-4">
-        ${featured.map(p => productTileHTML(p)).join('')}
+        ${PRODUCTS.slice(0, 4).map(tileHTML).join('')}
       </div>
     </div>
-    <div class="shop-footer">
-      <p>© 2026 Inuvet GmbH · <a href="#">Datenschutz</a> · <a href="#">Impressum</a></p>
-    </div>`;
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
+/* ── Alle Produkte ── */
 function renderCollection() {
   return `
-    <div class="collection-header">
-      <div>
-        <nav class="breadcrumb" style="margin-bottom:0.5rem">
-          <span class="breadcrumb__item"><a href="#" onclick="setPage('home');return false;">Home</a></span>
-          <span class="breadcrumb__sep"><span class="material-icons" style="font-size:0.75rem">chevron_right</span></span>
-          <span class="breadcrumb__item"><span class="--current">Alle Produkte</span></span>
-        </nav>
-        <div class="collection-header__title">Alle Produkte</div>
+    <div class="page">
+      ${breadcrumb([
+        { label: 'Home',          onclick: "setPage('home')",       href: true },
+        { label: 'Alle Produkte', onclick: '' }
+      ])}
+      <h2 class="shop-page-title">Alle Produkte</h2>
+      <div class="collection-toolbar">
+        <div class="collection-toolbar__count">${PRODUCTS.length} Produkte</div>
       </div>
-      <div class="collection-header__count">${PRODUCTS.length} Produkte</div>
-    </div>
-    <div class="collection-grid">
       <div class="tile-grid --cols-3">
-        ${PRODUCTS.map(p => productTileHTML(p)).join('')}
+        ${PRODUCTS.map(tileHTML).join('')}
       </div>
     </div>
-    <div class="shop-footer"><p>© 2026 Inuvet GmbH · <a href="#">Datenschutz</a> · <a href="#">Impressum</a></p></div>`;
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
+/* ── Empfohlene Produkte ── */
 function renderRecommended() {
   const approved = PRODUCTS.filter(p => p.approved);
   return `
-    <div class="collection-header">
-      <div>
-        <nav class="breadcrumb" style="margin-bottom:0.5rem">
-          <span class="breadcrumb__item"><a href="#" onclick="setPage('home');return false;">Home</a></span>
-          <span class="breadcrumb__sep"><span class="material-icons" style="font-size:0.75rem">chevron_right</span></span>
-          <span class="breadcrumb__item"><span class="--current">Empfohlene Produkte</span></span>
-        </nav>
-        <div class="collection-header__title">Empfohlene Produkte</div>
+    <div class="page">
+      ${breadcrumb([
+        { label: 'Home',                  onclick: "setPage('home')",       href: true },
+        { label: 'Empfohlene Produkte',   onclick: '' }
+      ])}
+      <h2 class="shop-page-title">Empfohlene Produkte</h2>
+      <div class="collection-toolbar">
+        <div class="collection-toolbar__count">${approved.length} Empfehlungen</div>
       </div>
-      <div class="collection-header__count">${approved.length} Empfehlungen</div>
-    </div>
-    <div class="collection-grid">
       <div class="tile-grid --cols-3">
-        ${approved.map(p => productTileHTML(p)).join('')}
+        ${approved.map(tileHTML).join('')}
       </div>
     </div>
-    <div class="shop-footer"><p>© 2026 Inuvet GmbH · <a href="#">Datenschutz</a> · <a href="#">Impressum</a></p></div>`;
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
+/* ── Produktseite (PDP) ── */
 function renderProduct() {
   const p = activeProduct;
-  let noticeHTML = '';
-  let actionsHTML = '';
+  const approved = isApproved(p);
+
+  let notice = '';
+  let actions = '';
 
   if (state === 'guest') {
-    noticeHTML = `
-      <div class="shop-notice">
-        <p class="shop-notice__text">Wenn Sie eine Empfehlung haben, können Sie dieses nach der Registrierung oder dem Login einlösen.</p>
-        <button class="btn --primary" onclick="setState('no-release', document.querySelectorAll('.mockup-bar .mockup-btn')[1])">Jetzt registrieren</button>
-      </div>`;
+    notice = `<div class="shop-notice">
+      <p>Wenn Sie eine Empfehlung haben, können Sie dieses nach der Registrierung oder dem Login einlösen.</p>
+      <button class="btn --primary" onclick="setState('no-release', document.querySelectorAll('[data-state]')[1])">Jetzt registrieren</button>
+    </div>`;
   } else if (state === 'no-release') {
-    noticeHTML = `
-      <div class="shop-notice">
-        <p class="shop-notice__text">Du hast noch keine Empfehlung für dieses Produkt? Gut, dass über 20.000 Tierärzte mit Inuvet-Produkten arbeiten. Ruf einfach in deiner Praxis an und frage nach diesem Produkt. Deine Praxis kann es jederzeit für dich bestellen.</p>
-      </div>`;
-  } else {
-    if (p.approved) {
-      actionsHTML = `
-        <div class="pdp__actions">
-          <div class="qty-selector" style="margin-right:0.5rem">
-            <button class="qty-selector__btn" onclick="this.nextElementSibling.value=Math.max(1,+this.nextElementSibling.value-1)" aria-label="Weniger"><span class="material-icons">remove</span></button>
-            <input class="qty-selector__input" type="number" value="1" min="1" max="99">
-            <button class="qty-selector__btn" onclick="this.previousElementSibling.value=Math.min(99,+this.previousElementSibling.value+1)" aria-label="Mehr"><span class="material-icons">add</span></button>
-          </div>
-          <button class="btn --primary --with-icon" style="flex:1" onclick="addToCart(${p.id},'approved');setPage('cart')"><span class="material-icons">shopping_cart</span> In den Warenkorb</button>
-          <button class="pdp__wishlist icon-box --md" style="width:calc(var(--base)*2.75);height:calc(var(--base)*2.75);display:flex;align-items:center;justify-content:center" aria-label="Merken"><span class="material-icons">favorite_border</span></button>
+    notice = `<div class="shop-notice">
+      <p>Du hast noch keine Empfehlung für dieses Produkt? Gut, dass über 20.000 Tierärzte mit Inuvet-Produkten arbeiten. Ruf einfach in deiner Praxis an und frage nach diesem Produkt. Deine Praxis kann es jederzeit für dich bestellen.</p>
+    </div>`;
+  } else if (approved) {
+    actions = `
+      <div class="pdp__variants">
+        <div class="label-caps pdp__variant-label">Menge</div>
+        <div class="qty-selector">
+          <button class="qty-selector__btn" type="button" aria-label="Weniger" onclick="this.nextElementSibling.value=Math.max(1,+this.nextElementSibling.value-1)"><span class="material-icons">remove</span></button>
+          <input class="qty-selector__input" type="number" value="1" min="1" max="99">
+          <button class="qty-selector__btn" type="button" aria-label="Mehr" onclick="this.previousElementSibling.value=Math.min(99,+this.previousElementSibling.value+1)"><span class="material-icons">add</span></button>
         </div>
-        <div class="badge --sale" style="margin-bottom:var(--half-module)">Empfohlen von deiner Praxis</div>`;
-    } else {
-      noticeHTML = `
-        <div class="shop-notice">
-          <p class="shop-notice__text">Du hast noch keine Empfehlung für dieses Produkt? Gut, dass über 20.000 Tierärzte mit Inuvet-Produkten arbeiten. Ruf einfach in deiner Praxis an und frage nach diesem Produkt. Deine Praxis kann es jederzeit für dich bestellen.</p>
-        </div>`;
-      actionsHTML = `
-        <div class="pdp__actions">
-          <button class="btn --secondary --with-icon" style="flex:1" onclick="addToCart(${p.id},'requested');showToast('Anfrage hinzugefügt')"><span class="material-icons">mail_outline</span> Produkt anfragen</button>
-        </div>`;
-    }
+      </div>
+      <div class="pdp__actions">
+        <button class="btn --primary --with-icon" onclick="addToCart(${p.id},'approved');setPage('cart')">
+          <span class="material-icons">shopping_cart</span> In den Warenkorb
+        </button>
+        <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste">
+          <span class="material-icons">favorite_border</span>
+        </button>
+      </div>
+      <div class="badge --sale" style="display:inline-flex;margin-bottom:var(--module)">Empfohlen von deiner Praxis</div>`;
+  } else {
+    notice = `<div class="shop-notice">
+      <p>Du hast noch keine Empfehlung für dieses Produkt? Gut, dass über 20.000 Tierärzte mit Inuvet-Produkten arbeiten. Ruf einfach in deiner Praxis an und frage nach diesem Produkt. Deine Praxis kann es jederzeit für dich bestellen.</p>
+    </div>`;
+    actions = `<div class="pdp__actions">
+      <button class="btn --secondary --with-icon" onclick="addToCart(${p.id},'requested');toast('Anfrage hinzugefügt')">
+        <span class="material-icons">mail_outline</span> Produkt anfragen
+      </button>
+    </div>`;
   }
 
   return `
-    <div class="shop-section">
-      <nav class="breadcrumb" style="margin-bottom:var(--module)">
-        <span class="breadcrumb__item"><a href="#" onclick="setPage('home');return false;">Home</a></span>
-        <span class="breadcrumb__sep"><span class="material-icons" style="font-size:0.75rem">chevron_right</span></span>
-        <span class="breadcrumb__item"><a href="#" onclick="setPage('collection');return false;">Alle Produkte</a></span>
-        <span class="breadcrumb__sep"><span class="material-icons" style="font-size:0.75rem">chevron_right</span></span>
-        <span class="breadcrumb__item"><span class="--current">${p.name}</span></span>
-      </nav>
+    <div class="page">
+      ${breadcrumb([
+        { label: 'Home',          onclick: "setPage('home')",       href: true },
+        { label: 'Alle Produkte', onclick: "setPage('collection')", href: true },
+        { label: p.name,          onclick: '' }
+      ])}
       <div class="pdp">
         <div class="pdp__gallery">
-          <div class="pdp__main-image"><img src="${p.img}" alt="${p.name}"></div>
+          <div class="pdp__main-image">
+            <img src="${p.img}" alt="${p.name}">
+          </div>
         </div>
         <div class="pdp__info">
           <div class="badge" data-cat="${p.cat}" style="margin-bottom:var(--half-module)">${p.catLabel}</div>
           <h1 class="pdp__title">${p.name}</h1>
-          <div class="pdp__price" style="font-size:var(--text-m);font-weight:700">${p.price}</div>
+          <div class="pdp__price">
+            <div class="price-stack text-m"><span>${p.price}</span></div>
+          </div>
           <p class="pdp__description">${p.desc}</p>
-          ${noticeHTML}
-          ${actionsHTML}
-          <div style="border-top:1px solid var(--border-light);padding-top:var(--half-module);font-size:var(--text-xs);color:var(--fg-muted)">
-            <p>✓ Tierärztlich geprüft &nbsp;·&nbsp; ✓ Hergestellt in Deutschland &nbsp;·&nbsp; ✓ Ohne Konservierungsstoffe</p>
+          ${notice}
+          ${actions}
+          <div style="border-top:1px solid var(--border-light);padding-top:var(--half-module)">
+            <p class="label-caps">Tierärztlich geprüft &nbsp;·&nbsp; Hergestellt in Deutschland &nbsp;·&nbsp; Ohne Konservierungsstoffe</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="shop-footer"><p>© 2026 Inuvet GmbH · <a href="#">Datenschutz</a> · <a href="#">Impressum</a></p></div>`;
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
+/* ── Warenkorb ── */
 function renderCart() {
   const hasApproved  = cartApproved.length > 0;
   const hasRequested = cartRequested.length > 0;
-  const isEmpty = !hasApproved && !hasRequested;
 
-  if (isEmpty) {
+  if (!hasApproved && !hasRequested) {
     return `
       <div class="cart-page">
-        <div class="cart-page__title">Warenkorb</div>
-        <div class="cart-page__empty">Dein Warenkorb ist leer. <a href="#" onclick="setPage('collection');return false;">Weiter einkaufen</a></div>
+        <h2 class="shop-page-title">Warenkorb</h2>
+        <p style="color:var(--fg-muted);font-size:var(--text-base)">Dein Warenkorb ist leer. <a href="#" onclick="setPage('collection');return false;">Weiter einkaufen</a></p>
       </div>`;
   }
 
   let approvedSection = '';
   let requestedSection = '';
 
-  if (state === 'with-release' && hasApproved) {
-    const items = cartApproved.map(id => {
-      const p = getProduct(id);
-      return `
-        <div class="cart-page__item">
-          <div class="cart-page__item-img"><img src="${p.img}" alt="${p.name}"></div>
-          <div>
-            <div class="cart-page__item-name">${p.name}</div>
-            <div class="cart-page__item-meta">Einzulösen mit Empfehlung</div>
-            <button class="cart-page__remove" onclick="removeFromCart(${id})">Entfernen</button>
-          </div>
-          <div class="cart-page__item-price">${p.price}</div>
-        </div>`;
-    }).join('');
+  if (hasApproved) {
     approvedSection = `
-      <div class="cart-page__section-label">Einzulösende Produkte</div>
-      ${items}`;
-  } else if (!state.includes('with-release') && hasApproved) {
-    // Fallback wenn nicht mit-release aber approved items im cart (sollte nicht vorkommen)
-    const items = cartApproved.map(id => {
-      const p = getProduct(id);
-      return `<div class="cart-page__item">
-        <div class="cart-page__item-img"><img src="${p.img}" alt="${p.name}"></div>
-        <div><div class="cart-page__item-name">${p.name}</div><button class="cart-page__remove" onclick="removeFromCart(${id})">Entfernen</button></div>
-        <div class="cart-page__item-price">${p.price}</div>
-      </div>`;
-    }).join('');
-    approvedSection = items;
+      <h3 class="section-label">Einzulösende Produkte</h3>
+      ${cartApproved.map(id => cartItemHTML(id, 'approved')).join('')}`;
   }
 
   if (hasRequested) {
-    const items = cartRequested.map(id => {
-      const p = getProduct(id);
-      return `
-        <div class="cart-page__item">
-          <div class="cart-page__item-img"><img src="${p.img}" alt="${p.name}"></div>
-          <div>
-            <div class="cart-page__item-name">${p.name}</div>
-            <div class="cart-page__item-meta">Anfrage an deine Praxis</div>
-            <button class="cart-page__remove" onclick="removeFromCart(${id})">Entfernen</button>
-          </div>
-          <div class="cart-page__item-price">${p.price}</div>
-        </div>`;
-    }).join('');
     requestedSection = `
-      <div class="cart-page__section-label --requested" style="margin-top:${hasApproved ? 'var(--module)' : '0'}">Anzufragende Produkte</div>
-      ${items}`;
+      <h3 class="section-label">Anzufragende Produkte</h3>
+      ${cartRequested.map(id => cartItemHTML(id, 'requested')).join('')}`;
   }
 
-  // Gesamtpreis nur für einzulösende
-  const approvedTotal = cartApproved.reduce((sum, id) => {
-    const p = getProduct(id);
-    return sum + parseFloat(p.price.replace(',','.').replace(' €',''));
+  const total = cartApproved.reduce((sum, id) => {
+    return sum + parseFloat(getProduct(id).price.replace(',', '.').replace(' €', ''));
   }, 0);
 
-  const footerHint = hasApproved
-    ? `<span class="cart-page__total">Gesamt (einzulösend): ${approvedTotal.toFixed(2).replace('.',',')} €</span>`
-    : `<span style="font-size:var(--text-xs);color:var(--fg-muted)">Nur Produktanfragen im Warenkorb</span>`;
+  const totalLine = hasApproved
+    ? `<div class="summary-total"><span>Gesamt (einzulösend)</span><span>${total.toFixed(2).replace('.', ',')} €</span></div>`
+    : `<p style="font-size:var(--text-xs);color:var(--fg-muted)">Nur Produktanfragen — kein Bestellwert</p>`;
 
   return `
     <div class="cart-page">
-      <div class="cart-page__title">Warenkorb (${cartTotal()} Artikel)</div>
+      <h2 class="shop-page-title">Warenkorb (${cartTotal()} Artikel)</h2>
       ${approvedSection}
       ${requestedSection}
-      <div class="cart-page__footer">
-        ${footerHint}
+      ${totalLine}
+      <div style="margin-top:var(--half-module);display:flex;justify-content:flex-end">
         <button class="btn --primary" onclick="openCheckoutModal()">Zum Checkout</button>
       </div>
     </div>
-    <div class="shop-footer"><p>© 2026 Inuvet GmbH · <a href="#">Datenschutz</a> · <a href="#">Impressum</a></p></div>`;
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
+/* ── Checkout-Seite ── */
 function renderCheckout() {
   const hasApproved = cartApproved.length > 0;
   if (!hasApproved) {
     return `
       <div class="cart-page">
-        <div class="cart-page__title">Checkout</div>
-        <div class="cart-page__empty">Keine einzulösenden Produkte. <a href="#" onclick="setPage('collection');return false;">Zurück zum Shop</a></div>
+        <h2 class="shop-page-title">Checkout</h2>
+        <p style="color:var(--fg-muted)">Keine einzulösenden Produkte. <a href="#" onclick="setPage('collection');return false;">Zurück zum Shop</a></p>
       </div>`;
   }
 
-  const approvedItems = cartApproved.map(id => {
-    const p = getProduct(id);
-    return `
-      <div class="cart-page__item" style="grid-template-columns:calc(var(--base)*5) 1fr auto">
-        <div class="cart-page__item-img"><img src="${p.img}" alt="${p.name}"></div>
-        <div><div class="cart-page__item-name">${p.name}</div><div class="cart-page__item-meta">Empfohlen · Menge: 1</div></div>
-        <div class="cart-page__item-price">${p.price}</div>
-      </div>`;
-  }).join('');
-
   const total = cartApproved.reduce((sum, id) => {
-    const p = getProduct(id);
-    return sum + parseFloat(p.price.replace(',','.').replace(' €',''));
+    return sum + parseFloat(getProduct(id).price.replace(',', '.').replace(' €', ''));
   }, 0);
+
+  const items = cartApproved.map(id => cartItemHTML(id, 'approved')).join('');
 
   return `
     <div class="checkout-page">
-      <div class="checkout-page__title">Checkout — Einzulösende Produkte</div>
+      <h2 class="shop-page-title">Checkout</h2>
       <div class="checkout">
         <div>
-          <div>
-            <h3 class="section-label">Lieferadresse</h3>
-            <div class="form-grid">
-              <div class="form-field"><input type="text" placeholder=" " value="Anna"><label>Vorname</label></div>
-              <div class="form-field"><input type="text" placeholder=" " value="Müller"><label>Nachname</label></div>
-              <div class="form-field" style="grid-column:1/-1"><input type="text" placeholder=" " value="Musterstraße 12"><label>Straße &amp; Hausnummer</label></div>
-              <div class="form-field"><input type="text" placeholder=" " value="80331"><label>PLZ</label></div>
-              <div class="form-field"><input type="text" placeholder=" " value="München"><label>Stadt</label></div>
+          <h3 class="section-label">Lieferadresse</h3>
+          <div class="form-grid">
+            <div class="form-field">
+              <input type="text" placeholder=" " value="Anna"><label>Vorname</label>
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder=" " value="Müller"><label>Nachname</label>
+            </div>
+            <div class="form-field" style="grid-column:1/-1">
+              <input type="text" placeholder=" " value="Musterstraße 12"><label>Straße &amp; Hausnummer</label>
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder=" " value="80331"><label>PLZ</label>
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder=" " value="München"><label>Stadt</label>
             </div>
           </div>
-          <div>
-            <h3 class="section-label">Zahlungsart</h3>
-            <div style="display:flex;flex-direction:column;gap:0.5rem">
-              <label style="display:flex;align-items:center;gap:0.5rem;font-size:var(--text-base);cursor:pointer">
-                <input type="radio" name="payment" checked> Kreditkarte
-              </label>
-              <label style="display:flex;align-items:center;gap:0.5rem;font-size:var(--text-base);cursor:pointer">
-                <input type="radio" name="payment"> PayPal
-              </label>
-              <label style="display:flex;align-items:center;gap:0.5rem;font-size:var(--text-base);cursor:pointer">
-                <input type="radio" name="payment"> Rechnung
-              </label>
+          <h3 class="section-label">Zahlungsart</h3>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:var(--module)">
+            <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer"><input type="radio" name="payment" checked> Kreditkarte</label>
+            <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer"><input type="radio" name="payment"> PayPal</label>
+            <label style="display:flex;align-items:center;gap:0.5rem;cursor:pointer"><input type="radio" name="payment"> Rechnung</label>
+          </div>
+          <div class="form-grid">
+            <div class="form-field" style="grid-column:1/-1">
+              <input type="text" placeholder=" " value="•••• •••• •••• 4111"><label>Kartennummer</label>
             </div>
-            <div class="form-grid" style="margin-top:var(--half-module)">
-              <div class="form-field" style="grid-column:1/-1"><input type="text" placeholder=" " value="4111 1111 1111 1111"><label>Kartennummer (Demo)</label></div>
-              <div class="form-field"><input type="text" placeholder=" " value="12/27"><label>Gültigkeit</label></div>
-              <div class="form-field"><input type="text" placeholder=" " value="123"><label>CVV</label></div>
+            <div class="form-field">
+              <input type="text" placeholder=" " value="12/27"><label>Gültigkeit</label>
+            </div>
+            <div class="form-field">
+              <input type="text" placeholder=" " value="•••"><label>CVV</label>
             </div>
           </div>
         </div>
-        <div>
-          <div>
-            <h3 class="section-label">Bestellübersicht</h3>
-            ${approvedItems}
-            <div style="display:flex;justify-content:space-between;padding:var(--half-module) 0;border-top:1px solid var(--border);margin-top:var(--half-module)">
-              <span>Versand</span><span style="color:var(--green);font-weight:700">Kostenlos</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;padding:var(--half-module) 0;border-top:2px solid var(--fg);font-weight:700;font-size:var(--text-m)">
-              <span>Gesamt</span><span>${total.toFixed(2).replace('.',',')} €</span>
-            </div>
-            <button class="btn --primary --full" style="margin-top:var(--half-module)" onclick="showToast('Bestellung erfolgreich aufgegeben! (Demo)')">Jetzt kaufen</button>
-            <p style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:var(--half-module)">Mit dem Klauf bestätigst du, dass du eine gültige Empfehlung deiner Tierarztpraxis für diese Produkte hast.</p>
+        <div class="checkout__sidebar">
+          <h3 class="section-label">Bestellübersicht</h3>
+          ${items}
+          <div class="summary-total">
+            <span>Gesamt</span>
+            <span>${total.toFixed(2).replace('.', ',')} €</span>
           </div>
+          <div style="margin-top:var(--half-module)">
+            <button class="btn --primary --full" onclick="toast('Bestellung erfolgreich aufgegeben! (Demo)')">Jetzt kaufen</button>
+          </div>
+          <p class="label-caps" style="margin-top:var(--half-module)">Inkl. MwSt. · Versand kostenlos · Mit gültiger Empfehlung</p>
         </div>
       </div>
     </div>
-    <div class="shop-footer"><p>© 2026 Inuvet GmbH · <a href="#">Datenschutz</a> · <a href="#">Impressum</a></p></div>`;
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
-// ─── Checkout Modal ───
+/* ════════════════════════════════════════════
+   CHECKOUT-MODAL
+   ════════════════════════════════════════════ */
 function openCheckoutModal() {
   const hasRequested = cartRequested.length > 0;
   const hasApproved  = cartApproved.length > 0;
-
-  const modal = document.getElementById('checkoutModal');
-  const title = document.getElementById('modalTitle');
-  const body  = document.getElementById('modalBody');
-  const actions = document.getElementById('modalActions');
+  const modal        = document.getElementById('checkoutModal');
 
   if (hasRequested) {
     const names = cartRequested.map(id => getProduct(id).name).join(', ');
-    title.textContent = 'Produkte erfolgreich angefragt!';
-    body.innerHTML = `<strong>Produkte erfolgreich bei Tierarzt Dr. med. vet. Martina Müller (Tierarztpraxis Grüntal) angefragt.</strong><br><br>Angefragte Produkte: ${names}.<br><br>Deine Praxis wurde benachrichtigt und meldet sich bei dir.`;
+    document.getElementById('modalTitle').textContent = 'Produkte erfolgreich angefragt!';
+    document.getElementById('modalBody').innerHTML =
+      `<strong>Produkte erfolgreich bei Tierarzt Dr. med. vet. Martina Müller (Tierarztpraxis Grüntal) angefragt.</strong><br><br>
+       Angefragte Produkte: ${names}.<br><br>
+       Deine Praxis wurde benachrichtigt und meldet sich bei dir.`;
   } else {
-    title.textContent = 'Weiter zum Checkout';
-    body.innerHTML = 'Du hast ausschließlich empfohlene Produkte im Warenkorb. Weiter zur Bezahlung.';
+    document.getElementById('modalTitle').textContent = 'Zum Checkout';
+    document.getElementById('modalBody').textContent  = 'Du hast ausschließlich empfohlene Produkte im Warenkorb.';
   }
 
+  const actions = document.getElementById('modalActions');
   actions.innerHTML = '';
 
   if (hasApproved) {
@@ -635,36 +676,35 @@ function openCheckoutModal() {
     actions.appendChild(btn);
   }
 
-  const backBtn = document.createElement('button');
-  backBtn.className = 'btn --ghost --full';
-  backBtn.textContent = 'Zurück zum Shop';
-  backBtn.onclick = () => { modal.classList.remove('--open'); setPage('home'); };
-  actions.appendChild(backBtn);
+  const back = document.createElement('button');
+  back.className = 'btn --ghost --full';
+  back.textContent = 'Zurück zum Shop';
+  back.onclick = () => { modal.classList.remove('--open'); setPage('home'); };
+  actions.appendChild(back);
 
   modal.classList.add('--open');
 }
 
-// ─── Haupt-Render ───
-function render() {
-  renderNav();
-
-  const main = document.getElementById('shopMain');
-  switch (page) {
-    case 'home':        main.innerHTML = renderHome(); break;
-    case 'collection':  main.innerHTML = renderCollection(); break;
-    case 'recommended': main.innerHTML = renderRecommended(); break;
-    case 'product':     main.innerHTML = renderProduct(); break;
-    case 'cart':        main.innerHTML = renderCart(); break;
-    case 'checkout':    main.innerHTML = renderCheckout(); break;
-  }
-}
-
-// Modal schließen bei Klick außerhalb
 document.getElementById('checkoutModal').addEventListener('click', function(e) {
   if (e.target === this) this.classList.remove('--open');
 });
 
-// Init
+/* ════════════════════════════════════════════
+   HAUPT-RENDER
+   ════════════════════════════════════════════ */
+function render() {
+  renderNav();
+  const main = document.getElementById('shopMain');
+  switch (page) {
+    case 'home':        main.innerHTML = renderHome();        break;
+    case 'collection':  main.innerHTML = renderCollection();  break;
+    case 'recommended': main.innerHTML = renderRecommended(); break;
+    case 'product':     main.innerHTML = renderProduct();     break;
+    case 'cart':        main.innerHTML = renderCart();        break;
+    case 'checkout':    main.innerHTML = renderCheckout();    break;
+  }
+}
+
 render();
 </script>
 </body>
