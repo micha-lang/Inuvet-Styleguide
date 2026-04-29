@@ -555,7 +555,7 @@
 
   /* ─── Tile Variante A: Icon + Text ─── */
   /* .tile__icon — nutzt .icon-box + .placeholder-bg */
-  .tile__icon { border: 1px solid var(--border-light); margin-bottom: calc(var(--base) * 0.5); }
+  .tile__icon { margin-bottom: calc(var(--base) * 0.5); }
 
   /* ─── Tile Variante B: Bild + Text ─── */
   /* .tile__image — nutzt .placeholder-bg */
@@ -1259,7 +1259,7 @@
   .checkout__block { margin-bottom: var(--module); }
   .checkout .choice-box:not(.--block) { padding-top: calc(var(--base) * 0.75); padding-bottom: calc(var(--base) * 0.75); }
   .checkout__block-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--module); }
-  .checkout__sidebar {}
+  .checkout__sidebar { position: sticky; top: var(--module); align-self: start; }
   .checkout .tile-grid { gap: var(--half-module); }
   @media (max-width: 767px) { .checkout { grid-template-columns: 1fr; } .checkout .form-grid { grid-template-columns: 1fr; } .checkout .form-field[style*="grid-column"] { grid-column: 1 !important; } }
 
@@ -1567,7 +1567,7 @@
   [data-cat="hormone"]      { background: var(--cat-hormone-light); }
   .pdp__title { font-size: var(--text-l); font-weight: 700; line-height: var(--lh-h2); margin-bottom: 0.5rem; }
   .pdp__price { margin-bottom: var(--half-module); }
-  .pdp__price-badge { padding: calc(var(--base) * 0.125) calc(var(--base) * 0.375); }
+
   .pdp__description { color: var(--fg-muted); font-size: var(--text-base); line-height: var(--lh-base); margin-bottom: var(--half-module); }
   .pdp__variants { margin-bottom: var(--half-module); }
   /* .pdp__variant-label — nutzt .label-caps */
@@ -1703,6 +1703,10 @@
     .section-type.--v2 .section-type__content {
       justify-content: flex-start;
       gap: var(--half-module);
+    }
+    .section-type:has(.section-type__animation) .section-type__content {
+      max-width: none;
+      margin: 0;
     }
     .section-type.--v1 .section-type__bottom,
     .section-type.--v2 .section-type__bottom {
@@ -1913,11 +1917,6 @@
   /* ═══════════════════════════════════════════
      ACCOUNT
      ═══════════════════════════════════════════ */
-  .account-tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--half-module); padding: var(--module); border: 1px solid var(--border-light); cursor: pointer; text-decoration: none; color: var(--fg); transition: background var(--anim-fast), border-color var(--anim-fast); text-align: center; }
-  .account-tile:hover { background: var(--accent-bg); border-color: var(--border-active); }
-  .account-tile__label { font-size: var(--text-base); font-weight: 700; }
-  .account-tile__sub { font-size: var(--text-xs); color: var(--fg-muted); }
-
   .order-item { display: grid; grid-template-columns: 1fr auto auto auto auto; gap: var(--half-module); padding: var(--half-module) 0; border-bottom: 1px solid var(--border-light); align-items: center; }
   .order-item__number { font-size: var(--text-base); font-weight: 700; }
   .order-item__date { font-size: var(--text-xs); color: var(--fg-muted); }
