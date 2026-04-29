@@ -79,8 +79,8 @@
     --icon-box-md: calc(var(--base) * 2.75);
 
     --announcement-height: var(--module);
-    --nav-height: var(--module-2xl);
-    --header-height: var(--module-3xl);  /* announcement + nav */
+    --nav-height: calc(var(--module) * 2.5);
+    --header-height: calc(var(--module) * 3.5);  /* announcement + nav */
     --section-max-height: 51rem;
     --section-min-height: 24rem;
 
@@ -212,6 +212,7 @@
     padding: 0 var(--margin);
     background: var(--bg);
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.05);
   }
 
   .nav-left {
@@ -232,7 +233,7 @@
     align-items: center;
     justify-content: center;
   }
-  .nav-center svg { width: clamp(3rem, 1.5rem + 5vw, 5.25rem); height: auto; display: block; }
+  .nav-center svg { width: clamp(3.5rem, 2rem + 5vw, 6rem); height: auto; display: block; }
 
   .nav-right {
     display: flex;
@@ -1249,6 +1250,9 @@
   .summary-line { display: flex; justify-content: space-between; padding: calc(var(--base) * 0.75) 0; border-bottom: 1px dashed var(--border-light); color: var(--fg-muted); }
   .summary-line:last-of-type { border-bottom: none; padding-bottom: 0; }
   .summary-total { display: flex; justify-content: space-between; font-weight: 700; font-size: var(--text-m); margin-top: var(--half-module); padding-top: var(--module); border-top: 1px solid var(--fg); color: var(--fg); }
+  /* Checkout: letztes summary-line als solide Trennlinie, summary-total ohne eigene Linie */
+  .checkout .summary-line:has(+ .summary-total) { border-bottom: 1px solid var(--fg); padding-bottom: calc(var(--base) * 0.75); color: var(--fg); }
+  .checkout .summary-total { border-top: none; padding-top: calc(var(--base) * 0.375); margin-top: calc(var(--base) * 0.375); }
 
   /* ═══════════════════════════════════════════
      CHECKOUT
@@ -1566,7 +1570,8 @@
   [data-cat="atemwege"]     { background: var(--cat-atemwege-light); }
   [data-cat="hormone"]      { background: var(--cat-hormone-light); }
   .pdp__title { font-size: var(--text-l); font-weight: 700; line-height: var(--lh-h2); margin-bottom: 0.5rem; }
-  .pdp__price { margin-bottom: var(--half-module); }
+  .pdp__price { display: flex; align-items: center; gap: var(--half-module); margin-bottom: var(--half-module); }
+  .pdp__info .rating { margin-bottom: var(--half-module); }
 
   .pdp__description { color: var(--fg-muted); font-size: var(--text-base); line-height: var(--lh-base); margin-bottom: var(--half-module); }
   .pdp__variants { margin-bottom: var(--half-module); }
@@ -1574,8 +1579,7 @@
   .pdp__variant-label { margin-bottom: 0.5rem; }
   .pdp__variant-options { display: flex; gap: calc(var(--base) * 0.5); flex-wrap: wrap; }
   /* .pdp__variant-option → .choice-box (globaler Atom) */
-  .pdp__info .qty-selector { margin-bottom: var(--half-module); }
-  .pdp__actions { display: flex; gap: var(--half-module); align-items: center; margin-bottom: var(--module); }
+  .pdp__actions { display: flex; gap: var(--half-module); align-items: flex-end; margin-bottom: var(--module); }
   .pdp__actions .btn { flex: 1; text-align: center; }
   /* .pdp__wishlist — nutzt .icon-box.--md */
   .pdp__wishlist { background: none; border: 1px solid var(--border-light); border-radius: 0; cursor: pointer; transition: border-color var(--anim-fast); }

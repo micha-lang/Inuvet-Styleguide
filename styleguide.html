@@ -150,7 +150,7 @@
     </div>
 
     <table class="spec-table">
-      <tr><th>Navigation</th><td>Fluid: <code>clamp(3rem, 1.5rem + 5vw, 5.25rem)</code>. Min = <code>var(--module)</code>, Max = <code>var(--module) × 1.75</code>.</td></tr>
+      <tr><th>Navigation</th><td>Fluid: <code>clamp(3.5rem, 2rem + 5vw, 6rem)</code>. Min ≈ <code>var(--module) × 1.17</code>, Max = <code>var(--module) × 2</code>.</td></tr>
       <tr><th>Schutzzone</th><td>Mindestens <code>½ Modul</code> Freiraum um das Logo auf allen Seiten.</td></tr>
       <tr><th>Mindestgröße</th><td><code>3rem</code> = <code>var(--module)</code>. Darunter wird die Wortmarke unleserlich.</td></tr>
       <tr><th>Hintergrund</th><td>Bevorzugt auf Weiß. Auf <code>--green-light</code> ebenfalls zulässig.</td></tr>
@@ -2862,15 +2862,15 @@
             <button class="choice-box" onclick="selectVariant(this)">500g</button>
           </div>
         </div>
-        <div class="pdp__variants">
-          <div class="pdp__variant-label label-caps">Menge</div>
-          <div class="qty-selector">
-            <button class="qty-selector__btn" type="button" aria-label="Menge verringern" onclick="changeQty(-1)"><span class="material-icons">remove</span></button>
-            <input class="qty-selector__input" type="number" value="1" min="1" id="qtyInput">
-            <button class="qty-selector__btn" type="button" aria-label="Menge erhöhen" onclick="changeQty(1)"><span class="material-icons">add</span></button>
-          </div>
-        </div>
         <div class="pdp__actions">
+          <div>
+            <div class="pdp__variant-label label-caps">Menge</div>
+            <div class="qty-selector">
+              <button class="qty-selector__btn" type="button" aria-label="Menge verringern" onclick="changeQty(-1)"><span class="material-icons">remove</span></button>
+              <input class="qty-selector__input" type="number" value="1" min="1" id="qtyInput">
+              <button class="qty-selector__btn" type="button" aria-label="Menge erhöhen" onclick="changeQty(1)"><span class="material-icons">add</span></button>
+            </div>
+          </div>
           <a class="btn --primary" onclick="openCart('cartFull')">In den Warenkorb</a>
           <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste"><span class="material-icons">favorite_border</span></button>
         </div>
@@ -3284,7 +3284,7 @@
           <div class="summary-line"><span>MwSt. (19 %)</span><span>23,12 €</span></div>
           <div class="summary-total"><span>Gesamt</span><span>144,60 €</span></div>
 
-          <div>
+          <div style="margin-top:var(--module)">
             <button class="btn --primary --full" type="button">Jetzt kaufen</button>
           </div>
         </aside>
