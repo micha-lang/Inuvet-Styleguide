@@ -445,31 +445,41 @@ function tileHTML(p) {
 
 /* ── Startseite ── */
 function renderHome() {
-  let heroContent = '';
+  let headline = '';
+  let body     = '';
+  let cta      = '';
+
   if (state === 'guest') {
-    heroContent = `
-      <h1 class="shop-hero__headline">Wenn Sie eine Empfehlung haben, können Sie diese nach der Registrierung oder dem Login einlösen.</h1>
-      <p class="shop-hero__body">Dieser Shop ist ausschließlich für Tierhalter mit ärztlicher Empfehlung zugänglich. Bitte melden Sie sich an oder registrieren Sie sich, um Ihre Empfehlung einzulösen.</p>
-      <div class="shop-hero__actions">
-        <button class="btn --primary" onclick="setState('no-release',document.querySelectorAll('[data-state]')[1])">Jetzt registrieren</button>
-        <button class="btn --ghost"   onclick="setState('no-release',document.querySelectorAll('[data-state]')[1])">Bereits registriert? Anmelden</button>
-      </div>`;
+    headline = 'Ihr Zugang zum Inuvet-Shop';
+    body     = 'Dieser Shop ist ausschließlich für Tierhalter mit ärztlicher Empfehlung. Melden Sie sich an, um Ihre Empfehlung einzulösen.';
+    cta      = `<div style="display:flex;gap:var(--half-module);flex-wrap:wrap">
+      <button class="btn --primary" onclick="setState('no-release',document.querySelectorAll('[data-state]')[1])">Jetzt registrieren</button>
+      <button class="btn --ghost"   onclick="setState('no-release',document.querySelectorAll('[data-state]')[1])">Anmelden</button>
+    </div>`;
   } else if (state === 'no-release') {
-    heroContent = `
-      <h1 class="shop-hero__headline">Du hast noch keine Empfehlung für Inuvet-Produkte?</h1>
-      <p class="shop-hero__body">Gut, dass über 20.000 Tierärzte mit Inuvet arbeiten. Ruf einfach in deiner Praxis an und frage nach Inuvet-Produkten. Deine Praxis kann diese jederzeit für dich bestellen.</p>`;
+    headline = 'Noch keine Empfehlung?';
+    body     = 'Über 20.000 Tierärzte arbeiten mit Inuvet. Frag einfach in deiner Praxis nach — sie können jederzeit für dich bestellen.';
+    cta      = `<button class="btn --primary" onclick="setPage('collection')">Alle Produkte ansehen</button>`;
   } else {
-    heroContent = `
-      <h1 class="shop-hero__headline">Du hast offene Empfehlungen. Diese kannst du hier einlösen.</h1>
-      <p class="shop-hero__body">2 Produkte wurden für dich von deiner Tierarztpraxis empfohlen. Lege sie direkt in den Warenkorb und schließe deine Bestellung ab.</p>
-      <div class="shop-hero__actions">
-        <button class="btn --primary" onclick="setPage('recommended')">Empfohlene Produkte ansehen</button>
-        <button class="btn --ghost"   onclick="setPage('collection')">Alle Produkte</button>
-      </div>`;
+    headline = 'Deine Empfehlungen warten';
+    body     = '2 Produkte wurden von deiner Tierarztpraxis für dich empfohlen. Lege sie in den Warenkorb und schließe die Bestellung ab.';
+    cta      = `<div style="display:flex;gap:var(--half-module);flex-wrap:wrap">
+      <button class="btn --primary" onclick="setPage('recommended')">Empfehlungen ansehen</button>
+      <button class="btn --ghost"   onclick="setPage('collection')">Alle Produkte</button>
+    </div>`;
   }
 
   return `
-    <div class="shop-hero"><div class="shop-hero__inner">${heroContent}</div></div>
+    <div class="section-type --v2">
+      <div class="section-type__image" style="background-image:url('../assets/images/Produkt_Packshot_01.jpeg');background-size:cover;background-position:center"></div>
+      <div class="section-type__content">
+        <h2 class="section-type__headline">${headline}</h2>
+        <div class="section-type__bottom">
+          <p class="section-type__body">${body}</p>
+          ${cta}
+        </div>
+      </div>
+    </div>
     <div class="page">
       <h3 class="section-label">Unsere Produkte</h3>
       <div class="tile-grid --cols-4">
