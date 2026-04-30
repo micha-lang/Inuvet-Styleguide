@@ -402,6 +402,12 @@
     grid-template-columns: 1fr 1fr;
     min-height: var(--section-min-height);
   }
+  /* Alle Section-Types außer --v3 (Vollbild-Hintergrund): Seitenbreite + Abstand oben */
+  .section-type:not(.--v3) {
+    max-width: 1536px;
+    margin-inline: auto;
+    margin-top: var(--module);
+  }
   .section-type.--viewport {
     height: calc(100dvh - var(--header-height));
     max-height: var(--section-max-height);
