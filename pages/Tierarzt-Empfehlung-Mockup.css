@@ -1,0 +1,8 @@
+/* ═══════════════════════════════════════════════════════
+   Tierarzt-Empfehlung-Mockup.css
+   Seitenspezifische Darstellungsanpassungen für dieses Mockup.
+   Nie in Produktion einbinden.
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── Navigation ─── */
+.nav-left a { font-size: var(--text-base); }

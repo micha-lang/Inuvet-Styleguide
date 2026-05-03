@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tierarzt-Empfehlung — HTML Mockup</title>
+  <link rel="stylesheet" href="https://use.typekit.net/vhh5bbc.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../inuvet.css">
+  <link rel="stylesheet" href="../mockup-ui.css">
+  <link rel="stylesheet" href="Tierarzt-Empfehlung-Mockup.css">
+</head>
+<body class="--mockup-bar-visible">
+
+<!-- ════════════════════════════════════════
+     MOCKUP-STEUERLEISTE
+     ════════════════════════════════════════ -->
+<div class="mockup-bar" id="mockupBar">
+  <div class="mockup-bar__group">
+    <span class="mockup-bar__group-label">Zustand:</span>
+    <button class="mockup-btn --active" data-state="guest"        onclick="setState('guest',        this)">① Nicht angemeldet</button>
+    <button class="mockup-btn"          data-state="no-release"   onclick="setState('no-release',   this)">② Angemeldet · keine Freigabe</button>
+    <button class="mockup-btn"          data-state="with-release" onclick="setState('with-release', this)">③ Angemeldet · mit Freigabe</button>
+  </div>
+  <div class="mockup-bar__sep"></div>
+  <div class="mockup-bar__group" id="pageNav">
+    <span class="mockup-bar__group-label">Seite:</span>
+    <button class="mockup-btn --active" onclick="setPage('home',        this)">Startseite</button>
+    <button class="mockup-btn"          onclick="setPage('collection',  this)">Alle Produkte</button>
+    <button class="mockup-btn"          onclick="setPage('recommended', this)" id="btnRecommended" style="display:none">Empfohlene Produkte</button>
+    <button class="mockup-btn"          onclick="setPage('product',     this)">Produktseite</button>
+    <button class="mockup-btn"          onclick="openCart()"                  >Warenkorb</button>
+    <button class="mockup-btn"          onclick="setPage('checkout',    this)">Checkout</button>
+  </div>
+  <div class="mockup-bar__sep" id="productPickerSep" style="display:none"></div>
+  <div class="mockup-bar__group" id="productPicker" style="display:none">
+    <span class="mockup-bar__group-label">Produkt:</span>
+  </div>
+  <button class="mockup-bar__collapse" onclick="toggleMockupBar()" title="Leiste ausblenden">▾ Ausblenden</button>
+</div>
+<button class="mockup-revive" id="mockupRevive" onclick="toggleMockupBar()" title="Steuerleiste einblenden">▴ Mockup</button>
+
+<!-- ════════════════════════════════════════
+     SHOP-HEADER
+     ════════════════════════════════════════ -->
+<div class="announcement-bar" id="announcementBar">
+  <span class="announcement-bar__item">Kostenloser Versand ab 49 €</span>
+  <span class="announcement-bar__item">30 Tage Rückgabe</span>
+  <span class="announcement-bar__item">Tierärztlich entwickelt</span>
+  <span class="announcement-bar__item"><span class="rating"><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span>4,9 · Über 2.400 Bewertungen</span></span></span>
+  <button class="btn --icon" onclick="closeAnnouncement()" aria-label="Schließen">
+    <span class="material-icons">close</span>
+  </button>
+</div>
+
+<nav class="site-nav" aria-label="Hauptnavigation">
+  <div class="nav-left" id="navLinks"></div>
+  <div class="nav-center">
+    <a href="#" onclick="setPage('home');return false;" aria-label="Zur Startseite">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.4 113.4"<defs><style>.st0{fill:none}.st1{fill:#78b41b}.st2{clip-path:url(#cp-shop)}</style><clipPath id="cp-shop"><rect class="st0" width="113.4" height="113.4"/></clipPath></defs><g><path d="M19.4,74.3c0,1.4-1.1,2.6-2.6,2.6s-2.6-1.2-2.6-2.6,1.1-2.5,2.6-2.5,2.5,1.2,2.5,2.5ZM14.7,78.9h4.3v15.4h-4.3s0-15.4,0-15.4Z"/><path d="M23.1,78.9h3.8l.2,2.1c1.5-1.8,3.1-2.5,5.1-2.5s3.5.7,4.2,2.1c.5.9.7,2,.7,4.1v9.7h-4.3v-8.9c0-1.3,0-1.8-.3-2.3-.3-.6-.8-.9-1.6-.9-1.2,0-2.6,1.1-3.5,2.8v9.3h-4.3v-15.4h0Z"/><path d="M50.5,92.6c-1.4,1.5-2.8,2.1-4.7,2.1s-3.4-.8-4.2-2.2c-.5-.9-.7-2.1-.7-4.2v-9.5h4.3v8.7c0,2.6.5,3.4,1.9,3.4s2.3-.6,3.1-1.9v-10.2h4.3v15.4h-3.8l-.3-1.7h0Z"/><path d="M56.8,78.9h4.8l3.6,10.3,3.6-10.3h4.3l-6.3,15.4h-3.9l-6.1-15.4h0Z"/><path d="M78.1,87.9c.2,2.6,1.5,3.7,4.4,3.7s2.7-.3,4.4-1.2l1,2.8c-1.8,1.1-3.8,1.6-6.4,1.6-5.2,0-7.8-2.5-7.8-7.7s2.8-8.6,7.5-8.6,6.8,2.6,6.8,7.6,0,.9,0,1.8h-9.9,0ZM84.2,85.1c-.2-2.4-1.1-3.5-2.9-3.5s-2.9,1.1-3.2,3.5h6.1Z"/><path d="M89.7,82.4l.3-3.4h2.5l.2-3.7,4-1.4v5.1h3.8l-.3,3.4h-3.5v5.6c0,2.8.2,3.3,1.6,3.3s1.3-.2,2.1-.5l.8,2.7c-1.5.9-3,1.3-4.5,1.3s-3-.6-3.7-1.8c-.4-.8-.6-2-.6-4.2v-6.5h-2.7,0Z"/></g><g class="st2"><g><path d="M81.4,32h-.3v1h.2c.5,0,.7-.3.7-.6s-.1-.5-.6-.5M82,35.1l-.8-1.5h0v1.5h-.8v-3.7h1.3c.9,0,1.2.4,1.2,1s-.3,1-.8,1c0,0,.2.3.3.5l.7,1.2h-1ZM78.9,33.3c0,1.4,1.1,2.6,2.6,2.6s2.6-1.2,2.6-2.6-1.1-2.6-2.6-2.6-2.6,1.2-2.6,2.6M85,33.3c0,1.9-1.6,3.5-3.5,3.5s-3.6-1.5-3.6-3.5,1.6-3.5,3.6-3.5,3.5,1.5,3.5,3.5"/><path class="st1" d="M28.7,54.5c1.3,5.2,5.6,9,11.1,10.7,4.1-4.1,6.1-9.5,4.8-14.7-1.3-5.2-5.6-9-11.1-10.7-4.1,4.1-6.1,9.5-4.8,14.7Z"/><path class="st1" d="M38.6,32.3c.7,5.3,4.4,9.7,9.7,12,4.6-3.6,7.2-8.6,6.6-14-.6-5.3-4.4-9.7-9.7-12-4.6,3.6-7.2,8.7-6.5,14Z"/><path class="st1" d="M84.6,54.5c-1.3,5.2-5.6,9-11.1,10.7-4.1-4.1-6.1-9.5-4.8-14.7,1.3-5.2,5.6-9,11.1-10.7,4.1,4.1,6.1,9.5,4.8,14.7h0Z"/><path class="st1" d="M74.8,32.3c-.7,5.3-4.4,9.7-9.7,12-4.6-3.6-7.2-8.6-6.6-14,.6-5.3,4.4-9.7,9.7-12,4.6,3.6,7.2,8.7,6.6,14h0Z"/></g></g></svg>
+    </a>
+  </div>
+  <div class="nav-right">
+    <span id="navRight"></span>
+    <button class="btn --icon icon-badged" aria-label="Warenkorb öffnen" onclick="openCart()">
+      <span class="material-icons">shopping_cart</span>
+      <span class="badge --count" id="cartCount" style="display:none">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HAUPTINHALT
+     ════════════════════════════════════════ -->
+<main id="shopMain"></main>
+
+<!-- ════════════════════════════════════════
+     WARENKORB-DRAWER (Styleguide-Klassen)
+     ════════════════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <!-- Inhalt wird per JS gerendert -->
+</div>
+
+<!-- ════════════════════════════════════════
+     CHECKOUT-MODAL (Popup — nur bei Anfragen)
+     ════════════════════════════════════════ -->
+<div class="shop-modal-overlay" id="checkoutModal">
+  <div class="shop-modal">
+    <div class="shop-modal__icon">
+      <span class="material-icons checkout__success-icon">check_circle</span>
+    </div>
+    <div class="shop-modal__title"   id="modalTitle"></div>
+    <div class="shop-modal__body"    id="modalBody"></div>
+    <div class="shop-modal__actions" id="modalActions"></div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   PRODUKTDATEN
+   Packshot_01 = Calmin Balance · Packshot_02 = Hepax
+   approved: nur Produkt A + B (State ③)
+   ════════════════════════════════════════════ */
+/* Calmin Balance */
+const CALMIN_1 = '../assets/images/Calmin_Packshot_01.jpeg';
+const CALMIN_2 = '../assets/images/Calmin_Packshot_02.png';
+const CALMIN_3 = '../assets/images/Calmin_Packshot_03.png';
+/* Hepax */
+const HEPAX_1  = '../assets/images/Hepax_Packshot_01.jpeg';
+const HEPAX_2  = '../assets/images/Hepax_Packshot_02.png';
+
+const PRODUCTS = [
+  { id:1, name:'Calmin Balance', cat:'beruhigung', catLabel:'Beruhigung', price:'39,90 €', img:CALMIN_1, imgHover:CALMIN_2, imgDetail:CALMIN_3, approved:true,
+    shortDesc:'Für Entspannung und innere Balance.',
+    desc:'Hochwertige Tropfen für eine entspannte und ausgeglichene Stimmung bei Hunden und Katzen. Schonend gewonnen, tierärztlich geprüft.',
+    ingredients:'CBD-Hanfextrakt, MCT-Öl (Kokosöl), natürliches Aroma. Ohne künstliche Zusatzstoffe, ohne Lösungsmittel.' },
+  { id:2, name:'Hepax',          cat:'leber',    catLabel:'Leber',      price:'44,90 €', img:HEPAX_1,  imgHover:HEPAX_2,                      approved:true,
+    shortDesc:'Unterstützt Knorpel und Gelenke.',
+    desc:'Spezialformel zur Unterstützung von Knorpel und Gelenken bei aktiven Tieren. Mit natürlichen Extrakten, tierärztlich entwickelt.',
+    ingredients:'Grünlippmuschel-Extrakt, Teufelskralle, Boswellia, Vitamin C, Glucosamin, Chondroitin. Frei von Getreide und Soja.' },
+  { id:3, name:'Calmin Balance', cat:'beruhigung', catLabel:'Beruhigung', price:'34,90 €', img:CALMIN_1, imgHover:CALMIN_2, imgDetail:CALMIN_3, approved:false,
+    shortDesc:'Für eine gesunde Verdauung.',
+    desc:'Beruhigt den Verdauungstrakt und fördert eine gesunde Darmflora. Ideal bei empfindlichem Magen und nach Antibiotika-Behandlungen.',
+    ingredients:'Flohsamenschalen, Probiotika (Enterococcus faecium), Präbiotika (FOS), Bentonit, Pektin, Kamillenextrakt. Ohne künstliche Zusatzstoffe.' },
+  { id:4, name:'Hepax',          cat:'leber',    catLabel:'Leber',      price:'49,90 €', img:HEPAX_1,  imgHover:HEPAX_2,                      approved:false,
+    shortDesc:'Zur Unterstützung der Herzfunktion.',
+    desc:'Spezialformel zur Unterstützung der Herzfunktion bei älteren Tieren. Enthält natürliche Wirkstoffe, tierärztlich entwickelt.',
+    ingredients:'Weißdornextrakt, Coenzym Q10, Taurin, L-Carnitin, Magnesium, Vitamin E. Ohne Konservierungsstoffe.' },
+  { id:5, name:'Calmin Balance', cat:'beruhigung', catLabel:'Beruhigung', price:'42,90 €', img:CALMIN_1, imgHover:CALMIN_2, imgDetail:CALMIN_3, approved:false,
+    shortDesc:'Zur Unterstützung der Nierenfunktion.',
+    desc:'Unterstützt die Nierenfunktion und trägt zur natürlichen Entgiftung bei. Schonende Naturextrakte für Hunde und Katzen.',
+    ingredients:'Cranberry-Extrakt, Brennnesselwurzel, Schachtelhalmextrakt, Vitamin B6, Kalium. Frei von künstlichen Farbstoffen.' },
+  { id:6, name:'Hepax',          cat:'leber',    catLabel:'Leber',      price:'36,90 €', img:HEPAX_1,  imgHover:HEPAX_2,                      approved:false,
+    shortDesc:'Für gesunde Haut und glänzendes Fell.',
+    desc:'Für glänzendes Fell und gesunde Haut. Reich an Omega-3-Fettsäuren und Biotin, tierärztlich geprüft.',
+    ingredients:'Lachsöl, Borretschsamenöl, Biotin, Zink, Vitamin A, E. Kaltgepresst, ohne Konservierungsstoffe.' },
+];
+
+/* ════════════════════════════════════════════
+   STATE
+   ════════════════════════════════════════════ */
+let state         = 'guest';
+let page          = 'home';
+let activeProduct = PRODUCTS[0];
+let cartApproved  = [];
+let cartRequested = [];
+
+/* ════════════════════════════════════════════
+   HILFSFUNKTIONEN
+   ════════════════════════════════════════════ */
+const getProduct = id  => PRODUCTS.find(p => p.id === id);
+const cartTotal  = ()  => cartApproved.length + cartRequested.length;
+const isApproved = p   => state === 'with-release' && p.approved;
+
+function updateCartBadge() {
+  const badge = document.getElementById('cartCount');
+  const n = cartTotal();
+  badge.style.display = n > 0 ? 'flex' : 'none';
+  badge.textContent   = n;
+}
+
+function addToCart(id, type) {
+  const arr = type === 'approved' ? cartApproved : cartRequested;
+  if (!arr.includes(id)) arr.push(id);
+  updateCartBadge();
+  if (document.getElementById('cartDrawer').classList.contains('--open')) {
+    renderCartDrawer();
+  }
+  toast(type === 'approved' ? 'In den Warenkorb gelegt' : 'Anfrage hinzugefügt');
+}
+
+function removeFromCart(id) {
+  cartApproved  = cartApproved.filter(x => x !== id);
+  cartRequested = cartRequested.filter(x => x !== id);
+  updateCartBadge();
+  if (document.getElementById('cartDrawer').classList.contains('--open')) {
+    renderCartDrawer();
+  }
+}
+
+function calcTotal(ids) {
+  return ids.reduce((s, id) => s + parseFloat(getProduct(id).price.replace(',','.').replace(' €','')), 0);
+}
+
+function toast(msg) {
+  let t = document.getElementById('shopToast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'shopToast';
+    Object.assign(t.style, {
+      position:'fixed', bottom:'2rem', right:'2rem',
+      background:'var(--fg)', color:'#fff',
+      padding:'0.75rem 1.25rem', fontSize:'var(--text-base)',
+      zIndex:'9999', transition:'opacity 0.3s', opacity:'0'
+    });
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.style.opacity = '0', 2200);
+}
+
+/* ════════════════════════════════════════════
+   UI-HELFER
+   ════════════════════════════════════════════ */
+function closeAnnouncement() {
+  document.getElementById('announcementBar').classList.add('--closed');
+  document.documentElement.style.setProperty('--announcement-height', '0px');
+}
+
+function toggleMockupBar() {
+  const bar    = document.getElementById('mockupBar');
+  const revive = document.getElementById('mockupRevive');
+  const hide   = !bar.classList.contains('--hidden');
+  bar.classList.toggle('--hidden', hide);
+  revive.classList.toggle('--visible', hide);
+  document.body.classList.toggle('--mockup-bar-visible', !hide);
+}
+
+function pdpSetImg(thumb, src) {
+  document.getElementById('pdpMainImg').src = src;
+  document.querySelectorAll('.pdp__thumb').forEach(t => t.classList.remove('--active'));
+  thumb.classList.add('--active');
+}
+
+function toggleAccordion(btn) {
+  const item    = btn.closest('.accordion-item');
+  const content = item.querySelector('.accordion-content');
+  const isOpen  = item.classList.contains('--open');
+  item.classList.toggle('--open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ════════════════════════════════════════════
+   WARENKORB-DRAWER
+   ════════════════════════════════════════════ */
+function openCart() {
+  renderCartDrawer();
+  document.getElementById('cartOverlay').classList.add('--open');
+  document.getElementById('cartDrawer').classList.add('--open');
+}
+
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('--open');
+  document.getElementById('cartDrawer').classList.remove('--open');
+}
+
+function renderCartDrawer() {
+  const hasApproved  = cartApproved.length  > 0;
+  const hasRequested = cartRequested.length > 0;
+  const drawer       = document.getElementById('cartDrawer');
+
+  if (!hasApproved && !hasRequested) {
+    drawer.innerHTML = `
+      <div class="cart-drawer__header">
+        <h2 class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(0)</span></h2>
+        <button class="btn --icon" onclick="closeCart()" aria-label="Schließen"><span class="material-icons">close</span></button>
+      </div>
+      <div class="cart-drawer__empty">
+        <p class="text-muted">Dein Warenkorb ist leer.</p>
+      </div>`;
+    return;
+  }
+
+  let items = '';
+
+  if (hasApproved) {
+    items += `<h3 class="section-label">Einzulösende Produkte</h3>`;
+    items += cartApproved.map(id => drawerItemHTML(id, 'approved')).join('');
+  }
+  if (hasRequested) {
+    items += `<h3 class="section-label">Anzufragende Produkte</h3>`;
+    items += cartRequested.map(id => drawerItemHTML(id, 'requested')).join('');
+  }
+
+  const totalApproved = calcTotal(cartApproved);
+
+  /* Checkout-Aktion:
+     Nur empfohlene Produkte → direkt zur Checkout-Seite
+     Angefragte vorhanden    → Popup (Anfrage + ggf. Checkout) */
+  const checkoutFn = hasRequested
+    ? `closeCart();openCheckoutModal()`
+    : `closeCart();setPage('checkout')`;
+
+  drawer.innerHTML = `
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(${cartTotal()})</span></h2>
+      <button class="btn --icon" onclick="closeCart()" aria-label="Schließen"><span class="material-icons">close</span></button>
+    </div>
+    <div class="cart-drawer__items">${items}</div>
+    <div class="cart-drawer__footer">
+      ${hasApproved ? `
+      <div class="cart-drawer__shipping">
+        <div class="shipping-hint"><span class="material-icons">local_shipping</span> Kostenloser Versand</div>
+      </div>
+      <div class="summary-total"><span>Gesamt (einzulösend)</span><span>${totalApproved.toFixed(2).replace('.',',')} €</span></div>
+      <div class="cart-drawer__tax">inkl. MwSt.</div>` : ''}
+      <button class="btn --primary cart-drawer__checkout" onclick="${checkoutFn}">Zur Kasse</button>
+      <div class="cart-drawer__continue-wrap">
+        <button class="btn --ghost cart-drawer__continue" onclick="closeCart()">Weiter einkaufen</button>
+      </div>
+    </div>`;
+}
+
+/* Cart-Item im Drawer (mit Mengenauswahl + Entfernen) */
+function drawerItemHTML(id, type) {
+  const p    = getProduct(id);
+  const info = type === 'approved' ? 'Einzulösen mit Empfehlung' : 'Anfrage an Praxis';
+  return `<div class="cart-item">
+    <div class="cart-item__image product-thumb"><img src="${p.img}" alt="${p.name}"></div>
+    <div class="cart-item__info">
+      <div class="cart-item__top">
+        <div>
+          <p class="cart-item__name">${p.name}</p>
+          <div class="cart-item__variant">${info}</div>
+        </div>
+        <button type="button" class="btn --icon cart-item__remove" aria-label="Entfernen" onclick="removeFromCart(${id})">
+          <span class="material-icons">close</span>
+        </button>
+      </div>
+      <div class="cart-item__bottom">
+        <div class="qty-selector --sm">
+          <button class="qty-selector__btn" type="button" aria-label="Weniger"><span class="material-icons">remove</span></button>
+          <input class="qty-selector__input" type="number" value="1" min="1" max="99">
+          <button class="qty-selector__btn" type="button" aria-label="Mehr"><span class="material-icons">add</span></button>
+        </div>
+        <div class="price-stack">${p.price}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* Cart-Item in der Checkout-Übersicht (vereinfacht, kein Remove) */
+function checkoutItemHTML(id) {
+  const p = getProduct(id);
+  return `<div class="cart-item">
+    <div class="cart-item__image product-thumb"><img src="${p.img}" alt="${p.name}"></div>
+    <div class="cart-item__info">
+      <div class="cart-item__top">
+        <div>
+          <p class="cart-item__name">${p.name}</p>
+          <div class="cart-item__variant">${p.catLabel}</div>
+        </div>
+      </div>
+      <div class="cart-item__bottom">
+        <div class="cart-item__qty-text">1 Stück</div>
+        <div class="price-stack">${p.price}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════
+   ZUSTAND & SEITE WECHSELN
+   ════════════════════════════════════════════ */
+function setState(s, btn) {
+  state = s;
+  cartApproved = []; cartRequested = [];
+  updateCartBadge();
+
+  document.querySelectorAll('[data-state]').forEach(b => b.classList.remove('--active'));
+  if (btn) btn.classList.add('--active');
+
+  const btnRec = document.getElementById('btnRecommended');
+  btnRec.style.display = state === 'with-release' ? '' : 'none';
+  if (state !== 'with-release' && page === 'recommended') setPage('collection');
+
+  render();
+}
+
+function setPage(p, btn) {
+  page = p;
+  document.querySelectorAll('#pageNav .mockup-btn').forEach(b => b.classList.remove('--active'));
+  if (btn) btn.classList.add('--active');
+
+  const picker    = document.getElementById('productPicker');
+  const pickerSep = document.getElementById('productPickerSep');
+  if (p === 'product') {
+    picker.style.display = pickerSep.style.display = '';
+    renderProductPicker();
+  } else {
+    picker.style.display = pickerSep.style.display = 'none';
+  }
+
+  document.getElementById('checkoutModal').classList.remove('--open');
+  closeCart();
+  window.scrollTo({ top: 0 });
+  render();
+}
+
+function renderProductPicker() {
+  const picker = document.getElementById('productPicker');
+  picker.innerHTML = '<span class="mockup-bar__group-label">Produkt:</span>';
+  PRODUCTS.forEach(p => {
+    const btn = document.createElement('button');
+    btn.className = 'mockup-btn' + (activeProduct.id === p.id ? ' --active' : '');
+    btn.textContent = `${p.name} (${p.catLabel})`;
+    btn.onclick = () => {
+      activeProduct = p;
+      picker.querySelectorAll('.mockup-btn').forEach(b => b.classList.remove('--active'));
+      btn.classList.add('--active');
+      render();
+    };
+    picker.appendChild(btn);
+  });
+}
+
+/* ════════════════════════════════════════════
+   NAV
+   ════════════════════════════════════════════ */
+function renderNav() {
+  const navLinks = document.getElementById('navLinks');
+  const navRight = document.getElementById('navRight');
+
+  let links = `<a href="#" onclick="setPage('collection');return false;">Alle Produkte</a>`;
+  if (state === 'with-release') {
+    links += `<a href="#" onclick="setPage('recommended');return false;">Empfohlene Produkte</a>`;
+  }
+  navLinks.innerHTML = links;
+
+  /* Kein User-Greeting/Abmelden im Nav */
+  navRight.innerHTML = state === 'guest'
+    ? `<button class="btn --secondary" onclick="setState('no-release', document.querySelectorAll('[data-state]')[1])">Anmelden</button>`
+    : '';
+}
+
+/* ════════════════════════════════════════════
+   BREADCRUMB
+   ════════════════════════════════════════════ */
+function breadcrumb(items) {
+  return `<nav class="breadcrumb" aria-label="Breadcrumb">
+    ${items.map((item, i) => {
+      if (i === 0) return `<div class="breadcrumb__item"><a href="#" onclick="${item.onclick};return false;">${item.label}</a></div>`;
+      if (item.current) return `<div class="breadcrumb__item"><span class="breadcrumb__sep">/</span><span class="--current">${item.label}</span></div>`;
+      return `<div class="breadcrumb__item"><span class="breadcrumb__sep">/</span><a href="#" onclick="${item.onclick};return false;">${item.label}</a></div>`;
+    }).join('')}
+  </nav>`;
+}
+
+/* ════════════════════════════════════════════
+   NEWSLETTER (geteilt, alle Seiten)
+   ════════════════════════════════════════════ */
+/* ════════════════════════════════════════════
+   TESTIMONIAL-SLIDER
+   ════════════════════════════════════════════ */
+const TESTIMONIALS = [
+  { text: 'Mein Hund hat sich nach wenigen Wochen spürbar beruhigt. Ich bin so froh, dass mir meine Tierärztin Calmin Balance empfohlen hat.',        name: 'Sandra M.',     role: 'Hundemama, München' },
+  { text: 'Endlich ein Produkt, das wirklich hält, was es verspricht. Hepax hat meiner Katze nach der Operation schnell wieder auf die Beine geholfen.', name: 'Thomas K.',     role: 'Katzenbesitzer, Hamburg' },
+  { text: 'Die Bestellung war unkompliziert und das Produkt kam schnell an. Mein Tierarzt hat es direkt für meinen Labrador verschrieben.',             name: 'Julia R.',      role: 'Tierliebhaberin, Berlin' },
+  { text: 'Ich vertraue Inuvet seit über zwei Jahren. Die Qualität ist konstant hoch und mein Hund nimmt es problemlos.',                              name: 'Markus T.',     role: 'Golden-Retriever-Besitzer' },
+  { text: 'Super Service und top Beratung. Meine Tierärztin arbeitet seit Jahren mit Inuvet und ich merke den Unterschied jeden Tag.',                 name: 'Petra L.',      role: 'Hundebesitzerin, Köln' },
+  { text: 'Nach der Empfehlung meines Tierarztes haben wir Calmin Balance ausprobiert — mein ängstlicher Beagle ist eine andere Seele geworden.',      name: 'Anna W.',       role: 'Beagle-Mama, Frankfurt' },
+];
+
+function testimonialSlideHTML(t) {
+  return `
+    <div class="testimonial-slider__slide testimonial">
+      <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
+      <p class="testimonial__text">${t.text}</p>
+      <div class="rating">
+        <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
+      </div>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar icon-box placeholder-bg"></div>
+        <div><p class="testimonial__name">${t.name}</p><div class="testimonial__role">${t.role}</div></div>
+      </div>
+    </div>`;
+}
+
+function testimonialSectionHTML() {
+  return `
+    <div class="page">
+      <div class="testimonial-slider --cols-3" id="tSlider${Math.random().toString(36).slice(2,7)}">
+        <div class="testimonial-slider__track">
+          ${TESTIMONIALS.map(testimonialSlideHTML).join('')}
+        </div>
+        <div class="slider-nav">
+          <button class="slider-btn icon-box" type="button" aria-label="Zurück" data-dir="prev" disabled><span class="material-icons">arrow_back</span></button>
+          <span class="slider-counter"></span>
+          <button class="slider-btn icon-box" type="button" aria-label="Weiter" data-dir="next"><span class="material-icons">arrow_forward</span></button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function initSliders() {
+  document.querySelectorAll('.testimonial-slider').forEach(function(slider) {
+    var track   = slider.querySelector('.testimonial-slider__track');
+    var slides  = slider.querySelectorAll('.testimonial-slider__slide');
+    var prevBtn = slider.querySelector('[data-dir="prev"]');
+    var nextBtn = slider.querySelector('[data-dir="next"]');
+    var counter = slider.querySelector('.slider-counter');
+    var current = 0;
+
+    function getVisible() {
+      var w = window.innerWidth;
+      if (w <= 767) return slides.length;
+      return w <= 1535 ? 2 : 3;
+    }
+    function getMaxPage() { return Math.max(0, slides.length - getVisible()); }
+    function update() {
+      var vis     = getVisible();
+      var maxPage = getMaxPage();
+      if (current > maxPage) current = maxPage;
+      if (slides.length > 0 && vis < slides.length) {
+        var slideWidth = slides[0].offsetWidth;
+        var gap = slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft - slideWidth : 0;
+        track.style.transform = 'translateX(-' + (current * (slideWidth + gap)) + 'px)';
+      } else {
+        track.style.transform = 'translateX(0)';
+      }
+      if (counter) counter.textContent = (current + 1) + ' – ' + Math.min(current + vis, slides.length) + ' / ' + slides.length;
+      if (prevBtn) prevBtn.disabled = current === 0;
+      if (nextBtn) nextBtn.disabled = current >= maxPage;
+    }
+    if (prevBtn) prevBtn.addEventListener('click', function() { if (current > 0) { current--; update(); } });
+    if (nextBtn) nextBtn.addEventListener('click', function() { if (current < getMaxPage()) { current++; update(); } });
+    var startX = 0;
+    track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { if (diff > 0 && current < getMaxPage()) current++; else if (diff < 0 && current > 0) current--; update(); }
+    }, { passive: true });
+    window.addEventListener('resize', function() { update(); });
+    update();
+  });
+}
+
+function newsletterHTML() {
+  return `
+    <div class="page">
+      <div class="newsletter --on-green">
+        <div class="newsletter__content">
+          <p class="label">Newsletter</p>
+          <h3>Bleib auf dem Laufenden</h3>
+          <p>Tipps, Angebote und Neuigkeiten rund um die Gesundheit deines Tieres.</p>
+        </div>
+        <form class="actionable-input" onsubmit="toast('Danke für deine Anmeldung!');return false;">
+          <div class="form-field">
+            <input type="email" id="nl-email" placeholder="">
+            <label for="nl-email">E-Mail-Adresse</label>
+          </div>
+          <button class="btn --primary" type="submit">Anmelden</button>
+        </form>
+      </div>
+    </div>`;
+}
+
+/* ════════════════════════════════════════════
+   PRODUKT-KACHEL (.tile --product)
+   ════════════════════════════════════════════ */
+function tileHTML(p) {
+  const approved = isApproved(p);
+
+  let cartOverlay = '';
+  if (state === 'with-release') {
+    if (approved) {
+      cartOverlay = `
+        <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="addToCart(${p.id},'approved');openCart();event.stopPropagation()">
+          <span class="material-icons">shopping_cart</span>
+        </button>
+        <div class="tile__cart">
+          <button class="btn --primary" onclick="addToCart(${p.id},'approved');openCart();event.stopPropagation()">In den Warenkorb</button>
+        </div>`;
+    } else {
+      cartOverlay = `
+        <button class="tile__cart-icon" type="button" aria-label="Produkt anfragen" onclick="addToCart(${p.id},'requested');openCart();event.stopPropagation()">
+          <span class="material-icons">mail_outline</span>
+        </button>
+        <div class="tile__cart">
+          <button class="btn --secondary" onclick="addToCart(${p.id},'requested');openCart();event.stopPropagation()">Produkt anfragen</button>
+        </div>`;
+    }
+  }
+
+  return `<div class="tile --product" onclick="activeProduct=PRODUCTS[${p.id-1}];setPage('product')">
+    <div class="tile__image-wrap">
+      <div class="floating-meta">
+        <div class="badge" data-cat="${p.cat}">${p.catLabel}</div>
+        ${approved ? '<div class="badge --sale">Empfohlen</div>' : ''}
+      </div>
+      <div class="tile__image">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        ${p.imgHover ? `<img src="${p.imgHover}" alt="" loading="lazy" aria-hidden="true">` : ''}
+      </div>
+      ${cartOverlay}
+    </div>
+    <h3 class="tile__headline">${p.name}</h3>
+    <div class="tile__description">${p.shortDesc}</div>
+    <div class="tile__price">
+      <div class="price-stack"><span>${p.price}</span></div>
+    </div>
+  </div>`;
+}
+
+/* ════════════════════════════════════════════
+   SEITEN
+   ════════════════════════════════════════════ */
+
+/* ── Startseite ── */
+function renderHome() {
+  let headline = '';
+  let body     = '';
+  let cta      = '';
+
+  if (state === 'guest') {
+    headline = 'Ihr Zugang zum Inuvet-Shop';
+    body     = 'Dieser Shop ist ausschließlich für Tierhalter mit ärztlicher Empfehlung. Melden Sie sich an, um Ihre Empfehlung einzulösen.';
+    cta      = `<div style="display:flex;gap:var(--half-module);flex-wrap:wrap">
+      <button class="btn --primary" onclick="setState('no-release',document.querySelectorAll('[data-state]')[1])">Jetzt registrieren</button>
+      <button class="btn --ghost"   onclick="setState('no-release',document.querySelectorAll('[data-state]')[1])">Anmelden</button>
+    </div>`;
+  } else if (state === 'no-release') {
+    headline = 'Noch keine Empfehlung?';
+    body     = 'Über 20.000 Tierärzte arbeiten mit Inuvet. Frag einfach in deiner Praxis nach — sie können jederzeit für dich bestellen.';
+    cta      = `<button class="btn --primary" onclick="setPage('collection')">Alle Produkte ansehen</button>`;
+  } else {
+    headline = 'Deine Empfehlungen warten';
+    body     = '2 Produkte wurden von deiner Tierarztpraxis für dich empfohlen. Lege sie in den Warenkorb und schließe die Bestellung ab.';
+    cta      = `<div style="display:flex;gap:var(--half-module);flex-wrap:wrap">
+      <button class="btn --primary" onclick="setPage('recommended')">Empfehlungen ansehen</button>
+      <button class="btn --ghost"   onclick="setPage('collection')">Alle Produkte</button>
+    </div>`;
+  }
+
+  return `
+    <div class="section-type --v3 --viewport --reverse">
+      <div class="section-type__image" style="background-image:url('../assets/images/Hero_Mood_01.png');background-size:cover;background-position:center"></div>
+      <div class="section-type__inner">
+        <div class="section-type__content">
+          <h2 class="section-type__headline">${headline}</h2>
+          <p class="section-type__body">${body}</p>
+          ${cta}
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <h3 class="section-label">Unsere Produkte</h3>
+      <div class="tile-grid --cols-4">
+        ${PRODUCTS.slice(0,4).map(tileHTML).join('')}
+      </div>
+    </div>
+    ${testimonialSectionHTML()}
+    ${newsletterHTML()}
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
+}
+
+/* ── Alle Produkte ── */
+function renderCollection() {
+  return `
+    <div class="page">
+      ${breadcrumb([
+        {label:'Home',          onclick:"setPage('home')",       current:false},
+        {label:'Alle Produkte', current:true}
+      ])}
+      <h2 class="shop-page-title">Alle Produkte</h2>
+      <div class="collection-toolbar">
+        <div class="collection-toolbar__count">${PRODUCTS.length} Produkte</div>
+      </div>
+      <div class="tile-grid --cols-3">
+        ${PRODUCTS.map(tileHTML).join('')}
+      </div>
+    </div>
+    ${testimonialSectionHTML()}
+    ${newsletterHTML()}
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
+}
+
+/* ── Empfohlene Produkte ── */
+function renderRecommended() {
+  const approved = PRODUCTS.filter(p => p.approved);
+  return `
+    <div class="page">
+      ${breadcrumb([
+        {label:'Home',                  onclick:"setPage('home')",       current:false},
+        {label:'Empfohlene Produkte',   current:true}
+      ])}
+      <h2 class="shop-page-title">Empfohlene Produkte</h2>
+      <div class="collection-toolbar">
+        <div class="collection-toolbar__count">${approved.length} Empfehlungen</div>
+      </div>
+      <div class="tile-grid --cols-3">
+        ${approved.map(tileHTML).join('')}
+      </div>
+    </div>
+    ${testimonialSectionHTML()}
+    ${newsletterHTML()}
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
+}
+
+/* ── Produktseite (PDP) ── */
+function renderProduct() {
+  const p        = activeProduct;
+  const approved = isApproved(p);
+
+  /* Badges im Bild: floating-meta innerhalb .pdp__main-image */
+  const imgBadges = `<div class="floating-meta">
+    <div class="badge" data-cat="${p.cat}">${p.catLabel}</div>
+    ${approved ? '<div class="badge --sale">Empfohlen</div>' : ''}
+  </div>`;
+
+  let notice  = '';
+  let actions = '';
+
+  if (state === 'guest') {
+    notice = `<div class="shop-notice">
+      <p>Wenn Sie eine Empfehlung haben, können Sie dieses nach der Registrierung oder dem Login einlösen.</p>
+      <button class="btn --primary" onclick="setState('no-release',document.querySelectorAll('[data-state]')[1])">Jetzt registrieren</button>
+    </div>`;
+  } else if (state === 'no-release') {
+    notice = `<div class="shop-notice">
+      <p>Du hast noch keine Empfehlung für dieses Produkt? Gut, dass über 20.000 Tierärzte mit Inuvet-Produkten arbeiten. Ruf einfach in deiner Praxis an und frage nach diesem Produkt. Deine Praxis kann es jederzeit für dich bestellen.</p>
+    </div>`;
+  } else if (approved) {
+    actions = `
+      <div class="pdp__actions">
+        <div>
+          <div class="pdp__variant-label label-caps">Menge</div>
+          <div class="qty-selector">
+            <button class="qty-selector__btn" type="button" aria-label="Weniger" onclick="this.nextElementSibling.value=Math.max(1,+this.nextElementSibling.value-1)"><span class="material-icons">remove</span></button>
+            <input class="qty-selector__input" type="number" value="1" min="1" max="99">
+            <button class="qty-selector__btn" type="button" aria-label="Mehr" onclick="this.previousElementSibling.value=Math.min(99,+this.previousElementSibling.value+1)"><span class="material-icons">add</span></button>
+          </div>
+        </div>
+        <button class="btn --primary" onclick="addToCart(${p.id},'approved');openCart()">In den Warenkorb</button>
+        <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste">
+          <span class="material-icons">favorite_border</span>
+        </button>
+      </div>`;
+  } else {
+    notice = `<div class="shop-notice">
+      <p>Du hast noch keine Empfehlung für dieses Produkt? Gut, dass über 20.000 Tierärzte mit Inuvet-Produkten arbeiten. Ruf einfach in deiner Praxis an und frage nach diesem Produkt. Deine Praxis kann es jederzeit für dich bestellen.</p>
+    </div>`;
+    actions = `<div class="pdp__actions">
+      <button class="btn --secondary --with-icon" onclick="addToCart(${p.id},'requested');openCart()">
+        <span class="material-icons">mail_outline</span> Produkt anfragen
+      </button>
+    </div>`;
+  }
+
+  return `
+    <div class="page">
+      ${breadcrumb([
+        {label:'Home',          onclick:"setPage('home')",       current:false},
+        {label:'Alle Produkte', onclick:"setPage('collection')", current:false},
+        {label:p.name,          current:true}
+      ])}
+      <div class="pdp">
+        <div class="pdp__gallery">
+          <div class="pdp__main-image" id="pdpMainImage">
+            <img src="${p.img}" alt="${p.name}" id="pdpMainImg">
+            <div class="pdp__caption --hidden" aria-live="polite"></div>
+            ${imgBadges}
+          </div>
+          <div class="pdp__thumbs">
+            <button class="pdp__thumb --active" onclick="pdpSetImg(this,'${p.img}')"><img src="${p.img}" alt="${p.name}"></button>
+            ${p.imgHover  ? `<button class="pdp__thumb" onclick="pdpSetImg(this,'${p.imgHover}')"><img src="${p.imgHover}" alt="${p.name} Ansicht 2"></button>` : ''}
+            ${p.imgDetail ? `<button class="pdp__thumb" onclick="pdpSetImg(this,'${p.imgDetail}')"><img src="${p.imgDetail}" alt="${p.name} Ansicht 3"></button>` : ''}
+          </div>
+        </div>
+        <div class="pdp__info">
+          <h1 class="pdp__title">${p.name}</h1>
+          <div class="pdp__price">
+            <div class="price-stack text-m"><span>${p.price}</span></div>
+          </div>
+          ${notice}
+          ${actions}
+          <div class="accordion">
+            <div class="accordion-item --open">
+              <button class="accordion-trigger" type="button" aria-expanded="true" onclick="toggleAccordion(this)">Beschreibung<span class="accordion-icon material-icons">expand_more</span></button>
+              <div class="accordion-content"><div class="accordion-content__inner"><p>${p.desc}</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Inhaltsstoffe<span class="accordion-icon material-icons">expand_more</span></button>
+              <div class="accordion-content"><div class="accordion-content__inner"><p>${p.ingredients}</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Versand &amp; Lieferung<span class="accordion-icon material-icons">expand_more</span></button>
+              <div class="accordion-content"><div class="accordion-content__inner"><p>Standardversand: 3–5 Werktage. Expressversand: 1–2 Werktage. Ab 50 € versandkostenfrei.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    ${testimonialSectionHTML()}
+    ${newsletterHTML()}
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
+}
+
+/* ── Checkout-Seite ── */
+function renderCheckout() {
+  if (cartApproved.length === 0) {
+    return `
+      <div class="page">
+        <h2 class="shop-page-title">Checkout</h2>
+        <p class="text-muted">Keine einzulösenden Produkte. <a href="#" onclick="setPage('collection');return false;">Zurück zum Shop</a></p>
+      </div>`;
+  }
+
+  const total   = calcTotal(cartApproved);
+  const items   = cartApproved.map(checkoutItemHTML).join('');
+
+  return `
+    <div class="page">
+      <div class="checkout">
+
+        <!-- ── Linke Spalte ── -->
+        <div>
+          <div>
+            <h3 class="section-label">Lieferadresse</h3>
+            <div class="form-grid">
+              <div class="form-field"><input type="text" id="co-vorname"  placeholder=""><label for="co-vorname">Vorname</label></div>
+              <div class="form-field"><input type="text" id="co-nachname" placeholder=""><label for="co-nachname">Nachname</label></div>
+              <div class="form-field"><input type="text" id="co-strasse"  placeholder=""><label for="co-strasse">Straße</label></div>
+              <div class="form-field"><input type="text" id="co-hausnr"   placeholder=""><label for="co-hausnr">Nr.</label></div>
+              <div class="form-field"><input type="text" id="co-plz"      placeholder=""><label for="co-plz">PLZ</label></div>
+              <div class="form-field"><input type="text" id="co-ort"      placeholder=""><label for="co-ort">Ort</label></div>
+              <div class="form-field" style="grid-column:span 2"><input type="email" id="co-email" placeholder=""><label for="co-email">E-Mail-Adresse</label></div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="section-label">Versandart</h3>
+            <div class="tile-grid" style="gap:var(--half-module)">
+              <button class="choice-box --block --active" type="button" onclick="this.parentNode.querySelectorAll('.choice-box').forEach(b=>b.classList.remove('--active'));this.classList.add('--active')">
+                <span class="material-icons">local_shipping</span>
+                <span><strong>Standardversand</strong> — DHL · 3–5 Werktage · <strong>kostenlos</strong></span>
+              </button>
+              <button class="choice-box --block" type="button" onclick="this.parentNode.querySelectorAll('.choice-box').forEach(b=>b.classList.remove('--active'));this.classList.add('--active')">
+                <span class="material-icons">rocket_launch</span>
+                <span><strong>Expressversand</strong> — DHL Express · 1–2 Werktage · <strong>4,99 €</strong></span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="section-label">Zahlung</h3>
+            <div class="tile-grid" style="gap:var(--half-module)">
+              <button class="choice-box --block --active" type="button" onclick="this.parentNode.querySelectorAll('.choice-box').forEach(b=>b.classList.remove('--active'));this.classList.add('--active')">
+                <span class="material-icons">credit_card</span>
+                <span>Kreditkarte</span>
+              </button>
+              <button class="choice-box --block" type="button" onclick="this.parentNode.querySelectorAll('.choice-box').forEach(b=>b.classList.remove('--active'));this.classList.add('--active')">
+                <span class="material-icons">account_balance_wallet</span>
+                <span>PayPal</span>
+              </button>
+              <button class="choice-box --block" type="button" onclick="this.parentNode.querySelectorAll('.choice-box').forEach(b=>b.classList.remove('--active'));this.classList.add('--active')">
+                <span class="material-icons">receipt_long</span>
+                <span>Rechnung</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Rechte Spalte ── -->
+        <aside class="checkout__sidebar">
+          <h3 class="section-label">Bestellübersicht</h3>
+          ${items}
+          <div class="summary-line"><span>Zwischensumme</span><span>${total.toFixed(2).replace('.',',')} €</span></div>
+          <div class="summary-line"><span>Versand</span><span>kostenlos</span></div>
+          <div class="summary-total"><span>Gesamt</span><span>${total.toFixed(2).replace('.',',')} €</span></div>
+          <div class="checkout__cta">
+            <button class="btn --primary cart-drawer__checkout" onclick="toast('Bestellung erfolgreich! (Demo)')">Jetzt kaufen</button>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+    ${testimonialSectionHTML()}
+    ${newsletterHTML()}
+    <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
+}
+
+/* ════════════════════════════════════════════
+   CHECKOUT-MODAL (nur bei angefragten Produkten)
+   ════════════════════════════════════════════ */
+function openCheckoutModal() {
+  const hasApproved  = cartApproved.length  > 0;
+  const hasRequested = cartRequested.length > 0;
+  const modal        = document.getElementById('checkoutModal');
+
+  const names = cartRequested.map(id => getProduct(id).name).join(', ');
+  document.getElementById('modalTitle').textContent = 'Produkte erfolgreich angefragt!';
+  document.getElementById('modalBody').innerHTML =
+    `<strong>Produkte erfolgreich bei Tierarzt Dr. med. vet. Martina Müller (Tierarztpraxis Grüntal) angefragt.</strong><br><br>
+     Angefragte Produkte: ${names}.<br><br>
+     Deine Praxis wurde benachrichtigt und meldet sich bei dir.`;
+
+  const actions = document.getElementById('modalActions');
+  actions.innerHTML = '';
+
+  if (hasApproved) {
+    const btn = document.createElement('button');
+    btn.className   = 'btn --primary --full';
+    btn.textContent = 'Zum Check-Out';
+    btn.onclick     = () => { modal.classList.remove('--open'); setPage('checkout'); };
+    actions.appendChild(btn);
+  }
+
+  const back = document.createElement('button');
+  back.className   = 'btn --ghost --full';
+  back.textContent = 'Zurück zum Shop';
+  back.onclick     = () => { modal.classList.remove('--open'); setPage('home'); };
+  actions.appendChild(back);
+
+  modal.classList.add('--open');
+}
+
+document.getElementById('checkoutModal').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('--open');
+});
+
+/* ════════════════════════════════════════════
+   HAUPT-RENDER
+   ════════════════════════════════════════════ */
+function render() {
+  renderNav();
+  const main = document.getElementById('shopMain');
+  switch (page) {
+    case 'home':        main.innerHTML = renderHome();        break;
+    case 'collection':  main.innerHTML = renderCollection();  break;
+    case 'recommended': main.innerHTML = renderRecommended(); break;
+    case 'product':     main.innerHTML = renderProduct();     break;
+    case 'checkout':    main.innerHTML = renderCheckout();    break;
+  }
+  initSliders();
+}
+
+render();
+initSliders();
+</script>
+</body>
+</html>

@@ -55,8 +55,8 @@
     --cat-herz-light: #ffeceb;
     --cat-leber: #DDBCB0;
     --cat-leber-light: #f8f2f0;
-    --cat-stress: #C3D7EE;
-    --cat-stress-light: #ecf2fa;
+    --cat-beruhigung: #C3D7EE;
+    --cat-beruhigung-light: #ecf2fa;
     --cat-gelenke: #D0D3D4;
     --cat-gelenke-light: #f1f2f2;
     --cat-magendarm: #D4EC8E;
@@ -232,7 +232,7 @@
     align-items: center;
     justify-content: center;
   }
-  .nav-center svg { width: clamp(4.5rem, 2rem + 6vw, 7.5rem); height: auto; display: block; }
+  .nav-center svg { width: clamp(3.5rem, 2rem + 5vw, 6rem); height: auto; display: block; }
 
   .nav-right {
     display: flex;
@@ -478,17 +478,29 @@
     margin-top: auto;
   }
 
+  /* ─── Hero-Animations ─── */
+  @keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(1.5rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroPanIn {
+    from { transform: scale(1.05); }
+    to   { transform: scale(1); }
+  }
+
   /* Variante 3: Viewport-Breite, Hintergrundbild, Content-Box mit BG überlagert */
   .section-type.--v3 {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
   }
   .section-type.--v3 .section-type__image {
     position: absolute;
     inset: 0;
     z-index: var(--z-default);
+    animation: heroPanIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
   .section-type.--v3 .section-type__inner {
     position: relative;
@@ -520,6 +532,21 @@
     color: var(--fg-muted);
     line-height: var(--lh-base);
     margin-bottom: var(--half-module);
+  }
+  /* Staggered entrance for content children */
+  .section-type.--v3 .section-type__content > * {
+    animation: heroFadeUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .section-type.--v3 .section-type__content > *:nth-child(1) { animation-delay: 0.10s; }
+  .section-type.--v3 .section-type__content > *:nth-child(2) { animation-delay: 0.25s; }
+  .section-type.--v3 .section-type__content > *:nth-child(3) { animation-delay: 0.40s; }
+  .section-type.--v3 .section-type__content > *:nth-child(4) { animation-delay: 0.55s; }
+  /* Reduced motion: skip animations */
+  @media (prefers-reduced-motion: reduce) {
+    .section-type.--v3 .section-type__image,
+    .section-type.--v3 .section-type__content > * {
+      animation: none;
+    }
   }
   /* ═══════════════════════════════════════════
      TILE GRIDS
@@ -777,8 +804,9 @@
     border-color: var(--fg);
   }
   .btn.--primary:hover {
-    background: var(--fg-hover);
-    border-color: var(--fg-hover);
+    background: var(--fg);
+    border-color: var(--fg);
+    box-shadow: 0 0 0 2px var(--fg);
   }
 
   /* Secondary — Outline */
@@ -790,6 +818,7 @@
   .btn.--secondary:hover {
     background: var(--fg);
     color: var(--bg);
+    box-shadow: 0 0 0 2px var(--fg);
   }
 
   /* Ghost — kein Rand, nur Text */
@@ -1567,7 +1596,7 @@
   [data-cat="niere"]        { background: var(--cat-niere-light); }
   [data-cat="herz"]         { background: var(--cat-herz-light); }
   [data-cat="leber"]        { background: var(--cat-leber-light); }
-  [data-cat="stress"]       { background: var(--cat-stress-light); }
+  [data-cat="beruhigung"]   { background: var(--cat-beruhigung-light); }
   [data-cat="gelenke"]      { background: var(--cat-gelenke-light); }
   [data-cat="magendarm"]    { background: var(--cat-magendarm-light); }
   [data-cat="fettsaeuren"]  { background: var(--cat-fettsaeuren-light); }
