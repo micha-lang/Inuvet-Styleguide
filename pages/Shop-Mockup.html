@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="https://use.typekit.net/vhh5bbc.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="../inuvet.css">
-  <link rel="stylesheet" href="shop-mockup.css">
+  <link rel="stylesheet" href="../mockup-ui.css">
 </head>
-<body>
+<body class="--mockup-bar-visible">
 
 <!-- ════════════════════════════════════════
      MOCKUP-STEUERLEISTE
      ════════════════════════════════════════ -->
-<div class="mockup-bar">
+<div class="mockup-bar" id="mockupBar">
   <div class="mockup-bar__group">
     <span class="mockup-bar__group-label">Zustand:</span>
     <button class="mockup-btn --active" data-state="guest"        onclick="setState('guest',        this)">① Nicht angemeldet</button>
@@ -35,7 +35,9 @@
   <div class="mockup-bar__group" id="productPicker" style="display:none">
     <span class="mockup-bar__group-label">Produkt:</span>
   </div>
+  <button class="mockup-bar__collapse" onclick="toggleMockupBar()" title="Leiste ausblenden">▾ Ausblenden</button>
 </div>
+<button class="mockup-revive" id="mockupRevive" onclick="toggleMockupBar()" title="Steuerleiste einblenden">▴ Mockup</button>
 
 <!-- ════════════════════════════════════════
      SHOP-HEADER
@@ -196,6 +198,15 @@ function toast(msg) {
 /* ════════════════════════════════════════════
    UI-HELFER
    ════════════════════════════════════════════ */
+function toggleMockupBar() {
+  const bar    = document.getElementById('mockupBar');
+  const revive = document.getElementById('mockupRevive');
+  const hide   = !bar.classList.contains('--hidden');
+  bar.classList.toggle('--hidden', hide);
+  revive.classList.toggle('--visible', hide);
+  document.body.classList.toggle('--mockup-bar-visible', !hide);
+}
+
 function toggleAccordion(btn) {
   const item    = btn.closest('.accordion-item');
   const content = item.querySelector('.accordion-content');
