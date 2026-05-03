@@ -404,10 +404,7 @@
   }
   /* Alle Section-Types außer --v3 (Vollbild-Hintergrund): Satzspiegel + Abstand oben */
   .section-type:not(.--v3) {
-    max-width: 1536px;
-    margin-inline: auto;
     margin-top: var(--module);
-    padding-inline: var(--margin);
   }
   .section-type.--viewport {
     height: calc(100dvh - var(--header-height));
