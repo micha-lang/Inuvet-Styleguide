@@ -491,23 +491,121 @@
     <h3 class="sg-h3 --top">Produkt-Kategoriefarben</h3>
     <p class="sg-p">Jede Produktkategorie hat eine Hauptfarbe und eine helle Abstufung. Noch nicht auf Komponenten angewendet — nur als Farbpalette dokumentiert.</p>
 
-    <table class="spec-table">
-      <tr><th>CBD</th><td><span class="sg-swatch" style="background:#C5B4E3"></span> <code>#C5B4E3</code> · <span class="sg-swatch --pair" style="background:#f2eff9"></span> <code>#f2eff9</code></td></tr>
-      <tr><th>Bauchspeichel</th><td><span class="sg-swatch" style="background:#FFB1BB"></span> <code>#FFB1BB</code> · <span class="sg-swatch --pair" style="background:#ffeff2"></span> <code>#ffeff2</code></td></tr>
-      <tr><th>Blase</th><td><span class="sg-swatch" style="background:#F3DD6D"></span> <code>#F3DD6D</code> · <span class="sg-swatch --pair" style="background:#fdf8e3"></span> <code>#fdf8e3</code></td></tr>
-      <tr><th>Niere</th><td><span class="sg-swatch" style="background:#C3623A"></span> <code>#C3623A</code> · <span class="sg-swatch --pair" style="background:#f8ece8"></span> <code>#f8ece8</code></td></tr>
-      <tr><th>Herz</th><td><span class="sg-swatch" style="background:#FF6D6A"></span> <code>#FF6D6A</code> · <span class="sg-swatch --pair" style="background:#ffeceb"></span> <code>#ffeceb</code></td></tr>
-      <tr><th>Leber</th><td><span class="sg-swatch" style="background:#DDBCB0"></span> <code>#DDBCB0</code> · <span class="sg-swatch --pair" style="background:#f8f2f0"></span> <code>#f8f2f0</code></td></tr>
-      <tr><th>Stress</th><td><span class="sg-swatch" style="background:#C3D7EE"></span> <code>#C3D7EE</code> · <span class="sg-swatch --pair" style="background:#ecf2fa"></span> <code>#ecf2fa</code></td></tr>
-      <tr><th>Gelenke</th><td><span class="sg-swatch" style="background:#D0D3D4"></span> <code>#D0D3D4</code> · <span class="sg-swatch --pair" style="background:#f1f2f2"></span> <code>#f1f2f2</code></td></tr>
-      <tr><th>Magen/Darm</th><td><span class="sg-swatch" style="background:#D4EC8E"></span> <code>#D4EC8E</code> · <span class="sg-swatch --pair" style="background:#f0fae6"></span> <code>#f0fae6</code></td></tr>
-      <tr><th>Fettsäuren</th><td><span class="sg-swatch" style="background:#05868E"></span> <code>#05868E</code> · <span class="sg-swatch --pair" style="background:#e5f0f1"></span> <code>#e5f0f1</code></td></tr>
-      <tr><th>Haut</th><td><span class="sg-swatch" style="background:#F1A7DC"></span> <code>#F1A7DC</code> · <span class="sg-swatch --pair" style="background:#fcedf7"></span> <code>#fcedf7</code></td></tr>
-      <tr><th>Immun</th><td><span class="sg-swatch" style="background:#C3D7EE"></span> <code>#C3D7EE</code> · <span class="sg-swatch --pair" style="background:#e5f7f3"></span> <code>#e5f7f3</code></td></tr>
-      <tr><th>Atemwege</th><td><span class="sg-swatch" style="background:#FFB990"></span> <code>#FFB990</code> · <span class="sg-swatch --pair" style="background:#fff1e9"></span> <code>#fff1e9</code></td></tr>
-      <tr><th>Hormone</th><td><span class="sg-swatch" style="background:#994878"></span> <code>#994878</code> · <span class="sg-swatch --pair" style="background:#f4e9ef"></span> <code>#f4e9ef</code></td></tr>
-    </table>
-    <p class="demo-note">14 Kategoriefarben mit hellen Abstufungen. Als CSS-Variablen definiert (<code>--cat-[name]</code> und <code>--cat-[name]-light</code>), aber noch keinem Element zugewiesen.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #C5B4E3 60%, #f2eff9 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-cbd</span>
+          <span class="color-card__hex">#C5B4E3 · #f2eff9</span>
+          <span class="color-card__role">CBD</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #FFB1BB 60%, #ffeff2 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-bauchspeichel</span>
+          <span class="color-card__hex">#FFB1BB · #ffeff2</span>
+          <span class="color-card__role">Bauchspeichel</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #F3DD6D 60%, #fdf8e3 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-blase</span>
+          <span class="color-card__hex">#F3DD6D · #fdf8e3</span>
+          <span class="color-card__role">Blase</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #C3623A 60%, #f8ece8 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-niere</span>
+          <span class="color-card__hex">#C3623A · #f8ece8</span>
+          <span class="color-card__role">Niere</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #FF6D6A 60%, #ffeceb 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-herz</span>
+          <span class="color-card__hex">#FF6D6A · #ffeceb</span>
+          <span class="color-card__role">Herz</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #DDBCB0 60%, #f8f2f0 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-leber</span>
+          <span class="color-card__hex">#DDBCB0 · #f8f2f0</span>
+          <span class="color-card__role">Leber</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #C3D7EE 60%, #ecf2fa 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-stress</span>
+          <span class="color-card__hex">#C3D7EE · #ecf2fa</span>
+          <span class="color-card__role">Stress</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #D0D3D4 60%, #f1f2f2 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-gelenke</span>
+          <span class="color-card__hex">#D0D3D4 · #f1f2f2</span>
+          <span class="color-card__role">Gelenke</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #D4EC8E 60%, #f0fae6 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-magendarm</span>
+          <span class="color-card__hex">#D4EC8E · #f0fae6</span>
+          <span class="color-card__role">Magen/Darm</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #05868E 60%, #e5f0f1 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-fettsaeuren</span>
+          <span class="color-card__hex">#05868E · #e5f0f1</span>
+          <span class="color-card__role">Fettsäuren</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #F1A7DC 60%, #fcedf7 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-haut</span>
+          <span class="color-card__hex">#F1A7DC · #fcedf7</span>
+          <span class="color-card__role">Haut</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #a7e6d7 60%, #e5f7f3 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-immun</span>
+          <span class="color-card__hex">#a7e6d7 · #e5f7f3</span>
+          <span class="color-card__role">Immun</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #FFB990 60%, #fff1e9 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-atemwege</span>
+          <span class="color-card__hex">#FFB990 · #fff1e9</span>
+          <span class="color-card__role">Atemwege</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #994878 60%, #f4e9ef 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-hormone</span>
+          <span class="color-card__hex">#994878 · #f4e9ef</span>
+          <span class="color-card__role">Hormone</span>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">14 Kategoriefarben — oben Hauptfarbe, unten helle Abstufung. Tokens: <code>--cat-[name]</code> und <code>--cat-[name]-light</code>. Noch nicht auf Komponenten angewendet.</p>
 
   </section>
 
