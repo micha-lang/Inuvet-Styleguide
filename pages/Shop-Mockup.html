@@ -194,6 +194,17 @@ function toast(msg) {
 }
 
 /* ════════════════════════════════════════════
+   UI-HELFER
+   ════════════════════════════════════════════ */
+function toggleAccordion(btn) {
+  const item    = btn.closest('.accordion-item');
+  const content = item.querySelector('.accordion-content');
+  const isOpen  = item.classList.contains('--open');
+  item.classList.toggle('--open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
+/* ════════════════════════════════════════════
    WARENKORB-DRAWER
    ════════════════════════════════════════════ */
 function openCart() {
@@ -400,6 +411,29 @@ function breadcrumb(items) {
 }
 
 /* ════════════════════════════════════════════
+   NEWSLETTER (geteilt, alle Seiten)
+   ════════════════════════════════════════════ */
+function newsletterHTML() {
+  return `
+    <div class="page">
+      <div class="newsletter --on-green">
+        <div class="newsletter__content">
+          <p class="label">Newsletter</p>
+          <h3>Bleib auf dem Laufenden</h3>
+          <p>Tipps, Angebote und Neuigkeiten rund um die Gesundheit deines Tieres.</p>
+        </div>
+        <form class="actionable-input" onsubmit="toast('Danke für deine Anmeldung!');return false;">
+          <div class="form-field">
+            <input type="email" id="nl-email" placeholder="">
+            <label for="nl-email">E-Mail-Adresse</label>
+          </div>
+          <button class="btn --primary" type="submit">Anmelden</button>
+        </form>
+      </div>
+    </div>`;
+}
+
+/* ════════════════════════════════════════════
    PRODUKT-KACHEL (.tile --product)
    ════════════════════════════════════════════ */
 function tileHTML(p) {
@@ -476,17 +510,15 @@ function renderHome() {
   }
 
   return `
-    <div class="page" style="padding-block: 0">
-    <div class="section-type --v2">
+    <div class="section-type --v3 --viewport">
       <div class="section-type__image" style="background-image:url('../assets/images/Hero_Mood_01.png');background-size:cover;background-position:center"></div>
-      <div class="section-type__content">
-        <h2 class="section-type__headline">${headline}</h2>
-        <div class="section-type__bottom">
+      <div class="section-type__inner">
+        <div class="section-type__content">
+          <h2 class="section-type__headline">${headline}</h2>
           <p class="section-type__body">${body}</p>
           ${cta}
         </div>
       </div>
-    </div>
     </div>
     <div class="page">
       <h3 class="section-label">Unsere Produkte</h3>
@@ -494,6 +526,7 @@ function renderHome() {
         ${PRODUCTS.slice(0,4).map(tileHTML).join('')}
       </div>
     </div>
+    ${newsletterHTML()}
     <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
@@ -513,6 +546,7 @@ function renderCollection() {
         ${PRODUCTS.map(tileHTML).join('')}
       </div>
     </div>
+    ${newsletterHTML()}
     <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
@@ -533,6 +567,7 @@ function renderRecommended() {
         ${approved.map(tileHTML).join('')}
       </div>
     </div>
+    ${newsletterHTML()}
     <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
@@ -625,6 +660,7 @@ function renderProduct() {
         </div>
       </div>
     </div>
+    ${newsletterHTML()}
     <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
@@ -707,6 +743,7 @@ function renderCheckout() {
 
       </div>
     </div>
+    ${newsletterHTML()}
     <div class="shop-footer">© 2026 Inuvet GmbH &nbsp;·&nbsp; <a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>`;
 }
 
