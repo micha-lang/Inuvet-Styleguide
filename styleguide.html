@@ -205,6 +205,7 @@
         <p>Immer <code>var(--token)</code> im CSS, niemals Rohdaten wie <code>#78b41b</code> oder <code>3rem</code> direkt. Ausnahme: Demo-Blöcke mit instanzspezifischen Datenwerten (<code>--sz</code>, <code>--h</code>).</p>
       </div>
     </div>
+    <p class="sg-p">Diese Sektion ist die technische Referenz für Entwickler — vollständige Liste aller Custom Properties. Die visuelle Darstellung der Tokens (mit großen Swatches, Specimens und Maßstabsdiagrammen) findet sich direkt dort, wo sie eingesetzt werden: <a href="#typo">04 Typografie</a>, <a href="#colors">05 Farben</a>, <a href="#spacing">07 Spacing</a>.</p>
 
     <h3 class="sg-h3 --top">Spacing</h3>
     <table class="spec-table">
@@ -344,23 +345,23 @@
       <div class="rule"><h4>Text-Stile</h4><p>Sechs Ebenen: H1–H4 (Headlines), Body, Caption. Zusätzlich: <strong>Uppercase Label</strong> (<code>--text-xs</code>, uppercase, 0.15em Spacing) für Sektions-Titel und Tabellen-Header. <code>code</code> in Monospace, relativ zum Kontext (<code>0.85em</code>).</p></div>
     </div>
     <div class="type-scale">
-      <div class="type-scale-step"><div class="glyph --xs">Ag</div><div class="meta">0.667rem</div></div>
-      <div class="type-scale-step"><div class="glyph --base">Ag</div><div class="meta">0.875–1rem</div></div>
-      <div class="type-scale-step"><div class="glyph --m">Ag</div><div class="meta">1.25–1.5rem</div></div>
-      <div class="type-scale-step"><div class="glyph --l">Ag</div><div class="meta">1.5–2.25rem</div></div>
-      <div class="type-scale-step"><div class="glyph --xl">Ag</div><div class="meta">2–3.375rem</div></div>
+      <div class="type-scale-step"><div class="glyph --xs">Ag</div><div class="meta"><span class="sg-token">--text-xs</span>0.667rem</div></div>
+      <div class="type-scale-step"><div class="glyph --base">Ag</div><div class="meta"><span class="sg-token">--text-base</span>0.875–1rem</div></div>
+      <div class="type-scale-step"><div class="glyph --m">Ag</div><div class="meta"><span class="sg-token">--text-m</span>1.25–1.5rem</div></div>
+      <div class="type-scale-step"><div class="glyph --l">Ag</div><div class="meta"><span class="sg-token">--text-l</span>1.5–2.25rem</div></div>
+      <div class="type-scale-step"><div class="glyph --xl">Ag</div><div class="meta"><span class="sg-token">--text-xl</span>2–3.375rem</div></div>
     </div>
     <div class="specimen">
-      <div class="specimen-row"><div class="specimen-meta"><span>2–3.375rem</span><span>LH 1.11</span></div><p class="h1">Headline 1</p></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>1.5–2.25rem</span><span>LH 1.17</span></div><p class="h2">Headline 2</p></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>1.25–1.5rem</span><span>LH 1.5</span></div><h3>Headline 3</h3></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.875–1rem</span><span>LH 1.5</span></div><h4>Headline 4</h4></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.875–1rem</span><span>LH 1.5 · Body</span></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Alle Produkte enthalten <a href="#">natürliche Wirkstoffe</a> – ohne unnötige Zusatzstoffe. Mehr dazu in unserem <a href="#">Ratgeber</a>.</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xl</span><span>2–3.375rem</span><span>LH 1.11</span></div><p class="h1">Headline 1</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-l</span><span>1.5–2.25rem</span><span>LH 1.17</span></div><p class="h2">Headline 2</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-m</span><span>1.25–1.5rem</span><span>LH 1.5</span></div><h3>Headline 3</h3></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-base</span><span>0.875–1rem</span><span>LH 1.5</span></div><h4>Headline 4</h4></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-base</span><span>0.875–1rem</span><span>LH 1.5 · Body</span></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Alle Produkte enthalten <a href="#">natürliche Wirkstoffe</a> – ohne unnötige Zusatzstoffe. Mehr dazu in unserem <a href="#">Ratgeber</a>.</p></div>
       <div class="specimen-row"><div class="specimen-meta"><span>ul · ol</span><span>a:not([class])</span></div><div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--module)"><ul><li>Tierärztlich entwickelt</li><li>Ohne künstliche Zusätze</li><li>Nachhaltige Rohstoffe</li></ul><ol><li>Produkt wählen</li><li>Dosierung beachten</li><li>Regelmäßig anwenden</li></ol></div></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>LH 1.5</span></div><p style="font-size: var(--text-xs)">Caption · Label · Kleingedrucktes · Metainfo</p></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>Uppercase · 0.15em</span></div><div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--fg-muted);">Section Label · Tabellen-Header · Filter-Label</div></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xs</span><span>0.667rem</span><span>LH 1.5</span></div><p style="font-size: var(--text-xs)">Caption · Label · Kleingedrucktes · Metainfo</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xs</span><span>0.667rem</span><span>Uppercase · 0.15em</span></div><div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--fg-muted);">Section Label · Tabellen-Header · Filter-Label</div></div>
       <div class="specimen-row"><div class="specimen-meta"><span>0.85em (relativ)</span><span>Monospace</span></div><div style="font-size: var(--text-base); line-height: var(--lh-base); color: var(--fg-muted);">Inline-Code: <code>var(--module)</code>, <code>clamp()</code>, <code>#78b41b</code></div></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>700 · uppercase · ls 0.05em</span></div><div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;"><div class="badge" data-cat="herz">Herz</div><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge" data-cat="stress">Stress</div><div class="badge --dark">Neu</div><div class="badge --sale">Sale</div></div></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xs</span><span>0.667rem</span><span>700 · uppercase · ls 0.05em</span></div><div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;"><div class="badge" data-cat="herz">Herz</div><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge" data-cat="stress">Stress</div><div class="badge --dark">Neu</div><div class="badge --sale">Sale</div></div></div>
     </div>
 
     <p class="sg-p">Die vollständige Icon-Galerie ist in <a href="#section-13">13 — Icons &amp; icon-box</a> dokumentiert.</p>
@@ -410,9 +411,82 @@
       </div>
     </div>
 
-    <p class="sg-p">Die CSS Custom Properties für Brandfarben sind in <a href="#tokens">02 — Design Tokens</a> definiert (<code>--fg</code>, <code>--green</code>, <code>--green-light</code> etc.). Fließtext-Links in <code>--green</code>, Hover: <code>--green-hover</code> + Unterstrich.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#000"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--fg</span>
+          <span class="color-card__hex">#000</span>
+          <span class="color-card__role">Text, Linien, aktive Zustände</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#666"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--fg-muted</span>
+          <span class="color-card__hex">#666</span>
+          <span class="color-card__role">Sekundärer Text, Meta</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#fff; border-bottom: 1px solid var(--border-light);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--bg</span>
+          <span class="color-card__hex">#fff</span>
+          <span class="color-card__role">Seitenhintergrund</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#f2f2f2"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--accent-bg</span>
+          <span class="color-card__hex">#f2f2f2</span>
+          <span class="color-card__role">Flächen, Placeholder</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#78b41b"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--green</span>
+          <span class="color-card__hex">#78b41b</span>
+          <span class="color-card__role">Primärfarbe, CTAs, Icons</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#58990F"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--green-hover</span>
+          <span class="color-card__hex">#58990F</span>
+          <span class="color-card__role">Hover-Zustand</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#f0fae6"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--green-light</span>
+          <span class="color-card__hex">#f0fae6</span>
+          <span class="color-card__role">Hintergründe, Announcement</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#cccccc"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--border</span>
+          <span class="color-card__hex">#cccccc</span>
+          <span class="color-card__role">Strukturelle Linien</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#e0e0e0"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--border-light</span>
+          <span class="color-card__hex">#e0e0e0</span>
+          <span class="color-card__role">Dekorative Trennlinien</span>
+        </div>
+      </div>
+    </div>
 
-    <p class="sg-p">Beispiel: Ein Fließtext mit <a href="#colors">einem Link zur Farb-Sektion</a> und <a href="#buttons">einem Link zu den Buttons</a> — beide in Grün, mit Hover-Effekt.</p>
+    <p class="sg-p">Fließtext-Links in <code>--green</code>, Hover: <code>--green-hover</code> + Unterstrich. Beispiel: <a href="#colors">Link zur Farb-Sektion</a> · <a href="#buttons">Link zu Buttons</a>.</p>
 
     <h3 class="sg-h3 --top">Produkt-Kategoriefarben</h3>
     <p class="sg-p">Jede Produktkategorie hat eine Hauptfarbe und eine helle Abstufung. Noch nicht auf Komponenten angewendet — nur als Farbpalette dokumentiert.</p>
@@ -476,18 +550,18 @@
   <section class="sg-section" id="spacing">
     <h2 class="section-label">07 — Spacing</h2>
     <div class="spacing-blocks">
-      <div class="spacing-block"><div class="box" style="--sz:1.5rem;"></div><div class="meta">½× · 1.5rem</div></div>
-      <div class="spacing-block"><div class="box" style="--sz:3rem;"></div><div class="meta">1× · 3rem</div></div>
-      <div class="spacing-block"><div class="box" style="--sz:6rem;"></div><div class="meta">2× · 6rem</div></div>
-      <div class="spacing-block"><div class="box" style="--sz:9rem;"></div><div class="meta">3× · 9rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:1.5rem;"></div><div class="meta"><span class="sg-token">--half-module</span>½× · 1.5rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:3rem;"></div><div class="meta"><span class="sg-token">--module</span>1× · 3rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:6rem;"></div><div class="meta"><span class="sg-token">--module-2xl</span>2× · 6rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:9rem;"></div><div class="meta"><span class="sg-token">--module-3xl</span>3× · 9rem</div></div>
       <div class="spacing-block"><div class="box" style="--sz:12rem;"></div><div class="meta">4× · 12rem</div></div>
       <div class="spacing-block"><div class="box" style="--sz:15rem;"></div><div class="meta">5× · 15rem</div></div>
     </div>
     <div class="spacing-bars">
-      <div class="spacing-bar-row"><span class="spacing-bar-label">½×</span><div class="spacing-bar" style="--sz:1.5rem;"></div><span class="spacing-bar-value">1.5rem</span></div>
-      <div class="spacing-bar-row"><span class="spacing-bar-label">1×</span><div class="spacing-bar" style="--sz:3rem;"></div><span class="spacing-bar-value">3rem</span></div>
-      <div class="spacing-bar-row"><span class="spacing-bar-label">2×</span><div class="spacing-bar" style="--sz:6rem;"></div><span class="spacing-bar-value">6rem</span></div>
-      <div class="spacing-bar-row"><span class="spacing-bar-label">3×</span><div class="spacing-bar" style="--sz:9rem;"></div><span class="spacing-bar-value">9rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--half-module</span> · ½×</span><div class="spacing-bar" style="--sz:1.5rem;"></div><span class="spacing-bar-value">1.5rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--module</span> · 1×</span><div class="spacing-bar" style="--sz:3rem;"></div><span class="spacing-bar-value">3rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--module-2xl</span> · 2×</span><div class="spacing-bar" style="--sz:6rem;"></div><span class="spacing-bar-value">6rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--module-3xl</span> · 3×</span><div class="spacing-bar" style="--sz:9rem;"></div><span class="spacing-bar-value">9rem</span></div>
       <div class="spacing-bar-row"><span class="spacing-bar-label">4×</span><div class="spacing-bar" style="--sz:12rem;"></div><span class="spacing-bar-value">12rem</span></div>
       <div class="spacing-bar-row"><span class="spacing-bar-label">5×</span><div class="spacing-bar" style="--sz:15rem;"></div><span class="spacing-bar-value">15rem</span></div>
     </div>
