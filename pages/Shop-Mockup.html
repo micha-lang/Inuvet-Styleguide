@@ -46,7 +46,7 @@
   <span class="announcement-bar__item">Tierärztlich empfohlen &amp; entwickelt</span>
   <span class="announcement-bar__item">Versand nur mit ärztlicher Empfehlung</span>
   <span class="announcement-bar__item">Fragen? Ruf deine Tierarztpraxis an</span>
-  <button class="btn --icon" onclick="document.getElementById('announcementBar').classList.add('--closed')" aria-label="Schließen">
+  <button class="btn --icon" onclick="closeAnnouncement()" aria-label="Schließen">
     <span class="material-icons">close</span>
   </button>
 </div>
@@ -198,6 +198,11 @@ function toast(msg) {
 /* ════════════════════════════════════════════
    UI-HELFER
    ════════════════════════════════════════════ */
+function closeAnnouncement() {
+  document.getElementById('announcementBar').classList.add('--closed');
+  document.documentElement.style.setProperty('--announcement-height', '0px');
+}
+
 function toggleMockupBar() {
   const bar    = document.getElementById('mockupBar');
   const revive = document.getElementById('mockupRevive');
@@ -521,7 +526,7 @@ function renderHome() {
   }
 
   return `
-    <div class="section-type --v3 --viewport">
+    <div class="section-type --v3 --viewport --reverse">
       <div class="section-type__image" style="background-image:url('../assets/images/Hero_Mood_01.png');background-size:cover;background-position:center"></div>
       <div class="section-type__inner">
         <div class="section-type__content">
