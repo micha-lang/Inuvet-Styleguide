@@ -403,9 +403,7 @@
     min-height: var(--section-min-height);
   }
   /* Alle Section-Types außer --v3 (Vollbild-Hintergrund): Satzspiegel + Abstand oben */
-  .section-type:not(.--v3) {
-    margin-top: var(--module);
-  }
+  /* margin-top via Eltern-Kontext (.page padding / sg-section) */
   .section-type.--viewport {
     height: calc(100dvh - var(--header-height));
     max-height: var(--section-max-height);
