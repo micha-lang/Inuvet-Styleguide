@@ -175,8 +175,6 @@
   .icon-grid { display: flex; flex-wrap: wrap; gap: var(--module); }
   .sg-demo-stack { display: flex; flex-direction: column; gap: var(--module); }
   .sg-demo-stack.--inset { margin: 0 calc(-1 * var(--margin)); }
-  /* Spacing zwischen gestapelten section-type Demos im Styleguide */
-  .sg-section .section-type { margin-top: var(--module); }
   .glyph.--xs { font-size: var(--text-xs); }
   .glyph.--base { font-size: var(--text-base); }
   .glyph.--m { font-size: var(--text-m); }
