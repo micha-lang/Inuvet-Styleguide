@@ -84,7 +84,7 @@
 <div class="shop-modal-overlay" id="checkoutModal">
   <div class="shop-modal">
     <div class="shop-modal__icon">
-      <span class="material-icons" style="font-size:2.5rem;color:var(--green)">check_circle</span>
+      <span class="material-icons checkout__success-icon">check_circle</span>
     </div>
     <div class="shop-modal__title"   id="modalTitle"></div>
     <div class="shop-modal__body"    id="modalBody"></div>
@@ -212,7 +212,7 @@ function renderCartDrawer() {
         <h2 class="cart-drawer__title">Warenkorb <span class="cart-drawer__count">(0)</span></h2>
         <button class="btn --icon" onclick="closeCart()" aria-label="Schließen"><span class="material-icons">close</span></button>
       </div>
-      <div class="cart-drawer__empty" style="display:flex;align-items:center;justify-content:center;padding:var(--module)">
+      <div class="cart-drawer__empty">
         <p class="text-muted">Dein Warenkorb ist leer.</p>
       </div>`;
     return;
@@ -384,7 +384,7 @@ function renderNav() {
    BREADCRUMB
    ════════════════════════════════════════════ */
 function breadcrumb(items) {
-  return `<nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--module)">
+  return `<nav class="breadcrumb" aria-label="Breadcrumb">
     ${items.map((item, i) => {
       if (i === 0) return `<div class="breadcrumb__item"><a href="#" onclick="${item.onclick};return false;">${item.label}</a></div>`;
       if (item.current) return `<div class="breadcrumb__item"><span class="breadcrumb__sep">/</span><span class="--current">${item.label}</span></div>`;
@@ -420,7 +420,7 @@ function tileHTML(p) {
     }
   }
 
-  return `<div class="tile --product" onclick="activeProduct=PRODUCTS[${p.id-1}];setPage('product')" style="cursor:pointer">
+  return `<div class="tile --product" onclick="activeProduct=PRODUCTS[${p.id-1}];setPage('product')"
     <div class="tile__image-wrap">
       <div class="floating-meta">
         <div class="badge" data-cat="${p.cat}">${p.catLabel}</div>
@@ -683,7 +683,7 @@ function renderCheckout() {
           <div class="summary-line"><span>Zwischensumme</span><span>${total.toFixed(2).replace('.',',')} €</span></div>
           <div class="summary-line"><span>Versand</span><span>kostenlos</span></div>
           <div class="summary-total"><span>Gesamt</span><span>${total.toFixed(2).replace('.',',')} €</span></div>
-          <div style="margin-top:var(--module)">
+          <div class="checkout__cta">
             <button class="btn --primary cart-drawer__checkout" onclick="toast('Bestellung erfolgreich! (Demo)')">Jetzt kaufen</button>
           </div>
         </aside>

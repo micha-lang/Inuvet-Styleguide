@@ -31,7 +31,7 @@
     --border: #cccccc;       /* Linien: sichtbare Trennung (Nav, Karten, Tabellen) */
     --border-light: #e0e0e0; /* Linien: dezente Gliederung (Rules, Rows, Dashed) */
     --accent-bg: #f2f2f2;    /* Flächen: neutrale Hintergründe (Boxen, Placeholder) — bewusst ≠ --border-light */
-    --cross-color: #ccc;
+    --cross-color: var(--border);
 
     /* ─── Semantische Border-Tokens ─── */
     --border-focus:  var(--fg);
@@ -602,6 +602,7 @@
   /* ─── Tile Variante D: Produktkarte ─── */
   .tile.--product {
     position: relative;
+    cursor: pointer;
   }
   .tile.--product .tile__image-wrap {
     position: relative;
@@ -841,7 +842,7 @@
   .pagination__dots { color: var(--fg-muted); padding: 0 0.5rem; }
 
   /* ─── Breadcrumb ─── */
-  .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; font-size: var(--text-xs); color: var(--fg-muted); }
+  .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; font-size: var(--text-xs); color: var(--fg-muted); margin-bottom: var(--module); }
   .breadcrumb__item { display: flex; align-items: center; gap: 0.25rem; }
   .breadcrumb__item a { color: var(--fg-muted); text-decoration: none; transition: color var(--anim-fast); }
   .breadcrumb__item a:hover { color: var(--fg); }
@@ -1254,8 +1255,8 @@
   .summary-line:last-of-type { border-bottom: none; padding-bottom: 0; }
   .summary-total { display: flex; justify-content: space-between; font-weight: 700; font-size: var(--text-m); margin-top: var(--half-module); padding-top: var(--module); border-top: 1px solid var(--fg); color: var(--fg); }
   /* Checkout: letztes summary-line als solide Trennlinie, summary-total ohne eigene Linie */
-  .checkout .summary-line:has(+ .summary-total) { border-bottom: 1px solid var(--fg); padding-bottom: calc(var(--base) * 0.75); color: var(--fg); }
-  .checkout .summary-total { border-top: none; padding-top: calc(var(--base) * 0.375); margin-top: calc(var(--base) * 0.375); }
+  .checkout .summary-line:has(+ .summary-total) { border-bottom: 1px solid var(--fg); padding-bottom: calc(var(--half-module) / 2); color: var(--fg); }
+  .checkout .summary-total { border-top: none; padding-top: calc(var(--half-module) / 4); margin-top: calc(var(--half-module) / 4); }
 
   /* ═══════════════════════════════════════════
      CHECKOUT
@@ -1267,6 +1268,8 @@
   .checkout .choice-box:not(.--block) { padding-top: calc(var(--base) * 0.75); padding-bottom: calc(var(--base) * 0.75); }
   .checkout__block-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--module); }
   .checkout__sidebar { position: sticky; top: var(--module); align-self: start; }
+  .checkout__cta { margin-top: var(--module); }
+  .checkout__success-icon { font-size: 2.5rem; color: var(--green); }
   .checkout .tile-grid { gap: var(--half-module); }
   @media (max-width: 767px) { .checkout { grid-template-columns: 1fr; } .checkout .form-grid { grid-template-columns: 1fr; } .checkout .form-field[style*="grid-column"] { grid-column: 1 !important; } }
 
@@ -1634,7 +1637,7 @@
   .cart-drawer__checkout { width: 100%; text-align: center; }
   .cart-drawer__continue-wrap { padding-top: var(--half-module); }
   .cart-drawer__continue { width: 100%; text-align: center; }
-  .cart-drawer__empty { flex: 1; }
+  .cart-drawer__empty { flex: 1; display: flex; align-items: center; justify-content: center; padding: var(--module); }
 
   /* ─── Produktlisten-Karte — geteilte Erweiterungen für .cart-item ─── */
   /* Thumb-Wrapper: ermöglicht .floating-meta Overlay auf .product-thumb  */

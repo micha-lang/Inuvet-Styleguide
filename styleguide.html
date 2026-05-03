@@ -209,8 +209,10 @@
 
     <h3 class="sg-h3 --top">Spacing</h3>
     <table class="spec-table">
-      <tr><th><code>--module</code></th><td><code>clamp(1.5rem, 1rem + 2.7vw, 3rem)</code> — Grundmodul, flüssig</td></tr>
       <tr><th><code>--half-module</code></th><td><code>clamp(0.75rem, 0.5rem + 1.35vw, 1.5rem)</code> — ½ Modul</td></tr>
+      <tr><th><code>--module</code></th><td><code>clamp(1.5rem, 1rem + 2.7vw, 3rem)</code> — Grundmodul (1×), flüssig</td></tr>
+      <tr><th><code>--module-2xl</code></th><td><code>calc(var(--module) * 2)</code> — 2× Modul</td></tr>
+      <tr><th><code>--module-3xl</code></th><td><code>calc(var(--module) * 3)</code> — 3× Modul</td></tr>
       <tr><th><code>--gutter</code></th><td><code>var(--module)</code> — Grid-Abstände</td></tr>
       <tr><th><code>--margin</code></th><td><code>var(--module)</code> — Seitenabstände</td></tr>
       <tr><th><code>--section-gap</code></th><td><code>var(--module)</code> — Abstände zwischen Sektionen</td></tr>
@@ -247,8 +249,8 @@
     <h3 class="sg-h3 --top">Layout</h3>
     <table class="spec-table">
       <tr><th><code>--announcement-height</code></th><td><code>var(--module)</code> — Höhe der Announcement Bar (wird beim Schließen auf <code>0px</code> gesetzt)</td></tr>
-      <tr><th><code>--nav-height</code></th><td><code>calc(var(--module) * 2)</code> — Höhe der Navigation</td></tr>
-      <tr><th><code>--header-height</code></th><td><code>calc(var(--module) * 3)</code> — Announcement + Nav, für <code>scroll-padding-top</code></td></tr>
+      <tr><th><code>--nav-height</code></th><td><code>calc(var(--module) * 2.5)</code> — Höhe der Navigation</td></tr>
+      <tr><th><code>--header-height</code></th><td><code>calc(var(--module) * 3.5)</code> — Announcement + Nav, für <code>scroll-padding-top</code></td></tr>
       <tr><th><code>--section-max-height</code></th><td><code>51rem</code> — Max-Höhe für Section Types mit Bild</td></tr>
       <tr><th><code>--section-min-height</code></th><td><code>24rem</code> — Min-Höhe für Section Types mit Bild</td></tr>
     </table>
@@ -1776,10 +1778,10 @@
     <table class="spec-table">
       <tr><th>Announcement</th><td>Höhe <code>3rem</code> · <code>border-bottom: 1px</code> · scrollt mit · Items per <code>.announcement-bar__item</code></td></tr>
       <tr><th>Item-Animation</th><td><code>@keyframes annBarFade</code> · Dauer: <code>var(--anim-announcement) × 3</code> · Delay: <code>0s / --anim-announcement / --anim-announcement × 2</code></td></tr>
-      <tr><th>Navigation</th><td>Höhe <code>6rem</code> (<code>var(--module-2xl)</code>) · sticky · <code>border-bottom: 1px solid</code> · weißer Hintergrund</td></tr>
+      <tr><th>Navigation</th><td>Höhe <code>calc(var(--module) * 2.5)</code> = 7.5rem (Desktop) · sticky · <code>border-bottom: 1px solid</code> · weißer Hintergrund</td></tr>
       <tr><th>Layout</th><td>3-Spalten-Grid: <code>1fr auto 1fr</code>. Links: Menü/Links. Mitte: Logo/Titel. Rechts: Aktionen.</td></tr>
       <tr><th>Padding</th><td>Seitenrand <code>3rem</code> (1 Modul) links und rechts</td></tr>
-      <tr><th>Header-Höhe</th><td>Announcement + Nav = <code>9rem</code> (3 Module / <code>var(--header-height)</code>). Relevant für <code>scroll-padding-top</code> und <code>--viewport</code> Berechnung.</td></tr>
+      <tr><th>Header-Höhe</th><td>Announcement + Nav = <code>calc(var(--module) * 3.5)</code> = 10.5rem (Desktop) · Token: <code>var(--header-height)</code>. Relevant für <code>scroll-padding-top</code> und <code>--viewport</code> Berechnung.</td></tr>
       <tr><th>Responsive</th><td>Mobile: Seitenrand auf halbes Modul reduziert. Sekundäre Menüpunkte ausgeblendet.</td></tr>
     </table>
 
