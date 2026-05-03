@@ -104,22 +104,28 @@ const IMG2 = '../assets/images/Produkt_Packshot_02.jpeg';
 const PRODUCTS = [
   { id:1, name:'Calmin Balance', cat:'cbd',      catLabel:'CBD',        price:'39,90 €', img:IMG1, approved:true,
     shortDesc:'Für Entspannung und innere Balance.',
-    desc:'Hochwertige Tropfen für eine entspannte und ausgeglichene Stimmung bei Hunden und Katzen. Schonend gewonnen, tierärztlich geprüft.' },
+    desc:'Hochwertige Tropfen für eine entspannte und ausgeglichene Stimmung bei Hunden und Katzen. Schonend gewonnen, tierärztlich geprüft.',
+    ingredients:'CBD-Hanfextrakt, MCT-Öl (Kokosöl), natürliches Aroma. Ohne künstliche Zusatzstoffe, ohne Lösungsmittel.' },
   { id:2, name:'Hepax',          cat:'gelenke',  catLabel:'Gelenke',    price:'44,90 €', img:IMG2, approved:true,
     shortDesc:'Unterstützt Knorpel und Gelenke.',
-    desc:'Spezialformel zur Unterstützung von Knorpel und Gelenken bei aktiven Tieren. Mit natürlichen Extrakten, tierärztlich entwickelt.' },
+    desc:'Spezialformel zur Unterstützung von Knorpel und Gelenken bei aktiven Tieren. Mit natürlichen Extrakten, tierärztlich entwickelt.',
+    ingredients:'Grünlippmuschel-Extrakt, Teufelskralle, Boswellia, Vitamin C, Glucosamin, Chondroitin. Frei von Getreide und Soja.' },
   { id:3, name:'Calmin Balance', cat:'magendarm',catLabel:'Magen-Darm', price:'34,90 €', img:IMG1, approved:false,
     shortDesc:'Für eine gesunde Verdauung.',
-    desc:'Beruhigt den Verdauungstrakt und fördert eine gesunde Darmflora. Ideal bei empfindlichem Magen und nach Antibiotika-Behandlungen.' },
+    desc:'Beruhigt den Verdauungstrakt und fördert eine gesunde Darmflora. Ideal bei empfindlichem Magen und nach Antibiotika-Behandlungen.',
+    ingredients:'Flohsamenschalen, Probiotika (Enterococcus faecium), Präbiotika (FOS), Bentonit, Pektin, Kamillenextrakt. Ohne künstliche Zusatzstoffe.' },
   { id:4, name:'Hepax',          cat:'herz',     catLabel:'Herz',       price:'49,90 €', img:IMG2, approved:false,
     shortDesc:'Zur Unterstützung der Herzfunktion.',
-    desc:'Spezialformel zur Unterstützung der Herzfunktion bei älteren Tieren. Enthält natürliche Wirkstoffe, tierärztlich entwickelt.' },
+    desc:'Spezialformel zur Unterstützung der Herzfunktion bei älteren Tieren. Enthält natürliche Wirkstoffe, tierärztlich entwickelt.',
+    ingredients:'Weißdornextrakt, Coenzym Q10, Taurin, L-Carnitin, Magnesium, Vitamin E. Ohne Konservierungsstoffe.' },
   { id:5, name:'Calmin Balance', cat:'niere',    catLabel:'Niere',      price:'42,90 €', img:IMG1, approved:false,
     shortDesc:'Zur Unterstützung der Nierenfunktion.',
-    desc:'Unterstützt die Nierenfunktion und trägt zur natürlichen Entgiftung bei. Schonende Naturextrakte für Hunde und Katzen.' },
+    desc:'Unterstützt die Nierenfunktion und trägt zur natürlichen Entgiftung bei. Schonende Naturextrakte für Hunde und Katzen.',
+    ingredients:'Cranberry-Extrakt, Brennnesselwurzel, Schachtelhalmextrakt, Vitamin B6, Kalium. Frei von künstlichen Farbstoffen.' },
   { id:6, name:'Hepax',          cat:'haut',     catLabel:'Haut',       price:'36,90 €', img:IMG2, approved:false,
     shortDesc:'Für gesunde Haut und glänzendes Fell.',
-    desc:'Für glänzendes Fell und gesunde Haut. Reich an Omega-3-Fettsäuren und Biotin, tierärztlich geprüft.' },
+    desc:'Für glänzendes Fell und gesunde Haut. Reich an Omega-3-Fettsäuren und Biotin, tierärztlich geprüft.',
+    ingredients:'Lachsöl, Borretschsamenöl, Biotin, Zink, Vitamin A, E. Kaltgepresst, ohne Konservierungsstoffe.' },
 ];
 
 /* ════════════════════════════════════════════
@@ -420,13 +426,13 @@ function tileHTML(p) {
     }
   }
 
-  return `<div class="tile --product" onclick="activeProduct=PRODUCTS[${p.id-1}];setPage('product')"
+  return `<div class="tile --product" onclick="activeProduct=PRODUCTS[${p.id-1}];setPage('product')">
     <div class="tile__image-wrap">
       <div class="floating-meta">
         <div class="badge" data-cat="${p.cat}">${p.catLabel}</div>
         ${approved ? '<div class="badge --sale">Empfohlen</div>' : ''}
       </div>
-      <div class="tile__image --square">
+      <div class="tile__image">
         <img src="${p.img}" alt="${p.name}" loading="lazy">
       </div>
       ${cartOverlay}
@@ -472,7 +478,7 @@ function renderHome() {
   return `
     <div class="page" style="padding-block: 0">
     <div class="section-type --v2">
-      <div class="section-type__image" style="background-image:url('../assets/images/Produkt_Packshot_01.jpeg');background-size:cover;background-position:center"></div>
+      <div class="section-type__image" style="background-image:url('../assets/images/Hero_Mood_01.png');background-size:cover;background-position:center"></div>
       <div class="section-type__content">
         <h2 class="section-type__headline">${headline}</h2>
         <div class="section-type__bottom">
@@ -564,9 +570,7 @@ function renderProduct() {
             <button class="qty-selector__btn" type="button" aria-label="Mehr" onclick="this.previousElementSibling.value=Math.min(99,+this.previousElementSibling.value+1)"><span class="material-icons">add</span></button>
           </div>
         </div>
-        <button class="btn --primary --with-icon" onclick="addToCart(${p.id},'approved');openCart()">
-          <span class="material-icons">shopping_cart</span> In den Warenkorb
-        </button>
+        <button class="btn --primary" onclick="addToCart(${p.id},'approved');openCart()">In den Warenkorb</button>
         <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste">
           <span class="material-icons">favorite_border</span>
         </button>
@@ -602,9 +606,22 @@ function renderProduct() {
           <div class="pdp__price">
             <div class="price-stack text-m"><span>${p.price}</span></div>
           </div>
-          <p class="pdp__description">${p.desc}</p>
           ${notice}
           ${actions}
+          <div class="accordion">
+            <div class="accordion-item --open">
+              <button class="accordion-trigger" type="button" aria-expanded="true" onclick="toggleAccordion(this)">Beschreibung<span class="accordion-icon material-icons">expand_more</span></button>
+              <div class="accordion-content"><div class="accordion-content__inner"><p>${p.desc}</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Inhaltsstoffe<span class="accordion-icon material-icons">expand_more</span></button>
+              <div class="accordion-content"><div class="accordion-content__inner"><p>${p.ingredients}</p></div></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Versand &amp; Lieferung<span class="accordion-icon material-icons">expand_more</span></button>
+              <div class="accordion-content"><div class="accordion-content__inner"><p>Standardversand: 3–5 Werktage. Expressversand: 1–2 Werktage. Ab 50 € versandkostenfrei.</p></div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
