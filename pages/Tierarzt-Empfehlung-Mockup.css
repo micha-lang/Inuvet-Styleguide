@@ -101,22 +101,30 @@
   color: var(--bg);
 }
 
-/* Footer mit Preis + CTA */
+/* Preis in der Produktvorschau */
+.options-drawer__price {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+/* Footer: nur CTA, volle Breite, Abstand nach unten */
 .options-drawer__footer {
   margin-top: auto;
-  padding: var(--module);
+  padding: var(--module) var(--module) calc(var(--module) * 1.5);
   border-top: 1px solid var(--border-light);
-  display: flex;
-  flex-direction: column;
-  gap: var(--half-module);
 }
-.options-drawer__price-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.5rem;
+.options-drawer__footer .btn {
+  width: 100%;
+  justify-content: center;
 }
-.options-drawer__price-row .price-stack {
-  font-size: var(--text-m);
-  font-weight: 700;
+
+/* ─── Warenkorb-Drawer: Abstände der Zwischenüberschriften korrigieren ─── */
+.cart-drawer__items .section-label {
+  margin-top: var(--half-module);
+  margin-bottom: calc(var(--half-module) / 2);
+}
+.cart-drawer__items *:first-child.section-label,
+.cart-drawer__items .section-label:first-child {
+  margin-top: 0;
 }

@@ -331,6 +331,7 @@ function renderOptionsDrawer(p) {
         <div class="badge" data-cat="${p.cat}" style="margin-bottom:0.3rem">${p.catLabel}</div>
         <p class="options-drawer__product-name">${p.name}</p>
         ${p.rating ? `<div class="rating"><span class="material-icons" aria-hidden="true">star</span><span>${p.rating}</span></div>` : ''}
+        <div class="options-drawer__price" id="optionsPrice">${firstPrice}</div>
       </div>
     </div>
     ${variants.length > 0 ? `
@@ -353,10 +354,6 @@ function renderOptionsDrawer(p) {
       </div>
     </div>
     <div class="options-drawer__footer">
-      <div class="options-drawer__price-row">
-        <span class="label-caps" style="color:var(--fg-muted)">Gesamt</span>
-        <span class="price-stack" id="optionsPrice">${firstPrice}</span>
-      </div>
       <button class="${ctaClass}"
         onclick="addToCart(${p.id},'${ctaType}');closeOptions();openCart()">
         ${ctaIcon}${ctaLabel}
