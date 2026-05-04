@@ -326,7 +326,6 @@ function renderOptionsDrawer(p) {
     <div class="cart-item options-drawer__product">
       <div class="product-thumb">
         <img src="${p.img}" alt="${p.name}">
-        ${p.imgHover ? `<img src="${p.imgHover}" alt="" aria-hidden="true">` : ''}
       </div>
       <div class="cart-item__info">
         <div class="cart-item__top">
@@ -346,7 +345,7 @@ function renderOptionsDrawer(p) {
     </div>` : ''}
     <div class="options-drawer__section">
       <div class="label-caps options-drawer__section-label">Menge</div>
-      <div class="qty-selector">
+      <div class="qty-selector --sm">
         <button class="qty-selector__btn" type="button" aria-label="Weniger"
           onclick="this.nextElementSibling.value=Math.max(1,+this.nextElementSibling.value-1)">
           <span class="material-icons">remove</span>
