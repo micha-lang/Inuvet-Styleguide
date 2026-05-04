@@ -86,12 +86,3 @@
   justify-content: center;
 }
 
-/* ─── Warenkorb-Drawer: Abstände der Zwischenüberschriften korrigieren ─── */
-.cart-drawer__items .section-label {
-  margin-top: var(--half-module);
-  margin-bottom: calc(var(--half-module) / 2);
-}
-.cart-drawer__items *:first-child.section-label,
-.cart-drawer__items .section-label:first-child {
-  margin-top: 0;
-}
