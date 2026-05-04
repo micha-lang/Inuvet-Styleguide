@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="inuvet.css?v=17">
 <link rel="stylesheet" href="sg.css">
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
 
@@ -17,7 +18,7 @@
   <span class="announcement-bar__item">Kostenloser Versand ab 49 €</span>
   <span class="announcement-bar__item">30 Tage Rückgabe</span>
   <span class="announcement-bar__item">Tierärztlich entwickelt</span>
-  <span class="announcement-bar__item"><span class="rating"><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span>4,9 · Über 2.400 Bewertungen</span></span></span>
+  <span class="announcement-bar__item"><span class="rating"><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span>4,9 · Über 2.400 Bewertungen</span></span></span>
   <button class="btn --icon" onclick="closeAnnouncement()" aria-label="Schließen"><span class="material-icons">close</span></button>
 </div>
 
@@ -66,27 +67,28 @@
     <a href="#spacing" class="--indent" onclick="closeMobile()">07 Spacing</a>
     <a href="#columns" class="--indent" onclick="closeMobile()">08 Spaltenraster</a>
     <a href="#responsive" class="--indent" onclick="closeMobile()">09 Responsive</a>
-    <a href="#height" class="--indent" onclick="closeMobile()">10 Höhen</a>
   </div>
   <div class="nav-col">
     <a href="#buttons" onclick="closeMobile()">Atome &amp; Basis</a>
-    <a href="#buttons" class="--indent" onclick="closeMobile()">11 Buttons</a>
-    <a href="#section-12" class="--indent" onclick="closeMobile()">12 Badges &amp; Labels</a>
-    <a href="#section-13" class="--indent" onclick="closeMobile()">13 Formulare</a>
-    <a href="#section-14" class="--indent" onclick="closeMobile()">14 Icons &amp; icon-box</a>
-    <a href="#section-15" onclick="closeMobile()">Produktkarten</a>
-    <a href="#section-15" class="--indent" onclick="closeMobile()">15 Produktkarte</a>
-    <a href="#section-16" class="--indent" onclick="closeMobile()">16 Cart Item</a>
-    <a href="#section-17" class="--indent" onclick="closeMobile()">17 Product Thumb</a>
+    <a href="#buttons" class="--indent" onclick="closeMobile()">10 Buttons</a>
+    <a href="#section-11" class="--indent" onclick="closeMobile()">11 Badges &amp; Labels</a>
+    <a href="#section-12" class="--indent" onclick="closeMobile()">12 Formulare</a>
+    <a href="#section-12-standalone" class="--indent" onclick="closeMobile()">12a Stand-Alone-Formular</a>
+    <a href="#section-13" class="--indent" onclick="closeMobile()">13 Icons &amp; icon-box</a>
+    <a href="#section-14" onclick="closeMobile()">Produktkarten</a>
+    <a href="#section-14" class="--indent" onclick="closeMobile()">14 Produktkarte</a>
+    <a href="#section-15" class="--indent" onclick="closeMobile()">15 Cart Item</a>
+    <a href="#section-16" class="--indent" onclick="closeMobile()">16 Product Thumb</a>
   </div>
   <div class="nav-col">
-    <a href="#section-18" onclick="closeMobile()">Seitenstruktur</a>
-    <a href="#section-18" class="--indent" onclick="closeMobile()">18 Navigation &amp; Announcement</a>
-    <a href="#section-19" class="--indent" onclick="closeMobile()">19 Breadcrumb</a>
-    <a href="#section-20" class="--indent" onclick="closeMobile()">20 Footer</a>
-    <a href="#section-21" onclick="closeMobile()">Seiten-Layouts</a>
-    <a href="#section-21" class="--indent" onclick="closeMobile()">21 Section Types</a>
-    <a href="#section-22" class="--indent" onclick="closeMobile()">22 Kachel-Raster</a>
+    <a href="#section-17" onclick="closeMobile()">Seitenstruktur</a>
+    <a href="#section-17" class="--indent" onclick="closeMobile()">17 Navigation &amp; Announcement</a>
+    <a href="#section-18" class="--indent" onclick="closeMobile()">18 Breadcrumb</a>
+    <a href="#section-19" class="--indent" onclick="closeMobile()">19 Footer</a>
+    <a href="#section-20" onclick="closeMobile()">Seiten-Layouts</a>
+    <a href="#section-20" class="--indent" onclick="closeMobile()">20 Section Types</a>
+    <a href="#section-21" class="--indent" onclick="closeMobile()">21 Kachel-Raster</a>
+    <a href="#section-22" class="--indent" onclick="closeMobile()">22 Landing-Page-Elemente</a>
     <a href="#section-23" class="--indent" onclick="closeMobile()">23 Tabs &amp; Akkordeon</a>
     <a href="#section-24" class="--indent" onclick="closeMobile()">24 Testimonials</a>
     <a href="#section-25" class="--indent" onclick="closeMobile()">25 Banner / Marquee</a>
@@ -148,7 +150,7 @@
     </div>
 
     <table class="spec-table">
-      <tr><th>Navigation</th><td>Fluid: <code>clamp(3rem, 1.5rem + 5vw, 5.25rem)</code>. Min = <code>var(--module)</code>, Max = <code>var(--module) × 1.75</code>.</td></tr>
+      <tr><th>Navigation</th><td>Fluid: <code>clamp(3.5rem, 2rem + 5vw, 6rem)</code>. Min ≈ <code>var(--module) × 1.17</code>, Max = <code>var(--module) × 2</code>.</td></tr>
       <tr><th>Schutzzone</th><td>Mindestens <code>½ Modul</code> Freiraum um das Logo auf allen Seiten.</td></tr>
       <tr><th>Mindestgröße</th><td><code>3rem</code> = <code>var(--module)</code>. Darunter wird die Wortmarke unleserlich.</td></tr>
       <tr><th>Hintergrund</th><td>Bevorzugt auf Weiß. Auf <code>--green-light</code> ebenfalls zulässig.</td></tr>
@@ -203,11 +205,14 @@
         <p>Immer <code>var(--token)</code> im CSS, niemals Rohdaten wie <code>#78b41b</code> oder <code>3rem</code> direkt. Ausnahme: Demo-Blöcke mit instanzspezifischen Datenwerten (<code>--sz</code>, <code>--h</code>).</p>
       </div>
     </div>
+    <p class="sg-p">Diese Sektion ist die technische Referenz für Entwickler — vollständige Liste aller Custom Properties. Die visuelle Darstellung der Tokens (mit großen Swatches, Specimens und Maßstabsdiagrammen) findet sich direkt dort, wo sie eingesetzt werden: <a href="#typo">04 Typografie</a>, <a href="#colors">05 Farben</a>, <a href="#spacing">07 Spacing</a>.</p>
 
     <h3 class="sg-h3 --top">Spacing</h3>
     <table class="spec-table">
-      <tr><th><code>--module</code></th><td><code>clamp(1.5rem, 1rem + 2.7vw, 3rem)</code> — Grundmodul, flüssig</td></tr>
       <tr><th><code>--half-module</code></th><td><code>clamp(0.75rem, 0.5rem + 1.35vw, 1.5rem)</code> — ½ Modul</td></tr>
+      <tr><th><code>--module</code></th><td><code>clamp(1.5rem, 1rem + 2.7vw, 3rem)</code> — Grundmodul (1×), flüssig</td></tr>
+      <tr><th><code>--module-2xl</code></th><td><code>calc(var(--module) * 2)</code> — 2× Modul</td></tr>
+      <tr><th><code>--module-3xl</code></th><td><code>calc(var(--module) * 3)</code> — 3× Modul</td></tr>
       <tr><th><code>--gutter</code></th><td><code>var(--module)</code> — Grid-Abstände</td></tr>
       <tr><th><code>--margin</code></th><td><code>var(--module)</code> — Seitenabstände</td></tr>
       <tr><th><code>--section-gap</code></th><td><code>var(--module)</code> — Abstände zwischen Sektionen</td></tr>
@@ -244,8 +249,8 @@
     <h3 class="sg-h3 --top">Layout</h3>
     <table class="spec-table">
       <tr><th><code>--announcement-height</code></th><td><code>var(--module)</code> — Höhe der Announcement Bar (wird beim Schließen auf <code>0px</code> gesetzt)</td></tr>
-      <tr><th><code>--nav-height</code></th><td><code>calc(var(--module) * 2)</code> — Höhe der Navigation</td></tr>
-      <tr><th><code>--header-height</code></th><td><code>calc(var(--module) * 3)</code> — Announcement + Nav, für <code>scroll-padding-top</code></td></tr>
+      <tr><th><code>--nav-height</code></th><td><code>calc(var(--module) * 2.5)</code> — Höhe der Navigation</td></tr>
+      <tr><th><code>--header-height</code></th><td><code>calc(var(--module) * 3.5)</code> — Announcement + Nav, für <code>scroll-padding-top</code></td></tr>
       <tr><th><code>--section-max-height</code></th><td><code>51rem</code> — Max-Höhe für Section Types mit Bild</td></tr>
       <tr><th><code>--section-min-height</code></th><td><code>24rem</code> — Min-Höhe für Section Types mit Bild</td></tr>
     </table>
@@ -342,26 +347,26 @@
       <div class="rule"><h4>Text-Stile</h4><p>Sechs Ebenen: H1–H4 (Headlines), Body, Caption. Zusätzlich: <strong>Uppercase Label</strong> (<code>--text-xs</code>, uppercase, 0.15em Spacing) für Sektions-Titel und Tabellen-Header. <code>code</code> in Monospace, relativ zum Kontext (<code>0.85em</code>).</p></div>
     </div>
     <div class="type-scale">
-      <div class="type-scale-step"><div class="glyph --xs">Ag</div><div class="meta">0.667rem</div></div>
-      <div class="type-scale-step"><div class="glyph --base">Ag</div><div class="meta">0.875–1rem</div></div>
-      <div class="type-scale-step"><div class="glyph --m">Ag</div><div class="meta">1.25–1.5rem</div></div>
-      <div class="type-scale-step"><div class="glyph --l">Ag</div><div class="meta">1.5–2.25rem</div></div>
-      <div class="type-scale-step"><div class="glyph --xl">Ag</div><div class="meta">2–3.375rem</div></div>
+      <div class="type-scale-step"><div class="glyph --xs">Ag</div><div class="meta"><span class="sg-token">--text-xs</span>0.667rem</div></div>
+      <div class="type-scale-step"><div class="glyph --base">Ag</div><div class="meta"><span class="sg-token">--text-base</span>0.875–1rem</div></div>
+      <div class="type-scale-step"><div class="glyph --m">Ag</div><div class="meta"><span class="sg-token">--text-m</span>1.25–1.5rem</div></div>
+      <div class="type-scale-step"><div class="glyph --l">Ag</div><div class="meta"><span class="sg-token">--text-l</span>1.5–2.25rem</div></div>
+      <div class="type-scale-step"><div class="glyph --xl">Ag</div><div class="meta"><span class="sg-token">--text-xl</span>2–3.375rem</div></div>
     </div>
     <div class="specimen">
-      <div class="specimen-row"><div class="specimen-meta"><span>2–3.375rem</span><span>LH 1.11</span></div><p class="h1">Headline 1</p></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>1.5–2.25rem</span><span>LH 1.17</span></div><p class="h2">Headline 2</p></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>1.25–1.5rem</span><span>LH 1.5</span></div><h3>Headline 3</h3></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.875–1rem</span><span>LH 1.5</span></div><h4>Headline 4</h4></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.875–1rem</span><span>LH 1.5 · Body</span></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Alle Produkte enthalten <a href="#">natürliche Wirkstoffe</a> – ohne unnötige Zusatzstoffe. Mehr dazu in unserem <a href="#">Ratgeber</a>.</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xl</span><span>2–3.375rem</span><span>LH 1.11</span></div><p class="h1">Headline 1</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-l</span><span>1.5–2.25rem</span><span>LH 1.17</span></div><p class="h2">Headline 2</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-m</span><span>1.25–1.5rem</span><span>LH 1.5</span></div><h3>Headline 3</h3></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-base</span><span>0.875–1rem</span><span>LH 1.5</span></div><h4>Headline 4</h4></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-base</span><span>0.875–1rem</span><span>LH 1.5 · Body</span></div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Alle Produkte enthalten <a href="#">natürliche Wirkstoffe</a> – ohne unnötige Zusatzstoffe. Mehr dazu in unserem <a href="#">Ratgeber</a>.</p></div>
       <div class="specimen-row"><div class="specimen-meta"><span>ul · ol</span><span>a:not([class])</span></div><div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--module)"><ul><li>Tierärztlich entwickelt</li><li>Ohne künstliche Zusätze</li><li>Nachhaltige Rohstoffe</li></ul><ol><li>Produkt wählen</li><li>Dosierung beachten</li><li>Regelmäßig anwenden</li></ol></div></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>LH 1.5</span></div><p style="font-size: var(--text-xs)">Caption · Label · Kleingedrucktes · Metainfo</p></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>Uppercase · 0.15em</span></div><div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--fg-muted);">Section Label · Tabellen-Header · Filter-Label</div></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xs</span><span>0.667rem</span><span>LH 1.5</span></div><p style="font-size: var(--text-xs)">Caption · Label · Kleingedrucktes · Metainfo</p></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xs</span><span>0.667rem</span><span>Uppercase · 0.15em</span></div><div style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--fg-muted);">Section Label · Tabellen-Header · Filter-Label</div></div>
       <div class="specimen-row"><div class="specimen-meta"><span>0.85em (relativ)</span><span>Monospace</span></div><div style="font-size: var(--text-base); line-height: var(--lh-base); color: var(--fg-muted);">Inline-Code: <code>var(--module)</code>, <code>clamp()</code>, <code>#78b41b</code></div></div>
-      <div class="specimen-row"><div class="specimen-meta"><span>0.667rem</span><span>700 · uppercase · ls 0.05em</span></div><div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;"><div class="badge" data-cat="herz">Herz</div><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge" data-cat="stress">Stress</div><div class="badge --dark">Neu</div><div class="badge --sale">Sale</div></div></div>
+      <div class="specimen-row"><div class="specimen-meta"><span class="sg-token">--text-xs</span><span>0.667rem</span><span>700 · uppercase · ls 0.05em</span></div><div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;"><div class="badge" data-cat="herz">Herz</div><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge" data-cat="beruhigung">Beruhigung</div><div class="badge --dark">Neu</div><div class="badge --sale">Sale</div></div></div>
     </div>
 
-    <p class="sg-p">Die vollständige Icon-Galerie ist in <a href="#section-14">14 — Icons &amp; icon-box</a> dokumentiert.</p>
+    <p class="sg-p">Die vollständige Icon-Galerie ist in <a href="#section-13">13 — Icons &amp; icon-box</a> dokumentiert.</p>
 
     <h3 class="sg-h3 --top-xl">Rich Text Editor (CMS Content)</h3>
     <p class="sg-p">Texte aus dem Shopify-Backend (Seiten, Blogbeiträge, Produktbeschreibungen) haben keine Utility-Klassen. Der Wrapper <code>.rte</code> sorgt dafür, dass Standard-HTML-Tags automatisch den korrekten vertikalen Rhythmus erhalten.</p>
@@ -408,30 +413,201 @@
       </div>
     </div>
 
-    <p class="sg-p">Die CSS Custom Properties für Brandfarben sind in <a href="#tokens">02 — Design Tokens</a> definiert (<code>--fg</code>, <code>--green</code>, <code>--green-light</code> etc.). Fließtext-Links in <code>--green</code>, Hover: <code>--green-hover</code> + Unterstrich.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#000"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--fg</span>
+          <span class="color-card__hex">#000</span>
+          <span class="color-card__role">Text, Linien, aktive Zustände</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#666"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--fg-muted</span>
+          <span class="color-card__hex">#666</span>
+          <span class="color-card__role">Sekundärer Text, Meta</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#fff; border-bottom: 1px solid var(--border-light);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--bg</span>
+          <span class="color-card__hex">#fff</span>
+          <span class="color-card__role">Seitenhintergrund</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#f2f2f2"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--accent-bg</span>
+          <span class="color-card__hex">#f2f2f2</span>
+          <span class="color-card__role">Flächen, Placeholder</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#78b41b"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--green</span>
+          <span class="color-card__hex">#78b41b</span>
+          <span class="color-card__role">Primärfarbe, CTAs, Icons</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#58990F"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--green-hover</span>
+          <span class="color-card__hex">#58990F</span>
+          <span class="color-card__role">Hover-Zustand</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#f0fae6"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--green-light</span>
+          <span class="color-card__hex">#f0fae6</span>
+          <span class="color-card__role">Hintergründe, Announcement</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#cccccc"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--border</span>
+          <span class="color-card__hex">#cccccc</span>
+          <span class="color-card__role">Strukturelle Linien</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background:#e0e0e0"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--border-light</span>
+          <span class="color-card__hex">#e0e0e0</span>
+          <span class="color-card__role">Dekorative Trennlinien</span>
+        </div>
+      </div>
+    </div>
 
-    <p class="sg-p">Beispiel: Ein Fließtext mit <a href="#colors">einem Link zur Farb-Sektion</a> und <a href="#buttons">einem Link zu den Buttons</a> — beide in Grün, mit Hover-Effekt.</p>
+    <p class="sg-p">Fließtext-Links in <code>--green</code>, Hover: <code>--green-hover</code> + Unterstrich. Beispiel: <a href="#colors">Link zur Farb-Sektion</a> · <a href="#buttons">Link zu Buttons</a>.</p>
 
     <h3 class="sg-h3 --top">Produkt-Kategoriefarben</h3>
     <p class="sg-p">Jede Produktkategorie hat eine Hauptfarbe und eine helle Abstufung. Noch nicht auf Komponenten angewendet — nur als Farbpalette dokumentiert.</p>
 
-    <table class="spec-table">
-      <tr><th>CBD</th><td><span class="sg-swatch" style="background:#C5B4E3"></span> <code>#C5B4E3</code> · <span class="sg-swatch --pair" style="background:#f2eff9"></span> <code>#f2eff9</code></td></tr>
-      <tr><th>Bauchspeichel</th><td><span class="sg-swatch" style="background:#FFB1BB"></span> <code>#FFB1BB</code> · <span class="sg-swatch --pair" style="background:#ffeff2"></span> <code>#ffeff2</code></td></tr>
-      <tr><th>Blase</th><td><span class="sg-swatch" style="background:#F3DD6D"></span> <code>#F3DD6D</code> · <span class="sg-swatch --pair" style="background:#fdf8e3"></span> <code>#fdf8e3</code></td></tr>
-      <tr><th>Niere</th><td><span class="sg-swatch" style="background:#C3623A"></span> <code>#C3623A</code> · <span class="sg-swatch --pair" style="background:#f8ece8"></span> <code>#f8ece8</code></td></tr>
-      <tr><th>Herz</th><td><span class="sg-swatch" style="background:#FF6D6A"></span> <code>#FF6D6A</code> · <span class="sg-swatch --pair" style="background:#ffeceb"></span> <code>#ffeceb</code></td></tr>
-      <tr><th>Leber</th><td><span class="sg-swatch" style="background:#DDBCB0"></span> <code>#DDBCB0</code> · <span class="sg-swatch --pair" style="background:#f8f2f0"></span> <code>#f8f2f0</code></td></tr>
-      <tr><th>Stress</th><td><span class="sg-swatch" style="background:#C3D7EE"></span> <code>#C3D7EE</code> · <span class="sg-swatch --pair" style="background:#ecf2fa"></span> <code>#ecf2fa</code></td></tr>
-      <tr><th>Gelenke</th><td><span class="sg-swatch" style="background:#D0D3D4"></span> <code>#D0D3D4</code> · <span class="sg-swatch --pair" style="background:#f1f2f2"></span> <code>#f1f2f2</code></td></tr>
-      <tr><th>Magen/Darm</th><td><span class="sg-swatch" style="background:#D4EC8E"></span> <code>#D4EC8E</code> · <span class="sg-swatch --pair" style="background:#f0fae6"></span> <code>#f0fae6</code></td></tr>
-      <tr><th>Fettsäuren</th><td><span class="sg-swatch" style="background:#05868E"></span> <code>#05868E</code> · <span class="sg-swatch --pair" style="background:#e5f0f1"></span> <code>#e5f0f1</code></td></tr>
-      <tr><th>Haut</th><td><span class="sg-swatch" style="background:#F1A7DC"></span> <code>#F1A7DC</code> · <span class="sg-swatch --pair" style="background:#fcedf7"></span> <code>#fcedf7</code></td></tr>
-      <tr><th>Immun</th><td><span class="sg-swatch" style="background:#C3D7EE"></span> <code>#C3D7EE</code> · <span class="sg-swatch --pair" style="background:#e5f7f3"></span> <code>#e5f7f3</code></td></tr>
-      <tr><th>Atemwege</th><td><span class="sg-swatch" style="background:#FFB990"></span> <code>#FFB990</code> · <span class="sg-swatch --pair" style="background:#fff1e9"></span> <code>#fff1e9</code></td></tr>
-      <tr><th>Hormone</th><td><span class="sg-swatch" style="background:#994878"></span> <code>#994878</code> · <span class="sg-swatch --pair" style="background:#f4e9ef"></span> <code>#f4e9ef</code></td></tr>
-    </table>
-    <p class="demo-note">14 Kategoriefarben mit hellen Abstufungen. Als CSS-Variablen definiert (<code>--cat-[name]</code> und <code>--cat-[name]-light</code>), aber noch keinem Element zugewiesen.</p>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #C5B4E3 60%, #f2eff9 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-cbd</span>
+          <span class="color-card__hex">#C5B4E3 · #f2eff9</span>
+          <span class="color-card__role">CBD</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #FFB1BB 60%, #ffeff2 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-bauchspeichel</span>
+          <span class="color-card__hex">#FFB1BB · #ffeff2</span>
+          <span class="color-card__role">Bauchspeichel</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #F3DD6D 60%, #fdf8e3 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-blase</span>
+          <span class="color-card__hex">#F3DD6D · #fdf8e3</span>
+          <span class="color-card__role">Blase</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #C3623A 60%, #f8ece8 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-niere</span>
+          <span class="color-card__hex">#C3623A · #f8ece8</span>
+          <span class="color-card__role">Niere</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #FF6D6A 60%, #ffeceb 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-herz</span>
+          <span class="color-card__hex">#FF6D6A · #ffeceb</span>
+          <span class="color-card__role">Herz</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #DDBCB0 60%, #f8f2f0 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-leber</span>
+          <span class="color-card__hex">#DDBCB0 · #f8f2f0</span>
+          <span class="color-card__role">Leber</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #C3D7EE 60%, #ecf2fa 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-beruhigung</span>
+          <span class="color-card__hex">#C3D7EE · #ecf2fa</span>
+          <span class="color-card__role">Beruhigung</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #D0D3D4 60%, #f1f2f2 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-gelenke</span>
+          <span class="color-card__hex">#D0D3D4 · #f1f2f2</span>
+          <span class="color-card__role">Gelenke</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #D4EC8E 60%, #f0fae6 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-magendarm</span>
+          <span class="color-card__hex">#D4EC8E · #f0fae6</span>
+          <span class="color-card__role">Magen/Darm</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #05868E 60%, #e5f0f1 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-fettsaeuren</span>
+          <span class="color-card__hex">#05868E · #e5f0f1</span>
+          <span class="color-card__role">Fettsäuren</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #F1A7DC 60%, #fcedf7 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-haut</span>
+          <span class="color-card__hex">#F1A7DC · #fcedf7</span>
+          <span class="color-card__role">Haut</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #a7e6d7 60%, #e5f7f3 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-immun</span>
+          <span class="color-card__hex">#a7e6d7 · #e5f7f3</span>
+          <span class="color-card__role">Immun</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #FFB990 60%, #fff1e9 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-atemwege</span>
+          <span class="color-card__hex">#FFB990 · #fff1e9</span>
+          <span class="color-card__role">Atemwege</span>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-card__swatch" style="background: linear-gradient(to bottom, #994878 60%, #f4e9ef 40%);"></div>
+        <div class="color-card__info">
+          <span class="color-card__token">--cat-hormone</span>
+          <span class="color-card__hex">#994878 · #f4e9ef</span>
+          <span class="color-card__role">Hormone</span>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">14 Kategoriefarben — oben Hauptfarbe, unten helle Abstufung. Tokens: <code>--cat-[name]</code> und <code>--cat-[name]-light</code>. Noch nicht auf Komponenten angewendet.</p>
 
   </section>
 
@@ -474,18 +650,18 @@
   <section class="sg-section" id="spacing">
     <h2 class="section-label">07 — Spacing</h2>
     <div class="spacing-blocks">
-      <div class="spacing-block"><div class="box" style="--sz:1.5rem;"></div><div class="meta">½× · 1.5rem</div></div>
-      <div class="spacing-block"><div class="box" style="--sz:3rem;"></div><div class="meta">1× · 3rem</div></div>
-      <div class="spacing-block"><div class="box" style="--sz:6rem;"></div><div class="meta">2× · 6rem</div></div>
-      <div class="spacing-block"><div class="box" style="--sz:9rem;"></div><div class="meta">3× · 9rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:1.5rem;"></div><div class="meta"><span class="sg-token">--half-module</span>½× · 1.5rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:3rem;"></div><div class="meta"><span class="sg-token">--module</span>1× · 3rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:6rem;"></div><div class="meta"><span class="sg-token">--module-2xl</span>2× · 6rem</div></div>
+      <div class="spacing-block"><div class="box" style="--sz:9rem;"></div><div class="meta"><span class="sg-token">--module-3xl</span>3× · 9rem</div></div>
       <div class="spacing-block"><div class="box" style="--sz:12rem;"></div><div class="meta">4× · 12rem</div></div>
       <div class="spacing-block"><div class="box" style="--sz:15rem;"></div><div class="meta">5× · 15rem</div></div>
     </div>
     <div class="spacing-bars">
-      <div class="spacing-bar-row"><span class="spacing-bar-label">½×</span><div class="spacing-bar" style="--sz:1.5rem;"></div><span class="spacing-bar-value">1.5rem</span></div>
-      <div class="spacing-bar-row"><span class="spacing-bar-label">1×</span><div class="spacing-bar" style="--sz:3rem;"></div><span class="spacing-bar-value">3rem</span></div>
-      <div class="spacing-bar-row"><span class="spacing-bar-label">2×</span><div class="spacing-bar" style="--sz:6rem;"></div><span class="spacing-bar-value">6rem</span></div>
-      <div class="spacing-bar-row"><span class="spacing-bar-label">3×</span><div class="spacing-bar" style="--sz:9rem;"></div><span class="spacing-bar-value">9rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--half-module</span> · ½×</span><div class="spacing-bar" style="--sz:1.5rem;"></div><span class="spacing-bar-value">1.5rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--module</span> · 1×</span><div class="spacing-bar" style="--sz:3rem;"></div><span class="spacing-bar-value">3rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--module-2xl</span> · 2×</span><div class="spacing-bar" style="--sz:6rem;"></div><span class="spacing-bar-value">6rem</span></div>
+      <div class="spacing-bar-row"><span class="spacing-bar-label"><span class="sg-token">--module-3xl</span> · 3×</span><div class="spacing-bar" style="--sz:9rem;"></div><span class="spacing-bar-value">9rem</span></div>
       <div class="spacing-bar-row"><span class="spacing-bar-label">4×</span><div class="spacing-bar" style="--sz:12rem;"></div><span class="spacing-bar-value">12rem</span></div>
       <div class="spacing-bar-row"><span class="spacing-bar-label">5×</span><div class="spacing-bar" style="--sz:15rem;"></div><span class="spacing-bar-value">15rem</span></div>
     </div>
@@ -534,30 +710,14 @@
     </table>
   </section>
 
-  <!-- 06 Höhen -->
 
-  <section class="sg-section" id="height">
-    <h2 class="section-label">10 — Höhenverhalten</h2>
-    <div class="height-demo">
-      <div class="height-card">
-        <h4>Viewport-Modus</h4>
-        <p>Section als erstes Element: <code>height: calc(100dvh - var(--header-height))</code> mit <code>max-height: 51rem</code>.</p>
-        <div class="height-viz" style="--h:9rem;">calc(100dvh - header)</div>
-      </div>
-      <div class="height-card">
-        <h4>Content-Modus</h4>
-        <p>Section an beliebiger Stelle: <code>min-height: 24rem</code>, Höhe aus Inhalt.</p>
-        <div class="height-viz" style="--h:6rem;">min-height: 24rem</div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ═══════════════════════════════════════════
        11 BUTTONS
        ═══════════════════════════════════════════ -->
   <section class="sg-section" id="buttons">
-    <h2 class="section-label">11 — Buttons</h2>
+    <h2 class="section-label">10 — Buttons</h2>
 
     <div class="rules">
       <div class="rule">
@@ -631,8 +791,8 @@
 
   <!-- ── ATOME & BASIS-KOMPONENTEN ────────────────────── -->
 
-  <section class="sg-section" id="section-12">
-    <h2 class="section-label">12 — Badges &amp; Labels</h2>
+  <section class="sg-section" id="section-11">
+    <h2 class="section-label">11 — Badges &amp; Labels</h2>
 
     <!-- ── Rating ── -->
     <h3 class="sg-h3 --top">Rating</h3>
@@ -647,15 +807,15 @@
     <div class="demo-label">Varianten</div>
     <div class="sg-demo-stack">
       <div class="rating">
-        <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+        <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
         <span>5,0</span>
       </div>
       <div class="rating">
-        <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+        <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
         <span>4,0</span>
       </div>
       <div class="rating">
-        <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+        <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
         <span>4,2 · 128 Bewertungen</span>
       </div>
     </div>
@@ -674,7 +834,7 @@
     <div class="demo-label">Kategorie-Badges</div>
     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
       <div class="badge" data-cat="gelenke">Gelenke</div>
-      <div class="badge" data-cat="stress">Stress</div>
+      <div class="badge" data-cat="beruhigung">Beruhigung</div>
       <div class="badge" data-cat="herz">Herz</div>
       <div class="badge" data-cat="haut">Haut</div>
       <div class="badge" data-cat="cbd">CBD</div>
@@ -714,8 +874,8 @@
     <p class="demo-note">Links: inaktiv (Outline-Herz). Rechts: aktiv (gefülltes Herz, Border dunkel). Toggle via JS.</p>
   </section>
 
-  <section class="sg-section" id="section-13">
-    <h2 class="section-label">13 — Formulare</h2>
+  <section class="sg-section" id="section-12">
+    <h2 class="section-label">12 — Formulare</h2>
 
     <div class="rules">
       <div class="rule">
@@ -994,8 +1154,59 @@
 
   </section>
 
-  <section class="sg-section" id="section-14">
-    <h2 class="section-label">14 — Icons &amp; icon-box</h2>
+  <section class="sg-section" id="section-12-standalone">
+    <h2 class="section-label">12a — Stand-Alone-Formular</h2>
+
+    <div class="rules">
+      <div class="rule">
+        <h4>Wann verwenden</h4>
+        <p>Eigenständige Formularseiten außerhalb der Shop-Navigation — z.B. Reklamation, Kontaktformular, Registrierung. Kein Site-Nav, kein Footer-Menü. Nur Logo, Formular und Impressum.</p>
+      </div>
+      <div class="rule">
+        <h4>Aufbau</h4>
+        <p><code>.form-page</code> als Seitenhintergrund (<code>--accent-bg</code>), <code>.form-page__card</code> als weißer Card-Container (max. 640 px), <code>.form-page__header</code> mit zentriertem Logo, <code>.form-page__title</code> als H1, <code>.form-page__footer</code> für Impressum. Formularinhalte nutzen die globalen Atome aus Sektion 13.</p>
+      </div>
+    </div>
+
+    <table class="spec-table">
+      <tr><th><code>.form-page</code></th><td>Vollbild-Hintergrund <code>var(--accent-bg)</code> · zentriert · <code>min-height: 100vh</code></td></tr>
+      <tr><th><code>.form-page__card</code></th><td>Weißer Container · <code>max-width: 640px</code> · Padding <code>var(--module)</code></td></tr>
+      <tr><th><code>.form-page__header</code></th><td>Logo zentriert · <code>border-bottom</code> · Abstand <code>var(--module)</code></td></tr>
+      <tr><th><code>.form-page__title</code></th><td>H1 · <code>var(--text-l)</code> · <code>var(--fg)</code> · linksbündig</td></tr>
+      <tr><th><code>.form-page__privacy</code></th><td>Datenschutzhinweis · <code>var(--text-xs)</code> · <code>var(--fg-muted)</code></td></tr>
+      <tr><th><code>.form-page__footer</code></th><td>Impressum/Legal · <code>var(--text-xs)</code> · zentriert · außerhalb von <code>.form-page__card</code></td></tr>
+    </table>
+
+    <div class="demo-label">Stand-Alone-Formular — Shell-Demo</div>
+    <p class="demo-note">Nur die Hülle wird hier gezeigt. Formularfelder, Section-Labels und Buttons stammen aus Sektion 13.</p>
+    <div class="sg-demo-standalone">
+      <div class="form-page" style="min-height:auto;padding:var(--half-module) var(--base);">
+        <div class="form-page__card">
+          <header class="form-page__header">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 113.4 113.4" aria-label="inuvet" role="img">
+              <defs><style>.fpst0{fill:none}.fpst1{fill:#78b41b}.fpst2{clip-path:url(#clippath-fp)}</style><clipPath id="clippath-fp"><rect class="fpst0" width="113.4" height="113.4"/></clipPath></defs>
+              <g><path d="M19.4,74.3c0,1.4-1.1,2.6-2.6,2.6s-2.6-1.2-2.6-2.6,1.1-2.5,2.6-2.5,2.5,1.2,2.5,2.5ZM14.7,78.9h4.3v15.4h-4.3s0-15.4,0-15.4Z"/><path d="M23.1,78.9h3.8l.2,2.1c1.5-1.8,3.1-2.5,5.1-2.5s3.5.7,4.2,2.1c.5.9.7,2,.7,4.1v9.7h-4.3v-8.9c0-1.3,0-1.8-.3-2.3-.3-.6-.8-.9-1.6-.9-1.2,0-2.6,1.1-3.5,2.8v9.3h-4.3v-15.4h0Z"/><path d="M50.5,92.6c-1.4,1.5-2.8,2.1-4.7,2.1s-3.4-.8-4.2-2.2c-.5-.9-.7-2.1-.7-4.2v-9.5h4.3v8.7c0,2.6.5,3.4,1.9,3.4s2.3-.6,3.1-1.9v-10.2h4.3v15.4h-3.8l-.3-1.7h0Z"/><path d="M56.8,78.9h4.8l3.6,10.3,3.6-10.3h4.3l-6.3,15.4h-3.9l-6.1-15.4h0Z"/><path d="M78.1,87.9c.2,2.6,1.5,3.7,4.4,3.7s2.7-.3,4.4-1.2l1,2.8c-1.8,1.1-3.8,1.6-6.4,1.6-5.2,0-7.8-2.5-7.8-7.7s2.8-8.6,7.5-8.6,6.8,2.6,6.8,7.6,0,.9,0,1.8h-9.9,0ZM84.2,85.1c-.2-2.4-1.1-3.5-2.9-3.5s-2.9,1.1-3.2,3.5h6.1Z"/><path d="M89.7,82.4l.3-3.4h2.5l.2-3.7,4-1.4v5.1h3.8l-.3,3.4h-3.5v5.6c0,2.8.2,3.3,1.6,3.3s1.3-.2,2.1-.5l.8,2.7c-1.5.9-3,1.3-4.5,1.3s-3-.6-3.7-1.8c-.4-.8-.6-2-.6-4.2v-6.5h-2.7,0Z"/></g>
+              <g class="fpst2"><g><path d="M81.4,32h-.3v1h.2c.5,0,.7-.3.7-.6s-.1-.5-.6-.5M82,35.1l-.8-1.5h0v1.5h-.8v-3.7h1.3c.9,0,1.2.4,1.2,1s-.3,1-.8,1c0,0,.2.3.3.5l.7,1.2h-1ZM78.9,33.3c0,1.4,1.1,2.6,2.6,2.6s2.6-1.2,2.6-2.6-1.1-2.6-2.6-2.6-2.6,1.2-2.6,2.6M85,33.3c0,1.9-1.6,3.5-3.5,3.5s-3.6-1.5-3.6-3.5,1.6-3.5,3.6-3.5,3.5,1.5,3.5,3.5"/><path class="fpst1" d="M28.7,54.5c1.3,5.2,5.6,9,11.1,10.7,4.1-4.1,6.1-9.5,4.8-14.7-1.3-5.2-5.6-9-11.1-10.7-4.1,4.1-6.1,9.5-4.8,14.7Z"/><path class="fpst1" d="M38.6,32.3c.7,5.3,4.4,9.7,9.7,12,4.6-3.6,7.2-8.6,6.6-14-.6-5.3-4.4-9.7-9.7-12-4.6,3.6-7.2,8.7-6.5,14Z"/><path class="fpst1" d="M84.6,54.5c-1.3,5.2-5.6,9-11.1,10.7-4.1-4.1-6.1-9.5-4.8-14.7,1.3-5.2,5.6-9,11.1-10.7,4.1,4.1,6.1,9.5,4.8,14.7h0Z"/><path class="fpst1" d="M74.8,32.3c-.7,5.3-4.4,9.7-9.7,12-4.6-3.6-7.2-8.6-6.6-14,.6-5.3,4.4-9.7,9.7-12,4.6,3.6,7.2,8.7,6.6,14h0Z"/></g></g>
+            </svg>
+          </header>
+          <h1 class="form-page__title">Seitentitel</h1>
+          <h3 class="section-label">Abschnittsname</h3>
+          <div class="form-grid" style="margin-bottom:var(--half-module);">
+            <div class="form-field"><input type="text" placeholder=""><label>Vorname</label></div>
+            <div class="form-field"><input type="email" placeholder=""><label>E-Mail-Adresse</label></div>
+          </div>
+          <div class="form-field"><textarea placeholder="" rows="3"></textarea><label>Nachricht</label></div>
+          <button class="btn --primary --full">Absenden</button>
+          <p class="form-page__privacy">Für Informationen über unsere Datenschutzpraktiken besuche bitte <a href="#">unsere Website</a>.</p>
+        </div>
+        <div class="form-page__footer">Impressum: Inuvet GmbH · Berner Weg 19 · 79539 Lörrach · info@inuvet.com</div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="sg-section" id="section-13">
+    <h2 class="section-label">13 — Icons &amp; icon-box</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1032,7 +1243,7 @@
     <div class="icon-grid">
       <div class="icon-demo"><span class="material-icons">shopping_cart</span><div>shopping_cart</div></div>
       <div class="icon-demo"><span class="material-icons">favorite_border</span><div>favorite_border</div></div>
-      <div class="icon-demo"><span class="material-icons">star</span><div>star</div></div>
+      <div class="icon-demo"><span class="material-icons" aria-hidden="true">star</span><div>star</div></div>
       <div class="icon-demo"><span class="material-icons">star_border</span><div>star_border</div></div>
       <div class="icon-demo"><span class="material-icons">local_shipping</span><div>local_shipping</div></div>
       <div class="icon-demo"><span class="material-icons">inventory_2</span><div>inventory_2</div></div>
@@ -1124,7 +1335,7 @@
         <p class="label">Rating — 4 von 5 Sternen</p>
         <div class="sg-form-demo">
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
             <span>4.2 (128 Bewertungen)</span>
           </div>
         </div>
@@ -1175,8 +1386,8 @@
     <!-- ═══════════════════════════════════════════
        15 PRODUKTKARTE
        ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="section-15">
-    <h2 class="section-label">15 — Produktkarte</h2>
+  <section class="sg-section" id="section-14">
+    <h2 class="section-label">14 — Produktkarte</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1185,21 +1396,22 @@
       </div>
       <div class="rule">
         <h4>Klassen-Übersicht</h4>
-        <p>Basisklassen: <code>.tile.--product</code>, <code>.tile__image-wrap</code>, <code>.floating-meta</code>, <code>.tile__image</code>, <code>.tile__cart</code>, <code>.tile__cart-icon</code>, <code>.tile__headline</code>, <code>.tile__description</code>, <code>.tile__price</code>.</p>
+        <p>Kanonischer Aufbau: <code>.tile.--product</code> → <code>.tile__image-wrap</code> (enthält <code>.floating-meta</code>, <code>.tile__image</code>, <code>.tile__cart-icon</code>, <code>.tile__cart</code>) → <code>.tile__headline-row</code> (enthält <code>.tile__headline</code> + <code>.rating</code>) → <code>.tile__description</code> → <code>.tile__price</code>.</p>
       </div>
     </div>
 
     <!-- Produktkarten -->
     <h3 id="tile-product" class="sg-h3 --top">Produktkarten (Variante D)</h3>
-    <p class="sg-p --mb">Shopify-ready. Bild, Produktname, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid.</p>
+    <p class="sg-p --mb">Shopify-ready. Bild, Produktname, Bewertung, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid.</p>
 
     <table class="spec-table">
-      <tr><th>Bild</th><td>Quadratisch (<code>1:1</code>). Bei Hover: „In den Warenkorb"-Button gleitet von unten ins Bild.</td></tr>
-      <tr><th>Badge</th><td>Optional. Position: oben links auf dem Bild. Varianten: Standard (schwarz) und Sale (grün).</td></tr>
-      <tr><th>Kategorie-Badge</th><td>Optional. <code>.badge</code> mit <code>data-cat="…"</code> im <code>.floating-meta</code>-Container. Nur Hintergrund in Kategoriefarbe (light), Schrift schwarz. Wird als erstes Badge gestapelt, Status-Badges (Neu, Sale) folgen dahinter.</td></tr>
-      <tr><th>Beschreibung</th><td>Optional. Unter dem Produktnamen, <code>--text-xs</code>, <code>--fg-muted</code>.</td></tr>
-      <tr><th>Preis</th><td>Bold. Bei Sale: alter Preis durchgestrichen daneben.</td></tr>
-      <tr><th>Button</th><td>Secondary-Style. Desktop: erscheint bei Hover als Overlay am unteren Bildrand (<code>0.25s ease</code>). Mobile: stattdessen permanentes Warenkorb-Icon (Material Icons) oben rechts auf dem Bild.</td></tr>
+      <tr><th>Bild</th><td><code>.tile__image</code>. Erstes <code>&lt;img&gt;</code>: Produktbild mit beschreibendem <code>alt</code>. Zweites <code>&lt;img&gt;</code> (optional): Rollover, immer <code>alt="" aria-hidden="true"</code>. Bei Hover: Rollover blendet ein (<code>opacity</code>-Transition).</td></tr>
+      <tr><th>Badges</th><td><code>.floating-meta</code> auf dem Bild. Reihenfolge: 1. Kategorie-Badge (<code>.badge[data-cat]</code>), 2. Status-Badge (<code>.badge.--dark</code> / <code>.badge.--sale</code>). Alle optional.</td></tr>
+      <tr><th>Warenkorb-Hover</th><td><code>.tile__cart</code>: Button gleitet bei Hover von unten ins Bild. <code>.tile__cart-icon</code>: permanentes Icon auf Mobile. Beide mit <code>aria-label="In den Warenkorb"</code>.</td></tr>
+      <tr><th>Headline-Zeile</th><td><code>.tile__headline-row</code> (Flex, <code>justify-content: space-between</code>). Enthält <code>.tile__headline</code> links und <code>.rating</code> rechts (optional).</td></tr>
+      <tr><th>Bewertung</th><td><code>.rating</code> in <code>.tile__headline-row</code>. Ein Stern (<code>material-icons star</code>, orange) + Textzahl. <code>aria-hidden="true"</code> auf dem Icon.</td></tr>
+      <tr><th>Beschreibung</th><td><code>.tile__description</code>. Optional, <code>var(--fg-muted)</code>.</td></tr>
+      <tr><th>Preis</th><td><code>.tile__price</code> → <code>.price-stack</code>. Bei Sale: alter Preis als <code>&lt;span class="--old"&gt;</code> daneben.</td></tr>
     </table>
 
     <div class="demo-label">4-Spalter — Produktkarten</div>
@@ -1210,53 +1422,55 @@
             <div class="badge" data-cat="herz">Herz</div>
             <div class="badge --dark">Neu</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname Eins</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt A</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="cbd">CBD</div>
+            <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname Zwei</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt B</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
-            <div class="badge" data-cat="stress">Stress</div>
+            <div class="badge" data-cat="beruhigung">Beruhigung</div>
             <div class="badge --sale">Sale</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname Drei</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt C</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.9</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div>
+        <div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="gelenke">Gelenke</div>
+            <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname Vier</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt D</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.9</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div>
+        <div class="tile__price"><div class="price-stack"><span>34,90 €</span></div></div>
       </div>
     </div>
     <p class="demo-note">Hover über ein Produktbild: Button gleitet von unten ein. Badges, Beschreibung und Preis darunter.</p>
@@ -1269,40 +1483,41 @@
             <div class="badge" data-cat="bauchspeichel">Bauchspeicheldrüse</div>
             <div class="badge --dark">Neu</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname mit einem etwas längeren Titel</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt E — Längerer Produkttitel</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.7</div></div>
         <div class="tile__description">Eine etwas ausführlichere Beschreibung des Produkts mit mehr Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>59,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.7</div></div>
+        <div class="tile__price"><div class="price-stack"><span>59,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="leber">Leber</div>
             <div class="badge --sale">Sale</div>
+            <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname Sechs</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt F</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.1</div></div>
         <div class="tile__description">Kurze Produktbeschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>24,90 €</span><span class="--old">49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.1</div></div>
+        <div class="tile__price"><div class="price-stack"><span>24,90 €</span><span class="--old">49,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="magendarm">Magen/Darm</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname Sieben</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt G</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div>
+        <div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div>
       </div>
     </div>
     <p class="demo-note">3-Spalter. Produktname und Beschreibung dürfen mehrzeilig sein.</p>
@@ -1313,27 +1528,28 @@
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="haut">Haut</div>
+            <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produktname</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.8</div></div>
         <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.8</div></div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="atemwege">Atemwege</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produktname</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.3</div></div>
         <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.3</div></div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div></div>
       </div>
       <div class="tile --featured">
         <h3 class="tile__headline">Entdecke unsere Neuheiten</h3>
@@ -1347,22 +1563,23 @@
           <div class="floating-meta">
             <div class="badge" data-cat="niere">Niere</div>
             <div class="badge --sale">Sale</div>
+            <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image placeholder-bg"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produktname</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div>
         <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>14,90 €</span><span class="--old">29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div>
+        <div class="tile__price"><div class="price-stack"><span>14,90 €</span><span class="--old">29,90 €</span></div></div>
       </div>
     </div>
     <p class="demo-note">Produktkarten gemischt mit Sonderkachel — flexibel einsetzbar.</p>
 
   </section>
 
-  <section class="sg-section" id="section-16">
-    <h2 class="section-label">16 — Cart Item</h2>
+  <section class="sg-section" id="section-15">
+    <h2 class="section-label">15 — Cart Item</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1386,7 +1603,7 @@
     <div class="sg-demo-pad">
       <div style="max-width: 28rem;">
         <div class="cart-item">
-          <div class="product-thumb placeholder-bg"></div>
+          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <div class="cart-item__info">
             <div class="cart-item__top">
               <div>
@@ -1406,7 +1623,7 @@
     <div class="sg-demo-pad">
       <div style="max-width: 28rem;">
         <div class="cart-item">
-          <div class="product-thumb placeholder-bg"></div>
+          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <div class="cart-item__info">
             <div class="cart-item__top">
               <div>
@@ -1435,7 +1652,7 @@
       <div style="max-width: 28rem;">
         <div class="cart-item">
           <div class="product-thumb-wrap">
-            <div class="product-thumb placeholder-bg"></div>
+            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="floating-meta" style="top:0; left:0;">
               <span class="badge --free">+3 gratis</span>
             </div>
@@ -1460,7 +1677,7 @@
       <div style="max-width: 28rem;">
         <div class="cart-item">
           <div class="product-thumb-wrap">
-            <div class="product-thumb placeholder-bg"></div>
+            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="floating-meta" style="top:0; left:0;">
               <span class="badge --free">+3 gratis</span>
             </div>
@@ -1494,8 +1711,8 @@
     <!-- ═══════════════════════════════════════════
        17 PRODUCT THUMB
        ═══════════════════════════════════════════ -->
-  <section class="sg-section" id="section-17">
-    <h2 class="section-label">17 — Product Thumb</h2>
+  <section class="sg-section" id="section-16">
+    <h2 class="section-label">16 — Product Thumb</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1519,12 +1736,8 @@
     <div class="sg-demo-pad">
       <div style="display:flex;gap:var(--half-module);align-items:flex-end;">
         <div>
-          <div class="product-thumb placeholder-bg"></div>
+          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">.product-thumb · 5rem</div>
-        </div>
-        <div>
-          <div class="product-thumb placeholder-bg"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="Beispielbild"></div>
-          <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">mit Bild</div>
         </div>
       </div>
     </div>
@@ -1534,7 +1747,7 @@
       <div style="display:flex;gap:var(--half-module);align-items:flex-end;">
         <div>
           <div class="product-thumb-wrap">
-            <div class="product-thumb placeholder-bg"></div>
+            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="floating-meta" style="top:0;left:0;">
               <span class="badge --free">+3 gratis</span>
             </div>
@@ -1549,8 +1762,8 @@
 
   <!-- ── SEITENSTRUKTUR ──────────────────────────────── -->
 
-  <section class="sg-section" id="section-18">
-    <h2 class="section-label">18 — Navigation &amp; Announcement Bar</h2>
+  <section class="sg-section" id="section-17">
+    <h2 class="section-label">17 — Navigation &amp; Announcement Bar</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1566,10 +1779,10 @@
     <table class="spec-table">
       <tr><th>Announcement</th><td>Höhe <code>3rem</code> · <code>border-bottom: 1px</code> · scrollt mit · Items per <code>.announcement-bar__item</code></td></tr>
       <tr><th>Item-Animation</th><td><code>@keyframes annBarFade</code> · Dauer: <code>var(--anim-announcement) × 3</code> · Delay: <code>0s / --anim-announcement / --anim-announcement × 2</code></td></tr>
-      <tr><th>Navigation</th><td>Höhe <code>6rem</code> (<code>var(--module-2xl)</code>) · sticky · <code>border-bottom: 1px solid</code> · weißer Hintergrund</td></tr>
+      <tr><th>Navigation</th><td>Höhe <code>calc(var(--module) * 2.5)</code> = 7.5rem (Desktop) · sticky · <code>border-bottom: 1px solid</code> · weißer Hintergrund</td></tr>
       <tr><th>Layout</th><td>3-Spalten-Grid: <code>1fr auto 1fr</code>. Links: Menü/Links. Mitte: Logo/Titel. Rechts: Aktionen.</td></tr>
       <tr><th>Padding</th><td>Seitenrand <code>3rem</code> (1 Modul) links und rechts</td></tr>
-      <tr><th>Header-Höhe</th><td>Announcement + Nav = <code>9rem</code> (3 Module / <code>var(--header-height)</code>). Relevant für <code>scroll-padding-top</code> und <code>--viewport</code> Berechnung.</td></tr>
+      <tr><th>Header-Höhe</th><td>Announcement + Nav = <code>calc(var(--module) * 3.5)</code> = 10.5rem (Desktop) · Token: <code>var(--header-height)</code>. Relevant für <code>scroll-padding-top</code> und <code>--viewport</code> Berechnung.</td></tr>
       <tr><th>Responsive</th><td>Mobile: Seitenrand auf halbes Modul reduziert. Sekundäre Menüpunkte ausgeblendet.</td></tr>
     </table>
 
@@ -1586,8 +1799,8 @@
 
   </section>
 
-  <section class="sg-section" id="section-19">
-    <h2 class="section-label">19 — Breadcrumb</h2>
+  <section class="sg-section" id="section-18">
+    <h2 class="section-label">18 — Breadcrumb</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1637,8 +1850,8 @@
     </div>
   </section>
 
-  <section class="sg-section" id="section-20">
-    <h2 class="section-label">20 — Footer</h2>
+  <section class="sg-section" id="section-19">
+    <h2 class="section-label">19 — Footer</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1666,8 +1879,8 @@
 
   <!-- ── SEITEN-LAYOUTS ──────────────────────────────── -->
 
-  <section class="sg-section" id="section-21">
-    <h2 class="section-label">21 — Section Types</h2>
+  <section class="sg-section" id="section-20">
+    <h2 class="section-label">20 — Section Types</h2>
 
     <div class="rules">
       <div class="rule">
@@ -1738,6 +1951,52 @@
       </div>
     </div>
     <p class="demo-note">Gleiche Section, mit <code>--reverse</code> gespiegelt.</p>
+
+    <!-- ─── Variante 1 Lottie ─── -->
+    <h3 id="v1-lottie" class="sg-h3 --top">Variante 1 — Animation + Text</h3>
+    <p class="sg-p --mb">Identisches Layout wie Variante 1, jedoch mit Lottie-JSON-Animation anstelle eines Bilds. Höhe ergibt sich aus der nativen Seitenverhältnis der Animation (<code>width: 100%</code>). Austauschbar ohne CSS-Anpassung.</p>
+
+    <!-- Spec -->
+    <table class="spec-table">
+      <tr><th>Animation</th><td>Lottie JSON via <code>&lt;lottie-player&gt;</code> · CDN: <code>@lottiefiles/lottie-player</code></td></tr>
+      <tr><th>Höhe</th><td>Automatisch aus JSON (<code>w</code>/<code>h</code>-Felder) · kein hardcodierter Wert</td></tr>
+      <tr><th>Austausch</th><td><code>src</code>-Attribut am <code>&lt;lottie-player&gt;</code> ändern — Layout passt sich an</td></tr>
+      <tr><th>Content</th><td>Kompakte Einheit · vertikal zentriert in der Spalte · max-width <code>calc(var(--module) * 8)</code> = 24rem (8×) · horizontal mittig im Raster</td></tr>
+      <tr><th>Layout</th><td><code>--reverse</code> funktioniert (Text links, Animation rechts)</td></tr>
+      <tr><th>Responsive</th><td>Mobile: 1-spaltig, Animation oben, Content unten</td></tr>
+    </table>
+
+    <!-- Demo: Default -->
+    <div class="demo-label">Default (Animation links, Text rechts)</div>
+    <div class="section-type --v1">
+      <div class="section-type__animation">
+        <lottie-player src="assets/lotties/Hero_Animation_01.json" background="transparent" speed="1" loop autoplay></lottie-player>
+      </div>
+      <div class="section-type__content">
+        <h3 class="section-type__headline">Natürlich gesunde Tiere</h3>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Höhe folgt dem nativen Seitenverhältnis der Animation (1000 × 780). Content-Block kompakt und vertikal zentriert in der Spalte.</p>
+
+    <!-- Demo: Reversed -->
+    <div class="demo-label">Reversed (Text links, Animation rechts)</div>
+    <div class="section-type --v1 --reverse">
+      <div class="section-type__animation">
+        <lottie-player src="assets/lotties/Hero_Animation_01.json" background="transparent" speed="1" loop autoplay></lottie-player>
+      </div>
+      <div class="section-type__content">
+        <h3 class="section-type__headline">Natürlich gesunde Tiere</h3>
+        <div class="section-type__bottom">
+          <p class="section-type__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="btn --primary">Call to Action</div>
+        </div>
+      </div>
+    </div>
+    <p class="demo-note">Mit <code>--reverse</code>: Text links, Animation rechts.</p>
 
     <!-- ─── Variante 2 ─── -->
     <h3 id="v2" class="sg-h3 --top">Variante 2 — Bild + Content-Box mit Hintergrund</h3>
@@ -1877,8 +2136,8 @@
 
   </section>
 
-  <section class="sg-section" id="section-22">
-    <h2 class="section-label">22 — Kachel-Raster</h2>
+  <section class="sg-section" id="section-21">
+    <h2 class="section-label">21 — Kachel-Raster</h2>
 
     <div class="rules">
       <div class="rule">
@@ -2032,7 +2291,65 @@
     </div>
     <p class="demo-note">Sonderkachel im 3-Spalter.</p>
 
-  </section>
+  <section class="sg-section" id="section-22">
+  <h2 class="section-label">22 — Landing-Page-Elemente</h2>
+
+  <div class="rules">
+    <div class="rule">
+      <h4>Verwendung</h4>
+      <p>Komponenten für Marketing- und Landing-Pages: Vorteils-Listen mit Häkchen und Infoboxen mit Icon für Feature-Übersichten.</p>
+    </div>
+  </div>
+
+  <!-- Textliste mit Häkchen -->
+  <h3 class="sg-h3">Textliste mit Häkchen (.check-list)</h3>
+  <table class="spec-table">
+    <tr><th><code>.check-list</code></th><td>Liste ohne Standard-Bullets · Flex-Layout pro Item · Icon links</td></tr>
+    <tr><th><code>.check-list li</code></th><td>Flex-Row · Gap <code>calc(var(--base) * 0.5)</code></td></tr>
+    <tr><th>Icon</th><td>Material Icon <code>check</code> · <code>var(--green)</code> · <code>var(--base)</code></td></tr>
+  </table>
+  <div class="demo-label">Textliste</div>
+  <div class="sg-form-demo">
+    <ul class="check-list">
+      <li><span class="material-icons">check</span><span>Tierärztlich entwickelt und klinisch getestet</span></li>
+      <li><span class="material-icons">check</span><span>Hochwertige Inhaltsstoffe ohne künstliche Zusätze</span></li>
+      <li><span class="material-icons">check</span><span>Einfache Dosierung für alle Tiergrößen</span></li>
+      <li><span class="material-icons">check</span><span>Kostenloser Versand ab 49 €</span></li>
+    </ul>
+  </div>
+
+  <!-- Infoboxen -->
+  <h3 class="sg-h3 --top">Infoboxen (.tile-grid.--boxed)</h3>
+  <p class="sg-p">4-Spalter mit Icon + Text wie Variante A, jedoch mit Rahmen und Innenabstand pro Kachel. Modifier <code>.--boxed</code> auf <code>.tile-grid</code>.</p>
+  <table class="spec-table">
+    <tr><th><code>.tile-grid.--boxed &gt; .tile</code></th><td>Border <code>1px solid var(--border-light)</code> · Padding <code>var(--half-module)</code></td></tr>
+  </table>
+  <div class="demo-label">Infoboxen — 4-spaltig</div>
+  <div class="tile-grid --cols-4 --boxed --mb">
+    <div class="tile">
+      <div class="tile__icon icon-box"><span class="material-icons">verified</span></div>
+      <h3 class="tile__headline">Qualität</h3>
+      <p class="tile__body">Alle Produkte werden nach höchsten Standards produziert und regelmäßig geprüft.</p>
+    </div>
+    <div class="tile">
+      <div class="tile__icon icon-box"><span class="material-icons">science</span></div>
+      <h3 class="tile__headline">Forschung</h3>
+      <p class="tile__body">Entwickelt in enger Zusammenarbeit mit Tierärzten und Ernährungsexperten.</p>
+    </div>
+    <div class="tile">
+      <div class="tile__icon icon-box"><span class="material-icons">favorite</span></div>
+      <h3 class="tile__headline">Fürsorge</h3>
+      <p class="tile__body">Wir denken an das Wohlbefinden jedes Tieres — von der Formel bis zur Verpackung.</p>
+    </div>
+    <div class="tile">
+      <div class="tile__icon icon-box"><span class="material-icons">eco</span></div>
+      <h3 class="tile__headline">Nachhaltigkeit</h3>
+      <p class="tile__body">Verantwortungsvoller Umgang mit Ressourcen und umweltfreundliche Materialien.</p>
+    </div>
+  </div>
+  <p class="demo-note">Modifier <code>.--boxed</code> auf <code>.tile-grid</code>. Tablet: 2×2. Mobile: 1-spaltig.</p>
+
+</section>
 
   <section class="sg-section" id="section-23">
     <h2 class="section-label">23 — Tabs &amp; Akkordeon</h2>
@@ -2208,7 +2525,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab — kein Rätselraten mehr bei Abständen und Schriftgrößen.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2220,7 +2537,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Endlich ein Styleguide, der nicht nur schön aussieht, sondern auch in Shopify funktioniert. Die Section Types lassen sich 1:1 als Liquid Templates umsetzen.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2232,7 +2549,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Die konsequente Modular-Logik überzeugt. Wir nutzen das System jetzt als Basis für drei verschiedene Shop-Projekte — und es skaliert perfekt.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2244,7 +2561,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Kein Border-Radius, scharfe Kanten, klare Regeln. Genau das, was wir für unsere Marke gebraucht haben.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2256,7 +2573,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Wir haben den Styleguide als Grundlage für unser Shopify-Theme genommen. Die Dokumentation ist so klar, dass auch Nicht-Designer sofort loslegen können.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2268,7 +2585,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Besonders die Fluid Typography hat uns überzeugt. Keine Breakpoints für Schriftgrößen mehr — das spart enorm viel CSS.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2293,7 +2610,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2305,7 +2622,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Die Section Types lassen sich 1:1 als Liquid Templates umsetzen. Genau das, was wir gebraucht haben.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2317,7 +2634,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Wir nutzen das System als Basis für drei Shop-Projekte — und es skaliert perfekt.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2329,7 +2646,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Scharfe Kanten, klare Regeln. Genau das, was wir für unsere Marke gebraucht haben.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2354,7 +2671,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab — kein Rätselraten mehr.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2366,7 +2683,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Die Section Types lassen sich 1:1 als Liquid Templates umsetzen. Genau das, was wir gebraucht haben.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2378,7 +2695,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Wir nutzen das System als Basis für drei Shop-Projekte — und es skaliert perfekt.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2390,7 +2707,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Scharfe Kanten, klare Regeln. Die Dokumentation ist vorbildlich.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2402,7 +2719,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Auch Nicht-Designer können sofort loslegen. Das System erklärt sich selbst.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2414,7 +2731,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Keine Breakpoints für Schriftgrößen mehr — das spart enorm viel CSS.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2442,7 +2759,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Das Design-System hat unsere Entwicklungszeit halbiert. Alles leitet sich logisch aus dem Grundmodul ab.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2454,7 +2771,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Die Section Types lassen sich 1:1 als Liquid Templates umsetzen.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2466,7 +2783,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Wir nutzen das System als Basis für drei Shop-Projekte — skaliert perfekt.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2478,7 +2795,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Scharfe Kanten, klare Regeln. Genau das, was wir gebraucht haben.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2490,7 +2807,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Vorbildlich dokumentiert und sofort einsetzbar. So wünscht man sich ein Design-System.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2502,7 +2819,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Die modulare Skala macht jede Design-Entscheidung nachvollziehbar. Kein Zufall, nur Logik.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2514,7 +2831,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Fluid Typography ohne Breakpoints — endlich ein System, das einfach funktioniert.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2526,7 +2843,7 @@
           <div class="testimonial__quote-mark"><span class="material-icons">format_quote</span></div>
           <p class="testimonial__text">Das Spacing-System hat unsere Diskussionen über Abstände komplett beendet. Alles ist logisch begründet.</p>
           <div class="rating">
-            <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span>
+            <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span>
           </div>
           <div class="testimonial__author">
             <div class="testimonial__avatar icon-box placeholder-bg"></div>
@@ -2682,24 +2999,36 @@
 
     <div class="pdp">
       <div class="pdp__gallery">
-        <div class="pdp__main-image placeholder-bg">
-          <div class="floating-meta"><div class="badge" data-cat="herz">Herz</div></div>
+        <div class="pdp__main-image">
+          <img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt">
+          <div class="pdp__caption --hidden" aria-live="polite"></div>
+          <div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div></div>
         </div>
         <div class="pdp__thumbs">
-          <div class="pdp__thumb placeholder-bg --active"></div>
-          <div class="pdp__thumb placeholder-bg"></div>
+          <div class="pdp__thumb --active"
+               onclick="pdpSwitch(this,'assets/images/Calmin_Packshot_01.jpeg','','')">
+            <img src="assets/images/Calmin_Packshot_01.jpeg" alt="Packshot">
+          </div>
+          <div class="pdp__thumb"
+               onclick="pdpSwitch(this,'assets/images/Calmin_Packshot_02.png','Teilbare Tabletten mit hoher Akzeptanz','')">
+            <img src="assets/images/Calmin_Packshot_02.png" alt="Detail">
+          </div>
+          <div class="pdp__thumb"
+               onclick="pdpSwitch(this,'assets/images/Produkt_Testimonial_01.png','In meiner Praxis schw\u00f6ren wir seit Jahren drauf und nehmen nichts anders \u2013 besser als jedes CBD-Produkt','\u2014 Dr. med. vet. Martina Vetter')">
+            <img src="assets/images/Produkt_Testimonial_01.png" alt="Testimonial">
+          </div>
           <div class="pdp__thumb placeholder-bg"></div>
           <div class="pdp__thumb placeholder-bg"></div>
         </div>
       </div>
       <div class="pdp__info">
-        <h3 class="pdp__title">IntestiBAL — Verdauungsunterstützung für Hunde</h3>
+        <h3 class="pdp__title">Produkt A</h3>
         <div class="rating">
-          <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons --empty">star_border</span>
+          <span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons" aria-hidden="true">star</span><span class="material-icons --empty" aria-hidden="true">star_border</span>
           <span class="text-muted text-xs">4.2 (128 Bewertungen)</span>
         </div>
-        <div class="pdp__price"><div class="price-stack text-m"><span>19,90 €</span><span class="--old">29,90 €</span></div><span class="badge --sale pdp__price-badge">-33%</span></div>
         <p class="pdp__description">Hochwertige Nahrungsergänzung zur Unterstützung der Verdauung. Mit natürlichen Inhaltsstoffen, die das Wohlbefinden Ihres Hundes fördern.</p>
+        <div class="pdp__price"><div class="price-stack text-m"><span>19,90 €</span><span class="--old">29,90 €</span></div><span class="badge --sale">-33%</span></div>
         <div class="pdp__variants">
           <div class="pdp__variant-label label-caps">Größe</div>
           <div class="pdp__variant-options">
@@ -2708,22 +3037,22 @@
             <button class="choice-box" onclick="selectVariant(this)">500g</button>
           </div>
         </div>
-        <div class="pdp__variants">
-          <div class="pdp__variant-label label-caps">Menge</div>
-          <div class="qty-selector">
-            <button class="qty-selector__btn" type="button" aria-label="Menge verringern" onclick="changeQty(-1)"><span class="material-icons">remove</span></button>
-            <input class="qty-selector__input" type="number" value="1" min="1" id="qtyInput">
-            <button class="qty-selector__btn" type="button" aria-label="Menge erhöhen" onclick="changeQty(1)"><span class="material-icons">add</span></button>
-          </div>
-        </div>
         <div class="pdp__actions">
+          <div>
+            <div class="pdp__variant-label label-caps">Menge</div>
+            <div class="qty-selector">
+              <button class="qty-selector__btn" type="button" aria-label="Menge verringern" onclick="changeQty(-1)"><span class="material-icons">remove</span></button>
+              <input class="qty-selector__input" type="number" value="1" min="1" id="qtyInput">
+              <button class="qty-selector__btn" type="button" aria-label="Menge erhöhen" onclick="changeQty(1)"><span class="material-icons">add</span></button>
+            </div>
+          </div>
           <a class="btn --primary" onclick="openCart('cartFull')">In den Warenkorb</a>
           <button class="pdp__wishlist icon-box --md" type="button" aria-label="Zur Wunschliste"><span class="material-icons">favorite_border</span></button>
         </div>
         <div class="accordion">
           <div class="accordion-item --open">
             <button class="accordion-trigger" type="button" aria-expanded="true" onclick="toggleAccordion(this)">Beschreibung<span class="accordion-icon material-icons">expand_more</span></button>
-            <div class="accordion-content"><div class="accordion-content__inner"><p>IntestiBAL enthält eine einzigartige Kombination aus natürlichen Inhaltsstoffen, die speziell für die Verdauungsgesundheit Ihres Hundes entwickelt wurden.</p></div></div>
+            <div class="accordion-content"><div class="accordion-content__inner"><p>Produkt A enthält eine einzigartige Kombination aus natürlichen Inhaltsstoffen, die speziell für die Verdauungsgesundheit Ihres Hundes entwickelt wurden.</p></div></div>
           </div>
           <div class="accordion-item">
             <button class="accordion-trigger" type="button" aria-expanded="false" onclick="toggleAccordion(this)">Inhaltsstoffe<span class="accordion-icon material-icons">expand_more</span></button>
@@ -2740,17 +3069,17 @@
     <div class="pdp__recommendations">
       <h3>Das könnte Ihnen auch gefallen</h3>
       <div class="tile-grid --cols-4">
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Eins</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.8</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="cbd">CBD</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Zwei</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.5</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="stress">Stress</div><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Drei</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons">star</span> 3.9</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="haut">Haut</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produktname Vier</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div><div class="rating"><span class="material-icons">star</span> 4.9</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div><div class="badge --dark">Neu</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt A</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span></div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt B</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>34,90 €</span></div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div><div class="badge --sale">Sale</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt C</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.9</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt D</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.9</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
       </div>
     </div>
 
     <!-- Wishlist-Zustände -->
-    <h3 class="sg-h3">Wishlist-Button (.pdp__wishlist)</h3>
-    <p class="sg-p">Quadratischer Icon-Button neben dem Kauf-CTA. Nutzt <code>.icon-box.--md</code>. Drei Zustände:</p>
-    <div class="demo-label">Inaktiv / Aktiv / Hover</div>
+    <h3 class="sg-h3 --top">Wishlist-Button (.pdp__wishlist)</h3>
+    <p class="sg-p">Quadratischer Icon-Button neben dem Kauf-CTA. Nutzt <code>.icon-box.--md</code>. Zwei Zustände:</p>
+    <div class="demo-label">Inaktiv / Aktiv</div>
     <div style="display:flex;gap:var(--half-module);align-items:center;">
       <div>
         <p class="label-caps" style="margin-bottom:calc(var(--base)*0.5);">Inaktiv</p>
@@ -2837,9 +3166,9 @@
           </div>
 
           <div class="tile-grid --cols-3">
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">ArthroBAL Complex</h3><div class="tile__description">Für agile Gelenke.</div><div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div></div>
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --dark">Neu</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Mobility Plus</h3><div class="tile__description">Tägliche Unterstützung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --sale">Sale</div></div><div class="tile__image placeholder-bg"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Senior Fit</h3><div class="tile__description">Für ältere Hunde.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span><span class="--old">39,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">ArthroBAL Complex</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.7</div></div><div class="tile__description">Für agile Gelenke.</div><div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --dark">Neu</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Mobility Plus</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.4</div></div><div class="tile__description">Tägliche Unterstützung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --sale">Sale</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Senior Fit</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.2</div></div><div class="tile__description">Für ältere Hunde.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span><span class="--old">39,90 €</span></div></div></div>
           </div>
 
           <nav class="pagination" aria-label="Pagination">
@@ -2909,9 +3238,9 @@
       <button class="btn --icon" onclick="closeCart('cartFull')"><span class="material-icons">close</span></button>
     </div>
     <div class="cart-drawer__items">
-      <div class="cart-item"><div class="cart-item__image product-thumb placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">IntestiBAL</p><div class="cart-item__variant">250g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="2" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">59,80 €</div></div></div></div>
-      <div class="cart-item"><div class="cart-item__image product-thumb placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">CaniComplete</p><div class="cart-item__variant">120g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">34,90 €</div></div></div></div>
-      <div class="cart-item"><div class="cart-item__image product-thumb placeholder-bg"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">DermaComplex</p><div class="cart-item__variant">500g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">49,90 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt A</p><div class="cart-item__variant">250g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="2" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">59,80 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt B</p><div class="cart-item__variant">120g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">34,90 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt C</p><div class="cart-item__variant">500g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">49,90 €</div></div></div></div>
     </div>
     <div class="cart-drawer__footer">
       <div class="cart-drawer__shipping"><div class="shipping-hint"><span class="material-icons">local_shipping</span> Noch 5,40 € bis zum kostenlosen Versand</div></div>
@@ -3078,11 +3407,11 @@
           <h3 class="section-label">Bestellübersicht</h3>
 
           <div class="cart-item">
-            <div class="cart-item__image product-thumb placeholder-bg"></div>
+            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
-                  <p class="cart-item__name">IntestiBAL</p>
+                  <p class="cart-item__name">Produkt A</p>
                   <div class="cart-item__variant">250g</div>
                 </div>
               </div>
@@ -3094,11 +3423,11 @@
           </div>
 
           <div class="cart-item">
-            <div class="cart-item__image product-thumb placeholder-bg"></div>
+            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
-                  <p class="cart-item__name">CaniComplete</p>
+                  <p class="cart-item__name">Produkt B</p>
                   <div class="cart-item__variant">120g</div>
                 </div>
               </div>
@@ -3110,11 +3439,11 @@
           </div>
 
           <div class="cart-item">
-            <div class="cart-item__image product-thumb placeholder-bg"></div>
+            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
-                  <p class="cart-item__name">DermaComplex</p>
+                  <p class="cart-item__name">Produkt C</p>
                   <div class="cart-item__variant">500g · Sale</div>
                 </div>
               </div>
@@ -3130,7 +3459,7 @@
           <div class="summary-line"><span>MwSt. (19 %)</span><span>23,12 €</span></div>
           <div class="summary-total"><span>Gesamt</span><span>144,60 €</span></div>
 
-          <div>
+          <div style="margin-top:var(--module)">
             <button class="btn --primary --full" type="button">Jetzt kaufen</button>
           </div>
         </aside>
@@ -3145,13 +3474,9 @@
     <h2 class="section-label">30 — Account-Seiten</h2>
     <div class="rules">
       <div class="rule"><h4>Formulare</h4><p>Nutzen <code>.form-field</code> (Floating Label), <code>.form-grid</code> (2-Spalten), <code>.btn.--primary.--full</code>. Alle drei Screens in einem <code>.tab-nav</code>.</p></div>
-      <div class="rule"><h4>Dashboard</h4><p>Begrüßung + 4 Kacheln (<code>.tile-grid.--cols-2</code>). Kacheln nutzen <code>.icon-box.--lg</code> + <code>.label-caps</code>.</p></div>
       <div class="rule"><h4>Bestellhistorie</h4><p><code>.order-item</code> mit Bestellnummer, Datum, Status-Badge, Betrag und Link.</p></div>
     </div>
     <table class="spec-table">
-      <tr><th><code>.account-tile</code></th><td>Flex-Spalte, zentriert, Border, Hover-Hintergrund</td></tr>
-      <tr><th><code>.account-tile__label</code></th><td><code>font-weight: 700</code></td></tr>
-      <tr><th><code>.account-tile__sub</code></th><td><code>color: var(--fg-muted)</code>, <code>font-size: var(--text-xs)</code></td></tr>
       <tr><th><code>.order-item</code></th><td>5-Spalten-Grid: Info · Datum · Badge · Betrag · Link</td></tr>
     </table>
 
@@ -3223,34 +3548,6 @@
       </div>
     </div>
 
-    <!-- Account-Dashboard -->
-    <div class="demo-label" style="margin-top:var(--module);">Account-Dashboard</div>
-    <div>
-      <p style="font-size:var(--text-l);font-weight:700;margin-bottom:var(--module);">Hallo, Maria</p>
-      <div class="tile-grid --cols-2" style="max-width:32rem;">
-        <a class="account-tile" href="#">
-          <div class="icon-box --lg"><span class="material-icons">inventory_2</span></div>
-          <span class="account-tile__label">Meine Bestellungen</span>
-          <span class="account-tile__sub">3 aktive Bestellungen</span>
-        </a>
-        <a class="account-tile" href="#">
-          <div class="icon-box --lg"><span class="material-icons">place</span></div>
-          <span class="account-tile__label">Meine Adressen</span>
-          <span class="account-tile__sub">2 gespeicherte Adressen</span>
-        </a>
-        <a class="account-tile" href="#">
-          <div class="icon-box --lg"><span class="material-icons">person</span></div>
-          <span class="account-tile__label">Meine Daten</span>
-          <span class="account-tile__sub">Name, E-Mail, Passwort</span>
-        </a>
-        <a class="account-tile" href="#">
-          <div class="icon-box --lg"><span class="material-icons">logout</span></div>
-          <span class="account-tile__label">Abmelden</span>
-          <span class="account-tile__sub label-caps" style="text-transform:none;">Sitzung beenden</span>
-        </a>
-      </div>
-    </div>
-
     <!-- Bestellhistorie -->
     <div class="demo-label" style="margin-top:var(--module);">Bestellhistorie</div>
     <div style="max-width:48rem;">
@@ -3268,7 +3565,7 @@
           <div class="order-item__number">#10039</div>
           <div class="order-item__date">3. Februar 2025</div>
         </div>
-        <span class="badge" data-cat="stress">In Bearbeitung</span>
+        <span class="badge" data-cat="beruhigung">In Bearbeitung</span>
         <span class="order-item__amount">34,90 €</span>
         <a class="order-item__link" href="#">Details</a>
       </div>
@@ -3313,7 +3610,7 @@
         <div class="search-results__section">
           <div class="section-label">Produkte</div>
           <div class="search-result">
-            <div class="search-result__image product-thumb"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="ArthroBAL Mobility Complex"></div>
+            <div class="search-result__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="ArthroBAL Mobility Complex"><img src="assets/images/Calmin_Packshot_02.png" alt=""></div>
             <div class="search-result__info">
               <p class="search-result__name">ArthroBAL Mobility Complex</p>
               <div class="search-result__meta">Gelenke &amp; Bewegung</div>
@@ -3321,9 +3618,9 @@
             <div class="search-result__price">34,90 €</div>
           </div>
           <div class="search-result">
-            <div class="search-result__image product-thumb"><img src="https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg" alt="IntestiBAL Darm-Komplex"></div>
+            <div class="search-result__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="Produkt A"><img src="assets/images/Calmin_Packshot_02.png" alt=""></div>
             <div class="search-result__info">
-              <p class="search-result__name">IntestiBAL Darm-Komplex</p>
+              <p class="search-result__name">Produkt A</p>
               <div class="search-result__meta">Verdauung &amp; Darm</div>
             </div>
             <div class="search-result__price">29,90 €</div>
@@ -3390,7 +3687,7 @@
       <tr><th><code>.blog-card__meta</code></th><td>Datum + Kategorie, nutzt <code>.label-caps</code></td></tr>
       <tr><th><code>.blog-card__title</code></th><td><code>var(--text-m)</code>, <code>font-weight: 700</code>, h3-Element</td></tr>
       <tr><th><code>.blog-card__excerpt</code></th><td><code>var(--fg-muted)</code>, line-clamp 3 Zeilen</td></tr>
-      <tr><th><code>.blog-card__cta</code></th><td>„Weiterlesen"-Link, underline on hover, <code>margin-top: auto</code></td></tr>
+      <tr><th><code>.blog-card__cta</code></th><td>„Weiterlesen"-Link · <code>var(--green)</code> · underline + <code>var(--green-hover)</code> on hover · <code>margin-top: auto</code></td></tr>
       <tr><th><code>.article__header</code></th><td>Meta (<code>.label-caps</code>) + h1-Titel</td></tr>
       <tr><th><code>.article__hero</code></th><td>16:9, <code>.placeholder-bg</code>, <code>margin-bottom: var(--module)</code></td></tr>
       <tr><th><code>.article__body</code></th><td>Nutzt bestehende <code>.rte</code>-Klasse für Fließtext</td></tr>
@@ -4053,9 +4350,9 @@ const SEARCH_DATA = {
     { text: 'Haut & Fell' },
   ],
   products: [
-    { name: 'ArthroBAL Mobility Complex', meta: 'Gelenke & Bewegung', price: '34,90 €', img: 'https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg' },
-    { name: 'IntestiBAL Darm-Komplex', meta: 'Verdauung & Darm', price: '29,90 €', img: 'https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg' },
-    { name: 'DermaBAL Haut & Fell', meta: 'Haut & Fell', price: '27,90 €', img: 'https://image.email.inuvet.com/lib/fe2b11737364047b7c1477/m/1/a3eb1ef9-7388-46e0-aa6f-3536d4b05f39.jpg' },
+    { name: 'ArthroBAL Mobility Complex', meta: 'Gelenke & Bewegung', price: '34,90 €', img: 'assets/images/Calmin_Packshot_01.jpeg', imgHover: 'assets/images/Calmin_Packshot_02.png' },
+    { name: 'Produkt A', meta: 'Verdauung & Darm', price: '29,90 €', img: 'assets/images/Calmin_Packshot_01.jpeg', imgHover: 'assets/images/Calmin_Packshot_02.png' },
+    { name: 'DermaBAL Haut & Fell', meta: 'Haut & Fell', price: '27,90 €', img: 'assets/images/Calmin_Packshot_01.jpeg', imgHover: 'assets/images/Calmin_Packshot_02.png' },
   ]
 };
 
@@ -4119,7 +4416,7 @@ function renderSearchResults(query) {
       <div class="section-label">Produkte</div>`;
     matchedProducts.forEach((p, i) => {
       html += `<div class="search-result" role="option" data-index="${matchedQueries.length + i}" onclick="closeSearch()">
-        <div class="search-result__image product-thumb"><img src="${p.img}" alt="${p.name}"></div>
+        <div class="search-result__image product-thumb"><img src="${p.img}" alt="${p.name}">${p.imgHover ? `<img src="${p.imgHover}" alt="">` : ''}</div>
         <div class="search-result__info">
           <p class="search-result__name">${p.name}</p>
           <div class="search-result__meta">${p.meta}</div>
@@ -4177,6 +4474,27 @@ document.addEventListener('DOMContentLoaded', () => {
     <button class="btn --primary" onclick="document.getElementById('cookieBannerDemo').style.display='none';">Akzeptieren</button>
   </div>
 </div>
+
+
+<script>
+// ─── PDP Thumbnail Switcher ───
+function pdpSwitch(el, src, captionText, authorText) {
+  document.querySelectorAll('.pdp__thumbs .pdp__thumb').forEach(function(t) {
+    t.classList.remove('--active');
+  });
+  el.classList.add('--active');
+  document.querySelector('.pdp__main-image > img').src = src;
+  var cap = document.querySelector('.pdp__caption');
+  var show = captionText || authorText;
+  if (show) {
+    cap.innerHTML = captionText
+      + (authorText ? '<span class="pdp__caption-author">' + authorText + '</span>' : '');
+    cap.classList.remove('--hidden');
+  } else {
+    cap.classList.add('--hidden');
+  }
+}
+</script>
 
 </body>
 </html>
