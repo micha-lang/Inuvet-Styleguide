@@ -6,3 +6,117 @@
 
 /* ─── Navigation ─── */
 .nav-left a { font-size: var(--text-base); }
+
+/* ─── Options-Drawer (Varianten wählen) ─── */
+.options-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 850;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--anim-mid), visibility var(--anim-mid);
+}
+.options-overlay.--open { opacity: 1; visibility: visible; }
+
+.options-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(440px, 100vw);
+  background: var(--bg);
+  z-index: 900;
+  transform: translateX(100%);
+  transition: transform var(--anim-mid);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.options-drawer.--open { transform: translateX(0); }
+
+/* Produktvorschau */
+.options-drawer__product {
+  display: flex;
+  gap: var(--half-module);
+  padding: var(--half-module) var(--module);
+  border-bottom: 1px solid var(--border-light);
+  align-items: flex-start;
+}
+.options-drawer__thumb {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--accent-bg);
+}
+.options-drawer__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.options-drawer__product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.options-drawer__product-name {
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: var(--lh-base);
+  margin: 0;
+}
+
+/* Sektionen (Größe, Menge) */
+.options-drawer__section {
+  padding: var(--half-module) var(--module);
+  border-bottom: 1px solid var(--border-light);
+}
+.options-drawer__section-label {
+  margin-bottom: calc(var(--half-module) / 2);
+  color: var(--fg-muted);
+}
+
+/* Varianten-Pills */
+.options-variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.options-variant-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg);
+  padding: 0.4em 1em;
+  font-size: var(--text-sm);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s, color 0.12s;
+  line-height: 1.4;
+}
+.options-variant-btn:hover { border-color: var(--fg); }
+.options-variant-btn.--active {
+  border-color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* Footer mit Preis + CTA */
+.options-drawer__footer {
+  margin-top: auto;
+  padding: var(--module);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: var(--half-module);
+}
+.options-drawer__price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.options-drawer__price-row .price-stack {
+  font-size: var(--text-m);
+  font-weight: 700;
+}

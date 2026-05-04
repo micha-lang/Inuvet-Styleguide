@@ -92,6 +92,14 @@
 <main id="shopMain"></main>
 
 <!-- ════════════════════════════════════════
+     OPTIONS-DRAWER (Varianten wählen)
+     ════════════════════════════════════════ -->
+<div class="options-overlay" id="optionsOverlay" onclick="closeOptions()"></div>
+<div class="options-drawer" id="optionsDrawer">
+  <!-- Inhalt wird per JS gerendert -->
+</div>
+
+<!-- ════════════════════════════════════════
      WARENKORB-DRAWER (Styleguide-Klassen)
      ════════════════════════════════════════ -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
@@ -131,27 +139,33 @@ const PRODUCTS = [
   { id:1, name:'Calmin Balance', cat:'beruhigung', catLabel:'Beruhigung', price:'39,90 €', img:CALMIN_1, imgHover:CALMIN_2, imgDetail:CALMIN_3, rating:'4,8', approved:true,
     shortDesc:'Für Entspannung und innere Balance.',
     desc:'Hochwertige Tropfen für eine entspannte und ausgeglichene Stimmung bei Hunden und Katzen. Schonend gewonnen, tierärztlich geprüft.',
-    ingredients:'CBD-Hanfextrakt, MCT-Öl (Kokosöl), natürliches Aroma. Ohne künstliche Zusatzstoffe, ohne Lösungsmittel.' },
+    ingredients:'CBD-Hanfextrakt, MCT-Öl (Kokosöl), natürliches Aroma. Ohne künstliche Zusatzstoffe, ohne Lösungsmittel.',
+    variants:[{label:'30 ml',price:'39,90 €'},{label:'60 ml',price:'69,90 €'},{label:'100 ml',price:'109,90 €'}] },
   { id:2, name:'Hepax',          cat:'leber',    catLabel:'Leber',      price:'44,90 €', img:HEPAX_1,  imgHover:HEPAX_2,                      rating:'4,6', approved:true,
     shortDesc:'Unterstützt Knorpel und Gelenke.',
     desc:'Spezialformel zur Unterstützung von Knorpel und Gelenken bei aktiven Tieren. Mit natürlichen Extrakten, tierärztlich entwickelt.',
-    ingredients:'Grünlippmuschel-Extrakt, Teufelskralle, Boswellia, Vitamin C, Glucosamin, Chondroitin. Frei von Getreide und Soja.' },
+    ingredients:'Grünlippmuschel-Extrakt, Teufelskralle, Boswellia, Vitamin C, Glucosamin, Chondroitin. Frei von Getreide und Soja.',
+    variants:[{label:'60 Kapseln',price:'44,90 €'},{label:'120 Kapseln',price:'84,90 €'}] },
   { id:3, name:'Calmin Balance', cat:'beruhigung', catLabel:'Beruhigung', price:'34,90 €', img:CALMIN_1, imgHover:CALMIN_2, imgDetail:CALMIN_3, rating:'4,8', approved:false,
     shortDesc:'Für eine gesunde Verdauung.',
     desc:'Beruhigt den Verdauungstrakt und fördert eine gesunde Darmflora. Ideal bei empfindlichem Magen und nach Antibiotika-Behandlungen.',
-    ingredients:'Flohsamenschalen, Probiotika (Enterococcus faecium), Präbiotika (FOS), Bentonit, Pektin, Kamillenextrakt. Ohne künstliche Zusatzstoffe.' },
+    ingredients:'Flohsamenschalen, Probiotika (Enterococcus faecium), Präbiotika (FOS), Bentonit, Pektin, Kamillenextrakt. Ohne künstliche Zusatzstoffe.',
+    variants:[{label:'30 ml',price:'34,90 €'},{label:'60 ml',price:'64,90 €'},{label:'100 ml',price:'99,90 €'}] },
   { id:4, name:'Hepax',          cat:'leber',    catLabel:'Leber',      price:'49,90 €', img:HEPAX_1,  imgHover:HEPAX_2,                      rating:'4,6', approved:false,
     shortDesc:'Zur Unterstützung der Herzfunktion.',
     desc:'Spezialformel zur Unterstützung der Herzfunktion bei älteren Tieren. Enthält natürliche Wirkstoffe, tierärztlich entwickelt.',
-    ingredients:'Weißdornextrakt, Coenzym Q10, Taurin, L-Carnitin, Magnesium, Vitamin E. Ohne Konservierungsstoffe.' },
+    ingredients:'Weißdornextrakt, Coenzym Q10, Taurin, L-Carnitin, Magnesium, Vitamin E. Ohne Konservierungsstoffe.',
+    variants:[{label:'60 Kapseln',price:'49,90 €'},{label:'120 Kapseln',price:'89,90 €'}] },
   { id:5, name:'Calmin Balance', cat:'beruhigung', catLabel:'Beruhigung', price:'42,90 €', img:CALMIN_1, imgHover:CALMIN_2, imgDetail:CALMIN_3, rating:'4,8', approved:false,
     shortDesc:'Zur Unterstützung der Nierenfunktion.',
     desc:'Unterstützt die Nierenfunktion und trägt zur natürlichen Entgiftung bei. Schonende Naturextrakte für Hunde und Katzen.',
-    ingredients:'Cranberry-Extrakt, Brennnesselwurzel, Schachtelhalmextrakt, Vitamin B6, Kalium. Frei von künstlichen Farbstoffen.' },
+    ingredients:'Cranberry-Extrakt, Brennnesselwurzel, Schachtelhalmextrakt, Vitamin B6, Kalium. Frei von künstlichen Farbstoffen.',
+    variants:[{label:'30 ml',price:'42,90 €'},{label:'60 ml',price:'79,90 €'},{label:'100 ml',price:'119,90 €'}] },
   { id:6, name:'Hepax',          cat:'leber',    catLabel:'Leber',      price:'36,90 €', img:HEPAX_1,  imgHover:HEPAX_2,                      rating:'4,6', approved:false,
     shortDesc:'Für gesunde Haut und glänzendes Fell.',
     desc:'Für glänzendes Fell und gesunde Haut. Reich an Omega-3-Fettsäuren und Biotin, tierärztlich geprüft.',
-    ingredients:'Lachsöl, Borretschsamenöl, Biotin, Zink, Vitamin A, E. Kaltgepresst, ohne Konservierungsstoffe.' },
+    ingredients:'Lachsöl, Borretschsamenöl, Biotin, Zink, Vitamin A, E. Kaltgepresst, ohne Konservierungsstoffe.',
+    variants:[{label:'60 Kapseln',price:'36,90 €'},{label:'120 Kapseln',price:'69,90 €'}] },
 ];
 
 /* ════════════════════════════════════════════
@@ -262,6 +276,92 @@ function openCart() {
 function closeCart() {
   document.getElementById('cartOverlay').classList.remove('--open');
   document.getElementById('cartDrawer').classList.remove('--open');
+}
+
+/* ════════════════════════════════════════════
+   OPTIONS-DRAWER (Varianten wählen)
+   ════════════════════════════════════════════ */
+function openOptions(id) {
+  const p = getProduct(id);
+  renderOptionsDrawer(p);
+  document.getElementById('optionsOverlay').classList.add('--open');
+  document.getElementById('optionsDrawer').classList.add('--open');
+}
+
+function closeOptions() {
+  document.getElementById('optionsOverlay').classList.remove('--open');
+  document.getElementById('optionsDrawer').classList.remove('--open');
+}
+
+function selectVariant(btn, price) {
+  btn.closest('.options-variants').querySelectorAll('.options-variant-btn')
+    .forEach(b => b.classList.remove('--active'));
+  btn.classList.add('--active');
+  const priceEl = document.getElementById('optionsPrice');
+  if (priceEl) priceEl.textContent = price;
+}
+
+function renderOptionsDrawer(p) {
+  const approved = isApproved(p);
+  const variants = p.variants || [];
+  const firstPrice = variants.length > 0 ? variants[0].price : p.price;
+
+  const variantBtns = variants.map((v, i) =>
+    `<button class="options-variant-btn${i === 0 ? ' --active' : ''}" type="button"
+      onclick="selectVariant(this,'${v.price}')">${v.label}</button>`
+  ).join('');
+
+  const ctaType  = approved ? 'approved' : 'requested';
+  const ctaClass = approved ? 'btn --primary' : 'btn --secondary --with-icon';
+  const ctaIcon  = approved ? '' : '<span class="material-icons">mail_outline</span> ';
+  const ctaLabel = approved ? 'In den Warenkorb' : 'Produkt anfragen';
+
+  document.getElementById('optionsDrawer').innerHTML = `
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Optionen wählen</h2>
+      <button class="btn --icon" onclick="closeOptions()" aria-label="Schließen">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+    <div class="options-drawer__product">
+      <div class="options-drawer__thumb product-thumb">
+        <img src="${p.img}" alt="${p.name}">
+      </div>
+      <div class="options-drawer__product-info">
+        <div class="badge" data-cat="${p.cat}" style="margin-bottom:0.3rem">${p.catLabel}</div>
+        <p class="options-drawer__product-name">${p.name}</p>
+        ${p.rating ? `<div class="rating"><span class="material-icons" aria-hidden="true">star</span><span>${p.rating}</span></div>` : ''}
+      </div>
+    </div>
+    ${variants.length > 0 ? `
+    <div class="options-drawer__section">
+      <div class="label-caps options-drawer__section-label">Größe</div>
+      <div class="options-variants">${variantBtns}</div>
+    </div>` : ''}
+    <div class="options-drawer__section">
+      <div class="label-caps options-drawer__section-label">Menge</div>
+      <div class="qty-selector">
+        <button class="qty-selector__btn" type="button" aria-label="Weniger"
+          onclick="this.nextElementSibling.value=Math.max(1,+this.nextElementSibling.value-1)">
+          <span class="material-icons">remove</span>
+        </button>
+        <input class="qty-selector__input" type="number" value="1" min="1" max="99">
+        <button class="qty-selector__btn" type="button" aria-label="Mehr"
+          onclick="this.previousElementSibling.value=Math.min(99,+this.previousElementSibling.value+1)">
+          <span class="material-icons">add</span>
+        </button>
+      </div>
+    </div>
+    <div class="options-drawer__footer">
+      <div class="options-drawer__price-row">
+        <span class="label-caps" style="color:var(--fg-muted)">Gesamt</span>
+        <span class="price-stack" id="optionsPrice">${firstPrice}</span>
+      </div>
+      <button class="${ctaClass}"
+        onclick="addToCart(${p.id},'${ctaType}');closeOptions();openCart()">
+        ${ctaIcon}${ctaLabel}
+      </button>
+    </div>`;
 }
 
 function renderCartDrawer() {
@@ -575,19 +675,19 @@ function tileHTML(p) {
   if (state === 'with-release') {
     if (approved) {
       cartOverlay = `
-        <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="addToCart(${p.id},'approved');openCart();event.stopPropagation()">
+        <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openOptions(${p.id});event.stopPropagation()">
           <span class="material-icons">shopping_cart</span>
         </button>
         <div class="tile__cart">
-          <button class="btn --primary" onclick="addToCart(${p.id},'approved');openCart();event.stopPropagation()">In den Warenkorb</button>
+          <button class="btn --primary" onclick="openOptions(${p.id});event.stopPropagation()">In den Warenkorb</button>
         </div>`;
     } else {
       cartOverlay = `
-        <button class="tile__cart-icon" type="button" aria-label="Produkt anfragen" onclick="addToCart(${p.id},'requested');openCart();event.stopPropagation()">
+        <button class="tile__cart-icon" type="button" aria-label="Produkt anfragen" onclick="openOptions(${p.id});event.stopPropagation()">
           <span class="material-icons">mail_outline</span>
         </button>
         <div class="tile__cart">
-          <button class="btn --secondary" onclick="addToCart(${p.id},'requested');openCart();event.stopPropagation()">Produkt anfragen</button>
+          <button class="btn --secondary" onclick="openOptions(${p.id});event.stopPropagation()">Produkt anfragen</button>
         </div>`;
     }
   }
@@ -1054,6 +1154,13 @@ document.addEventListener('DOMContentLoaded', () => {
     items.forEach((item, i) => item.classList.toggle('--active', i === searchActiveIndex));
     if (searchActiveIndex >= 0) items[searchActiveIndex].scrollIntoView({ block: 'nearest' });
   });
+});
+
+/* Escape schließt Options-Drawer */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('optionsDrawer').classList.contains('--open')) {
+    closeOptions();
+  }
 });
 
 render();
