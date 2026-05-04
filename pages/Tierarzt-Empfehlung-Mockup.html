@@ -323,15 +323,20 @@ function renderOptionsDrawer(p) {
         <span class="material-icons">close</span>
       </button>
     </div>
-    <div class="options-drawer__product">
-      <div class="options-drawer__thumb product-thumb">
+    <div class="cart-item options-drawer__product">
+      <div class="product-thumb">
         <img src="${p.img}" alt="${p.name}">
+        ${p.imgHover ? `<img src="${p.imgHover}" alt="" aria-hidden="true">` : ''}
       </div>
-      <div class="options-drawer__product-info">
-        <div class="badge" data-cat="${p.cat}" style="margin-bottom:0.3rem">${p.catLabel}</div>
-        <p class="options-drawer__product-name">${p.name}</p>
-        ${p.rating ? `<div class="rating"><span class="material-icons" aria-hidden="true">star</span><span>${p.rating}</span></div>` : ''}
-        <div class="options-drawer__price" id="optionsPrice">${firstPrice}</div>
+      <div class="cart-item__info">
+        <div class="cart-item__top">
+          <div>
+            <div class="badge" data-cat="${p.cat}" style="margin-bottom:0.25rem">${p.catLabel}</div>
+            <p class="cart-item__name">${p.name}</p>
+            ${p.rating ? `<div class="rating" style="margin-bottom:0.15rem"><span class="material-icons" aria-hidden="true">star</span><span>${p.rating}</span></div>` : ''}
+            <div class="cart-item__variant" id="optionsPrice">${firstPrice}</div>
+          </div>
+        </div>
       </div>
     </div>
     ${variants.length > 0 ? `
@@ -418,12 +423,15 @@ function renderCartDrawer() {
     </div>`;
 }
 
-/* Cart-Item im Drawer (mit Mengenauswahl + Entfernen) */
+/* Cart-Item im Drawer (mit Mengenauswahl + Entfernen) — Struktur gem. Styleguide §15 */
 function drawerItemHTML(id, type) {
   const p    = getProduct(id);
   const info = type === 'approved' ? 'Einzulösen mit Empfehlung' : 'Anfrage an Praxis';
   return `<div class="cart-item">
-    <div class="cart-item__image product-thumb"><img src="${p.img}" alt="${p.name}"></div>
+    <div class="product-thumb">
+      <img src="${p.img}" alt="${p.name}">
+      ${p.imgHover ? `<img src="${p.imgHover}" alt="" aria-hidden="true">` : ''}
+    </div>
     <div class="cart-item__info">
       <div class="cart-item__top">
         <div>
@@ -440,17 +448,20 @@ function drawerItemHTML(id, type) {
           <input class="qty-selector__input" type="number" value="1" min="1" max="99">
           <button class="qty-selector__btn" type="button" aria-label="Mehr"><span class="material-icons">add</span></button>
         </div>
-        <div class="price-stack">${p.price}</div>
+        <span class="cart-item__qty-text">${p.price}</span>
       </div>
     </div>
   </div>`;
 }
 
-/* Cart-Item in der Checkout-Übersicht (vereinfacht, kein Remove) */
+/* Cart-Item in der Checkout-Übersicht (vereinfacht, kein Remove) — gem. Styleguide §15 */
 function checkoutItemHTML(id) {
   const p = getProduct(id);
   return `<div class="cart-item">
-    <div class="cart-item__image product-thumb"><img src="${p.img}" alt="${p.name}"></div>
+    <div class="product-thumb">
+      <img src="${p.img}" alt="${p.name}">
+      ${p.imgHover ? `<img src="${p.imgHover}" alt="" aria-hidden="true">` : ''}
+    </div>
     <div class="cart-item__info">
       <div class="cart-item__top">
         <div>
@@ -459,8 +470,8 @@ function checkoutItemHTML(id) {
         </div>
       </div>
       <div class="cart-item__bottom">
-        <div class="cart-item__qty-text">1 Stück</div>
-        <div class="price-stack">${p.price}</div>
+        <span class="cart-item__qty-text">1 Stück</span>
+        <span class="cart-item__qty-text">${p.price}</span>
       </div>
     </div>
   </div>`;
