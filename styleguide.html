@@ -1396,21 +1396,22 @@
       </div>
       <div class="rule">
         <h4>Klassen-Übersicht</h4>
-        <p>Basisklassen: <code>.tile.--product</code>, <code>.tile__image-wrap</code>, <code>.floating-meta</code>, <code>.tile__image</code>, <code>.tile__cart</code>, <code>.tile__cart-icon</code>, <code>.tile__headline</code>, <code>.tile__description</code>, <code>.tile__price</code>.</p>
+        <p>Kanonischer Aufbau: <code>.tile.--product</code> → <code>.tile__image-wrap</code> (enthält <code>.floating-meta</code>, <code>.tile__image</code>, <code>.tile__cart-icon</code>, <code>.tile__cart</code>) → <code>.tile__headline-row</code> (enthält <code>.tile__headline</code> + <code>.rating</code>) → <code>.tile__description</code> → <code>.tile__price</code>.</p>
       </div>
     </div>
 
     <!-- Produktkarten -->
     <h3 id="tile-product" class="sg-h3 --top">Produktkarten (Variante D)</h3>
-    <p class="sg-p --mb">Shopify-ready. Bild, Produktname, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid.</p>
+    <p class="sg-p --mb">Shopify-ready. Bild, Produktname, Bewertung, Preis, optionaler Badge und Warenkorb-Button. Passt ins bestehende Grid.</p>
 
     <table class="spec-table">
-      <tr><th>Bild</th><td>Quadratisch (<code>1:1</code>). Bei Hover: „In den Warenkorb"-Button gleitet von unten ins Bild.</td></tr>
-      <tr><th>Badge</th><td>Optional. Position: oben links auf dem Bild. Varianten: Standard (schwarz) und Sale (grün).</td></tr>
-      <tr><th>Kategorie-Badge</th><td>Optional. <code>.badge</code> mit <code>data-cat="…"</code> im <code>.floating-meta</code>-Container. Nur Hintergrund in Kategoriefarbe (light), Schrift schwarz. Wird als erstes Badge gestapelt, Status-Badges (Neu, Sale) folgen dahinter.</td></tr>
-      <tr><th>Beschreibung</th><td>Optional. Unter dem Produktnamen, <code>--text-xs</code>, <code>--fg-muted</code>.</td></tr>
-      <tr><th>Preis</th><td>Bold. Bei Sale: alter Preis durchgestrichen daneben.</td></tr>
-      <tr><th>Button</th><td>Secondary-Style. Desktop: erscheint bei Hover als Overlay am unteren Bildrand (<code>0.25s ease</code>). Mobile: stattdessen permanentes Warenkorb-Icon (Material Icons) oben rechts auf dem Bild.</td></tr>
+      <tr><th>Bild</th><td><code>.tile__image</code>. Erstes <code>&lt;img&gt;</code>: Produktbild mit beschreibendem <code>alt</code>. Zweites <code>&lt;img&gt;</code> (optional): Rollover, immer <code>alt="" aria-hidden="true"</code>. Bei Hover: Rollover blendet ein (<code>opacity</code>-Transition).</td></tr>
+      <tr><th>Badges</th><td><code>.floating-meta</code> auf dem Bild. Reihenfolge: 1. Kategorie-Badge (<code>.badge[data-cat]</code>), 2. Status-Badge (<code>.badge.--dark</code> / <code>.badge.--sale</code>). Alle optional.</td></tr>
+      <tr><th>Warenkorb-Hover</th><td><code>.tile__cart</code>: Button gleitet bei Hover von unten ins Bild. <code>.tile__cart-icon</code>: permanentes Icon auf Mobile. Beide mit <code>aria-label="In den Warenkorb"</code>.</td></tr>
+      <tr><th>Headline-Zeile</th><td><code>.tile__headline-row</code> (Flex, <code>justify-content: space-between</code>). Enthält <code>.tile__headline</code> links und <code>.rating</code> rechts (optional).</td></tr>
+      <tr><th>Bewertung</th><td><code>.rating</code> in <code>.tile__headline-row</code>. Ein Stern (<code>material-icons star</code>, orange) + Textzahl. <code>aria-hidden="true"</code> auf dem Icon.</td></tr>
+      <tr><th>Beschreibung</th><td><code>.tile__description</code>. Optional, <code>var(--fg-muted)</code>.</td></tr>
+      <tr><th>Preis</th><td><code>.tile__price</code> → <code>.price-stack</code>. Bei Sale: alter Preis als <code>&lt;span class="--old"&gt;</code> daneben.</td></tr>
     </table>
 
     <div class="demo-label">4-Spalter — Produktkarten</div>
@@ -1421,13 +1422,13 @@
             <div class="badge" data-cat="herz">Herz</div>
             <div class="badge --dark">Neu</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produkt A</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt A</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
@@ -1435,13 +1436,13 @@
             <div class="badge" data-cat="cbd">CBD</div>
             <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produkt B</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt B</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
@@ -1449,13 +1450,13 @@
             <div class="badge" data-cat="beruhigung">Beruhigung</div>
             <div class="badge --sale">Sale</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produkt C</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt C</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.9</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.9</div></div>
+        <div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
@@ -1463,13 +1464,13 @@
             <div class="badge" data-cat="gelenke">Gelenke</div>
             <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produkt D</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt D</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.9</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.9</div></div>
+        <div class="tile__price"><div class="price-stack"><span>34,90 €</span></div></div>
       </div>
     </div>
     <p class="demo-note">Hover über ein Produktbild: Button gleitet von unten ein. Badges, Beschreibung und Preis darunter.</p>
@@ -1482,13 +1483,13 @@
             <div class="badge" data-cat="bauchspeichel">Bauchspeicheldrüse</div>
             <div class="badge --dark">Neu</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produkt E — Längerer Produkttitel</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt E — Längerer Produkttitel</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.7</div></div>
         <div class="tile__description">Eine etwas ausführlichere Beschreibung des Produkts mit mehr Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>59,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.7</div></div>
+        <div class="tile__price"><div class="price-stack"><span>59,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
@@ -1497,26 +1498,26 @@
             <div class="badge --sale">Sale</div>
             <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produkt F</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt F</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.1</div></div>
         <div class="tile__description">Kurze Produktbeschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>24,90 €</span><span class="--old">49,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.1</div></div>
+        <div class="tile__price"><div class="price-stack"><span>24,90 €</span><span class="--old">49,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="magendarm">Magen/Darm</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produkt G</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produkt G</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div>
         <div class="tile__description">Kurze Produktbeschreibung mit den wichtigsten Details.</div>
-        <div class="tile__price"><div class="price-stack"><span>39,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div>
+        <div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div>
       </div>
     </div>
     <p class="demo-note">3-Spalter. Produktname und Beschreibung dürfen mehrzeilig sein.</p>
@@ -1529,26 +1530,26 @@
             <div class="badge" data-cat="haut">Haut</div>
             <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produktname</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.8</div></div>
         <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.8</div></div>
+        <div class="tile__price"><div class="price-stack"><span>29,90 €</span></div></div>
       </div>
       <div class="tile --product">
           <div class="tile__image-wrap">
           <div class="floating-meta">
             <div class="badge" data-cat="atemwege">Atemwege</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produktname</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.3</div></div>
         <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.3</div></div>
+        <div class="tile__price"><div class="price-stack"><span>49,90 €</span></div></div>
       </div>
       <div class="tile --featured">
         <h3 class="tile__headline">Entdecke unsere Neuheiten</h3>
@@ -1564,13 +1565,13 @@
             <div class="badge --sale">Sale</div>
             <div class="badge">Produktfamilie</div>
           </div>
-          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="tile__image"><img src="assets/images/Hepax_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Hepax_Packshot_02.png" alt="" aria-hidden="true"></div>
           <button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button>
           <div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div>
         </div>
-        <h3 class="tile__headline">Produktname</h3>
+        <div class="tile__headline-row"><h3 class="tile__headline">Produktname</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div>
         <div class="tile__description">Kurze Beschreibung.</div>
-        <div class="tile__price"><div class="price-stack"><span>14,90 €</span><span class="--old">29,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div>
+        <div class="tile__price"><div class="price-stack"><span>14,90 €</span><span class="--old">29,90 €</span></div></div>
       </div>
     </div>
     <p class="demo-note">Produktkarten gemischt mit Sonderkachel — flexibel einsetzbar.</p>
@@ -1602,7 +1603,7 @@
     <div class="sg-demo-pad">
       <div style="max-width: 28rem;">
         <div class="cart-item">
-          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <div class="cart-item__info">
             <div class="cart-item__top">
               <div>
@@ -1622,7 +1623,7 @@
     <div class="sg-demo-pad">
       <div style="max-width: 28rem;">
         <div class="cart-item">
-          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <div class="cart-item__info">
             <div class="cart-item__top">
               <div>
@@ -1651,7 +1652,7 @@
       <div style="max-width: 28rem;">
         <div class="cart-item">
           <div class="product-thumb-wrap">
-            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="floating-meta" style="top:0; left:0;">
               <span class="badge --free">+3 gratis</span>
             </div>
@@ -1676,7 +1677,7 @@
       <div style="max-width: 28rem;">
         <div class="cart-item">
           <div class="product-thumb-wrap">
-            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="floating-meta" style="top:0; left:0;">
               <span class="badge --free">+3 gratis</span>
             </div>
@@ -1735,7 +1736,7 @@
     <div class="sg-demo-pad">
       <div style="display:flex;gap:var(--half-module);align-items:flex-end;">
         <div>
-          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+          <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
           <div style="font-size:var(--text-xs);color:var(--fg-muted);margin-top:0.25rem;">.product-thumb · 5rem</div>
         </div>
       </div>
@@ -1746,7 +1747,7 @@
       <div style="display:flex;gap:var(--half-module);align-items:flex-end;">
         <div>
           <div class="product-thumb-wrap">
-            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+            <div class="product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="floating-meta" style="top:0;left:0;">
               <span class="badge --free">+3 gratis</span>
             </div>
@@ -3068,10 +3069,10 @@
     <div class="pdp__recommendations">
       <h3>Das könnte Ihnen auch gefallen</h3>
       <div class="tile-grid --cols-4">
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div><div class="badge --dark">Neu</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produkt A</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produkt B</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>34,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div><div class="badge --sale">Sale</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produkt C</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.9</div></div></div>
-        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Produkt D</h3><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.9</div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div><div class="badge --dark">Neu</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt A</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.8</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span></div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt B</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.5</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>34,90 €</span></div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div><div class="badge --sale">Sale</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt C</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 3.9</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>19,90 €</span><span class="--old">39,90 €</span></div></div></div>
+        <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="beruhigung">Beruhigung</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button" aria-label="In den Warenkorb" onclick="openCart('cartFull')"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Produkt D</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.9</div></div><div class="tile__description">Kurze Produktbeschreibung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
       </div>
     </div>
 
@@ -3165,9 +3166,9 @@
           </div>
 
           <div class="tile-grid --cols-3">
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">ArthroBAL Complex</h3><div class="tile__description">Für agile Gelenke.</div><div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div></div>
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --dark">Neu</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Mobility Plus</h3><div class="tile__description">Tägliche Unterstützung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
-            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --sale">Sale</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><h3 class="tile__headline">Senior Fit</h3><div class="tile__description">Für ältere Hunde.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span><span class="--old">39,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge" data-cat="gelenke">Gelenke</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">ArthroBAL Complex</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.7</div></div><div class="tile__description">Für agile Gelenke.</div><div class="tile__price"><div class="price-stack"><span>39,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --dark">Neu</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Mobility Plus</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.4</div></div><div class="tile__description">Tägliche Unterstützung.</div><div class="tile__price"><div class="price-stack"><span>24,90 €</span></div></div></div>
+            <div class="tile --product"><div class="tile__image-wrap"><div class="floating-meta"><div class="badge --sale">Sale</div></div><div class="tile__image"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><button class="tile__cart-icon" type="button"><span class="material-icons">shopping_cart</span></button><div class="tile__cart"><a class="btn --secondary" onclick="openCart('cartFull')">In den Warenkorb</a></div></div><div class="tile__headline-row"><h3 class="tile__headline">Senior Fit</h3><div class="rating"><span class="material-icons" aria-hidden="true">star</span> 4.2</div></div><div class="tile__description">Für ältere Hunde.</div><div class="tile__price"><div class="price-stack"><span>29,90 €</span><span class="--old">39,90 €</span></div></div></div>
           </div>
 
           <nav class="pagination" aria-label="Pagination">
@@ -3237,9 +3238,9 @@
       <button class="btn --icon" onclick="closeCart('cartFull')"><span class="material-icons">close</span></button>
     </div>
     <div class="cart-drawer__items">
-      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt A</p><div class="cart-item__variant">250g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="2" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">59,80 €</div></div></div></div>
-      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt B</p><div class="cart-item__variant">120g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">34,90 €</div></div></div></div>
-      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt C</p><div class="cart-item__variant">500g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">49,90 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt A</p><div class="cart-item__variant">250g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="2" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">59,80 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt B</p><div class="cart-item__variant">120g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">34,90 €</div></div></div></div>
+      <div class="cart-item"><div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div><div class="cart-item__info"><div class="cart-item__top"><div><p class="cart-item__name">Produkt C</p><div class="cart-item__variant">500g</div></div><button class="btn --icon cart-item__remove"><span class="material-icons">close</span></button></div><div class="cart-item__bottom"><div class="qty-selector --sm"><button class="qty-selector__btn"><span class="material-icons">remove</span></button><input class="qty-selector__input" type="number" value="1" min="1"><button class="qty-selector__btn"><span class="material-icons">add</span></button></div><div class="price-stack">49,90 €</div></div></div></div>
     </div>
     <div class="cart-drawer__footer">
       <div class="cart-drawer__shipping"><div class="shipping-hint"><span class="material-icons">local_shipping</span> Noch 5,40 € bis zum kostenlosen Versand</div></div>
@@ -3406,7 +3407,7 @@
           <h3 class="section-label">Bestellübersicht</h3>
 
           <div class="cart-item">
-            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
@@ -3422,7 +3423,7 @@
           </div>
 
           <div class="cart-item">
-            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>
@@ -3438,7 +3439,7 @@
           </div>
 
           <div class="cart-item">
-            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="inuvet Produkt Detail"></div>
+            <div class="cart-item__image product-thumb"><img src="assets/images/Calmin_Packshot_01.jpeg" alt="inuvet Produkt"><img src="assets/images/Calmin_Packshot_02.png" alt="" aria-hidden="true"></div>
             <div class="cart-item__info">
               <div class="cart-item__top">
                 <div>

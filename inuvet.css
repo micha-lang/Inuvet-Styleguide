@@ -573,6 +573,12 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+  .tile__headline-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--half-module);
+  }
   .tile__headline {
     font-size: var(--text-base);
     font-weight: 700;
@@ -846,7 +852,7 @@
 
   /* ─── Rating ─── */
   .rating { display: flex; align-items: center; gap: 0.25rem; font-size: var(--text-xs); color: var(--fg-muted); }
-  .rating .material-icons { font-size: 1rem; color: var(--fg); }
+  .rating .material-icons { font-size: 1rem; color: #E8A020; }
   .rating .material-icons.--empty { color: var(--border-light); }
 
   /* ─── Price Stack ─── */
